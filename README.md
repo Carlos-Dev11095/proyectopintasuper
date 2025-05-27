@@ -1,0 +1,2 @@
+# proyectopintasuper
+plantilla estructura pintasuper
