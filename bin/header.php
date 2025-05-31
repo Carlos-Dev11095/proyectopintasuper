@@ -146,10 +146,19 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="about.html">Acerca de</a>
+                                    <a href="acerca.php">Acerca</a>
+                                </li>
+                                <li>
+                                    <a href="calculadora_m2.php">Calcular m²</a>
+                                </li>
+                                <li>
+                                    <a href="decorador.php">Decorador</a>
+                                </li>
+                                <li>
+                                    <a href="galeria.php">Galería</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">Páginas</a>
+                                    <a href="#">+ Páginas</a>
                                     <ul>
                                         <li><a href="team.html">Equipo</a></li>
                                         <li><a href="team-carousel.html">Carrusel de Equipo</a></li>
