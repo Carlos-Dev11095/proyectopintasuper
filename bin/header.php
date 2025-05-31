@@ -146,16 +146,16 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="acerca.php">Acerca</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/acerca/">Acerca</a>
                                 </li>
                                 <li>
-                                    <a href="calculadora_m2.php">Calcular m²</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular m²</a>
                                 </li>
                                 <li>
-                                    <a href="decorador.php">Decorador</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">Decorador</a>
                                 </li>
                                 <li>
-                                    <a href="galeria.php">Galería</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/galeria/">Galeria</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">+ Páginas</a>
