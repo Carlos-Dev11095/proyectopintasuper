@@ -4,8 +4,8 @@
             <div class="main-header__top-inner clearfix">
                 <div class="main-header__logo">
                     <a href="index.html">
-                        <img src="assets/images/resources/logo-1.png" alt="" class="dark-logo">
-                        <img src="assets/images/resources/logo-2.png" alt="" class="light-logo">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-1.png" alt="" class="dark-logo">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-2.png" alt="" class="light-logo">
                     </a>
                 </div>
                 <div class="main-header__top-right">
@@ -71,7 +71,7 @@
                                                             <div class="col-lg-3">
                                                                 <div class="home-showcase__item">
                                                                     <div class="home-showcase__image">
-                                                                        <img src="assets/images/home-showcase/home-showcase-1-1.png"
+                                                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/home-showcase/home-showcase-1-1.png"
                                                                             alt="">
                                                                         <div class="home-showcase__buttons">
                                                                             <a href="index.html"
@@ -89,7 +89,7 @@
                                                             <div class="col-lg-3">
                                                                 <div class="home-showcase__item">
                                                                     <div class="home-showcase__image">
-                                                                        <img src="assets/images/home-showcase/home-showcase-1-2.png"
+                                                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/home-showcase/home-showcase-1-2.png"
                                                                             alt="">
                                                                         <div class="home-showcase__buttons">
                                                                             <a href="index2.html"
@@ -107,7 +107,7 @@
                                                             <div class="col-lg-3">
                                                                 <div class="home-showcase__item">
                                                                     <div class="home-showcase__image">
-                                                                        <img src="assets/images/home-showcase/home-showcase-1-3.png"
+                                                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/home-showcase/home-showcase-1-3.png"
                                                                             alt="">
                                                                         <div class="home-showcase__buttons">
                                                                             <a href="index3.html"
@@ -125,7 +125,7 @@
                                                             <div class="col-lg-3">
                                                                 <div class="home-showcase__item">
                                                                     <div class="home-showcase__image">
-                                                                        <img src="assets/images/home-showcase/home-showcase-1-4.png"
+                                                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/home-showcase/home-showcase-1-4.png"
                                                                             alt="">
                                                                         <div class="home-showcase__buttons">
                                                                             <a href="index-dark.html"

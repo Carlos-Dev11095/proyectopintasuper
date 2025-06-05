@@ -6,7 +6,7 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
     <div class="container">
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
             <div class="newsletter-shape-1"
-                style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
+                style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/newsletter-shape-1.png);"></div>
             <div class="newsletter__left">
                 <h3 class="newsletter__title">Únete a nuestro boletín</h3>
                 <p class="newsletter__text">Lorem ipsum dolor amet, elit do eiusmod sed</p>
@@ -26,7 +26,7 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
 
 <!--Site Footer Start-->
 <footer class="site-footer">
-    <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);">
+    <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);">
     </div>
     <div class="site-footer__top">
         <div class="container">
@@ -34,7 +34,7 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                            <a href="index.html"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
                             <p class="footer-widget__about-text">Trabajamos con pasión asumiendo desafíos y creando nuevos en el sector publicitario.</p>
@@ -136,7 +136,7 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="assets/images/resources/footer-logo.png"
+            <a href="index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png"
                     width="155" alt="" /></a>
         </div>
         <!-- /.logo-box -->
