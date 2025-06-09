@@ -20,6 +20,18 @@
 
     <?php include '../bin/css.php'; ?>
 
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="script.min.js" as="script">
+    <link rel="preload" href="images/fachada.webp" as="image">
+    <link rel="preload" href="images/habitacion.webp" as="image">
+    <link rel="preload" href="images/comedor.webp" as="image">
+    <link rel="preload" href="images/cocina.webp" as="image">
+    <link rel="preload" href="images/sala.webp" as="image">
+    <link rel="preload" href="images/bano.webp" as="image">
+    <!-- CSS combinado y minificado -->
+    <link rel="stylesheet" href="styles.min.css">
+
 </head>
 
 <body class="custom-cursor">
@@ -50,91 +62,6 @@
             <div class="sticky-header__content"></div>
         </div>
 
-        <!--Inicio de Características-->
-        <section class="feature-one">
-            <div class="container">
-                <ul class="list-unstyled feature-one__list">
-                    <!--Característica Individual-->
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-mind"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="about.html">Trabajo Inteligente</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
-                            <div class="feature-one__arrow">
-                                <a href="about.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <!--Característica Individual-->
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-wallpaper-2"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="about.html">Diseños Únicos</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
-                            <div class="feature-one__arrow">
-                                <a href="about.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <!--Característica Individual-->
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-programmer"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="team.html">Equipo Calificado</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
-                            <div class="feature-one__arrow">
-                                <a href="team.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <!--Característica Individual-->
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-best-price"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="contact.html">Mejores Precios</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
-                            <div class="feature-one__arrow">
-                                <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!--Fin de Características-->
-
         <!--Inicio de Servicios-->
         <section class="services-one">
             <div class="services-one-bg-box">
@@ -151,45 +78,58 @@
                     <div class="col-xl-4 col-lg-4">
                         <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
-                            <div class="services-one__img">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/services/services-1-1.jpg" alt="">
-                                <div class="services-one__icon">
-                                    <span class="icon-wallpaper-3"></span>
-                                </div>
-                            </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="room-wallpapers.html">Papeles Pintados para Habitaciones</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                        <div class="panel left-panel">
+            <h2>Selecciona un ambiente</h2>
+            <select id="room-selector" class="room-selector">
+                <option value="">-- Elige un ambiente --</option>
+                <option value="fachada">Fachada de casa</option>
+                <option value="habitacion">Habitación con cama</option>
+                <option value="comedor">Comedor</option>
+                <option value="cocina">Cocina</option>
+                <option value="sala">Sala de estar</option>
+                <option value="bano">Baño</option>
+            </select>
+        </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
-                            <div class="services-one__img">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/services/services-1-2.jpg" alt="">
-                                <div class="services-one__icon">
-                                    <span class="icon-wallpaper-4"></span>
-                                </div>
-                            </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="wall-sheets.html">Planchas para Paredes</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                        <div class="panel center-panel">
+            <div id="wall" class="wall">
+                <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+            </div>
+        </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
-                            <div class="services-one__img">
-                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/services/services-1-3.jpg" alt="">
-                                <div class="services-one__icon">
-                                    <span class="icon-paint"></span>
-                                </div>
-                            </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="wall-painting.html">Pintura de Paredes</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                <div class="panel right-panel">
+            <h2>Selecciona un color</h2>
+            <select id="palette-selector" class="palette-selector">
+                <option value="">-- Elige una paleta --</option>
+                <option value="zafiro">Línea Zafiro</option>
+                <option value="dorada">Línea Dorada</option>
+                <option value="onix">Línea Ónix</option>
+                <option value="natura">Línea Natura</option>
+            </select>
+            
+            <div id="color-palette" class="color-palette">
+                <!-- Contenido cargado dinámicamente por JS -->
+            </div>
+        </div>
                             </div>
                         </div>
                     </div>
@@ -198,10 +138,10 @@
         </section>
         <!--Fin de Servicios-->
 
+    <!-- JavaScript minificado y al final del body -->
+    <script src="script.min.js" defer></script>
     <?php require '../bin/footer.php'; ?>
-
     <?php require '../bin/js.php'; ?>
 
 </body>
-
 </html>
