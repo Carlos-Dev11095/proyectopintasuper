@@ -51,110 +51,81 @@
         </div>
 
         <!--Inicio del Slider Principal-->
-        <section class="main-slider clearfix">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
-                "effect": "fade",
-                "pagination": {
-                "el": "#main-slider-pagination",
-                "type": "bullets",
-                "clickable": true
-                },
-                "navigation": {
-                "nextEl": "#main-slider__swiper-button-next",
-                "prevEl": "#main-slider__swiper-button-prev"
-                },
-                "autoplay": {
-                "delay": 5000
-                }}'>
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider__content">
-                                        <div class="main-slider__icon">
-                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
-                                        </div>
-                                        <div class="main-slider__sub-title-box">
-                                            <p class="main-slider__sub-title">Bienvenido a Pintasuper</p>
-                                            <div class="main-slider__border-left"></div>
-                                            <div class="main-slider__border-right"></div>
-                                        </div>
-                                        <h2 class="main-slider__title">Papeles <br> Pintados <span>&</span> <br>
-                                            Pintura de Calidad Para el Hogar</h2>
-                                        <div class="main-slider__btn-box">
-                                            <a href="about.html" class="thm-btn main-slider__btn">Descubre Más</a>
-                                        </div>
-                                    </div>
+        <section class="feature-one">
+            <div class="container">
+                <ul class="list-unstyled feature-one__list">
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="fas fa-palette"></span> 
                                 </div>
+                            <h3 class="feature-one__title"><a href="products.html#colores">Tonos Infinitos</a></h3>
+                            <p class="feature-one__text">Explora nuestra vasta colección de colores y texturas para darle vida a cada rincón de tu hogar.</p>
+                            <div class="feature-one__arrow">
+                                <a href="products.html#colores"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-2.jpg);"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider__content">
-                                        <div class="main-slider__icon">
-                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
-                                        </div>
-                                        <div class="main-slider__sub-title-box">
-                                            <p class="main-slider__sub-title">Bienvenido a Pintasuper</p>
-                                            <div class="main-slider__border-left"></div>
-                                            <div class="main-slider__border-right"></div>
-                                        </div>
-                                        <h2 class="main-slider__title">Papeles <br> Pintados <span>&</span> <br>
-                                            Pintura de Calidad Para el Hogar</h2>
-                                        <div class="main-slider__btn-box">
-                                            <a href="about.html" class="thm-btn main-slider__btn">Descubre Más</a>
-                                        </div>
-                                    </div>
+                    </li>
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="fas fa-paint-roller"></span> 
                                 </div>
+                            <h3 class="feature-one__title"><a href="products.html#herramientas">Todo para tu Proyecto</a></h3>
+                            <p class="feature-one__text">Desde brochas y rodillos hasta lijas y selladores, tenemos todo lo que necesitas para un acabado profesional.</p>
+                            <div class="feature-one__arrow">
+                                <a href="products.html#herramientas"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-3.jpg);"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="main-slider__content">
-                                        <div class="main-slider__icon">
-                                            <img src="assets/images/shapes/main-slider-icon.png" alt="">
-                                        </div>
-                                        <div class="main-slider__sub-title-box">
-                                            <p class="main-slider__sub-title">Bienvenido a Pintasuper</p>
-                                            <div class="main-slider__border-left"></div>
-                                            <div class="main-slider__border-right"></div>
-                                        </div>
-                                        <h2 class="main-slider__title">Papeles <br> Pintados <span>&</span> <br>
-                                            Pintura de Calidad Para el Hogar</h2>
-                                        <div class="main-slider__btn-box">
-                                            <a href="about.html" class="thm-btn main-slider__btn">Descubre Más</a>
-                                        </div>
-                                    </div>
+                    </li>
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="fas fa-shield-alt"></span> 
                                 </div>
+                            <h3 class="feature-one__title"><a href="brands.html">Calidad Garantizada</a></h3>
+                            <p class="feature-one__text">Solo trabajamos con las marcas líderes del mercado, asegurando durabilidad y rendimiento superior en cada producto.</p>
+                            <div class="feature-one__arrow">
+                                <a href="brands.html"><i class="fa fa-arrow-right"></i></a> </div>
+                        </div>
+                    </li>
+                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
+                        <div class="feature-one__content">
+                            <div class="feature-one__shape-1">
+                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                            </div>
+                            <div class="feature-one__shape-2">
+                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                            </div>
+                            <div class="feature-one__icon">
+                                <span class="fas fa-comments"></span> 
+                                </div>
+                            <h3 class="feature-one__title"><a href="contact.html">Expertos a tu Servicio</a></h3>
+                            <p class="feature-one__text">Nuestro equipo te ofrece la mejor guía para elegir la pintura ideal y resolver todas tus dudas de aplicación.</p>
+                            <div class="feature-one__arrow">
+                                <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Botones de navegación -->
-                <div class="main-slider__nav">
-                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
-                        <i class="fa fa-angle-left"></i>
-                    </div>
-                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
-                        <i class="fa fa-angle-right"></i>
-                    </div>
-                </div>
-
+                    </li>
+                </ul>
             </div>
         </section>
         <!--Fin del Slider Principal-->
@@ -170,20 +141,16 @@
                     <div class="col-xl-6">
                         <div class="about-one__left">
                             <div class="section-title text-left">
-                                <span class="section-title__tagline">Sobre la empresa</span>
-                                <h2 class="section-title__title">Ofrecemos Diseños de Paredes de Calidad</h2>
-                                <div class="section-title__line"></div>
+                                <span class="section-title__tagline">¿Quiénes Somos?</span> <h2 class="section-title__title">Expertos en Transformar Espacios con Color</h2> <div class="section-title__line"></div>
                             </div>
-                            <p class="about-one__text-1">Tenemos más de 30 años de experiencia para ofrecerte resultados de mejor calidad.</p>
-                            <ul class="list-unstyled about-one__points">
+                            <p class="about-one__text-1">En Pintasuper, transformamos hogares y negocios con pintura y diseño de paredes de la más alta calidad.</p> <ul class="list-unstyled about-one__points">
                                 <li>
                                     <div class="about-one__points-content-box">
                                         <div class="about-one__points-icon">
                                             <span class="icon-wallpaper"></span>
                                         </div>
                                         <div class="about-one__points-text-box">
-                                            <p class="about-one__points-text">Trabajos de Pared Inteligentes y Únicos</p>
-                                        </div>
+                                            <p class="about-one__points-text">Soluciones Innovadoras en Diseño de Paredes</p> </div>
                                     </div>
                                 </li>
                                 <li>
@@ -192,23 +159,19 @@
                                             <span class="icon-high-quality"></span>
                                         </div>
                                         <div class="about-one__points-text-box">
-                                            <p class="about-one__points-text">Los Mejores Estándares de Calidad</p>
-                                        </div>
+                                            <p class="about-one__points-text">Calidad Garantizada en Cada Proyecto</p> </div>
                                     </div>
                                 </li>
                             </ul>
-                            <p class="about-one__text-2">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor donec at ligula lacus.</p>
-                            <div class="about-one__contact-us">
+                            <p class="about-one__text-2">Con **más de 30 años de experiencia** en el sector, nuestro equipo de profesionales se dedica a ofrecer acabados impecables y soluciones personalizadas. Desde pintura mural hasta papel tapiz y paneles, nos aseguramos de que cada detalle refleje la visión de nuestros clientes.</p> <div class="about-one__contact-us">
                                 <div class="about-one__btn-box">
-                                    <a href="about.html" class="thm-btn about-one__btn">Leer Más</a>
-                                </div>
+                                    <a href="about.html" class="thm-btn about-one__btn">Conoce Más</a> </div>
                                 <div class="about-one__call">
                                     <div class="about-one__call-icon">
                                         <span class="icon-phone-call"></span>
                                     </div>
                                     <div class="about-one__call-text">
-                                        <p>Llame en cualquier momento</p>
-                                        <a href="tel:980009630">+ 98 (000) - 9630</a>
+                                        <p>¿Listo para Transformar?</p> <a href="tel:980009630">+ 98 (000) - 9630</a>
                                     </div>
                                 </div>
                             </div>
@@ -219,18 +182,15 @@
                             <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms"
                                 data-wow-duration="2500ms">
                                 <div class="about-one__img">
-                                    <img src="assets/images/resources/about-one-img-1.jpg" alt="">
-                                </div>
+                                    <img src="assets/images/resources/about-one-img-1.jpg" alt="Imagen principal sobre nosotros"> </div>
                                 <div class="about-one__small-img">
-                                    <img src="assets/images/resources/about-one-small-img.jpg" alt="">
-                                </div>
+                                    <img src="assets/images/resources/about-one-small-img.jpg" alt="Imagen pequeña sobre nosotros"> </div>
                                 <div class="about-one__project">
                                     <div class="about-one__project-icon">
                                         <span class="icon-wallpaper-1"></span>
                                     </div>
                                     <div class="about-one__project-content">
-                                        <h3 class="odometer" data-count="3690">00</h3>
-                                        <p class="about-one__project-text">Proyectos Exitosos</p>
+                                        <p class="about-one__project-text">Diseños nnovadores</p>
                                     </div>
                                 </div>
                                 <div class="about-one__shape-1 float-bob-y"></div>
@@ -249,7 +209,6 @@
         <section class="feature-one">
             <div class="container">
                 <ul class="list-unstyled feature-one__list">
-                    <!--Característica Individual-->
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
                         <div class="feature-one__content">
                             <div class="feature-one__shape-1">
@@ -259,16 +218,14 @@
                                 <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                             </div>
                             <div class="feature-one__icon">
-                                <span class="icon-mind"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="about.html">Trabajo Inteligente</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
+                                <span class="icon-mind"></span> </div>
+                            <h3 class="feature-one__title"><a href="servicios.html#asesoramiento">Asesoramiento Inteligente</a></h3>
+                            <p class="feature-one__text">Te guiamos en la elección perfecta de colores y tipos de pintura para tu hogar u oficina.</p>
                             <div class="feature-one__arrow">
-                                <a href="about.html"><i class="fa fa-arrow-right"></i></a>
+                                <a href="servicios.html#asesoramiento"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </li>
-                    <!--Característica Individual-->
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
                         <div class="feature-one__content">
                             <div class="feature-one__shape-1">
@@ -278,16 +235,14 @@
                                 <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                             </div>
                             <div class="feature-one__icon">
-                                <span class="icon-wallpaper-2"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="about.html">Diseños Únicos</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
+                                <span class="icon-wallpaper-2"></span> </div>
+                            <h3 class="feature-one__title"><a href="portafolio.html">Diseños y Acabados Únicos</a></h3>
+                            <p class="feature-one__text">Creamos ambientes excepcionales con técnicas y estilos de pintura innovadores.</p>
                             <div class="feature-one__arrow">
-                                <a href="about.html"><i class="fa fa-arrow-right"></i></a>
+                                <a href="portafolio.html"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </li>
-                    <!--Característica Individual-->
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
                         <div class="feature-one__content">
                             <div class="feature-one__shape-1">
@@ -297,16 +252,14 @@
                                 <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                             </div>
                             <div class="feature-one__icon">
-                                <span class="icon-programmer"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="team.html">Equipo Calificado</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
+                                <span class="icon-programmer"></span> </div>
+                            <h3 class="feature-one__title"><a href="equipo.html">Equipo de Expertos de Pintura</a></h3>
+                            <p class="feature-one__text">Contamos con personal profesional altamente calificado y con amplia experiencia en pintura.</p>
                             <div class="feature-one__arrow">
-                                <a href="team.html"><i class="fa fa-arrow-right"></i></a>
+                                <a href="equipo.html"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </li>
-                    <!--Característica Individual-->
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
                         <div class="feature-one__content">
                             <div class="feature-one__shape-1">
@@ -316,12 +269,11 @@
                                 <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                             </div>
                             <div class="feature-one__icon">
-                                <span class="icon-best-price"></span>
-                            </div>
-                            <h3 class="feature-one__title"><a href="contact.html">Mejores Precios</a></h3>
-                            <p class="feature-one__text">Hay muchas variaciones de lorem ipsum disponibles, pero la mayoría.</p>
+                                <span class="icon-best-price"></span> </div>
+                            <h3 class="feature-one__title"><a href="calidad.html">Calidad Cuidando tu Economía</a></h3>
+                            <p class="feature-one__text">Utilizamos materiales de calidad y técnicas avanzadas para resultados duraderos.</p>
                             <div class="feature-one__arrow">
-                                <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
+                                <a href="calidad.html"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </li>
@@ -335,56 +287,50 @@
             <div class="services-one-bg-box">
                 <div class="services-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
                     style="background-image: url(assets/images/backgrounds/services-one-bg.jpg);"></div>
-            </div>
+                    </div>
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Nuestros Servicios</span>
-                    <h2 class="section-title__title">Servicios que Ofrecemos</h2>
+                    <span class="section-title__tagline">Nuestra Especialidad</span>
+                    <h2 class="section-title__title">Soluciones Completas de Pintura</h2>
                     <div class="section-title__line"></div>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-1.jpg" alt="">
+                                <img src="assets/images/services/services-1-1.jpg" alt="Pinturas y esmaltes de alta calidad">
                                 <div class="services-one__icon">
-                                    <span class="icon-wallpaper-3"></span>
-                                </div>
+                                    <span class="icon-wallpaper-3"></span> </div>
                             </div>
                             <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="room-wallpapers.html">Papeles Pintados para Habitaciones</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                <h3 class="services-one__title"><a href="productos-pinturas.html">Amplia Gama de Pinturas</a></h3>
+                                <p class="services-one__text">Descubre nuestra colección de pinturas para interiores y exteriores, en todos los acabados y colores.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-2.jpg" alt="">
+                                <img src="assets/images/services/services-1-2.jpg" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
-                                    <span class="icon-wallpaper-4"></span>
-                                </div>
+                                    <span class="icon-wallpaper-4"></span> </div>
                             </div>
                             <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="wall-sheets.html">Planchas para Paredes</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                <h3 class="services-one__title"><a href="herramientas.html">Herramientas y Preparación</a></h3>
+                                <p class="services-one__text">Encuentra todo lo necesario para preparar y aplicar pintura: brochas, rodillos, lijas, selladores, etc.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
                         <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-3.jpg" alt="">
+                                <img src="assets/images/services/services-1-3.jpg" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
-                                    <span class="icon-paint"></span>
-                                </div>
+                                    <span class="icon-paint"></span> </div>
                             </div>
                             <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="wall-painting.html">Pintura de Paredes</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
+                                <h3 class="services-one__title"><a href="asesoramiento-color.html">Asesoramiento de Color</a></h3>
+                                <p class="services-one__text">Nuestros expertos te guiarán para elegir la paleta de colores perfecta para cada ambiente.</p>
                             </div>
                         </div>
                     </div>
@@ -401,19 +347,17 @@
                         <div class="quality-work__left">
                             <div class="quality-work__img-box">
                                 <div class="quality-work__img">
-                                    <img src="assets/images/resources/quality-work-img-1.png" alt="">
-                                </div>
+                                    <img src="assets/images/resources/quality-work-img-1.png" alt="Pintor profesional trabajando">
+                                    </div>
                                 <div class="quality-work__small-img">
-                                    <img src="assets/images/resources/quality-work-small-img.jpg" alt="">
-                                </div>
+                                    <img src="assets/images/resources/quality-work-small-img.jpg" alt="Detalle de pintura de alta calidad">
+                                    </div>
                                 <div class="quality-work__video-box">
                                     <div class="quality-work__curved-circle-box">
                                         <div class="curved-circle">
-                                            <span class="curved-circle--item">NUEVA COLECCIÓN 2022.</span>
-                                        </div>
+                                            <span class="curved-circle--item">NUEVAS TÉCNICAS 2025.</span> </div>
                                         <div class="quality-work__video-link">
-                                            <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
-                                                <div class="quality-work__video-icon">
+                                            <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup"> <div class="quality-work__video-icon">
                                                     <span class="fa fa-play"></span>
                                                 </div>
                                             </a>
@@ -426,44 +370,40 @@
                     <div class="col-xl-6">
                         <div class="quality-work__right">
                             <div class="section-title text-left">
-                                <span class="section-title__tagline">Diseño de interiores</span>
-                                <h2 class="section-title__title">Trabajo de Calidad que Cumple tus Expectativas</h2>
+                                <span class="section-title__tagline">Expertos en Pintura</span>
+                                <h2 class="section-title__title">Calidad y Profesionalismo en Cada Proyecto</h2>
                                 <div class="section-title__line"></div>
                             </div>
-                            <p class="quality-work__text-1">Hay muchas variaciones de pasajes de lorem ipsum disponibles pero la mayoría han sufrido.</p>
+                            <p class="quality-work__text-1">Transformamos tus espacios con acabados impecables y duraderos.</p>
                             <ul class="list-unstyled quality-work__feature">
                                 <li>
                                     <div class="icon">
-                                        <span class="icon-image-gallery1"></span>
-                                    </div>
+                                        <span class="icon-image-gallery1"></span> </div>
                                     <div class="text">
-                                        <p>Diseños Innovadores <br> de Papel Pintado</p>
+                                        <p>Técnicas Innovadoras <br> y Creativas</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon">
-                                        <span class="icon-wallpaper-5"></span>
-                                    </div>
+                                        <span class="icon-wallpaper-5"></span> </div>
                                     <div class="text">
-                                        <p>Materiales de Pared <br> de Alta Calidad</p>
+                                        <p>Materiales Premium <br> para un Acabado Superior</p>
                                     </div>
                                 </li>
                             </ul>
-                            <p class="quality-work__text-2">Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias que no parecen ni siquiera.</p>
+                            <p class="quality-work__text-2">Nos apasiona la pintura y nos comprometemos a superar tus expectativas con cada trabajo.</p>
                             <div class="quality-work__progress">
                                 <div class="quality-work__progress-single">
-                                    <h4 class="quality-work__progress-title">Diseño de Paredes Interiores</h4>
+                                    <h4 class="quality-work__progress-title">Pintura Interior Residencial</h4>
                                     <div class="bar">
-                                        <div class="bar-inner count-bar" data-percent="88%">
-                                            <div class="count-text">88%</div>
+                                        <div class="bar-inner count-bar" data-percent="95%"> <div class="count-text">95%</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quality-work__progress-single">
-                                    <h4 class="quality-work__progress-title">Pintura Exterior</h4>
+                                    <h4 class="quality-work__progress-title">Pintura Exterior Comercial</h4>
                                     <div class="bar marb-0">
-                                        <div class="bar-inner count-bar" data-percent="60%">
-                                            <div class="count-text">60%</div>
+                                        <div class="bar-inner count-bar" data-percent="85%"> <div class="count-text">85%</div>
                                         </div>
                                     </div>
                                 </div>
@@ -479,8 +419,8 @@
         <section class="project-one">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Proyectos Exitosos</span>
-                    <h2 class="section-title__title">Mantén tu Ojo en Nuestros <br> Últimos Proyectos</h2>
+                    <span class="section-title__tagline">Nuestras Creaciones</span>
+                    <h2 class="section-title__title">Proyectos de Pintura que Inspiran <br> y Transforman</h2>
                     <div class="section-title__line"></div>
                 </div>
                 <div class="project-one__inner">
@@ -492,7 +432,29 @@
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="project-one__left">
                                                 <div class="project-one__img">
-                                                    <img src="assets/images/project/project-1-1.jpg" alt="">
+                                                    <img src="assets/images/project/project-1-1.jpg" alt="Proyecto de pintura de sala de estar">
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__right">
+                                                <div class="project-one__content-box">
+                                                    <div class="project-one__content">
+                                                        <h4 class="project-one__title">Renovación de Sala con Colores Cálidos</h4>
+                                                        <p class="project-one__text">Realizamos la transformación completa de esta sala de estar, aplicando una paleta de colores cálidos que aportan luminosidad y confort. Un trabajo detallado que superó las expectativas del cliente.</p>
+                                                        <a href="proyecto-sala.html" class="thm-btn project-one__btn">Ver Detalles del Proyecto</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="project-one__left">
+                                                <div class="project-one__img">
+                                                    <img src="assets/images/project/project-1-2.jpg" alt="Pintura exterior de residencia moderna">
                                                 </div>
                                             </div>
                                         </div>
@@ -500,17 +462,16 @@
                                             <div class="project-one__right">
                                                 <div class="project-one__content-box">
                                                     <div class="project-one__content">
-                                                        <h4 class="project-one__title">Diseño de Pared para Dormitorio</h4>
-                                                        <p class="project-one__text">Quisque sit amet tincidunt enim. Sed dignissim vulputate orci, non lobortis turpis luctus eget. Sed sit amet pharetra felis. Nulla semper velit non tempus sollicitudin.</p>
-                                                        <a href="project-details.html" class="thm-btn project-one__btn">Leer Más</a>
+                                                        <h4 class="project-one__title">Pintura Exterior de Residencia Moderna</h4>
+                                                        <p class="project-one__text">Abordamos la pintura exterior de esta moderna residencia, utilizando pinturas de alta durabilidad y resistencia a la intemperie. El resultado fue un acabado impecable que realza la arquitectura.</p>
+                                                        <a href="proyecto-exterior.html" class="thm-btn project-one__btn">Ver Detalles del Proyecto</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Más slides de proyectos... -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -518,7 +479,7 @@
                     <div class="col-xl-12">
                         <div class="project-one__more-project">
                             <div class="project-one__more-project-content">
-                                <p>Siempre estamos listos para servirte. <a href="project-details.html">Ver más proyectos</a></p>
+                                <p>¿Buscas inspiración para tu próximo espacio? <a href="portafolio.html">Explora nuestro Portafolio Completo</a></p>
                             </div>
                         </div>
                     </div>
@@ -526,110 +487,7 @@
             </div>
         </section>
         <!--Fin de Proyectos-->
-
-        <!--Inicio de Equipo-->
-        <section class="team-one">
-            <div class="container">
-                <div class="team-one__top">
-                    <div class="row">
-                        <div class="col-xl-7 col-lg-6">
-                            <div class="team-one__top-left">
-                                <div class="section-title text-left">
-                                    <span class="section-title__tagline">Miembros del equipo</span>
-                                    <h2 class="section-title__title">Conoce al Equipo de Expertos</h2>
-                                    <div class="section-title__line"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-6">
-                            <div class="team-one__top-right">
-                                <p class="team-one__top-text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor to incidut labore et dolore magna for aliqua.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-one__bottom">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                            <!--Miembro del Equipo-->
-                            <div class="team-one__single">
-                                <div class="team-one__img-box">
-                                    <div class="team-one__img">
-                                        <img src="assets/images/team/team-1-1.jpg" alt="">
-                                        <div class="team-one__social">
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                            <a href="#"><i class="fab fa-facebook"></i></a>
-                                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-one__content">
-                                    <div class="team-one__title-box">
-                                        <div class="team-one__title-shape">
-                                            <img src="assets/images/shapes/team-one-title-box-shape.png" alt="">
-                                            <div class="team-one__title-text">
-                                                <p class="team-one__title">Diseñador</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="team-one__name"><a href="team-details.html">David Cooper</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Más miembros del equipo... -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Fin de Equipo-->
-
-        <!--Inicio de Testimonios-->
-        <section class="testimonial-one">
-            <div class="testimonial-one-bg-box">
-                <div class="testimonial-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                    style="background-image: url(assets/images/backgrounds/testimonial-one-bg.jpg);"></div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3">
-                        <div class="testimonial-one__left">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Testimonios</span>
-                                <h2 class="section-title__title">¿Qué Dicen Nuestros Clientes?</h2>
-                                <div class="section-title__line"></div>
-                            </div>
-                            <p class="testimonial-one__text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor to incidut labore et dolore magna for aliqua.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-9">
-                        <div class="testimonial-one__right">
-                            <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel">
-                                <!--Testimonio Individual-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quotation"></span>
-                                    </div>
-                                    <p class="testimonial-one__text-2">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor to incidut labore et dolore magna for aliqua. Quis ipsum suspendisse.</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__img">
-                                            <img src="assets/images/testimonial/testimonial-1-1.jpg" alt="">
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-                                            <h4 class="testimonial-one__client-name">John Smith</h4>
-                                            <p class="testimonial-one__client-title">Nuestro Cliente</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Más testimonios... -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Fin de Testimonios-->
-
+        
         <!--Inicio de Marcas-->
         <section class="brand-one">
             <div class="container">
@@ -662,34 +520,74 @@
         <section class="blog-one">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Noticias y Actualizaciones</span>
-                    <h2 class="section-title__title">Noticias y Artículos</h2>
+                    <span class="section-title__tagline">Consejos y Tendencias</span>
+                    <h2 class="section-title__title">Nuestro Blog de Pintura</h2>
                     <div class="section-title__line"></div>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <!--Artículo de Blog-->
                         <div class="blog-one__single">
                             <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="">
-                                <a href="blog-details.html">
+                                <img src="assets/images/blog/blog-1-1.jpg" alt="Elegir colores para tu hogar">
+                                <a href="blog-details-colores.html">
                                     <span class="blog-one__plus"></span>
                                 </a>
                             </div>
                             <div class="blog-one__content">
                                 <div class="blog-one__date">
-                                    <p>20 Feb, 2022</p>
+                                    <p>15 May, 2025</p>
                                 </div>
                                 <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="blog-details.html"><i class="far fa-user-circle"></i> por Admin </a></li>
+                                    <li><a href="blog-details-colores.html"><i class="far fa-user-circle"></i> por Equipo Experto </a></li>
                                     <li><span>/</span></li>
-                                    <li><a href="blog-details.html"><i class="far fa-comments"></i> 02 Comentarios</a></li>
+                                    <li><a href="blog-details-colores.html"><i class="far fa-comments"></i> 04 Comentarios</a></li>
                                 </ul>
-                                <h3 class="blog-one__title"><a href="blog-details.html">Aprende la Forma Correcta de Usar Planchas de Pared</a></h3>
+                                <h3 class="blog-one__title"><a href="blog-details-colores.html">Guía Definitiva para Elegir los Colores de tu Hogar</a></h3>
                             </div>
                         </div>
                     </div>
-                    <!-- Más artículos de blog... -->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__img">
+                                <img src="assets/images/blog/blog-1-2.jpg" alt="Tendencias de pintura exterior">
+                                <a href="blog-details-tendencias.html">
+                                    <span class="blog-one__plus"></span>
+                                </a>
+                            </div>
+                            <div class="blog-one__content">
+                                <div class="blog-one__date">
+                                    <p>01 Abr, 2025</p>
+                                </div>
+                                <ul class="list-unstyled blog-one__meta">
+                                    <li><a href="blog-details-tendencias.html"><i class="far fa-user-circle"></i> por Nuestro Diseñador </a></li>
+                                    <li><span>/</span></li>
+                                    <li><a href="blog-details-tendencias.html"><i class="far fa-comments"></i> 06 Comentarios</a></li>
+                                </ul>
+                                <h3 class="blog-one__title"><a href="blog-details-tendencias.html">Las Últimas Tendencias en Pintura Exterior para 2025</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__img">
+                                <img src="assets/images/blog/blog-1-3.jpg" alt="Consejos para pintar tú mismo">
+                                <a href="blog-details-hazlotumismo.html">
+                                    <span class="blog-one__plus"></span>
+                                </a>
+                            </div>
+                            <div class="blog-one__content">
+                                <div class="blog-one__date">
+                                    <p>10 Mar, 2025</p>
+                                </div>
+                                <ul class="list-unstyled blog-one__meta">
+                                    <li><a href="blog-details-hazlotumismo.html"><i class="far fa-user-circle"></i> por Asesor Técnico </a></li>
+                                    <li><span>/</span></li>
+                                    <li><a href="blog-details-hazlotumismo.html"><i class="far fa-comments"></i> 03 Comentarios</a></li>
+                                </ul>
+                                <h3 class="blog-one__title"><a href="blog-details-hazlotumismo.html">Consejos Esenciales para Pintar tu Casa como un Profesional</a></h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

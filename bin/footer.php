@@ -1,30 +1,14 @@
-Aquí está la traducción al español del contenido dentro de las etiquetas:
-
-```html
-<!--Newsletter Start-->
-<section class="newsletter">
-    <div class="container">
+<section class="newsletter"> <div class="container">
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
             <div class="newsletter-shape-1"
                 style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/newsletter-shape-1.png);"></div>
             <div class="newsletter__left">
-                <h3 class="newsletter__title">Únete a nuestro boletín</h3>
-                <p class="newsletter__text">Lorem ipsum dolor amet, elit do eiusmod sed</p>
-            </div>
-            <div class="newsletter__right">
-                <form class="newsletter__form">
-                    <div class="newsletter__input-box">
-                        <input type="email" placeholder="Ingresa tu correo electrónico" name="email">
-                        <button type="submit" class="thm-btn newsletter__btn">Suscribirse</button>
-                    </div>
-                </form>
+                <h3 class="newsletter__title">¡Descubre Nuestras Últimas Novedades!</h3>
+                <p class="newsletter__text">Explora nuestra colección de papeles pintados y pinturas de alta calidad.</p>
             </div>
         </div>
     </div>
 </section>
-<!--Newsletter End-->
-
-<!--Site Footer Start-->
 <footer class="site-footer">
     <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);">
     </div>
@@ -123,15 +107,8 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
         </div>
     </div>
 </footer>
-<!--Site Footer End-->
-
-
-</div><!-- /.page-wrapper -->
-
-
-<div class="mobile-nav__wrapper">
+</div><div class="mobile-nav__wrapper">
     <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-    <!-- /.mobile-nav__overlay -->
     <div class="mobile-nav__content">
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
@@ -139,10 +116,7 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
             <a href="index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png"
                     width="155" alt="" /></a>
         </div>
-        <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>
-        <!-- /.mobile-nav__container -->
-
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
@@ -152,12 +126,11 @@ Aquí está la traducción al español del contenido dentro de las etiquetas:
                 <i class="fa fa-phone-alt"></i>
                 <a href="tel:666-888-0000">666 888 0000</a>
             </li>
-        </ul><!-- /.mobile-nav__contact -->
-        <div class="mobile-nav__top">
+        </ul><div class="mobile-nav__top">
             <div class="mobile-nav__social">
                 <a href="#" class="fab fa-twitter"></a>
                 <a href="#" class="fab fa-facebook-square"></a>
                 <a href="#" class="fab fa-pinterest-p"></a>
                 <a href="#" class="fab fa-instagram"></a>
-            </div><!-- /.mobile-nav__social -->
-        </div><!-- /.mobile-nav__top -->
+            </div>
+        </div>

@@ -25,7 +25,7 @@
   --ambed-white-rgb: 255, 255, 255;
   --ambed-black: #3c3531;
   --ambed-black-rgb: 60, 53, 49;
-  --ambed-base: #a47c68;
+  --ambed-base: #e6b619;
   --ambed-base-rgb: 164, 124, 104;
   --ambed-primary: #f2eeeb;
   --ambed-primary-rgb: 242, 238, 235;
@@ -41,7 +41,7 @@ $ambed-white: var(--ambed-white, #ffffff);
 $ambed-white-rgb: var(--ambed-white-rgb, 255, 255, 255);
 $ambed-black: var(--ambed-black, #3c3531);
 $ambed-black-rgb: var(--ambed-black-rgb, 60, 53, 49);
-$ambed-base: var(--ambed-base, #a47c68);
+$ambed-base: var(--ambed-base, #e6b619);
 $ambed-base-rgb: var(--ambed-base-rgb, 164, 124, 104);
 $ambed-primary: var(--ambed-primary, #f2eeeb);
 $ambed-primary-rgb: var(--ambed-primary-rgb, 242, 238, 235);
@@ -2126,74 +2126,101 @@ ul {
 }
 
 .main-slider__sub-title-box {
-  position: relative;
-  display: block;
-  max-width: 475px;
-  height: 65px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(120px);
-  transform: translateY(120px);
-  -webkit-transition-delay: 1000ms;
-  transition-delay: 1000ms;
-  -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-  transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
+    position: relative;
+    display: block;
+    max-width: 475px;
+    /* height: 65px; /* COMENTADO: Es mejor dejar que la altura sea fluida */
+    margin: 0 auto;
+    text-align: center;
+
+    /* AÑADIDO: Dar padding vertical para empujar el texto del borde superior e inferior */
+    /* Ajusta estos valores según cuánto espacio necesites encima y debajo del texto */
+    padding-top: 15px;   /* Por ejemplo, para crear espacio superior */
+    padding-bottom: 15px; /* Por ejemplo, para crear espacio inferior */
+    /* Si las líneas son muy largas y se solapan HORIZONTALMENTE con el texto, también puedes añadir padding-left/right */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+
+
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
+    -webkit-transition-delay: 1000ms;
+    transition-delay: 1000ms;
+    -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
 }
 
 .main-slider__sub-title {
-  font-size: 14px;
-  color: $ambed-base;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+    font-size: 20px;
+    color: $ambed-base;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    /* AÑADIDO: Asegura que el texto esté encima si se solapa */
+    position: relative;
+    z-index: 2; /* Mayor que los bordes */
+    /* Si el texto todavía se pega a los bordes, puedes añadir un pequeño margen horizontal: */
+    /* margin: 0 10px; */
 }
 
 .main-slider__border-left {
-  position: absolute;
-  top: 9px;
-  bottom: 0;
-  left: 0;
-  border-left: 6px solid $ambed-base;
-  border-top: 6px solid $ambed-base;
-  width: 70px;
+    position: absolute;
+    /* top: 9px; /* COMENTADO: Si comentamos la altura fija de la caja, 'top' y 'bottom' pueden causar problemas */
+    /* bottom: 0; /* COMENTADO */
+    left: 0;
+    border-left: 6px solid $ambed-base;
+    border-top: 6px solid $ambed-base;
+    width: 70px;
+    /* AÑADIDO: Centrar verticalmente las líneas en relación al contenedor si la altura es fluida */
+    top: 50%;
+    transform: translateY(-50%);
+    /* AÑADIDO: Ajusta z-index para que quede debajo del texto */
+    z-index: 1;
 }
 
 .main-slider__border-right {
-  position: absolute;
-  top: 9px;
-  bottom: 0;
-  right: 0;
-  border-right: 6px solid $ambed-base;
-  border-top: 6px solid $ambed-base;
-  width: 70px;
+    position: absolute;
+    /* top: 9px; /* COMENTADO */
+    /* bottom: 0; /* COMENTADO */
+    right: 0;
+    border-right: 6px solid $ambed-base;
+    border-top: 6px solid $ambed-base;
+    width: 70px;
+    /* AÑADIDO: Centrar verticalmente las líneas en relación al contenedor si la altura es fluida */
+    top: 50%;
+    transform: translateY(-50%);
+    /* AÑADIDO: Ajusta z-index para que quede debajo del texto */
+    z-index: 1;
 }
 
+
+/* El resto del código que tenías */
 .main-slider__title {
-  font-size: 70px;
-  color: $ambed-white;
-  font-weight: 900;
-  line-height: 80px;
-  margin-top: -36px;
-  margin-bottom: 42px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(120px);
-  transform: translateY(120px);
-  -webkit-transition-delay: 1000ms;
-  transition-delay: 1000ms;
-  -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-  transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
+    font-size: 70px;
+    color: $ambed-white;
+    font-weight: 900;
+    line-height: 80px;
+    margin-top: -36px;
+    margin-bottom: 42px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
+    -webkit-transition-delay: 1000ms;
+    transition-delay: 1000ms;
+    -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
 }
 
 .main-slider__title span {
-  color: $ambed-base;
-  font-family: $ambed-reey-font;
+    color: $ambed-base;
+    font-family: $ambed-reey-font;
 }
 
 .main-slider__btn-box {
