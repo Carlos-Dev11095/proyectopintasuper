@@ -31,11 +31,9 @@
     <link rel="preload" href="images/bano.webp" as="image">
     <!-- CSS combinado y minificado -->
     <link rel="stylesheet" href="styles.min.css">
-
 </head>
 
 <body class="custom-cursor">
-
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
@@ -55,7 +53,6 @@
     <?php require '../bin/preloader.php'; ?>
 
     <div class="page-wrapper">
-
         <?php require '../bin/header.php'; ?>
 
         <div class="stricky-header stricked-menu main-menu">
@@ -81,18 +78,18 @@
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="room-wallpapers.html">Papeles Pintados para Habitaciones</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
-                                        <div class="panel left-panel">
-            <h2>Selecciona un ambiente</h2>
-            <select id="room-selector" class="room-selector">
-                <option value="">-- Elige un ambiente --</option>
-                <option value="fachada">Fachada de casa</option>
-                <option value="habitacion">Habitación con cama</option>
-                <option value="comedor">Comedor</option>
-                <option value="cocina">Cocina</option>
-                <option value="sala">Sala de estar</option>
-                <option value="bano">Baño</option>
-            </select>
-        </div>
+                                <div class="panel left-panel">
+                                    <h2>Selecciona un ambiente</h2>
+                                    <select id="room-selector" class="room-selector">
+                                        <option value="">-- Elige un ambiente --</option>
+                                        <option value="fachada">Fachada de casa</option>
+                                        <option value="habitacion">Habitación con cama</option>
+                                        <option value="comedor">Comedor</option>
+                                        <option value="cocina">Cocina</option>
+                                        <option value="sala">Sala de estar</option>
+                                        <option value="bano">Baño</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,11 +99,11 @@
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="wall-sheets.html">Planchas para Paredes</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
-                                        <div class="panel center-panel">
-            <div id="wall" class="wall">
-                <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-            </div>
-        </div>
+                                <div class="panel center-panel">
+                                    <div id="wall" class="wall">
+                                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,19 +114,18 @@
                                 <h3 class="services-one__title"><a href="wall-painting.html">Pintura de Paredes</a></h3>
                                 <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
                                 <div class="panel right-panel">
-            <h2>Selecciona un color</h2>
-            <select id="palette-selector" class="palette-selector">
-                <option value="">-- Elige una paleta --</option>
-                <option value="zafiro">Línea Zafiro</option>
-                <option value="dorada">Línea Dorada</option>
-                <option value="onix">Línea Ónix</option>
-                <option value="natura">Línea Natura</option>
-            </select>
-            
-            <div id="color-palette" class="color-palette">
-                <!-- Contenido cargado dinámicamente por JS -->
-            </div>
-        </div>
+                                    <h2>Selecciona un color</h2>
+                                    <select id="palette-selector" class="palette-selector">
+                                        <option value="">-- Elige una paleta --</option>
+                                        <option value="zafiro">Línea Zafiro</option>
+                                        <option value="dorada">Línea Dorada</option>
+                                        <option value="onix">Línea Ónix</option>
+                                        <option value="natura">Línea Natura</option>
+                                    </select>
+                                    <div id="color-palette" class="color-palette">
+                                        <!-- Contenido cargado dinámicamente por JS -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,10 +134,11 @@
         </section>
         <!--Fin de Servicios-->
 
-    <!-- JavaScript minificado y al final del body -->
-    <script src="script.min.js" defer></script>
-    <?php require '../bin/footer.php'; ?>
-    <?php require '../bin/js.php'; ?>
 
+        <?php require '../bin/footer.php'; ?>
+        <?php require '../bin/js.php'; ?>
+        <!-- JavaScript minificado y al final del body -->
+        <script src="script.min.js" defer></script>
+    </div>
 </body>
 </html>
