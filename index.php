@@ -84,7 +84,7 @@
                                 <span class="fas fa-paint-roller"></span> 
                                 </div>
                             <h3 class="feature-one__title"><a href="products.html#herramientas">Todo para tu Proyecto</a></h3>
-                            <p class="feature-one__text">Desde brochas y rodillos hasta lijas y selladores, tenemos todo lo que necesitas para un acabado profesional.</p>
+                            <p class="feature-one__text">Tenemos todo lo que necesitas para un acabado profesional.</p>
                             <div class="feature-one__arrow">
                                 <a href="products.html#herramientas"><i class="fa fa-arrow-right"></i></a>
                             </div>
@@ -102,7 +102,7 @@
                                 <span class="fas fa-shield-alt"></span> 
                                 </div>
                             <h3 class="feature-one__title"><a href="brands.html">Calidad Garantizada</a></h3>
-                            <p class="feature-one__text">Solo trabajamos con las marcas líderes del mercado, asegurando durabilidad y rendimiento superior en cada producto.</p>
+                            <p class="feature-one__text">Solo trabajamos con productos de calidad, asegurando durabilidad y rendimiento superior en cada producto.</p>
                             <div class="feature-one__arrow">
                                 <a href="brands.html"><i class="fa fa-arrow-right"></i></a> </div>
                         </div>
