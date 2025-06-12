@@ -59,45 +59,46 @@
             <div class="sticky-header__content"></div>
         </div>
 
-
-        <div class="container_dec">
-    <div class="container_panel">
-        <div class="panel left-panel">
-            <h2>Selecciona un ambiente</h2>
-            <select id="room-selector" class="room-selector">
-                <option value="">-- Elige un ambiente --</option>
-                <option value="fachada">Fachada de casa</option>
-                <option value="habitacion">Habitación con cama</option>
-                <option value="comedor">Comedor</option>
-                <option value="cocina">Cocina</option>
-                <option value="sala">Sala de estar</option>
-                <option value="bano">Baño</option>
-            </select>
-        </div>
-        
-        <div class="panel right-panel">
-            <h2>Selecciona un color</h2>
-            <select id="palette-selector" class="palette-selector">
-                <option value="">-- Elige una paleta --</option>
-                <option value="zafiro">Línea Zafiro</option>
-                <option value="dorada">Línea Dorada</option>
-                <option value="onix">Línea Ónix</option>
-                <option value="natura">Línea Natura</option>
-            </select>
-            <div id="color-palette" class="color-palette">
-                <!-- Contenido cargado dinámicamente por JS -->
+        <!-- Sección Decorador -->
+        <section class="decorator">
+            <div class="container_dec">
+                <div class="container_panel">
+                    <div class="panel panel_ambient">
+                        <h2>Selecciona un ambiente</h2>
+                        <select id="room-selector" class="room-selector">
+                            <option value="">-- Elige un ambiente --</option>
+                            <option value="fachada">Fachada de casa</option>
+                            <option value="habitacion">Habitación con cama</option>
+                            <option value="comedor">Comedor</option>
+                            <option value="cocina">Cocina</option>
+                            <option value="sala">Sala de estar</option>
+                            <option value="bano">Baño</option>
+                        </select>
+                    </div>
+                    
+                    <div class="panel panel_color">
+                        <h2>Selecciona un color</h2>
+                        <select id="palette-selector" class="palette-selector">
+                            <option value="">-- Elige una paleta --</option>
+                            <option value="zafiro">Línea Zafiro</option>
+                            <option value="dorada">Línea Dorada</option>
+                            <option value="onix">Línea Ónix</option>
+                            <option value="natura">Línea Natura</option>
+                        </select>
+                        <div id="color-palette" class="color-palette">
+                            <!-- Contenido cargado dinámicamente por JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel_image">
+                    <div id="wall" class="wall">
+                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="panel center-panel">
-        <div id="wall" class="wall">
-            <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-        </div>
-    </div>
-</div>
-        <!--Fin de Servicios-->
-
+        </section>
+        <!-- Fin Sección Decorador -->
 
         <?php require '../bin/footer.php'; ?>
         <?php require '../bin/js.php'; ?>
