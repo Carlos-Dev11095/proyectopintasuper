@@ -59,79 +59,43 @@
             <div class="sticky-header__content"></div>
         </div>
 
-        <!--Inicio de Servicios-->
-        <section class="services-one">
-            <div class="services-one-bg-box">
-                <div class="services-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                    style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/services-one-bg.jpg);"></div>
+
+        <div class="container_dec">
+    <div class="container_panel">
+        <div class="panel left-panel">
+            <h2>Selecciona un ambiente</h2>
+            <select id="room-selector" class="room-selector">
+                <option value="">-- Elige un ambiente --</option>
+                <option value="fachada">Fachada de casa</option>
+                <option value="habitacion">Habitación con cama</option>
+                <option value="comedor">Comedor</option>
+                <option value="cocina">Cocina</option>
+                <option value="sala">Sala de estar</option>
+                <option value="bano">Baño</option>
+            </select>
+        </div>
+        
+        <div class="panel right-panel">
+            <h2>Selecciona un color</h2>
+            <select id="palette-selector" class="palette-selector">
+                <option value="">-- Elige una paleta --</option>
+                <option value="zafiro">Línea Zafiro</option>
+                <option value="dorada">Línea Dorada</option>
+                <option value="onix">Línea Ónix</option>
+                <option value="natura">Línea Natura</option>
+            </select>
+            <div id="color-palette" class="color-palette">
+                <!-- Contenido cargado dinámicamente por JS -->
             </div>
-            <div class="container">
-                <div class="section-title text-center">
-                    <span class="section-title__tagline">Nuestros Servicios</span>
-                    <h2 class="section-title__title">Servicios que Ofrecemos</h2>
-                    <div class="section-title__line"></div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
-                            <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="room-wallpapers.html">Papeles Pintados para Habitaciones</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
-                                <div class="panel left-panel">
-                                    <h2>Selecciona un ambiente</h2>
-                                    <select id="room-selector" class="room-selector">
-                                        <option value="">-- Elige un ambiente --</option>
-                                        <option value="fachada">Fachada de casa</option>
-                                        <option value="habitacion">Habitación con cama</option>
-                                        <option value="comedor">Comedor</option>
-                                        <option value="cocina">Cocina</option>
-                                        <option value="sala">Sala de estar</option>
-                                        <option value="bano">Baño</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
-                            <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="wall-sheets.html">Planchas para Paredes</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
-                                <div class="panel center-panel">
-                                    <div id="wall" class="wall">
-                                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Servicio Individual-->
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
-                            <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="wall-painting.html">Pintura de Paredes</a></h3>
-                                <p class="services-one__text">Morbi feugiat porta purus, at eleifend dolor posuere ac.</p>
-                                <div class="panel right-panel">
-                                    <h2>Selecciona un color</h2>
-                                    <select id="palette-selector" class="palette-selector">
-                                        <option value="">-- Elige una paleta --</option>
-                                        <option value="zafiro">Línea Zafiro</option>
-                                        <option value="dorada">Línea Dorada</option>
-                                        <option value="onix">Línea Ónix</option>
-                                        <option value="natura">Línea Natura</option>
-                                    </select>
-                                    <div id="color-palette" class="color-palette">
-                                        <!-- Contenido cargado dinámicamente por JS -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+    
+    <div class="panel center-panel">
+        <div id="wall" class="wall">
+            <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+        </div>
+    </div>
+</div>
         <!--Fin de Servicios-->
 
 
