@@ -61,7 +61,7 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="dropdown current megamenu">
-                                    <a href="index.html">Inicio</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/">Inicio</a>
                                     <ul>
                                         <li>
                                             <section class="home-showcase">
@@ -146,7 +146,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/acerca/">Acerca</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">Nosotros</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular m²</a>

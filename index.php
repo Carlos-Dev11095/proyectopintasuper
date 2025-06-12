@@ -50,84 +50,200 @@
             <div class="sticky-header__content"></div>
         </div>
 
-        <!--Inicio del Slider Principal-->
-        <section class="feature-one">
-            <div class="container">
-                <ul class="list-unstyled feature-one__list">
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="fas fa-palette"></span> 
+
+<!--Main Slider Start-->
+<section class="main-slider clearfix">
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+        "effect": "fade",
+        "pagination": {
+        "el": "#main-slider-pagination",
+        "type": "bullets",
+        "clickable": true
+        },
+        "navigation": {
+        "nextEl": "#main-slider__swiper-button-next",
+        "prevEl": "#main-slider__swiper-button-prev"
+        },
+        "autoplay": {
+        "delay": 5000
+        }}'>
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="image-layer"
+                    style="background-image: url(assets/images/backgrounds/pintura-slider-1.jpg);"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider__content">
+                                <div class="main-slider__icon">
+                                    <img src="assets/images/shapes/main-slider-icon.png" alt="">
                                 </div>
-                            <h3 class="feature-one__title"><a href="products.html#colores">Tonos Infinitos</a></h3>
-                            <p class="feature-one__text">Explora nuestra vasta colección de colores y texturas para darle vida a cada rincón de tu hogar.</p>
-                            <div class="feature-one__arrow">
-                                <a href="products.html#colores"><i class="fa fa-arrow-right"></i></a>
+                                <div class="main-slider__sub-title-box">
+                                    <p class="main-slider__sub-title">Bienvenido a Pinta Super</p>
+                                    <div class="main-slider__border-left"></div>
+                                    <div class="main-slider__border-right"></div>
+                                </div>
+                                <h2 class="main-slider__title">Expertos en <br> Pintura <span>&</span> <br>
+                                    Decoración</h2>
+                                <div class="main-slider__btn-box">
+                                    <a href="about.html" class="thm-btn main-slider__btn">Conoce Más</a>
+                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="fas fa-paint-roller"></span> 
-                                </div>
-                            <h3 class="feature-one__title"><a href="products.html#herramientas">Todo para tu Proyecto</a></h3>
-                            <p class="feature-one__text">Tenemos todo lo que necesitas para un acabado profesional.</p>
-                            <div class="feature-one__arrow">
-                                <a href="products.html#herramientas"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="fas fa-shield-alt"></span> 
-                                </div>
-                            <h3 class="feature-one__title"><a href="brands.html">Calidad Garantizada</a></h3>
-                            <p class="feature-one__text">Solo trabajamos con productos de calidad, asegurando durabilidad y rendimiento superior en cada producto.</p>
-                            <div class="feature-one__arrow">
-                                <a href="brands.html"><i class="fa fa-arrow-right"></i></a> </div>
-                        </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="fas fa-comments"></span> 
-                                </div>
-                            <h3 class="feature-one__title"><a href="contact.html">Expertos a tu Servicio</a></h3>
-                            <p class="feature-one__text">Nuestro equipo te ofrece la mejor guía para elegir la pintura ideal y resolver todas tus dudas de aplicación.</p>
-                            <div class="feature-one__arrow">
-                                <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+            <div class="swiper-slide">
+                <div class="image-layer"
+                    style="background-image: url(assets/images/backgrounds/pintura-slider-2.jpg);"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider__content">
+                                <div class="main-slider__icon">
+                                    <img src="assets/images/shapes/main-slider-icon.png" alt="">
+                                </div>
+                                <div class="main-slider__sub-title-box">
+                                    <p class="main-slider__sub-title">Soluciones integrales</p>
+                                    <div class="main-slider__border-left"></div>
+                                    <div class="main-slider__border-right"></div>
+                                </div>
+                                <h2 class="main-slider__title">Materiales de <br> la más alta <span>calidad</span> <br>
+                                    para tus proyectos</h2>
+                                <div class="main-slider__btn-box">
+                                    <a href="productos.html" class="thm-btn main-slider__btn">Nuestros Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="image-layer"
+                    style="background-image: url(assets/images/backgrounds/pintura-slider-3.jpg);"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider__content">
+                                <div class="main-slider__icon">
+                                    <img src="assets/images/shapes/main-slider-icon.png" alt="">
+                                </div>
+                                <div class="main-slider__sub-title-box">
+                                    <p class="main-slider__sub-title">Servicio profesional</p>
+                                    <div class="main-slider__border-left"></div>
+                                    <div class="main-slider__border-right"></div>
+                                </div>
+                                <h2 class="main-slider__title">Aplicación <br> profesional <span>&</span> <br>
+                                    asesoría técnica</h2>
+                                <div class="main-slider__btn-box">
+                                    <a href="servicios.html" class="thm-btn main-slider__btn">Nuestros Servicios</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="main-slider__nav">
+            <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--Main Slider End-->
+
+        <!--Inicio del Slider Principal-->
+<section class="feature-one">
+    <div class="container">
+        <ul class="list-unstyled feature-one__list">
+            <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
+                <div class="feature-one__content">
+                    <div class="feature-one__shape-1">
+                        <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                    </div>
+                    <div class="feature-one__shape-2">
+                        <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                    </div>
+                    <div class="feature-one__icon">
+                        <span class="fas fa-palette"></span>
+                    </div>
+                    <h3 class="feature-one__title"><a href="products.html#colores">Tonos Infinitos</a></h3>
+                    <p class="feature-one__text">Explora nuestra vasta gamma de colores y texturas para darle vida a cada rincón de tu hogar u oficina.</p>
+                    <div class="feature-one__arrow">
+                        <a href="products.html#colores"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
+                <div class="feature-one__content">
+                    <div class="feature-one__shape-1">
+                        <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                    </div>
+                    <div class="feature-one__shape-2">
+                        <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                    </div>
+                    <div class="feature-one__icon">
+                        <span class="fas fa-paint-roller"></span>
+                    </div>
+                    <h3 class="feature-one__title"><a href="products.html#herramientas">Todo para tu Proyecto</a></h3>
+                    <p class="feature-one__text">Encuentra todas las herramientas y materiales necesarios para un acabado profesional.</p>
+                    <div class="feature-one__arrow">
+                        <a href="products.html#herramientas"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
+                <div class="feature-one__content">
+                    <div class="feature-one__shape-1">
+                        <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                    </div>
+                    <div class="feature-one__shape-2">
+                        <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                    </div>
+                    <div class="feature-one__icon">
+                        <span class="fas fa-shield-alt"></span>
+                    </div>
+                    <h3 class="feature-one__title"><a href="brands.html">Calidad Garantizada en todo momento</a></h3>
+                    <p class="feature-one__text">Solo trabajamos con productos de calidad superior, asegurando durabilidad y rendimiento.</p>
+                    <div class="feature-one__arrow">
+                        <a href="brands.html"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
+                <div class="feature-one__content">
+                    <div class="feature-one__shape-1">
+                        <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                    </div>
+                    <div class="feature-one__shape-2">
+                        <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
+                    </div>
+                    <div class="feature-one__icon">
+                        <span class="fas fa-comments"></span>
+                    </div>
+                    <h3 class="feature-one__title"><a href="contact.html">Expertos a tu Servicio</a></h3>
+                    <p class="feature-one__text">Recibe asesoramiento experto para elegir la pintura ideal y resolver cualquier duda.</p>
+                    <div class="feature-one__arrow">
+                        <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
         <!--Fin del Slider Principal-->
 
         <!--Inicio Sobre Nosotros-->
@@ -304,7 +420,7 @@
                             </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="productos-pinturas.html">Amplia Gama de Pinturas</a></h3>
-                                <p class="services-one__text">Descubre nuestra colección de pinturas para interiores y exteriores, en todos los acabados y colores.</p>
+                                <p class="services-one__text">Descubre nuestra gamma de pinturas para interiores y exteriores, en todos los acabados y colores.</p>
                             </div>
                         </div>
                     </div>
