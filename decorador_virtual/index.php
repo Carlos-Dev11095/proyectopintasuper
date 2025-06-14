@@ -59,6 +59,23 @@
             <div class="sticky-header__content"></div>
         </div>
 
+<!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg)">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Decorador Virtual</li>
+                    </ul>
+                    <h2>Decorador Virtual</h2>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+
         <!-- Sección Decorador -->
         <section class="decorator">
             <div class="container_dec">
