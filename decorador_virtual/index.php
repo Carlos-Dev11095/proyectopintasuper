@@ -81,7 +81,9 @@
             <div class="container_dec">
                 <div class="container_panel">
                     <div class="panel panel_ambient">
-                        <h2>Selecciona un ambiente</h2>
+                        <div class="section-title text-left">
+                            <h2 class="section-title__title">Selecciona tu escena</h2>
+                        </div>
                         <select id="room-selector" class="room-selector">
                             <option value="">-- Elige un ambiente --</option>
                             <option value="fachada">Fachada de casa</option>
@@ -94,7 +96,9 @@
                     </div>
                     
                     <div class="panel panel_color">
-                        <h2>Selecciona un color</h2>
+                        <div class="section-title text-left">
+                            <h2 class="section-title__title">¡A DECORAR!</h2>
+                        </div>
                         <select id="palette-selector" class="palette-selector">
                             <option value="">-- Elige una paleta --</option>
                             <option value="zafiro">Línea Zafiro</option>
