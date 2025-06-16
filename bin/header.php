@@ -148,11 +148,11 @@
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">Nosotros</a>
                                 </li>
-                                <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular m²</a>
+                                                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">Decorador</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">Decorador</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular m²</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/galeria/">Galeria</a>
