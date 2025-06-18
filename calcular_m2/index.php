@@ -73,44 +73,110 @@
         <!-- Sección Decorador -->
         <section class="decorator">
             <div class="container_dec">
-                <div class="container_panel">
-                    <div class="panel panel_ambient">
-                        <div class="section-title text-left">
-                            <h2 class="section-title__title">Selecciona tu escena</h2>
-                        </div>
-                        <select id="room-selector" class="room-selector">
-                            <option value="">-- Elige un ambiente --</option>
-                            <option value="fachada">Fachada de casa</option>
-                            <option value="habitacion">Habitación con cama</option>
-                            <option value="comedor">Comedor</option>
-                            <option value="cocina">Cocina</option>
-                            <option value="sala">Sala de estar</option>
-                            <option value="bano">Baño</option>
-                        </select>
-                    </div>
-                    
-                    <div class="panel panel_color">
-                        <div class="section-title text-left">
-                            <h2 class="section-title__title">¡A DECORAR!</h2>
-                        </div>
-                        <select id="palette-selector" class="palette-selector">
-                            <option value="">-- Elige una paleta --</option>
-                            <option value="zafiro">Línea Zafiro</option>
-                            <option value="dorada">Línea Dorada</option>
-                            <option value="onix">Línea Ónix</option>
-                            <option value="natura">Línea Natura</option>
-                        </select>
-                        <div id="color-palette" class="color-palette">
-                            <!-- Contenido cargado dinámicamente por JS -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="panel panel_image">
-                    <div id="wall" class="wall">
-                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-                    </div>
-                </div>
+                 <div class="container_dec">
+        <h1>Simulador de Pintura</h1>
+        
+        <div class="panel">
+            <h2>Seleccione el producto</h2>
+            <select id="producto">
+                <option value="">-- Seleccione --</option>
+                <option value="vinilica_std" data-rendimiento="10">Pintura Vinílica Standard (10 m²/L)</option>
+                <option value="vinilica_prem" data-rendimiento="8">Pintura Vinílica Premium (8 m²/L)</option>
+                <option value="esmalte_acu" data-rendimiento="12">Esmalte Acrílico (12 m²/L)</option>
+                <option value="sellador" data-rendimiento="15">Sellador (15 m²/L)</option>
+            </select>
+        </div>
+
+        <div class="panel">
+            <h2>Superficie a pintar</h2>
+            <div class="input-group">
+                <label for="alto-pared">Alto (metros):</label>
+                <input type="number" id="alto-pared" step="0.01" min="0.1">
+            </div>
+            <div class="input-group">
+                <label for="ancho-pared">Ancho (metros):</label>
+                <input type="number" id="ancho-pared" step="0.01" min="0.1">
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Restar superficie - Puertas</h2>
+            <select id="num-puertas">
+                <option value="0">0 puertas</option>
+                <option value="1">1 puerta</option>
+                <option value="2">2 puertas</option>
+                <option value="3">3 puertas</option>
+            </select>
+            <div id="puertas-container"></div>
+        </div>
+
+        <div class="panel">
+            <h2>Restar superficie - Ventanas</h2>
+            <select id="num-ventanas">
+                <option value="0">0 ventanas</option>
+                <option value="1">1 ventana</option>
+                <option value="2">2 ventanas</option>
+                <option value="3">3 ventanas</option>
+            </select>
+            <div id="ventanas-container"></div>
+        </div>
+
+        <div class="panel">
+            <h2>Opciones de aplicación</h2>
+            <div class="option-group">
+                <h3>Superficie:</h3>
+                <label><input type="radio" name="superficie" value="1.2" checked> Nueva</label>
+                <label><input type="radio" name="superficie" value="1.0"> Mantenimiento</label>
+            </div>
+            <div class="option-group">
+                <h3>Textura:</h3>
+                <label><input type="radio" name="textura" value="1.0" checked> Lisa</label>
+                <label><input type="radio" name="textura" value="1.3"> Rugosa</label>
+            </div>
+            <div class="option-group">
+                <h3>Técnica:</h3>
+                <label><input type="radio" name="tecnica" value="1.15" checked> Brocha</label>
+                <label><input type="radio" name="tecnica" value="1.05"> Rodillo</label>
+                <label><input type="radio" name="tecnica" value="0.95"> Pistola</label>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="calcular">Calcular</button>
+            <button id="resetear">Resetear</button>
+        </div>
+
+        <div id="resultados" class="results-panel hidden">
+            <h2>Resultados</h2>
+            <table>
+                <tr>
+                    <th>Producto</th>
+                    <td id="res-producto"></td>
+                </tr>
+                <tr>
+                    <th>Superficie neta</th>
+                    <td id="res-superficie"></td>
+                </tr>
+                <tr>
+                    <th>Pintura necesaria</th>
+                    <td id="res-litros"></td>
+                </tr>
+                <tr>
+                    <th>Cubetas (19L)</th>
+                    <td id="res-cubetas"></td>
+                </tr>
+                <tr>
+                    <th>Galones (3.785L)</th>
+                    <td id="res-galones"></td>
+                </tr>
+                <tr>
+                    <th>Sobrante</th>
+                    <td id="res-sobrante"></td>
+                </tr>
+            </table>
+            <p class="note">* Los resultados son aproximados y pueden variar según las condiciones de aplicación.</p>
+        </div>
+    </div>
             </div>
         </section>
         <!-- Fin Sección Decorador -->
