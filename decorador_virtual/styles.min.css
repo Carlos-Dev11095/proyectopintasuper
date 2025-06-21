@@ -191,42 +191,136 @@
 .color-natura-1{background-color:#365314}.color-natura-2{background-color:#3f6212}.color-natura-3{background-color:#4d7c0f}.color-natura-4{background-color:#65a30d}.color-natura-5{background-color:#84cc16}.color-natura-6{background-color:#a3e635}.color-natura-7{background-color:#bef264}.color-natura-8{background-color:#d9f99d}
 
 /* Responsive */
-@media (max-width: 992px) {
+/* Ajustes base para desktop */
+@media (min-width: 993px) {
     .container_dec {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 25px;
+        padding: 25px;
     }
     
-    .container_panel, .panel_image{
+    .container_panel {
+        flex: 0 1 30%;
+        min-width: 280px;
+    }
+    
+    .panel_image {
+        flex: 0 1 65%;
+    }
+}
+
+/* Ajustes para tablet landscape y desktop pequeño (800px-992px) */
+@media (min-width: 800px) and (max-width: 992px) {
+    .container_dec {
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .container_panel {
+        flex: 0 1 28%;
+        min-width: 250px;
+    }
+    
+    .panel_image {
+        flex: 0 1 68%;
+    }
+    
+    .panel {
+        padding: 18px;
+    }
+}
+
+/* Ajustes para móvil y tablet portrait (hasta 799px) */
+@media (max-width: 799px) {
+    .container_dec {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .container_panel, 
+    .panel_image {
         flex: 1 1 100%;
         width: 100%;
     }
     
+    .panel {
+        padding: 15px;
+    }
+}
+
+/* Ajustes específicos para Nest Hub (1024x600) */
+@media (width: 1024px) and (height: 600px) {
+    .container_panel {
+        flex: 0 1 45%;
+    }
+    
     .panel_image {
+        flex: 0 1 50%;
+        min-height: 320px;
+    }
+}
+
+/* Ajustes para móviles pequeños (hasta 400px) */
+@media (max-width: 400px) {
+    .container_dec {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .panel {
+        padding: 12px;
+    }
+    
+    .room-selector,
+    .palette-selector {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Ajustes para móviles muy pequeños (hasta 350px) */
+@media (max-width: 350px) {
+    .container_dec {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .panel {
         padding: 10px;
     }
     
-    .panel_ambient {
-        order: 1;
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajustes para dispositivos plegables en modo landscape */
+@media (max-height: 400px) {
+    .container_dec {
+        flex-direction: row;
     }
     
-    .panel_color {
-        order: 3;
-    }
-
-    .room-image {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        max-height: none; /* Elimina la restricción de altura máxima */
-        object-fit: contain;
+    .container_panel {
+        flex: 0 1 40%;
     }
     
-    .wall {
-        width: 100%;
-        height: auto;
-        min-height: auto; /* Elimina la altura mínima fija */
-        background-color: transparent; /* Opcional: si prefieres que el fondo no compita con la imagen */
+    .panel_image {
+        flex: 0 1 55%;
+        min-height: 280px;
     }
+}
 
+/* Ajustes para iPad Pro en portrait */
+@media (width: 1024px) and (height: 1366px) {
+    .container_dec {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para zoom en desktop */
+@media (min-width: 801px) {
+    html {
+        zoom: 1;
+    }
 }
