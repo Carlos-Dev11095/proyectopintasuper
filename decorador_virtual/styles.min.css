@@ -230,7 +230,7 @@
     }
 }
 
-/* Ajustes para móvil y tablet portrait (hasta 799px) */
+/* Versión móvil (portrait y landscape) */
 @media (max-width: 799px) {
     .container_dec {
         flex-direction: column;
@@ -246,6 +246,27 @@
     
     .panel {
         padding: 15px;
+    }
+    
+    /* Modo landscape específico */
+    @media (orientation: landscape) {
+        .container_panel {
+            flex-direction: row;
+            gap: 15px;
+        }
+        
+        .panel_ambient,
+        .panel_color {
+            flex: 1 1 48%;
+        }
+        
+        .panel_image {
+            min-height: 50vh;
+        }
+        
+        .color-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
 
@@ -322,5 +343,56 @@
 @media (min-width: 801px) {
     html {
         zoom: 1;
+    }
+}
+
+/* Para landscape en móviles más pequeños */
+@media (max-width: 667px) and (orientation: landscape) {
+    .panel {
+        padding: 12px;
+    }
+    
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Versión móvil (portrait y landscape) */
+@media (max-width: 799px) {
+    .container_dec {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .container_panel, 
+    .panel_image {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .panel {
+        padding: 15px;
+    }
+    
+    /* Modo landscape específico */
+    @media (orientation: landscape) {
+        .container_panel {
+            flex-direction: row;
+            gap: 15px;
+        }
+        
+        .panel_ambient,
+        .panel_color {
+            flex: 1 1 48%;
+        }
+        
+        .panel_image {
+            min-height: 50vh;
+        }
+        
+        .color-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
