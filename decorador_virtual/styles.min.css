@@ -71,32 +71,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 600px;
-       background-color: rgba(255, 255, 255, 0.85) !important; /* 85% de opacidad */
+    padding: 20px; /* Espacio interno para que no toque los bordes */
+    background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(253, 78, 1, 0.4);
+    overflow: hidden; /* Evita que el contenido rebase */
 }
 
 .wall {
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    background-color: #f8f8f8;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
+    position: relative;
+    display: inline-flex; /* Se ajusta al tamaño de la imagen */
     justify-content: center;
     align-items: center;
+    background-color: #f8f8f8;
     overflow: hidden;
-    position: relative;
     border-radius: 10px;
+    max-width: 100%; /* No rebasa el panel_image */
+    max-height: 100%; /* No rebasa el panel_image */
 }
 
 .room-image {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     display: none;
     transition: all 0.3s ease;
+}
+
+/* Ajusta el tamaño del wall al de la imagen cuando se muestra */
+.room-image[src] {
+    display: block;
+}
+
+/* Asegura que el wall no tenga dimensiones fijas cuando no hay imagen */
+.wall:not(:has(img[src])) {
+    display: none;
 }
 
 .room-selector, .palette-selector {
@@ -188,14 +197,13 @@
         gap: 20px;
     }
     
-    .container_panel, .panel_image {
+    .container_panel, .panel_image{
         flex: 1 1 100%;
         width: 100%;
     }
     
     .panel_image {
-        min-height: 400px;
-        order: 2;
+        padding: 10px;
     }
     
     .panel_ambient {
@@ -205,8 +213,20 @@
     .panel_color {
         order: 3;
     }
+
+    .room-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none; /* Elimina la restricción de altura máxima */
+        object-fit: contain;
+    }
     
     .wall {
-        min-height: 400px;
+        width: 100%;
+        height: auto;
+        min-height: auto; /* Elimina la altura mínima fija */
+        background-color: transparent; /* Opcional: si prefieres que el fondo no compita con la imagen */
     }
+
 }

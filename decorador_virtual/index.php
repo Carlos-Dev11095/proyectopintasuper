@@ -112,11 +112,11 @@
                     </div>
                 </div>
                 
-                <div class="panel panel_image">
-                    <div id="wall" class="wall">
-                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-                    </div>
-                </div>
+<div class="panel panel_image">
+    <div id="wall" class="wall">
+        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+    </div>
+</div>
             </div>
         </section>
         <!-- Fin Sección Decorador -->
