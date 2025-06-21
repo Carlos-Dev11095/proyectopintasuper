@@ -24,16 +24,7 @@
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
-
-    <div class="style-switcher">
-        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
-        <h3>Opciones de Color</h3>
-        <div class="layout-feature" id="colorMode">
-            <a href="#" class="dark-switcher" data-theme="pintura-dark">Oscuro</a>
-            <a href="#" class="light-switcher" data-theme="pintura-light">Claro</a>
-            <button class="boxed-switcher">Modo Compacto</button>
-        </div>
-    </div>
+    
     <?php require_once __DIR__ . '/../bin/preloader.php'; // Usa __DIR__ para ruta absoluta ?>
 
     <div class="page-wrapper">

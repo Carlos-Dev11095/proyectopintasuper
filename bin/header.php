@@ -217,16 +217,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="main-menu__right">
-                        <div class="main-menu__search-btn-box">
-                            <div class="main-menu__search-box">
-                                <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
-                            </div>
-                            <div class="main-menu__btn-box">
-                                <a href="contact.html" class="thm-btn main-menu__btn">Reservar Cita</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

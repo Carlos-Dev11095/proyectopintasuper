@@ -27,18 +27,6 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <!-- selector de estilo -->
-    <div class="style-switcher">
-        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
-        <h3>Opciones de Diseño</h3>
-        <div class="layout-feature" id="colorMode">
-            <a href="" class="dark-switcher" data-theme="ambed-dark">Oscuro</a>
-            <a href="" class="light-switcher" data-theme="ambed-light">Claro</a>
-            <button class="boxed-switcher">En Caja</button>
-        </div>
-    </div>
-    <!-- fin selector de estilo -->
-
     <!-- precarga -->
     <?php include 'bin/preloader.php'; ?>
 
@@ -71,7 +59,7 @@
 
             <div class="swiper-slide">
                 <div class="image-layer"
-                    style="background-image: url(assets/images/backgrounds/pintura-slider-1.jpg);"></div>
+                    style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/slide-1.jpg);"></div>
                 <!-- /.image-layer -->
                 <div class="container">
                     <div class="row">
@@ -98,7 +86,7 @@
             
             <div class="swiper-slide">
                 <div class="image-layer"
-                    style="background-image: url(assets/images/backgrounds/pintura-slider-2.jpg);"></div>
+                    style="background-image: url(assets/images/shapes/slide-2.jpg);"></div>
                 <!-- /.image-layer -->
                 <div class="container">
                     <div class="row">
@@ -125,7 +113,7 @@
             
             <div class="swiper-slide">
                 <div class="image-layer"
-                    style="background-image: url(assets/images/backgrounds/pintura-slider-3.jpg);"></div>
+                    style="background-image: url(assets/images/shapes/slide-3.jpg);"></div>
                 <!-- /.image-layer -->
                 <div class="container">
                     <div class="row">
@@ -246,80 +234,90 @@
 </section>
         <!--Fin del Slider Principal-->
 
-        <!--Inicio Sobre Nosotros-->
-        <section class="about-one">
-            <div class="about-one-shape-2 float-bob-x"></div>
-            <div class="about-one-wall">
-                <img src="assets/images/shapes/about-one-wall.png" alt="">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="about-one__left">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">¿Quiénes Somos?</span> <h2 class="section-title__title">Expertos en Transformar Espacios con Color</h2> <div class="section-title__line"></div>
-                            </div>
-                            <p class="about-one__text-1">En Pintasuper, transformamos hogares y negocios con pintura y diseño de paredes de la más alta calidad.</p> <ul class="list-unstyled about-one__points">
-                                <li>
-                                    <div class="about-one__points-content-box">
-                                        <div class="about-one__points-icon">
-                                            <span class="icon-wallpaper"></span>
-                                        </div>
-                                        <div class="about-one__points-text-box">
-                                            <p class="about-one__points-text">Soluciones Innovadoras en Diseño de Paredes</p> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="about-one__points-content-box">
-                                        <div class="about-one__points-icon">
-                                            <span class="icon-high-quality"></span>
-                                        </div>
-                                        <div class="about-one__points-text-box">
-                                            <p class="about-one__points-text">Calidad Garantizada en Cada Proyecto</p> </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="about-one__text-2">Con **más de 30 años de experiencia** en el sector, nuestro equipo de profesionales se dedica a ofrecer acabados impecables y soluciones personalizadas. Desde pintura mural hasta papel tapiz y paneles, nos aseguramos de que cada detalle refleje la visión de nuestros clientes.</p> <div class="about-one__contact-us">
-                                <div class="about-one__btn-box">
-                                    <a href="about.html" class="thm-btn about-one__btn">Conoce Más</a> </div>
-                                <div class="about-one__call">
-                                    <div class="about-one__call-icon">
-                                        <span class="icon-phone-call"></span>
-                                    </div>
-                                    <div class="about-one__call-text">
-                                        <p>¿Listo para Transformar?</p> <a href="tel:980009630">+ 98 (000) - 9630</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--Inicio Nuestros Servicios-->
+<section class="about-one">
+    <div class="about-one-shape-2 float-bob-x"></div>
+    <div class="about-one-wall">
+        <img src="assets/images/shapes/about-one-wall.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="about-one__left">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">Nuestros Servicios</span>
+                        <h2 class="section-title__title">Soluciones Creativas para Cada Espacio</h2>
+                        <div class="section-title__line"></div>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="about-one__right">
-                            <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms"
-                                data-wow-duration="2500ms">
-                                <div class="about-one__img">
-                                    <img src="assets/images/resources/about-one-img-1.jpg" alt="Imagen principal sobre nosotros"> </div>
-                                <div class="about-one__small-img">
-                                    <img src="assets/images/resources/about-one-small-img.jpg" alt="Imagen pequeña sobre nosotros"> </div>
-                                <div class="about-one__project">
-                                    <div class="about-one__project-icon">
-                                        <span class="icon-wallpaper-1"></span>
-                                    </div>
-                                    <div class="about-one__project-content">
-                                        <p class="about-one__project-text">Diseños nnovadores</p>
-                                    </div>
+                    <p class="about-one__text-1">En Pintasuper, ofrecemos una amplia gama de servicios de pintura y decoración que se adaptan a tus necesidades y estilo.</p>
+                    <ul class="list-unstyled about-one__points">
+                        <li>
+                            <div class="about-one__points-content-box">
+                                <div class="about-one__points-icon">
+                                    <span class="icon-paint"></span>
                                 </div>
-                                <div class="about-one__shape-1 float-bob-y"></div>
-                                <div class="about-one__dot">
-                                    <img src="assets/images/shapes/about-one-dots.png" alt="">
+                                <div class="about-one__points-text-box">
+                                    <p class="about-one__points-text">Pintura Interior y Exterior Profesional</p>
                                 </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="about-one__points-content-box">
+                                <div class="about-one__points-icon">
+                                    <span class="icon-high-quality"></span> <!-- Restaurado -->
+                                </div>
+                                <div class="about-one__points-text-box">
+                                    <p class="about-one__points-text">Calidad Garantizada en Cada Proyecto</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="about-one__text-2">Nuestro compromiso es brindar acabados impecables, uso de materiales de primera calidad y asesoría personalizada para cada proyecto residencial o comercial.</p>
+                    <div class="about-one__contact-us">
+                        <div class="about-one__btn-box">
+                            <a href="services.html" class="thm-btn about-one__btn">Ver Servicios</a>
+                        </div>
+                        <div class="about-one__call">
+                            <div class="about-one__call-icon">
+                                <span class="icon-phone-call"></span>
+                            </div>
+                            <div class="about-one__call-text">
+                                <p>¿Necesitas Ayuda?</p>
+                                <a href="tel:980009630">+ 98 (000) - 9630</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Fin Sobre Nosotros-->
+            <div class="col-xl-6">
+                <div class="about-one__right">
+                    <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+                        <div class="about-one__img">
+                            <img src="assets/images/resources/pintores-profesionales-madrid.jpg" alt="Imagen principal servicios">
+                        </div>
+                        <div class="about-one__small-img">
+                            <img src="assets/images/resources/pared.jpg" alt="Imagen secundaria servicios">
+                        </div>
+                        <div class="about-one__project">
+                            <div class="about-one__project-icon">
+                                <span class="icon-brush"></span>
+                            </div>
+                            <div class="about-one__project-content">
+                                <p class="about-one__project-text">Resultados Profesionales</p>
+                            </div>
+                        </div>
+                        <div class="about-one__shape-1 float-bob-y"></div>
+                        <div class="about-one__dot">
+                            <img src="assets/images/resources/pared2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Fin Nuestros Servicios-->
+
 
         <!--Inicio de Características-->
         <section class="feature-one">
@@ -402,7 +400,7 @@
         <section class="services-one">
             <div class="services-one-bg-box">
                 <div class="services-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                    style="background-image: url(assets/images/backgrounds/services-one-bg.jpg);"></div>
+                    style="background-image: url(assets/images/backgrounds/pared_pintada.jpg);"></div>
                     </div>
             <div class="container">
                 <div class="section-title text-center">
@@ -414,7 +412,7 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-1.jpg" alt="Pinturas y esmaltes de alta calidad">
+                                <img src="assets/images/services/pared_pintada.jpg" alt="Pinturas y esmaltes de alta calidad">
                                 <div class="services-one__icon">
                                     <span class="icon-wallpaper-3"></span> </div>
                             </div>
@@ -427,7 +425,7 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-2.jpg" alt="Herramientas y preparación de superficies">
+                                <img src="assets/images/services/cocina.jpg" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
                                     <span class="icon-wallpaper-4"></span> </div>
                             </div>
@@ -440,7 +438,7 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/services-1-3.jpg" alt="Asesoramiento experto en color">
+                                <img src="assets/images/services/sala.jpg" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
                                     <span class="icon-paint"></span> </div>
                             </div>
@@ -463,24 +461,12 @@
                         <div class="quality-work__left">
                             <div class="quality-work__img-box">
                                 <div class="quality-work__img">
-                                    <img src="assets/images/resources/quality-work-img-1.png" alt="Pintor profesional trabajando">
+                                    <img src="assets/images/resources/pinturasuper.jpg" alt="Pintor profesional trabajando">
                                     </div>
                                 <div class="quality-work__small-img">
-                                    <img src="assets/images/resources/quality-work-small-img.jpg" alt="Detalle de pintura de alta calidad">
-                                    </div>
-                                <div class="quality-work__video-box">
-                                    <div class="quality-work__curved-circle-box">
-                                        <div class="curved-circle">
-                                            <span class="curved-circle--item">NUEVAS TÉCNICAS 2025.</span> </div>
-                                        <div class="quality-work__video-link">
-                                            <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup"> <div class="quality-work__video-icon">
-                                                    <span class="fa fa-play"></span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <img src="assets/images/resources/baño.jpg" alt="Detalle de pintura de alta calidad">
                                 </div>
-                            </div>
+                                </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
@@ -548,7 +534,7 @@
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="project-one__left">
                                                 <div class="project-one__img">
-                                                    <img src="assets/images/project/project-1-1.jpg" alt="Proyecto de pintura de sala de estar">
+                                                    <img src="assets/images/project/chimenea.jpg" alt="Proyecto de pintura de sala de estar">
                                                     </div>
                                             </div>
                                         </div>
@@ -591,46 +577,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="project-one__more-project">
-                            <div class="project-one__more-project-content">
-                                <p>¿Buscas inspiración para tu próximo espacio? <a href="portafolio.html">Explora nuestro Portafolio Completo</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <!--Fin de Proyectos-->
-        
-        <!--Inicio de Marcas-->
-        <section class="brand-one">
-            <div class="container">
-                <div class="brand-one__inner">
-                    <div class="row">
-                        <div class="col-xl-3">
-                            <div class="brand-one__title">
-                                <h2>Confían en nosotros más de 8800 marcas populares</h2>
-                            </div>
-                        </div>
-                        <div class="col-xl-9">
-                            <div class="brand-one__main-content">
-                                <div class="thm-swiper__slider swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/brand/brand-1-1.png" alt="">
-                                        </div>
-                                        <!-- Más slides de marcas... -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Fin de Marcas-->
 
         <!--Inicio de Blog-->
         <section class="blog-one">
@@ -644,7 +593,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="blog-one__single">
                             <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="Elegir colores para tu hogar">
+                                <img src="assets/images/blog/casita.jpg" alt="Elegir colores para tu hogar">
                                 <a href="blog-details-colores.html">
                                     <span class="blog-one__plus"></span>
                                 </a>
@@ -665,7 +614,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                         <div class="blog-one__single">
                             <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-2.jpg" alt="Tendencias de pintura exterior">
+                                <img src="assets/images/blog/salita.jpg" alt="Tendencias de pintura exterior">
                                 <a href="blog-details-tendencias.html">
                                     <span class="blog-one__plus"></span>
                                 </a>
@@ -686,7 +635,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                         <div class="blog-one__single">
                             <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-3.jpg" alt="Consejos para pintar tú mismo">
+                                <img src="assets/images/blog/cama.jpg" alt="Consejos para pintar tú mismo">
                                 <a href="blog-details-hazlotumismo.html">
                                     <span class="blog-one__plus"></span>
                                 </a>

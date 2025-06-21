@@ -37,18 +37,6 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <!-- selector de estilo -->
-    <div class="style-switcher">
-        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
-        <h3>Opciones de Diseño</h3>
-        <div class="layout-feature" id="colorMode">
-            <a href="" class="dark-switcher" data-theme="ambed-dark">Oscuro</a>
-            <a href="" class="light-switcher" data-theme="ambed-light">Claro</a>
-            <button class="boxed-switcher">En Caja</button>
-        </div>
-    </div>
-    <!-- fin selector de estilo -->
-
     <!-- precarga -->
     <?php require '../bin/preloader.php'; ?>
 
