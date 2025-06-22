@@ -92,7 +92,8 @@
                             <option value="zafiro">Línea Zafiro</option>
                             <option value="dorada">Línea Dorada</option>
                             <option value="onix">Línea Ónix</option>
-                            <option value="natura">Línea Natura</option>
+                            <option value="kiviforte">KiviForte</option>
+                            <option value="superrap">SuperRap</option>
                         </select>
                         <div id="color-palette" class="color-palette">
                             <!-- Contenido cargado dinámicamente por JS -->
