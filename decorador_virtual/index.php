@@ -23,12 +23,9 @@
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.min.js" as="script">
-    <link rel="preload" href="images/fachada.webp" as="image">
-    <link rel="preload" href="images/habitacion.webp" as="image">
-    <link rel="preload" href="images/comedor.webp" as="image">
-    <link rel="preload" href="images/cocina.webp" as="image">
-    <link rel="preload" href="images/sala.webp" as="image">
-    <link rel="preload" href="images/bano.webp" as="image">
+    <link rel="preload" href="images/habitacion.png" as="image">
+    <link rel="preload" href="images/sala.png" as="image">
+    <link rel="preload" href="images/bano.png" as="image">
     <!-- CSS combinado y minificado -->
     <link rel="stylesheet" href="styles.min.css">
 </head>
@@ -47,7 +44,7 @@
             <div class="sticky-header__content"></div>
         </div>
 
-<!--Page Header Start-->
+        <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg)">
             </div>
@@ -56,9 +53,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
                         <li><span>/</span></li>
-                        <li>Decorador Virtual</li>
+                        <li>Simulador Virtual</li>
                     </ul>
-                    <h2>Decorador Virtual</h2>
+                    <h2>Simulador Virtual</h2>
                 </div>
             </div>
         </section>
@@ -73,12 +70,9 @@
                             <h2 class="section-title__title">Selecciona tu escena</h2>
                         </div>
                         <select id="room-selector" class="room-selector">
-                            <option value="">-- Elige un ambiente --</option>
-                            <option value="fachada">Fachada de casa</option>
-                            <option value="habitacion">Habitación con cama</option>
-                            <option value="comedor">Comedor</option>
-                            <option value="cocina">Cocina</option>
-                            <option value="sala">Sala de estar</option>
+                            <option value="">-- Elige un escena --</option>
+                            <option value="habitacion">Habitación</option>
+                            <option value="sala">Sala</option>
                             <option value="bano">Baño</option>
                         </select>
                     </div>
@@ -92,7 +86,8 @@
                             <option value="zafiro">Línea Zafiro</option>
                             <option value="dorada">Línea Dorada</option>
                             <option value="onix">Línea Ónix</option>
-                            <option value="natura">Línea Natura</option>
+                            <option value="kiviforte">KiviForte</option>
+                            <option value="superrap">SuperRap</option>
                         </select>
                         <div id="color-palette" class="color-palette">
                             <!-- Contenido cargado dinámicamente por JS -->
@@ -100,11 +95,11 @@
                     </div>
                 </div>
                 
-<div class="panel panel_image">
-    <div id="wall" class="wall">
-        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-    </div>
-</div>
+                <div class="panel panel_image">
+                    <div id="wall" class="wall">
+                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Fin Sección Decorador -->
