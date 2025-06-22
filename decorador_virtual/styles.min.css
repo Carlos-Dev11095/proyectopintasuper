@@ -51,13 +51,13 @@
 }
 
 .panel_ambient {
-    background-color: rgba(255, 255, 255, 0.85) !important; /* 85% de opacidad */
+    background-color: rgba(255, 255, 255, 1) !important; /* 85% de opacidad */
     backdrop-filter: blur(5px); 
     border: 1px solid rgba(253, 78, 1, 0.5); /* Borde sutil */
 }
 
 .panel_color {
-    background-color: rgba(255, 255, 255, 0.85) !important; /* 85% de opacidad */
+    background-color: rgba(255, 255, 255, 1) !important; /* 85% de opacidad */
     backdrop-filter: blur(5px);
     border: 1px solid rgba(253, 78, 1, 0.45);
 }
@@ -68,7 +68,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px; /* Espacio interno para que no toque los bordes */
-    background-color: rgba(255, 255, 255, 0.85) !important;
+    background-color: rgba(255, 255, 255, 1) !important;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(253, 78, 1, 0.4);
     overflow: hidden; /* Evita que el contenido rebase */
@@ -193,7 +193,7 @@
     .container_dec {
         flex-direction: row;
         gap: 25px;
-        padding: 25px;
+        padding: 5px;
     }
     
     .container_panel {
