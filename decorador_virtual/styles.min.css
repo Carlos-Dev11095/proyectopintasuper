@@ -9,10 +9,6 @@
 .decorator {
     position: relative;
     padding: 40px 20px;
-    background-image: url('images/backgrounds/decorator-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 .decorator::before {
