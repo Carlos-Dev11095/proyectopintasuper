@@ -23,12 +23,9 @@
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.min.js" as="script">
-    <link rel="preload" href="images/fachada.webp" as="image">
-    <link rel="preload" href="images/habitacion.webp" as="image">
-    <link rel="preload" href="images/comedor.webp" as="image">
-    <link rel="preload" href="images/cocina.webp" as="image">
-    <link rel="preload" href="images/sala.webp" as="image">
-    <link rel="preload" href="images/bano.webp" as="image">
+    <link rel="preload" href="images/habitacion.png" as="image">
+    <link rel="preload" href="images/sala.png" as="image">
+    <link rel="preload" href="images/bano.png" as="image">
     <!-- CSS combinado y minificado -->
     <link rel="stylesheet" href="styles.min.css">
 </head>
@@ -74,11 +71,8 @@
                         </div>
                         <select id="room-selector" class="room-selector">
                             <option value="">-- Elige un ambiente --</option>
-                            <option value="fachada">Fachada de casa</option>
-                            <option value="habitacion">Habitación con cama</option>
-                            <option value="comedor">Comedor</option>
-                            <option value="cocina">Cocina</option>
-                            <option value="sala">Sala de estar</option>
+                            <option value="habitacion">Habitación</option>
+                            <option value="sala">Sala</option>
                             <option value="bano">Baño</option>
                         </select>
                     </div>
