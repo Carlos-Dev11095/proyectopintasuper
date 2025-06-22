@@ -59,82 +59,88 @@
         <!--Page Header End-->
 
         <!-- Sección Decorador -->
-        <section class="decorator">
-            <div class="container_dec">
-                 <div class="container_dec">
+        <!-- Dentro de la sección Decorador -->
+<section class="decorator">
+    <div class="container_dec">
         <h1>Calcule el material</h1>
-
-        <div class="panel">
-            <h2>Seleccione el producto</h2>
-            <select id="producto">
-                <option value="">-- Seleccione --</option>
-                <option value="vinilica_std" data-rendimiento="10">Pintura Vinílica Standard (10 m²/L)</option>
-                <option value="vinilica_prem" data-rendimiento="8">Pintura Vinílica Premium (8 m²/L)</option>
-                <option value="esmalte_acu" data-rendimiento="12">Esmalte Acrílico (12 m²/L)</option>
-                <option value="sellador" data-rendimiento="15">Sellador (15 m²/L)</option>
-            </select>
-        </div>
-
-        <div class="panel">
-            <h2>Superficie a pintar</h2>
-            <div class="input-group">
-                <label for="alto-pared">Alto (metros):</label>
-                <input type="number" id="alto-pared" step="0.01" min="0.1">
+        
+        <div class="panels-grid">
+            <!-- Panel Producto -->
+            <div class="panel panel-producto">
+                <h2>Seleccione el producto</h2>
+                <select id="producto">
+                    <option value="">-- Seleccione --</option>
+                    <option value="vinilica_std" data-rendimiento="10">Pintura Vinílica Standard (10 m²/L)</option>
+                    <option value="vinilica_prem" data-rendimiento="8">Pintura Vinílica Premium (8 m²/L)</option>
+                    <option value="esmalte_acu" data-rendimiento="12">Esmalte Acrílico (12 m²/L)</option>
+                    <option value="sellador" data-rendimiento="15">Sellador (15 m²/L)</option>
+                </select>
             </div>
-            <div class="input-group">
-                <label for="ancho-pared">Ancho (metros):</label>
-                <input type="number" id="ancho-pared" step="0.01" min="0.1">
+
+            <!-- Panel Superficie -->
+            <div class="panel panel-superficie">
+                <h2>Superficie a pintar</h2>
+                <div class="input-group">
+                    <label for="alto-pared">Alto (metros):</label>
+                    <input type="number" id="alto-pared" step="0.01" min="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="ancho-pared">Ancho (metros):</label>
+                    <input type="number" id="ancho-pared" step="0.01" min="0.1">
+                </div>
+            </div>
+
+            <!-- Panel Restar Superficie -->
+            <div class="panel panel-restar">
+                <h2>Restar superficie - Puertas</h2>
+                <select id="num-puertas">
+                    <option value="0">0 puertas</option>
+                    <option value="1">1 puerta</option>
+                    <option value="2">2 puertas</option>
+                    <option value="3">3 puertas</option>
+                </select>
+                <div id="puertas-container"></div>
+                
+                <h2>Restar superficie - Ventanas</h2>
+                <select id="num-ventanas">
+                    <option value="0">0 ventanas</option>
+                    <option value="1">1 ventana</option>
+                    <option value="2">2 ventanas</option>
+                    <option value="3">3 ventanas</option>
+                </select>
+                <div id="ventanas-container"></div>
+            </div>
+
+            <!-- Panel Opciones -->
+            <div class="panel panel-opciones">
+                <h2>Opciones de aplicación</h2>
+                <div class="option-group">
+                    <h3>Superficie:</h3>
+                    <label><input type="radio" name="superficie" value="1.2" checked> Nueva</label>
+                    <label><input type="radio" name="superficie" value="1.0"> Mantenimiento</label>
+                </div>
+                <div class="option-group">
+                    <h3>Textura:</h3>
+                    <label><input type="radio" name="textura" value="1.0" checked> Lisa</label>
+                    <label><input type="radio" name="textura" value="1.3"> Rugosa</label>
+                </div>
+                <div class="option-group">
+                    <h3>Técnica:</h3>
+                    <label><input type="radio" name="tecnica" value="1.15" checked> Brocha</label>
+                    <label><input type="radio" name="tecnica" value="1.05"> Rodillo</label>
+                    <label><input type="radio" name="tecnica" value="0.95"> Pistola</label>
+                </div>
             </div>
         </div>
 
-        <div class="panel">
-            <h2>Restar superficie - Puertas</h2>
-            <select id="num-puertas">
-                <option value="0">0 puertas</option>
-                <option value="1">1 puerta</option>
-                <option value="2">2 puertas</option>
-                <option value="3">3 puertas</option>
-            </select>
-            <div id="puertas-container"></div>
+        <!-- Botones -->
+        <div class="button-container">
+            <button id="calcular" class="btn btn-primary">Calcular</button>
+            <button id="resetear" class="btn btn-secondary">Resetear</button>
         </div>
 
-        <div class="panel">
-            <h2>Restar superficie - Ventanas</h2>
-            <select id="num-ventanas">
-                <option value="0">0 ventanas</option>
-                <option value="1">1 ventana</option>
-                <option value="2">2 ventanas</option>
-                <option value="3">3 ventanas</option>
-            </select>
-            <div id="ventanas-container"></div>
-        </div>
-
-        <div class="panel">
-            <h2>Opciones de aplicación</h2>
-            <div class="option-group">
-                <h3>Superficie:</h3>
-                <label><input type="radio" name="superficie" value="1.2" checked> Nueva</label>
-                <label><input type="radio" name="superficie" value="1.0"> Mantenimiento</label>
-            </div>
-            <div class="option-group">
-                <h3>Textura:</h3>
-                <label><input type="radio" name="textura" value="1.0" checked> Lisa</label>
-                <label><input type="radio" name="textura" value="1.3"> Rugosa</label>
-            </div>
-            <div class="option-group">
-                <h3>Técnica:</h3>
-                <label><input type="radio" name="tecnica" value="1.15" checked> Brocha</label>
-                <label><input type="radio" name="tecnica" value="1.05"> Rodillo</label>
-                <label><input type="radio" name="tecnica" value="0.95"> Pistola</label>
-            </div>
-        </div>
-
-        <div class="button-group">
-            <button id="calcular">Calcular</button>
-            <button id="resetear">Resetear</button>
-        </div>
-
-        <div id="resultados" class="results-panel hidden">
+        <!-- Panel Resultados -->
+        <div id="resultados" class="panel panel-resultados hidden">
             <h2>Resultados</h2>
             <table>
                 <tr>
@@ -165,8 +171,7 @@
             <p class="note">* Los resultados son aproximados y pueden variar según las condiciones de aplicación.</p>
         </div>
     </div>
-            </div>
-        </section>
+</section>
         <!-- Fin Sección Decorador -->
 
         <?php require '../bin/footer.php'; ?>
