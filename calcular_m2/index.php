@@ -50,9 +50,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
                         <li><span>/</span></li>
-                        <li>Decorador Virtual</li>
+                        <li>Calcular Material</li>
                     </ul>
-                    <h2>Decorador Virtual</h2>
+                    <h2>Calcular Material</h2>
                 </div>
             </div>
         </section>
@@ -62,7 +62,7 @@
         <section class="decorator">
             <div class="container_dec">
                  <div class="container_dec">
-        <h1>Simulador de Pintura</h1>
+        <h1>Calcule el material</h1>
 
         <div class="panel">
             <h2>Seleccione el producto</h2>

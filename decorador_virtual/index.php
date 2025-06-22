@@ -53,9 +53,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
                         <li><span>/</span></li>
-                        <li>Decorador Virtual</li>
+                        <li>Simulador Virtual</li>
                     </ul>
-                    <h2>Decorador Virtual</h2>
+                    <h2>Simulador Virtual</h2>
                 </div>
             </div>
         </section>
@@ -70,7 +70,7 @@
                             <h2 class="section-title__title">Selecciona tu escena</h2>
                         </div>
                         <select id="room-selector" class="room-selector">
-                            <option value="">-- Elige un ambiente --</option>
+                            <option value="">-- Elige un escena --</option>
                             <option value="habitacion">Habitación</option>
                             <option value="sala">Sala</option>
                             <option value="bano">Baño</option>
