@@ -1,4 +1,4 @@
-/* styles.min.css */
+/* styles.min.css actualizado */
 * {
     margin: 0;
     padding: 0;
@@ -6,84 +6,41 @@
     font-family: 'Arial', sans-serif;
 }
 
-.decorator {
+.decorator-simplified {
     position: relative;
-    padding: 40px 20px;
+    padding: 20px;
+    height: calc(100vh - 200px);
+    min-height: 400px;
 }
 
-.decorator::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.image-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.container_dec {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
     border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: rgba(253, 78, 1, 0.85) !important; /* 30% de opacidad */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque para mejor legibilidad */
-    border: 1px solid rgba(253, 78, 1, 0.5); /* Borde sutil */
-}
-
-.container_panel {
-    flex: 0 1 30%;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.panel {
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-}
-
-.panel_ambient {
-    background-color: rgba(255, 255, 255, 1) !important; /* 85% de opacidad */
-    backdrop-filter: blur(5px); 
-    border: 1px solid rgba(253, 78, 1, 0.5); /* Borde sutil */
-}
-
-.panel_color {
-    background-color: rgba(255, 255, 255, 1) !important; /* 85% de opacidad */
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(253, 78, 1, 0.45);
-}
-
-.panel_image {
-    flex: 0 1 65%;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Espacio interno para que no toque los bordes */
-    background-color: rgba(255, 255, 255, 1) !important;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(253, 78, 1, 0.4);
-    overflow: hidden; /* Evita que el contenido rebase */
+}
+
+.wall-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wall {
-    position: relative;
-    display: inline-flex; /* Se ajusta al tamaño de la imagen */
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f8f8;
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: 100%; /* No rebasa el panel_image */
-    max-height: 100%; /* No rebasa el panel_image */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
 }
 
 .room-image {
@@ -91,70 +48,139 @@
     max-height: 100%;
     object-fit: contain;
     display: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* Botones flotantes (FAB) */
+.fab-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.fab-decorator {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(253, 78, 1, 0.9);
+    color: white;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
-/* Ajusta el tamaño del wall al de la imagen cuando se muestra */
-.room-image[src] {
-    display: block;
+.fab-decorator:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+    background-color: rgba(253, 78, 1, 1);
 }
 
-/* Asegura que el wall no tenga dimensiones fijas cuando no hay imagen */
-.wall:not(:has(img[src])) {
+.fab-decorator:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: rgba(253, 78, 1, 0.5);
+}
+
+.fab-decorator:disabled:hover {
+    transform: none;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+/* Paneles flotantes */
+.floating-panel {
+    position: absolute;
+    top: 0;
+    left: 76px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 15px;
+    max-width: 300px;
+    z-index: 99;
     display: none;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-.room-selector, .palette-selector {
+#room-selector-panel {
+    width: 250px;
+}
+
+#color-selector-panel {
+    width: 300px;
+}
+
+.color-panel-header {
+    margin-bottom: 15px;
+}
+
+.palette-selector {
     width: 100%;
-    padding: 12px 15px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
     border-radius: 6px;
-    font-size: 16px;
-    background-color: #fff;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-.room-selector:focus, .palette-selector:focus {
-    border-color: #4a90e2;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+/* Opciones de ambiente */
+.room-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.palette-selector:disabled {
-    background-color: #f5f5f5;
-    cursor: not-allowed;
-    opacity: 0.7;
+.room-option {
+    padding: 12px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
 }
 
-.color-palette {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 1px dashed #ddd;
-    display: none;
+.room-option:hover {
+    background: #e0e0e0;
 }
 
-.color-grid {
+.room-option i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Paleta de colores */
+.color-palette-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
     margin-top: 15px;
 }
 
 .color-swatch {
     width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     position: relative;
     border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .color-swatch:hover {
     transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 .color-tooltip {
@@ -180,215 +206,79 @@
     opacity: 1;
 }
 
-/* Colores */
+/* Colores (mantener los existentes) */
 .color-zafiro-1{background-color:#faf8f4}.color-zafiro-2{background-color:#e7e1d1}.color-zafiro-3{background-color:#eee4cf}.color-zafiro-4{background-color:#d1c7b1}.color-zafiro-5{background-color:#cbb795}.color-zafiro-6{background-color:#eabd99}.color-zafiro-7{background-color:#f4aead}.color-zafiro-8{background-color:#d280b3}.color-zafiro-9{background-color:#baaac2}.color-zafiro-10{background-color:#a081a3}.color-zafiro-11{background-color:#7dc3a5}.color-zafiro-12{background-color:#a8c69a}.color-zafiro-13{background-color:#8ec47d}.color-zafiro-14{background-color:#a0c64b}.color-zafiro-15{background-color:#9daa70}.color-zafiro-16{background-color:#87bec3}.color-zafiro-17{background-color:#f9d49f}.color-zafiro-18{background-color:#f7b466}.color-zafiro-19{background-color:#f8d96b}.color-zafiro-20{background-color:#ca9647}.color-zafiro-21{background-color:#f4a784}.color-zafiro-22{background-color:#da7a60}.color-zafiro-23{background-color:#e77355}.color-zafiro-24{background-color:#6c4841}.color-zafiro-25{background-color:#67adcb}.color-zafiro-26{background-color:#3490ca}
 .color-dorada-1{background-color:#cfe1e5}.color-dorada-2{background-color:#a7cfdf}.color-dorada-3{background-color:#009dad}.color-dorada-4{background-color:#343a5d}.color-dorada-5{background-color:#d6c3d6}.color-dorada-6{background-color:#bab1d4}.color-dorada-7{background-color:#c86a87}.color-dorada-8{background-color:#3d3d3a}.color-dorada-9{background-color:#fefefe}.color-dorada-10{background-color:#f5ebd7}.color-dorada-11{background-color:#f6e7ca}.color-dorada-12{background-color:#e3dfd3}.color-dorada-13{background-color:#e5ccb9}.color-dorada-14{background-color:#cbb6a2}.color-dorada-15{background-color:#d0aa87}.color-dorada-16{background-color:#af6e50}.color-dorada-17{background-color:#e5b8a8}.color-dorada-18{background-color:#ecad5e}.color-dorada-19{background-color:#f9d7a2}.color-dorada-20{background-color:#edab95}.color-dorada-21{background-color:#fcbe0c}.color-dorada-22{background-color:#ad7a3a}.color-dorada-23{background-color:#bbbdb9}.color-dorada-24{background-color:#db7f5c}.color-dorada-25{background-color:#6d443c}.color-dorada-26{background-color:#5f504a}.color-dorada-27{background-color:#d14629}.color-dorada-28{background-color:#ae382d}.color-dorada-29{background-color:#02634d}.color-dorada-30{background-color:#88a869}.color-dorada-31{background-color:#a2c64a}.color-dorada-32{background-color:#99af5e}
 .color-onix-1{background-color:#79adc8}.color-onix-2{background-color:#a8c693}.color-onix-3{background-color:#a8c693}.color-onix-4{background-color:#299190}.color-onix-5{background-color:#7dbe79}.color-onix-6{background-color:#aab966}.color-onix-7{background-color:#135847}.color-onix-8{background-color:#323230}.color-onix-9{background-color:#fefefe}.color-onix-10{background-color:#e3dfd3}.color-onix-11{background-color:#d6ccb8}.color-onix-12{background-color:#f9d5aa}.color-onix-13{background-color:#f4b69a}.color-onix-14{background-color:#f6d18d}.color-onix-15{background-color:#f4ac73}.color-onix-16{background-color:#e1a358}.color-onix-17{background-color:#f5a84e}.color-onix-18{background-color:#fcc719}.color-onix-19{background-color:#af9983}.color-onix-20{background-color:#b88554}.color-onix-21{background-color:#ce7244}.color-onix-22{background-color:#6c3c33}.color-onix-23{background-color:#533f35}.color-onix-24{background-color:#9f5237}.color-onix-25{background-color:#a33c2f}.color-onix-26{background-color:#d6675a}.color-onix-27{background-color:#de767e}.color-onix-28{background-color:#bf4a87}.color-onix-29{background-color:#b2a0cb}.color-onix-30{background-color:#6b4b80}.color-onix-31{background-color:#2e4266}.color-onix-32{background-color:#33a7d1}.color-onix-33{background-color:#63bfd8}
+ 
 
 /* Responsive */
-/* Ajustes base para desktop */
-@media (min-width: 993px) {
-    .container_dec {
-        flex-direction: row;
-        gap: 25px;
-        padding: 5px;
+@media (max-width: 768px) {
+    .fab {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
     }
     
-    .container_panel {
-        flex: 0 1 30%;
-        min-width: 280px;
+    .floating-panel {
+        left: 68px;
+        max-width: 250px;
     }
     
-    .panel_image {
-        flex: 0 1 65%;
+    #color-selector-panel {
+        width: 280px;
+    }
+    
+    .color-palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
     }
 }
 
-/* Ajustes para tablet landscape y desktop pequeño (800px-992px) */
-@media (min-width: 800px) and (max-width: 992px) {
-    .container_dec {
-        gap: 20px;
-        padding: 20px;
+@media (max-height: 500px) and (orientation: landscape) {
+    .fab-container {
+        top: 10px;
+        left: 10px;
     }
     
-    .container_panel {
-        flex: 0 1 28%;
-        min-width: 250px;
+    .floating-panel {
+        top: 0;
+        left: 66px;
+        max-height: 60vh;
     }
     
-    .panel_image {
-        flex: 0 1 68%;
-    }
-    
-    .panel {
-        padding: 18px;
+    .decorator-simplified {
+        height: calc(100vh - 150px);
     }
 }
 
-/* Versión móvil (portrait y landscape) */
-@media (max-width: 799px) {
-    .container_dec {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+@media (max-width: 480px) {
+    .floating-panel {
+        left: 68px;
+        max-width: calc(100% - 88px);
     }
     
-    .container_panel, 
-    .panel_image {
-        flex: 1 1 100%;
-        width: 100%;
+    .color-palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 8px;
     }
     
-    .panel {
-        padding: 15px;
-    }
-    
-    /* Modo landscape específico */
-    @media (orientation: landscape) {
-        .container_panel {
-            flex-direction: row;
-            gap: 15px;
-        }
-        
-        .panel_ambient,
-        .panel_color {
-            flex: 1 1 48%;
-        }
-        
-        .panel_image {
-            min-height: 50vh;
-        }
-        
-        .color-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
+    .room-option {
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
-/* Ajustes específicos para Nest Hub (1024x600) */
-@media (width: 1024px) and (height: 600px) {
-    .container_panel {
-        flex: 0 1 45%;
-    }
-    
-    .panel_image {
-        flex: 0 1 50%;
-        min-height: 320px;
-    }
-}
-
-/* Ajustes para móviles pequeños (hasta 400px) */
-@media (max-width: 400px) {
-    .container_dec {
-        padding: 12px;
-        gap: 12px;
-    }
-    
-    .panel {
-        padding: 12px;
-    }
-    
-    .room-selector,
-    .palette-selector {
-        padding: 8px 10px;
-        font-size: 0.85rem;
-    }
-}
-
-/* Ajustes para móviles muy pequeños (hasta 350px) */
 @media (max-width: 350px) {
-    .container_dec {
-        padding: 10px;
-        gap: 10px;
+    .fab {
+        width: 42px;
+        height: 42px;
     }
     
-    .panel {
-        padding: 10px;
+    .floating-panel {
+        left: 62px;
     }
     
-    .color-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Ajustes para dispositivos plegables en modo landscape */
-@media (max-height: 400px) {
-    .container_dec {
-        flex-direction: row;
-    }
-    
-    .container_panel {
-        flex: 0 1 40%;
-    }
-    
-    .panel_image {
-        flex: 0 1 55%;
-        min-height: 280px;
-    }
-}
-
-/* Ajustes para iPad Pro en portrait */
-@media (width: 1024px) and (height: 1366px) {
-    .container_dec {
-        max-width: 95%;
-    }
-}
-
-/* Ajustes para zoom en desktop */
-@media (min-width: 801px) {
-    html {
-        zoom: 1;
-    }
-}
-
-/* Para landscape en móviles más pequeños */
-@media (max-width: 667px) and (orientation: landscape) {
-    .panel {
-        padding: 12px;
-    }
-    
-    .color-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Versión móvil (portrait y landscape) */
-@media (max-width: 799px) {
-    .container_dec {
-        flex-direction: column;
-        gap: 15px;
-        
-        padding: 15px;
-    }
-    
-    .container_panel, 
-    .panel_image {
-        flex: 1 1 100%;
-        width: 100%;
-    }
-    
-    .panel {
-        padding: 15px;
-    }
-    
-    /* Modo landscape específico */
-    @media (orientation: landscape) {
-        .container_panel {
-            flex-direction: row;
-            gap: 15px;
-        }
-        
-        .panel_ambient,
-        .panel_color {
-            flex: 1 1 48%;
-        }
-        
-        .panel_image {
-            min-height: 50vh;
-        }
-        
-        .color-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
+    .color-palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
     }
 }

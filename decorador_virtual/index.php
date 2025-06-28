@@ -17,6 +17,8 @@
     <!-- fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <?php include '../bin/css.php'; ?>
 
@@ -61,45 +63,60 @@
         </section>
         <!--Page Header End-->
 
-        <!-- Sección Decorador -->
-        <section class="decorator">
-            <div class="container_dec">
-                <div class="container_panel">
-                    <div class="panel panel_ambient">
-                        <div class="section-title text-left">
-                            <h2 class="section-title__title">Selecciona tu escena</h2>
-                        </div>
-                        <select id="room-selector" class="room-selector">
-                            <option value="">-- Elige un escena --</option>
-                            <option value="habitacion">Habitación</option>
-                            <option value="sala">Sala</option>
-                            <option value="bano">Baño</option>
-                        </select>
-                    </div>
-                    
-                    <div class="panel panel_color">
-                        <div class="section-title text-left">
-                            <h2 class="section-title__title">¡A DECORAR!</h2>
-                        </div>
-                        <select id="palette-selector" class="palette-selector">
-                            <option value="">-- Elige una paleta --</option>
-                            <option value="zafiro">Línea Zafiro</option>
-                            <option value="dorada">Línea Dorada</option>
-                            <option value="onix">Línea Ónix</option>
-                        </select>
-                        <div id="color-palette" class="color-palette">
-                            <!-- Contenido cargado dinámicamente por JS -->
-                        </div>
-                    </div>
+        <!-- Sección Decorador Modificada -->
+<section class="decorator-simplified">
+    <div class="image-container">
+        <div class="wall-container">
+            <div id="wall" class="wall"></div>
+            <img id="room-image" alt="Ambiente seleccionado" class="room-image">
+        </div>
+        
+        <!-- Botones flotantes -->
+        <div class="fab-container">
+            <button class="fab-decorator" id="room-selector-fab" title="Cambiar ambiente">
+                <i class="fas fa-couch"></i>
+            </button>
+            <button class="fab-decorator" id="color-selector-fab" title="Seleccionar color" disabled>
+                <i class="fas fa-palette"></i>
+            </button>
+        </div>
+        
+        <!-- Panel selector de ambiente -->
+        <div class="floating-panel" id="room-selector-panel">
+            <h3>Seleccionar Ambiente</h3>
+            <div class="room-options">
+                <div class="room-option" data-room="">
+                    <i class="fas fa-times"></i> Selecciona escena
                 </div>
-                
-                <div class="panel panel_image">
-                    <div id="wall" class="wall">
-                        <img id="room-image" src="" alt="Ambiente seleccionado" class="room-image" loading="lazy">
-                    </div>
+                <div class="room-option" data-room="habitacion">
+                    <i class="fas fa-bed"></i> Habitación
+                </div>
+                <div class="room-option" data-room="sala">
+                    <i class="fas fa-couch"></i> Sala
+                </div>
+                <div class="room-option" data-room="bano">
+                    <i class="fas fa-bath"></i> Baño
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- Panel selector de color -->
+        <div class="floating-panel" id="color-selector-panel">
+            <div class="color-panel-header">
+                <h3>Seleccionar Línea de Color</h3>
+                <select id="palette-selector" class="palette-selector">
+                    <option value="">-- Elegir línea --</option>
+                    <option value="zafiro">Línea Zafiro</option>
+                    <option value="dorada">Línea Dorada</option>
+                    <option value="onix">Línea Ónix</option>
+                </select>
+            </div>
+            <div id="color-palette" class="color-palette-grid">
+                <!-- Contenido cargado dinámicamente -->
+            </div>
+        </div>
+    </div>
+</section>
         <!-- Fin Sección Decorador -->
 
         <?php require '../bin/footer.php'; ?>
