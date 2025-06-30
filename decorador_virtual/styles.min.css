@@ -305,7 +305,30 @@
     }
     
     #color-selector-panel {
-        width: 300px;
+        max-height: 60vh; /* Altura máxima reducida */
+        padding-bottom: 15px; /* Espacio inferior */
+    }
+
+    .color-tooltip {
+        font-size: 12px; /* Tamaño de fuente más pequeño */
+        padding: 4px 8px; /* Espacio reducido */
+        bottom: calc(100% + 10px); /* Ajuste para que no se superponga con el swatch */
+    }
+    
+    .color-swatch:hover .color-tooltip {
+        visibility: visible;
+        opacity: 1;
+        bottom: calc(100% + 5px); /* Espacio adicional */
+    }
+
+    .color-palette-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
+        gap: 8px;
+        margin-bottom: 10px; /* Espacio para scroll */
+    }
+    
+    .color-swatch {
+        min-height: 50px; /* Altura mínima garantizada */
     }
 }
 
@@ -323,5 +346,19 @@
     .floating-panel {
         top: 62px; /* Un poco menos para pantallas pequeñas */
         width: 95%;
+    }
+
+    #color-selector-panel {
+        width: 95vw; /* Ancho casi completo */
+        left: 2.5vw; /* Centrado con margen */
+        transform: none;
+    }
+    
+    .color-palette-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en móviles muy pequeños */
+    }
+    
+    .color-tooltip {
+        font-size: 11px; /* Tamaño reducido para ajustar */
     }
 }
