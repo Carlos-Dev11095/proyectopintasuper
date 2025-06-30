@@ -279,3 +279,49 @@
         grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
     }
 }
+
+/* Modificación para los FABs en móvil portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+     .fab-container {
+        flex-direction: row;
+        gap: 10px;
+        top: 10px;
+        left: 10px; /* Posición en esquina izquierda */
+        transform: none; /* Eliminar transformación de centrado */
+        right: auto; /* Asegurar que no hay posicionamiento derecho */
+    }
+
+    .floating-panel {
+        top: 68px; /* 48px (altura del botón) + 10px (top) + 10px (margen extra) */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Asegurar que los paneles no sean demasiado anchos */
+    #room-selector-panel {
+        width: 280px;
+    }
+    
+    #color-selector-panel {
+        width: 300px;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) and (orientation: portrait) {
+    .fab-container {
+        top: 5px;
+    }
+    
+    .fab-decorator {
+        width: 42px;
+        height: 42px;
+    }
+
+    .floating-panel {
+        top: 62px; /* Un poco menos para pantallas pequeñas */
+        width: 95%;
+    }
+}
