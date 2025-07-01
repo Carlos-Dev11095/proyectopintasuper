@@ -100,21 +100,29 @@
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
+/* Estilos para grupos de opciones - MODIFICADO */
 .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
 .option-group h3 {
+    flex-basis: 100%;
     margin-bottom: 10px;
     font-size: 1rem;
     color: #34495e;
 }
 
 .option-group label {
-    display: block;
-    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
     cursor: pointer;
     font-weight: normal;
+    white-space: nowrap;
 }
 
 .option-group input[type="radio"] {
@@ -221,6 +229,18 @@
     margin-top: 15px;
 }
 
+/* Clase para ocultar elementos - NUEVO */
+.hidden {
+    display: none !important;
+}
+
+/* Efecto de foco para resultados - NUEVO */
+.panel-resultados:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .panel {
@@ -239,5 +259,10 @@
     
     .btn {
         width: 100%;
+    }
+    
+    /* Ajustes para opciones en móvil - NUEVO */
+    .option-group label {
+        white-space: normal;
     }
 }
