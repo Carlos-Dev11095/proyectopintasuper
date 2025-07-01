@@ -51,23 +51,23 @@
 
 /* Estilos específicos para cada panel */
 .panel-producto {
-    border-top: 5px solid #3498db;
+    border-top: 5px solid #FD4E01;
 }
 
 .panel-superficie {
-    border-top: 5px solid #2ecc71;
+    border-top: 5px solid #FD4E01;
 }
 
 .panel-restar {
-    border-top: 5px solid #e74c3c;
+    border-top: 5px solid #FD4E01;
 }
 
 .panel-opciones {
-    border-top: 5px solid #f39c12;
+    border-top: 5px solid #FD4E01;
 }
 
 .panel-resultados {
-    border-top: 5px solid #9b59b6;
+    border-top: 5px solid #000082;
     width: 100%;
 }
 
