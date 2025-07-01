@@ -241,6 +241,18 @@
     transition: box-shadow 0.3s ease;
 }
 
+/* Estilos para el foco en panel-producto */
+.panel-producto:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(253, 78, 1, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Estilo para el efecto de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .panel {
