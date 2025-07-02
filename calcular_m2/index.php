@@ -68,13 +68,39 @@
             <!-- Panel Producto -->
             <div class="panel panel-producto">
                 <h2>Seleccione el producto</h2>
-                <select id="producto">
-                    <option value="">-- Seleccione --</option>
-                    <option value="vinilica_std" data-rendimiento="10">Pintura Vinílica Standard (10 m²/L)</option>
-                    <option value="vinilica_prem" data-rendimiento="8">Pintura Vinílica Premium (8 m²/L)</option>
-                    <option value="esmalte_acu" data-rendimiento="12">Esmalte Acrílico (12 m²/L)</option>
-                    <option value="sellador" data-rendimiento="15">Sellador (15 m²/L)</option>
-                </select>
+<select id="producto">
+    <option value="">-- Seleccione --</option>
+    
+    <!-- PINTURAS (Existente) -->
+    <option value="platino_gold" data-rendimiento="10" data-manos="1" data-tipo="pintura">
+        Vinil-Acrílica PLATINO GOLD
+    </option>
+    <option value="dorada" data-rendimiento="7" data-manos="1" data-tipo="pintura">
+        Vinil-Acrílica DORADA
+    </option>
+    <option value="onix" data-rendimiento="6" data-manos="2" data-tipo="pintura">
+        Vinil-Acrílica ONIX
+    </option>
+    <option value="zafiro" data-rendimiento="4" data-manos="2" data-tipo="pintura">
+        Vinil-Acrílica ZAFIRO
+    </option>
+
+    <option value="super_rap_ultra" 
+            data-rendimiento="8" 
+            data-manos="1" 
+            data-tipo="esmalte"
+            data-secado="10">
+        SUPER RAP ULTRA
+    </option>
+    
+    <option value="kivi_forte" 
+            data-rendimiento="7" 
+            data-manos="2" 
+            data-tipo="esmalte"
+            data-secado="240">
+        KIVI FORTE
+    </option>
+</select>
             </div>
 
             <!-- Panel Superficie -->
