@@ -100,7 +100,7 @@
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-/* Estilos para grupos de opciones - MODIFICADO */
+/* Estilos para grupos de opciones */
 .option-group {
     display: flex;
     flex-wrap: wrap;
@@ -222,6 +222,12 @@
     color: #34495e;
 }
 
+/* Estilo especial para la información de manos */
+.panel-resultados td#res-litros {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
 .note {
     font-size: 0.85rem;
     color: #7f8c8d;
@@ -229,12 +235,12 @@
     margin-top: 15px;
 }
 
-/* Clase para ocultar elementos - NUEVO */
+/* Clase para ocultar elementos */
 .hidden {
     display: none !important;
 }
 
-/* Efecto de foco para resultados - NUEVO */
+/* Efecto de foco para resultados */
 .panel-resultados:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
@@ -273,7 +279,7 @@ html {
         width: 100%;
     }
     
-    /* Ajustes para opciones en móvil - NUEVO */
+    /* Ajustes para opciones en móvil */
     .option-group label {
         white-space: normal;
     }
