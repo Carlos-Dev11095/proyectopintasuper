@@ -88,6 +88,9 @@
                 <div class="room-option" data-room="">
                     <i class="fas fa-times"></i> Selecciona escena
                 </div>
+                <div class="room-option" data-room="fachada">
+                    <i class="fas fa-house"></i> Fachada
+                </div>
                 <div class="room-option" data-room="habitacion">
                     <i class="fas fa-bed"></i> Habitación
                 </div>
