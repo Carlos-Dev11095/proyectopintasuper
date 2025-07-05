@@ -130,7 +130,7 @@
                                         <li><a href="blog-details.html">Detalles del Blog</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contacto</a>
+                                <li><a href="<?php echo $ROOT_PATH; ?>/contacto/">Contacto</a>
                                 </li>
                             </ul>
                         </div>
