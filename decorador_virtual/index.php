@@ -88,6 +88,9 @@
                 <div class="room-option" data-room="">
                     <i class="fas fa-times"></i> Selecciona escena
                 </div>
+                <div class="room-option" data-room="fachada">
+                    <i class="fas fa-house"></i> Fachada
+                </div>
                 <div class="room-option" data-room="habitacion">
                     <i class="fas fa-bed"></i> Habitación
                 </div>
@@ -106,6 +109,7 @@
                 <h3>Seleccionar Línea de Color</h3>
                 <select id="palette-selector" class="palette-selector">
                     <option value="">-- Elegir línea --</option>
+                    <option value="platino">Línea Platino-Gold</option>
                     <option value="zafiro">Línea Zafiro</option>
                     <option value="dorada">Línea Dorada</option>
                     <option value="onix">Línea Ónix</option>
