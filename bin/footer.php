@@ -1,7 +1,7 @@
-<section class="newsletter"> <div class="container">
+<section class="newsletter">
+    <div class="container">
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
-            <div class="newsletter-shape-1"
-                style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/newsletter-shape-1.png);"></div>
+            <div class="newsletter-shape-1" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/newsletter-shape-1.png);"></div>
             <div class="newsletter__left">
                 <h3 class="newsletter__title">¡Descubre Nuestras Últimas Novedades!</h3>
                 <p class="newsletter__text">Explora nuestra colección de papeles pintados y pinturas de alta calidad.</p>
@@ -9,9 +9,9 @@
         </div>
     </div>
 </section>
+
 <footer class="site-footer">
-    <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);">
-    </div>
+    <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);"></div>
     <div class="site-footer__top">
         <div class="container">
             <div class="row">
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="text">
                                     <h5>Llama en cualquier momento</h5>
-                                    <p><a href="tel:980009630">+ 98 (000) - 9630</a></p>
+                                    <p><a href="tel:52 443 161 8135">+ 52 443 161 8135</a></p>
                                 </div>
                             </li>
                             <li>
@@ -76,16 +76,20 @@
                                 </div>
                                 <div class="text">
                                     <h5>Envía un correo</h5>
-                                    <p><a href="mailto:ambed@company.com">ambed@company.com</a></p>
+                                    <p><a href="mailto:pintasuperoficial@gmail.com">pintasuperoficial@gmail.com</a></p>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon">
-                                    <span class="icon-location"></span>
+                                    <a href="https://maps.app.goo.gl/75V8mGFnY4hwTtPo8" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                                        <span class="icon-location"></span>
+                                    </a>
                                 </div>
                                 <div class="text">
-                                    <h5>380 St Kilda Road</h5>
-                                    <p>Melbourne, Australia</p>
+                                    <a href="https://maps.app.goo.gl/75V8mGFnY4hwTtPo8" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                                        <p><h5>Av. Guadalupe Victoria #1560 Col, Prados Verdes, 58110</h5></p>
+                                    </a>
+                                    <p>Morelia, Michoacán</p>
                                 </div>
                             </li>
                         </ul>
@@ -99,34 +103,33 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright 2022 por <a href="#">Plantilla Ambed</a>
-                        </p>
+                        <p class="site-footer__bottom-text">© Copyright 2025 por <a href="#">Plantilla Ambed</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-</div><div class="mobile-nav__wrapper">
+
+<div class="mobile-nav__wrapper">
     <div class="mobile-nav__overlay mobile-nav__toggler"></div>
     <div class="mobile-nav__content">
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png"
-                    width="155" alt="" /></a>
+            <a href="index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" width="155" alt="" /></a>
         </div>
         <div class="mobile-nav__container"></div>
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@packageName__.com">needhelp@ambed.com</a>
+                <a href="mailto:pintasuperoficial@gmail.com">pintasuperoficial@gmail.com</a>
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
+                <a href="tel:52 443 161 8135">+52 443 161 8135</a>
             </li>
-        </ul><div class="mobile-nav__top">
+        </ul>
+        <div class="mobile-nav__top">
             <div class="mobile-nav__social">
                 <a href="#" class="fab fa-twitter"></a>
                 <a href="#" class="fab fa-facebook-square"></a>
@@ -134,3 +137,5 @@
                 <a href="#" class="fab fa-instagram"></a>
             </div>
         </div>
+    </div>
+</div>
