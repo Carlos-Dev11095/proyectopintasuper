@@ -212,11 +212,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .fab {
-        width: 48px;
-        height: 48px;
-        font-size: 1rem;
-    }
     
     .floating-panel {
         left: 68px;
@@ -267,10 +262,6 @@
 }
 
 @media (max-width: 350px) {
-    .fab {
-        width: 42px;
-        height: 42px;
-    }
     
     .floating-panel {
         left: 62px;
