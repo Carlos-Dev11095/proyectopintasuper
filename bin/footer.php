@@ -24,9 +24,9 @@
                             <p class="footer-widget__about-text">Si hablamos de PRECIO, CALIDAD y SERVICIO... hablamos de Pinta Super</p>
                         </div>
                         <div class="site-footer__social">
-                            <a href="https://x.com/PintaSuper"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/PintaSuperPinturas"><i class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/pintasuper"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/PintaSuper" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/PintaSuperPinturas" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/pintasuper" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -123,9 +123,9 @@
         </ul>
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="https://x.com/PintaSuper" class="fab fa-twitter"></a>
-                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square"></a>
-                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram"></a>
+                <a href="https://x.com/PintaSuper" class="fab fa-twitter" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </div>
     </div>
