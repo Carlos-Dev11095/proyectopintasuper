@@ -21,13 +21,12 @@
                             <a href="index.html"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
-                            <p class="footer-widget__about-text">Trabajamos con pasión asumiendo desafíos y creando nuevos en el sector publicitario.</p>
+                            <p class="footer-widget__about-text">Si hablamos de PRECIO, CALIDAD y SERVICIO... hablamos de Pinta Super</p>
                         </div>
                         <div class="site-footer__social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/PintaSuper"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/PintaSuperPinturas"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/pintasuper"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -35,12 +34,8 @@
                     <div class="footer-widget__column footer-widget__explore clearfix">
                         <h3 class="footer-widget__title">Explorar</h3>
                         <ul class="footer-widget__explore-list list-unstyled clearfix">
-                            <li><a href="about.html">Nosotros</a></li>
-                            <li><a href="contact.html">Contacto</a></li>
-                            <li><a href="team.html">Nuestro equipo</a></li>
-                            <li><a href="services.html">Nuestros servicios</a></li>
-                            <li><a href="projects.html">Proyectos recientes</a></li>
-                            <li><a href="contact.html">Precios y planes</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">NOSOTROS</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/contacto/">CONTACTO</a></li>
                         </ul>
                     </div>
                 </div>
@@ -48,12 +43,9 @@
                     <div class="footer-widget__column footer-widget__services clearfix">
                         <h3 class="footer-widget__title">Servicios</h3>
                         <ul class="footer-widget__services-list list-unstyled clearfix">
-                            <li><a href="room-wallpapers.html">Papel tapiz para habitaciones</a></li>
-                            <li><a href="wall-painting.html">Pintura mural</a></li>
-                            <li><a href="wall-sheets.html">Láminas para pared</a></li>
-                            <li><a href="outdoor-design.html">Diseños exteriores</a></li>
-                            <li><a href="pvc-panels.html">Paneles de PVC</a></li>
-                            <li><a href="interior-designing.html">Diseño de interiores</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/galeria/">PRODUCTOS</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">SIMULADOR VIRTUAL</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">CALCULAR MATERIALES</a></li>
                         </ul>
                     </div>
                 </div>
@@ -131,10 +123,9 @@
         </ul>
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-pinterest-p"></a>
-                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://x.com/PintaSuper" class="fab fa-twitter"></a>
+                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square"></a>
+                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram"></a>
             </div>
         </div>
     </div>
