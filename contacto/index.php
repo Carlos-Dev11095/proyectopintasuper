@@ -204,147 +204,7 @@
     </div>
     
     <div class="page-wrapper">
-        <header class="main-header clearfix">
-            <div class="main-header__top">
-                <div class="container">
-                    <div class="main-header__top-inner clearfix">
-                        <div class="main-header__logo">
-                            <a href="index.html">
-                                <img src="/proyectopintasuper/assets/images/resources/logo-1.png" alt="" class="dark-logo">
-                                <img src="/proyectopintasuper/assets/images/resources/logo-2.png" alt="" class="light-logo">
-                            </a>
-                        </div>
-                        <div class="main-header__top-right">
-                            <div class="main-header__top-right-content">
-                                <div class="main-header__top-address-box">
-                                    <ul class="list-unstyled main-header__top-address">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-phone-call"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Llame en cualquier momento</p>
-                                                <h5><a href="tel:980009630">+ 98 (000) - 9630</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-message"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Envíe un correo</p>
-                                                <h5><a href="mailto:ambed@company.com">ambed@company.com</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon icon--location">
-                                                <span class="icon-location"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>380 St Kilda Road</p>
-                                                <h5>Melbourne, Australia</h5>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-header__top-right-social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav class="main-menu clearfix">
-                <div class="main-menu__wrapper clearfix">
-                    <div class="container">
-                        <div class="main-menu__wrapper-inner clearfix">
-                            <div class="main-menu__left">
-                                <div class="main-menu__main-menu-box">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list">
-                                        <li class="dropdown current megamenu">
-                                            <a href="/proyectopintasuper/">Inicio</a>
-                                        </li>
-                                        <li>
-                                            <a href="/proyectopintasuper/quienes_somos/">Nosotros</a>
-                                        </li>
-                                        <li>
-                                            <a href="/proyectopintasuper/decorador_virtual/">Simulador Virtual</a>
-                                        </li>
-                                        <li>
-                                            <a href="/proyectopintasuper/calcular_m2/">Calcular Materal</a>
-                                        </li>
-                                        <li>
-                                            <a href="/proyectopintasuper/galeria/">Galeria</a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">+ Páginas</a>
-                                            <ul>
-                                                <li><a href="team.html">Equipo</a></li>
-                                                <li><a href="team-carousel.html">Carrusel de Equipo</a></li>
-                                                <li><a href="team-details.html">Detalles del Equipo</a></li>
-                                                <li><a href="testimonials.html">Testimonios</a></li>
-                                                <li><a href="testimonials-carousel.html">Carrusel de Testimonios</a></li>
-                                                <li><a href="gallery.html">Galería</a></li>
-                                                <li><a href="gallery-carousel.html">Carrusel de Galería</a></li>
-                                                <li><a href="faq.html">Preguntas Frecuentes</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="projects.html">Proyectos</a>
-                                            <ul>
-                                                <li><a href="projects.html">Nuestros Proyectos</a></li>
-                                                <li><a href="projects-carousel.html">Carrusel de Proyectos</a></li>
-                                                <li><a href="project-details.html">Detalles del Proyecto</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="services.html">Servicios</a>
-                                            <ul>
-                                                <li><a href="services.html">Servicios</a></li>
-                                                <li><a href="services-carousel.html">Carrusel de Servicios</a></li>
-                                                <li><a href="room-wallpapers.html">Papeles Pintados</a></li>
-                                                <li><a href="wall-sheets.html">Planchas de Pared</a></li>
-                                                <li><a href="wall-painting.html">Pintura de Pared</a></li>
-                                                <li><a href="interior-designing.html">Diseño de Interiores</a></li>
-                                                <li><a href="pvc-panels.html">Paneles de PVC</a></li>
-                                                <li><a href="outdoor-design.html">Diseño Exterior</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Tienda</a>
-                                            <ul>
-                                                <li><a href="products.html">Productos</a></li>
-                                                <li><a href="product-details.html">Detalles del Producto</a></li>
-                                                <li><a href="cart.html">Carrito</a></li>
-                                                <li><a href="checkout.html">Pago</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="blog.html">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-carousel.html">Carrusel de Blog</a></li>
-                                                <li><a href="blog-sidebar.html">Barra Lateral del Blog</a></li>
-                                                <li><a href="blog-sidebar-two.html">Barra Lateral del Blog 02</a></li>
-                                                <li><a href="blog-sidebar-left.html">Barra Lateral Izquierda del Blog</a></li>
-                                                <li><a href="blog-details.html">Detalles del Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/proyectopintasuper/contacto/">Contacto</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php include_once __DIR__ . '/../bin/header.php'; ?>
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div>
@@ -367,66 +227,75 @@
         </section>
         <!--Page Header End-->
 
-        <!--Contact Page Start-->
-        <section class="contact-page">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="contact-page__right">
-                            <div class="contact-page__details">
-                                <div class="section-title text-center">
-                                    <h2 class="section-title__title">Nuestras Sucursales</h2>
-                                    <p>en la Ciudad de Morelia, Mich.</p>
-                                    <p>Horario de atención: Lunes a Viernes de 8:30 am a 6:30 pm y Sábado de 8:30 am a 3:00 pm</p>
-                                </div>
-                                <ul class="list-unstyled contact-page__details-list">
-                                    <!-- Sucursal Matríz -->
-                                    <li>
-                                        <span>Matríz</span>
-                                        <p>Av. Guadalupe Victoria No.1560 Col. Prados Verdes.</p>
-                                        <p><a href="tel:4433171400">Tel. (443) 3171400</a></p>
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalMatriz">
-                                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Matríz" class="sucursal-thumbnail">
-                                            <small class="text-muted">(Click para ampliar)</small>
-                                        </a>
-                                    </li>
-                                    
-                                    <!-- Sucursal Torreón -->
-                                    <li>
-                                        <span>Torreón</span>
-                                        <p>Av. Torreón Nuevo No.560 Col. Loma Real.</p>
-                                        <p><a href="tel:4432752004">Tel. (443) 2752004</a></p>
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalTorreon">
-                                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Torreón" class="sucursal-thumbnail">
-                                            <small class="text-muted">(Click para ampliar)</small>
-                                        </a>
-                                    </li>
-                                    
-                                    <!-- Sucursal Realito -->
-                                    <li>
-                                        <span>Realito</span>
-                                        <p>Periférico Paseo de la República No.4911 (Frente al Realito).</p>
-                                        <p><a href="tel:443275589">Tel. (443) 275589</a></p>
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalRealito">
-                                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Realito" class="sucursal-thumbnail">
-                                            <small class="text-muted">(Click para ampliar)</small>
-                                        </a>
-                                    </li>
-                                </ul>
-                                
-                                <!-- Redes sociales -->
-                                <div class="contact-page__social text-center mt-4">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+<!--Contact Page Start-->
+<section class="contact-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="contact-page__right">
+                    <div class="contact-page__details">
+                        <div class="section-title text-center">
+                            <h2 class="section-title__title">Nuestras Sucursales</h2>
+                            <p>en la Ciudad de Morelia, Mich.</p>
+                            <p>Horario de atención: Lunes a Viernes de 8:30 am a 6:30 pm y Sábado de 8:30 am a 3:00 pm</p>
+                        </div>
+                        
+                        <!-- Contenedor de sucursales en columnas -->
+                        <div class="row">
+                            <!-- Sucursal Matríz -->
+                            <div class="col-md-4">
+                                <div class="sucursal-box text-center">
+                                    <h3>Matríz</h3>
+                                    <p>Av. Guadalupe Victoria No.1560 Col. Prados Verdes.</p>
+                                    <p><a href="tel:4433171400">Tel. (443) 3171400</a></p>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalMatriz">
+                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Matríz" class="sucursal-thumbnail img-fluid">
+                                        <small class="text-muted">(Click para ampliar)</small>
+                                    </a>
                                 </div>
                             </div>
+                            
+                            <!-- Sucursal Torreón -->
+                            <div class="col-md-4">
+                                <div class="sucursal-box text-center">
+                                    <h3>Torreón</h3>
+                                    <p>Av. Torreón Nuevo No.560 Col. Loma Real.</p>
+                                    <p><a href="tel:4432752004">Tel. (443) 2752004</a></p>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTorreon">
+                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Torreón" class="sucursal-thumbnail img-fluid">
+                                        <small class="text-muted">(Click para ampliar)</small>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Sucursal Realito -->
+                            <div class="col-md-4">
+                                <div class="sucursal-box text-center">
+                                    <h3>Realito</h3>
+                                    <p>Periférico Paseo de la República No.4911 (Frente al Realito).</p>
+                                    <p><a href="tel:443275589">Tel. (443) 275589</a></p>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalRealito">
+                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Realito" class="sucursal-thumbnail img-fluid">
+                                        <small class="text-muted">(Click para ampliar)</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Redes sociales -->
+                        <div class="contact-page__social text-center mt-5">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+<!--Contact Page End-->
         <!--Contact Page End-->
 
         <!-- Modales para las imágenes -->
@@ -523,114 +392,7 @@
 
         <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
-        <section class="newsletter">
-            <div class="container">
-                <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
-                    <div class="newsletter-shape-1" style="background-image: url(/proyectopintasuper/assets/images/shapes/newsletter-shape-1.png);"></div>
-                    <div class="newsletter__left">
-                        <h3 class="newsletter__title">¡Descubre Nuestras Últimas Novedades!</h3>
-                        <p class="newsletter__text">Explora nuestra colección de papeles pintados y pinturas de alta calidad.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(/proyectopintasuper/assets/images/backgrounds/site-footer-bg.jpg);"></div>
-            <div class="site-footer__top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <div class="footer-widget__logo">
-                                    <a href="index.html"><img src="/proyectopintasuper/assets/images/resources/footer-logo.png" alt=""></a>
-                                </div>
-                                <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">Trabajamos con pasión asumiendo desafíos y creando nuevos en el sector publicitario.</p>
-                                </div>
-                                <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__explore clearfix">
-                                <h3 class="footer-widget__title">Explorar</h3>
-                                <ul class="footer-widget__explore-list list-unstyled clearfix">
-                                    <li><a href="about.html">Nosotros</a></li>
-                                    <li><a href="contact.html">Contacto</a></li>
-                                    <li><a href="team.html">Nuestro equipo</a></li>
-                                    <li><a href="services.html">Nuestros servicios</a></li>
-                                    <li><a href="projects.html">Proyectos recientes</a></li>
-                                    <li><a href="contact.html">Precios y planes</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="footer-widget__column footer-widget__services clearfix">
-                                <h3 class="footer-widget__title">Servicios</h3>
-                                <ul class="footer-widget__services-list list-unstyled clearfix">
-                                    <li><a href="room-wallpapers.html">Papel tapiz para habitaciones</a></li>
-                                    <li><a href="wall-painting.html">Pintura mural</a></li>
-                                    <li><a href="wall-sheets.html">Láminas para pared</a></li>
-                                    <li><a href="outdoor-design.html">Diseños exteriores</a></li>
-                                    <li><a href="pvc-panels.html">Paneles de PVC</a></li>
-                                    <li><a href="interior-designing.html">Diseño de interiores</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__contact clearfix">
-                                <h3 class="footer-widget__title">Contacto</h3>
-                                <ul class="footer-widget__contact-list list-unstyled clearfix">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-phone-call"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>Llama en cualquier momento</h5>
-                                            <p><a href="tel:980009630">+ 98 (000) - 9630</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-message"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>Envía un correo</h5>
-                                            <p><a href="mailto:ambed@company.com">ambed@company.com</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-location"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>380 St Kilda Road</h5>
-                                            <p>Melbourne, Australia</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="site-footer__bottom-inner">
-                                <p class="site-footer__bottom-text">© Copyright 2022 por <a href="#">Plantilla Ambed</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php include_once __DIR__ . '/../bin/footer.php'; ?>
     </div>
 
     <?php require_once __DIR__ . '/../bin/js.php';?>

@@ -17,8 +17,8 @@
                                         <span class="icon-phone-call"></span>
                                     </div>
                                     <div class="content">
-                                        <p>Llame en cualquier momento</p>
-                                        <h5><a href="tel:980009630">+ 98 (000) - 9630</a></h5>
+                                        <p>Contáctenos</p>
+                                        <h5><a href="tel:4431618135">+ 52 (443) - 161 8135</a></h5>
                                     </div>
                                 </li>
                                 <li>
@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="content">
                                         <p>Envíe un correo</p>
-                                        <h5><a href="mailto:ambed@company.com">ambed@company.com</a></h5>
+                                        <h5><a href="mailto:pintasuperoficial@gmail.com">pintasuperoficial@gmail.com</a></h5>
                                     </div>
                                 </li>
                                 <li>
@@ -35,16 +35,14 @@
                                         <span class="icon-location"></span>
                                     </div>
                                     <div class="content">
-                                        <p>380 St Kilda Road</p>
-                                        <h5>Melbourne, Australia</h5>
+                                        <p>Av. Guadalupe Victoria #1560 Col, Prados Verdes, 58110</p>
+                                        <h5>Morelia, michoacán.</h5>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="main-header__top-right-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
