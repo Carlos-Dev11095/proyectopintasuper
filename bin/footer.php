@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="text">
                                     <a href="https://maps.app.goo.gl/75V8mGFnY4hwTtPo8" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
-                                        <p><h5>Av. Guadalupe Victoria #1560 Col, Prados Verdes, 58110</h5></p>
+                                        <p><h5>Av. Guadalupe Victoria #1560 <br>Col, Prados Verdes, 58110</h5></p>
                                     </a>
                                     <p>Morelia, Michoacán</p>
                                 </div>
