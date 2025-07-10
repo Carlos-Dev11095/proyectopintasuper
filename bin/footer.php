@@ -18,13 +18,12 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
+                            <a href="<?php echo $ROOT_PATH; ?>/"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
                             <p class="footer-widget__about-text">Si hablamos de PRECIO, CALIDAD y SERVICIO... hablamos de Pinta Super</p>
                         </div>
                         <div class="site-footer__social">
-                            <a href="https://x.com/PintaSuper" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                             <a href="https://www.facebook.com/PintaSuperPinturas" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/pintasuper" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -123,7 +122,6 @@
         </ul>
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="https://x.com/PintaSuper" class="fab fa-twitter" target="_blank" rel="noopener noreferrer"></a>
                 <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
                 <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
             </div>
