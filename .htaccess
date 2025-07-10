@@ -1,11 +1,12 @@
 # Se busca un archivo httppd.conf en el servidor WAMP para configurar el acceso a un proyecto específico y redirigir errores 404 a una página personalizada.
-# se busca el bloque Directory que permite el acceso al proyecto y se asegura de que la redirección de errores 404 funcione correctamente.  
-# <Directory />
+# Variara el archivo, dependiendo del servidor web que se esté utilizando (Apache, Nginx, etc.). En este caso, se asume que es Apache.  
+# Se busca el bloque Directory que permite el acceso al proyecto y se asegura de que la redirección de errores 404 funcione correctamente.  
+# <Directory /> (MANTENER)
 #     AllowOverride none
 #     Require all denied
 # </Directory>
 # 
-# # Bloque 2: Permisos solo para tu proyecto (MANTENER)
+# Bloque 2: Permisos solo para tu proyecto (MANTENER)
 # <Directory "c:\wamp64\www\proyectopintasuper">
 #     Options Indexes FollowSymLinks
 #     AllowOverride All
