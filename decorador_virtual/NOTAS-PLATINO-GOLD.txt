@@ -1,0 +1,8 @@
+[9/7/2025]  
+Gamma Platino-Gold: Nombres temporales implementados bajo solicitud del cliente.  
+Visibilidad: Solo en entorno de prueba (no versión final).  
+Nota: Los nombres podrían cambiar, requiriendo actualización posterior. 
+
+Una vez se aprueben los nombres definitivos:
+-Actualizaremos el sitio en producción con los nombres oficiales y se habilitara la gamma Platino-Gold.
+-Eliminaremos los placeholders temporales (PG-001) y las advertencias asociadas.
