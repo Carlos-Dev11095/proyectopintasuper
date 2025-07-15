@@ -338,6 +338,8 @@
 </head>
 
 <body class="custom-cursor">
+            <?php require_once __DIR__ . '/../bin/header.php'; // Usa __DIR__ para ruta absoluta ?>
+
     <section class="page-header">
         <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/gallery/banner_productos.png);"></div>
         </div>
