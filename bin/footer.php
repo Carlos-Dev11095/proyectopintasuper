@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright 2025 por <a href="#">Plantilla Ambed</a></p>
+                        <p class="site-footer__bottom-text">© Copyright 2025 por <a href="#" target="_blank" rel="noopener noreferrer">CharlieDev</a> y <a href="https://linktr.ee/luisggdev" target="_blank" rel="noopener noreferrer" >LGGDev</a></p>
                     </div>
                 </div>
             </div>
