@@ -71,7 +71,7 @@
                                     <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular Materal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/galeria/">Galeria</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/productos/">Productos</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">+ Páginas</a>

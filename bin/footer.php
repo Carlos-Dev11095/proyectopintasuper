@@ -42,7 +42,7 @@
                     <div class="footer-widget__column footer-widget__services clearfix">
                         <h3 class="footer-widget__title">Servicios</h3>
                         <ul class="footer-widget__services-list list-unstyled clearfix">
-                            <li><a href="<?php echo $ROOT_PATH; ?>/galeria/">PRODUCTOS</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/productos/">PRODUCTOS</a></li>
                             <li><a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">SIMULADOR VIRTUAL</a></li>
                             <li><a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">CALCULAR MATERIALES</a></li>
                         </ul>
