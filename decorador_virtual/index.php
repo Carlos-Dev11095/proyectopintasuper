@@ -48,7 +48,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/gallery/banner_productos.png)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -57,7 +57,7 @@
                         <li><span>/</span></li>
                         <li>Simulador Virtual</li>
                     </ul>
-                    <h2>Simulador Virtual</h2>
+                    <h2 class="banner_title">Simulador Virtual</h2>
                 </div>
             </div>
         </section>

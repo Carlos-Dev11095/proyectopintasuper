@@ -43,21 +43,37 @@
 
 <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/gallery/banner_productos.png)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
                         <li><span>/</span></li>
-                        <li>404 ERROR</li>
+                        <li>ERROR 404</li>
                     </ul>
-                    <h2>404 ERROR</h2>
+                    <h2 class="banner_title">ERROR 404</h2>
                 </div>
             </div>
         </section>
         <!--Page Header End-->
-
+        <section class="error-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="error-page__inner">
+                            <div class="error-page__title-box">
+                                <h2 class="error-page__title">404</h2>
+                            </div>
+                            <h3 class="error-page__tagline">Lo sentimos, no encontramos la página que buscas.</h3>
+                            <p class="error-page__text">Puede que el enlace esté roto o la página ya no esté disponible.</p>
+                            <br>
+                            <a href="<?php echo $ROOT_PATH; ?>" class="thm-btn error-page__btn">Volver a Inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- 404 Error Section Start -->    
 
 
