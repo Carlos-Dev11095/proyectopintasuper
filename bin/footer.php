@@ -44,7 +44,7 @@
                         <ul class="footer-widget__services-list list-unstyled clearfix">
                             <li><a href="<?php echo $ROOT_PATH; ?>/productos/">PRODUCTOS</a></li>
                             <li><a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">SIMULADOR VIRTUAL</a></li>
-                            <li><a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">CALCULAR MATERIALES</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">CALCULAR MATERIAL</a></li>
                         </ul>
                     </div>
                 </div>
