@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">Home</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
                         <li><span>/</span></li>
                         <li>Calcular Material</li>
                     </ul>
