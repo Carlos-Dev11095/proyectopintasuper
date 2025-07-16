@@ -50,9 +50,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
                         <li><span>/</span></li>
-                        <li>404 ERROR</li>
+                        <li>ERROR 404</li>
                     </ul>
-                    <h2 class="banner_title">404 ERROR</h2>
+                    <h2 class="banner_title">ERROR 404</h2>
                 </div>
             </div>
         </section>
@@ -63,15 +63,11 @@
                     <div class="col-xl-12">
                         <div class="error-page__inner">
                             <div class="error-page__title-box">
-                                <h2 class="error-page__title">ERROR 404</h2>
+                                <h2 class="error-page__title">404</h2>
                             </div>
                             <h3 class="error-page__tagline">Lo sentimos, no encontramos la página que buscas.</h3>
                             <p class="error-page__text">Puede que el enlace esté roto o la página ya no esté disponible.</p>
-                            <form class="error-page__form">
-                                <div class="error-page__form-input">
-                                    <button type="submit"><i class="icon-magnifying-glass"></i></button>
-                                </div>
-                            </form>
+                            <br>
                             <a href="<?php echo $ROOT_PATH; ?>" class="thm-btn error-page__btn">Volver a Inicio</a>
                         </div>
                     </div>
