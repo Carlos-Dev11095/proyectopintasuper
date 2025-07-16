@@ -1,4 +1,8 @@
 /* styles.min.css actualizado */
+.banner_title {
+    color: #f7931e !important;
+}
+
 * {
     margin: 0;
     padding: 0;
