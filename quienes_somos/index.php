@@ -31,7 +31,7 @@
         <?php require_once __DIR__ . '/../bin/header.php'; // Usa __DIR__ para ruta absoluta ?>
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div></div><section class="page-header">
-            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/pintura-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(/proyectopintasuper/assets/images/backgrounds/page-header-bg.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
