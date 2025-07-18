@@ -1,4 +1,8 @@
-<?php $ROOT_PATH = '/proyectopintasuper'; ?>
+<?php 
+// Configuración de rutas
+$ROOT_PATH = '/proyectopintasuper';
+$IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/productos/';
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -17,6 +21,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <?php include_once __DIR__ . '/../bin/css.php'; ?>
 
     <style>
@@ -26,6 +36,8 @@
             --light-color: #f8f9fa;
             --dark-color: #343a40;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --color-brand: #fd4e01;
+            --color-brand-dark: #000082;
         }
 
         .gallery-page {
@@ -39,6 +51,13 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .page-header__subtitle {
+            color: var(--color-brand);
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         .gallery-page__single {
@@ -50,6 +69,10 @@
             transition: var(--transition);
             background: white;
             padding-bottom: 15px;
+            border-top: 4px solid var(--color-brand);
+            margin-left: 10px;
+            margin-right: 10px;
+            width: calc(100% - 20px);
         }
 
         .gallery-page__single:hover {
@@ -60,7 +83,7 @@
         .gallery-page__img {
             position: relative;
             overflow: hidden;
-            height: 250px;
+            height: 280px;
             background-color: #e0e0e0;
             display: flex;
             align-items: center;
@@ -70,9 +93,10 @@
         .gallery-page__img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             transition: var(--transition);
+            padding: 20px;
         }
 
         .gallery-page__single:hover .gallery-page__img img {
@@ -108,7 +132,7 @@
 
         .product-details {
             text-align: center;
-            padding: 15px 10px 0;
+            padding: 20px 15px 0;
         }
 
         .product-price {
@@ -118,22 +142,39 @@
             margin-bottom: 5px;
         }
 
-        .product-stars {
-            color: #ffc107;
-            font-size: 1.2em;
+        .product-price small {
+            font-size: 0.7em;
+            color: #666;
+            display: block;
+        }
+
+        .product-price-gal {
+            font-size: 1.1em;
+            color: var(--color-brand-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-price-gal small {
+            font-size: 0.7em;
+            color: #666;
         }
 
         .product-technical {
-            font-size: 0.85em;
+            font-size: 0.9em;
             color: #666;
             margin-top: 10px;
             text-align: left;
             padding: 0 15px;
+            max-height: 180px;
+            overflow-y: auto;
         }
 
         .product-technical p {
             margin: 5px 0;
             line-height: 1.4;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
         }
 
         .product-technical strong {
@@ -173,12 +214,13 @@
         }
 
         .sidebar {
-            flex: 0 0 280px;
-            max-width: 280px;
+            flex: 0 0 240px;
+            max-width: 240px;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--color-brand);
         }
 
         .sidebar-widget {
@@ -191,6 +233,7 @@
             margin-bottom: 15px;
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
+            color: var(--color-brand-dark);
         }
 
         .sidebar-search input[type="text"] {
@@ -225,7 +268,7 @@
         }
 
         .price-filter .filter-button {
-            background-color: var(--dark-color);
+            background-color: var(--color-brand-dark);
             color: white;
             padding: 8px 20px;
             border: none;
@@ -235,6 +278,11 @@
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
+            transition: var(--transition);
+        }
+
+        .price-filter .filter-button:hover {
+            background-color: var(--color-brand);
         }
 
         .categories-list ul {
@@ -258,12 +306,14 @@
 
         .categories-list a:hover,
         .categories-list a.active {
-            background-color: var(--primary-color);
+            background-color: var(--color-brand);
             color: white;
         }
         
         .main-content {
             flex-grow: 1;
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         .product-header-controls {
@@ -275,6 +325,7 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--color-brand-dark);
         }
 
         .product-header-controls .results-count {
@@ -289,6 +340,95 @@
             background-color: #fefefe;
             font-size: 1em;
             color: #555;
+        }
+
+        .image-not-found {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image-not-found i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        /* Estilos para el lightbox - CORRECCIONES */
+        .mfp-wrap {
+            z-index: 1042 !important;
+        }
+
+        .mfp-container {
+            padding: 0 15px !important;
+        }
+
+        .mfp-content {
+            z-index: 1045 !important;
+        }
+
+        .mfp-figure:after {
+            box-shadow: none !important;
+            background: none !important;
+        }
+
+        /* Animaciones más suaves */
+        .mfp-zoom-in .mfp-content {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            transform: scale(0.95);
+        }
+
+        .mfp-zoom-in.mfp-ready .mfp-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .mfp-zoom-in.mfp-removing .mfp-content {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        /* Asegurar que las imágenes no se superpongan */
+        .mfp-img {
+            padding: 0;
+            max-height: calc(100vh - 150px);
+        }
+
+        .mfp-figure {
+            line-height: 0;
+        }
+
+        .mfp-bottom-bar {
+            margin-top: 10px;
+        }
+
+        .mfp-title {
+            text-align: left;
+            padding: 10px 0;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        .mfp-title h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 1.5em;
+            line-height: 1.2;
+            padding: 0;
+            background: none;
+            text-shadow: none;
+            display: block;
+        }
+
+        .mfp-counter {
+            color: #fff !important;
         }
 
         @media (max-width: 991px) {
@@ -316,33 +456,45 @@
                 align-items: flex-start;
                 gap: 15px;
             }
+
+            /* Ajustes para mobile en el lightbox */
+            .mfp-container {
+                padding: 0 8px !important;
+            }
+            
+            .mfp-img {
+                max-height: calc(100vh - 100px);
+            }
+            
+            .mfp-close {
+                font-size: 30px;
+                right: 5px;
+                top: 5px;
+            }
         }
 
-        /* Estilos para el modal de imagen */
-.mfp-title {
-    padding: 10px 0;     /* Padding reducido */
-    margin-top: 10px;    /* Margen superior reducido */
-}
-        
-.mfp-title h3 {
-    color: var(--secondary-color);
-    margin-bottom: 5px;  /* Reducido de 10px */
-    font-size: 1.5em;    /* Tamaño ajustado */
-    line-height: 1.2;    /* Interlineado más compacto */
-    padding: 0;          /* Eliminamos el padding */
-    background: none;    /* Eliminamos el fondo */
-    text-shadow: none;   /* Eliminamos la sombra */
-    display: block;      /* Cambiamos a bloque */
-}
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+        }
+
+        .color-box.primary {
+            background-color: #fd4e01;
+        }
+
+        .color-box.secondary {
+            background-color: #000082;
+        }
     </style>
 </head>
 
 <body class="custom-cursor">
-            <?php require_once __DIR__ . '/../bin/header.php'; // Usa __DIR__ para ruta absoluta ?>
+    <?php require_once __DIR__ . '/../bin/header.php'; ?>
 
     <section class="page-header">
         <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);"></div>
-        </div>
         <div class="container">
             <div class="page-header__inner">
                 <ul class="thm-breadcrumb list-unstyled">
@@ -351,17 +503,19 @@
                     <li>Productos</li>
                 </ul>
                 <h2>Nuestros Productos</h2>
+                <p class="page-header__subtitle">La magia del color en cada proyecto</p>
             </div>
         </div>
     </section>
+    
     <section class="gallery-page">
         <div class="container">
             <div class="gallery-wrapper">
                 <div class="sidebar">
                     <div class="sidebar-widget sidebar-search">
                         <div style="display: flex; align-items: center;">
-                            <input type="text" placeholder="Buscar producto...">
-                            <button type="submit"><i class="fas fa-search"></i></button>
+                            <input type="text" placeholder="Buscar producto..." id="searchInput">
+                            <button type="submit" id="searchButton"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
                     
@@ -369,31 +523,33 @@
                         <h4>Filtrar por Precio</h4>
                         <div class="price-range">
                             <span>$500</span>
-                            <input type="range" min="500" max="3500" value="2000" class="slider" id="priceRange">
+                            <input type="range" min="500" max="3500" value="3500" class="slider" id="priceRange">
                             <span>$3,500</span>
                         </div>
-                        <button class="filter-button">Aplicar Filtro</button>
+                        <div class="current-range" id="currentRange">Hasta: $3,500</div>
+                        <button class="filter-button" id="filterButton">Aplicar Filtro</button>
                     </div>
 
                     <div class="sidebar-widget categories-list">
                         <h4>Categorías</h4>
                         <ul>
-                            <li><a href="#" class="active">Todas las categorías</a></li>
-                            <li><a href="#">Pinturas Arquitectónicas</a></li>
-                            <li><a href="#">Impermeabilizantes</a></li>
-                            <li><a href="#">Esmaltes</a></li>
+                            <li><a href="#" class="active category-filter" data-category="all">Todas las categorías</a></li>
+                            <li><a href="#" class="category-filter" data-category="pinturas-arquitectónicas">Pinturas Arquitectónicas</a></li>
+                            <li><a href="#" class="category-filter" data-category="impermeabilizantes">Impermeabilizantes</a></li>
+                            <li><a href="#" class="category-filter" data-category="esmaltes">Esmaltes</a></li>
                         </ul>
                     </div>
                     
                     <div class="sidebar-widget">
                         <h4>Sobre Pinta Super</h4>
                         <p>Empresa fundada en 1993 en Morelia, Michoacán, especializada en la comercialización de pinturas y complementos de la más alta calidad.</p>
+                        <p><strong>Misión:</strong> Proporcionar soluciones, servicios y productos de gran calidad que superen las expectativas de nuestros clientes.</p>
                     </div>
                 </div>
 
                 <div class="main-content">
                     <div class="product-header-controls">
-                        <span class="results-count">Mostrando 12 productos</span>
+                        <span class="results-count" id="resultsCount">Mostrando 9 productos</span>
                         <div class="sort-by">
                             <label for="sort">Ordenar por:</label>
                             <select id="sort">
@@ -405,109 +561,131 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="productsContainer">
                         <?php
                         $productos = [
+                            // PINTURAS ARQUITECTÓNICAS
                             [
                                 'imagen' => 'platino_gold.png',
                                 'nombre' => 'Platino Gold',
                                 'precio' => 2992,
+                                'precio_galon' => 640,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
                                 'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium para superficies interiores y exteriores, con acabado satinado brillante.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Colores' => '13 colores disponibles',
+                                    'Precio por galón' => '$640',
+                                    'Colores disponibles' => '13 colores',
                                     'Tiempo de secado' => '45 minutos al tacto',
                                     'Rendimiento' => '10-12 m² por litro',
                                     'Duración' => '10-12 años',
-                                    'Acabado' => 'Satinado brillante'
+                                    'Acabado' => 'Satinado brillante',
+                                    'Recomendación' => 'Ideal para exteriores de alta resistencia'
                                 ]
                             ],
                             [
                                 'imagen' => 'dorada.png',
                                 'nombre' => 'Dorada',
                                 'precio' => 2025,
+                                'precio_galon' => 477,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
                                 'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Colores' => '32 colores disponibles',
+                                    'Precio por galón' => '$477',
+                                    'Colores disponibles' => '32 colores',
                                     'Tiempo de secado' => '30 minutos al tacto',
                                     'Rendimiento' => '7-9 m² por litro',
                                     'Duración' => '7 años',
-                                    'Acabado' => 'Mate'
+                                    'Acabado' => 'Mate',
+                                    'Recomendación' => 'Excelente relación calidad-precio'
                                 ]
                             ],
                             [
                                 'imagen' => 'onix.png',
                                 'nombre' => 'Onix',
                                 'precio' => 1458,
+                                'precio_galon' => 335,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
                                 'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño para decorar superficies en interiores y exteriores, con acabado mate.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Colores' => '33 colores disponibles',
+                                    'Precio por galón' => '$335',
+                                    'Colores disponibles' => '33 colores',
                                     'Tiempo de secado' => '30 minutos al tacto',
                                     'Rendimiento' => '6-8 m² por litro (a dos manos)',
                                     'Duración' => '4 años',
-                                    'Acabado' => 'Mate'
+                                    'Acabado' => 'Mate',
+                                    'Recomendación' => 'Perfecta para proyectos residenciales'
                                 ]
                             ],
                             [
                                 'imagen' => 'zafiro.png',
                                 'nombre' => 'Zafiro',
                                 'precio' => 733,
+                                'precio_galon' => 184,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
                                 'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para decorar superficies en interiores, con acabado mate.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Colores' => '26 colores disponibles',
+                                    'Precio por galón' => '$184',
+                                    'Colores disponibles' => '26 colores',
                                     'Tiempo de secado' => '30 minutos al tacto',
                                     'Rendimiento' => '4-6 m² por litro (a dos manos)',
                                     'Duración' => '2 años',
-                                    'Acabado' => 'Mate'
+                                    'Acabado' => 'Mate',
+                                    'Recomendación' => 'Ideal para interiores con bajo tráfico'
                                 ]
                             ],
+                            
+                            // IMPERMEABILIZANTES
                             [
                                 'imagen' => 'imper_multi_premium.png',
                                 'nombre' => 'Imper Multi Premium',
                                 'precio' => 2391,
+                                'precio_galon' => 546,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
                                 'descripcion' => 'Impermeabilizante premium con resistencia de 7 años, elaborado a base de resinas estiren-acrílicas, pigmentos inorgánicos y micro fibra de poliéster.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
+                                    'Precio por galón' => '$546',
                                     'Colores' => 'Terracota / Blanco',
                                     'Tiempo de secado' => '45 minutos al tacto',
                                     'Rendimiento' => '1 m² por litro',
                                     'Resistencia' => '7 años',
-                                    'Aplicación' => 'Techos y superficies exteriores'
+                                    'Aplicación' => 'Techos y superficies exteriores',
+                                    'Recomendación' => 'Máxima protección contra humedad'
                                 ]
                             ],
                             [
                                 'imagen' => 'imper_multi_pro_fibrantado.png',
                                 'nombre' => 'Imper Multi Pro Fibrantado',
                                 'precio' => 2120,
+                                'precio_galon' => 546,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
                                 'descripcion' => 'Impermeabilizante fibrantado color terracota, con atributos acrílico elastoméricos creado en base agua.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
+                                    'Precio por galón' => '$546',
                                     'Colores' => 'Terracota / Blanco',
                                     'Tiempo de secado' => '45 minutos al tacto',
                                     'Rendimiento' => '1 m² por litro',
                                     'Resistencia' => '10 años',
-                                    'Aplicación' => 'Techos con fisuras'
+                                    'Aplicación' => 'Techos con fisuras',
+                                    'Recomendación' => 'Ideal para techos con problemas de fisuras'
                                 ]
                             ],
                             [
                                 'imagen' => 'impertek_19.png',
                                 'nombre' => 'Imper-Tek',
                                 'precio' => 1300,
+                                'precio_galon' => null,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
                                 'descripcion' => 'Impermeabilizante elaborado a base de resinas estiren-acrílicas y pigmentos inorgánicos.',
@@ -517,39 +695,48 @@
                                     'Tiempo de secado' => '45 minutos al tacto',
                                     'Rendimiento' => '1 m² por litro',
                                     'Resistencia' => '5 años',
-                                    'Aplicación' => 'Techos planos'
+                                    'Aplicación' => 'Techos planos',
+                                    'Recomendación' => 'Solución económica para techos planos'
                                 ]
                             ],
+                            
+                            // ESMALTES
                             [
                                 'imagen' => 'super_rap_ultra.png',
                                 'nombre' => 'Super Rap Ultra',
                                 'precio' => 3254.99,
+                                'precio_galon' => 734,
                                 'tipo' => 'esmalte',
                                 'categoria' => 'Esmaltes',
                                 'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido. Ideal para trabajos donde el secado de la pintura sea un factor fundamental.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón / Litro',
-                                    'Colores' => '25 colores disponibles',
+                                    'Precio por galón' => '$734',
+                                    'Colores disponibles' => '25 colores',
                                     'Tiempo de secado' => '10 minutos al tacto',
                                     'Rendimiento' => '8-10 m² por litro',
                                     'Acabados' => 'Brillante, satinado, metálico y mate',
-                                    'Aplicación' => 'Muebles y superficies metálicas'
+                                    'Aplicación' => 'Muebles y superficies metálicas',
+                                    'Recomendación' => 'Perfecto para proyectos con tiempos ajustados'
                                 ]
                             ],
                             [
                                 'imagen' => 'kiviforte.png',
                                 'nombre' => 'Kivi Forte',
                                 'precio' => 3090,
+                                'precio_galon' => 702,
                                 'tipo' => 'esmalte',
                                 'categoria' => 'Esmaltes',
-                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento. Produce un acabado duro con máxima retención de color y resistencia a la intemperie.',
+                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento. Produce un acabado duro con máxima retención de color, adherencia y gran resistencia a la intemperie.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón / Litro',
-                                    'Colores' => '19 colores disponibles',
+                                    'Precio por galón' => '$702',
+                                    'Colores disponibles' => '19 colores',
                                     'Tiempo de secado' => '4 horas al tacto',
                                     'Rendimiento' => '7-9 m² por litro (a dos manos)',
                                     'Acabados' => 'Brillante, semimate, mate y metálico',
-                                    'Aplicación' => 'Estructuras metálicas exteriores'
+                                    'Aplicación' => 'Estructuras metálicas exteriores',
+                                    'Recomendación' => 'Protección superior para metal expuesto'
                                 ]
                             ]
                         ];
@@ -557,37 +744,50 @@
                         foreach ($productos as $producto) {
                             $nombreMostrar = $producto['nombre'];
                             $precioFormateado = number_format($producto['precio'], 2);
+                            $precioGalonFormateado = isset($producto['precio_galon']) ? number_format($producto['precio_galon'], 2) : 'N/A';
+                            $imagenPath = $ROOT_PATH . '/assets/images/gallery/productos/' . $producto['imagen'];
+                            $imagenExists = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagenPath);
                             
-                            // Generar detalles técnicos para el modal
+                            // Generar detalles técnicos
                             $detallesTecnicos = '';
                             foreach ($producto['detalles'] as $key => $value) {
                                 $detallesTecnicos .= "<p><strong>$key:</strong> $value</p>";
                             }
                             
-                            // Vista previa de detalles (mostrar solo los primeros 3)
-                            $detallesPreview = '';
-                            $counter = 0;
-                            foreach ($producto['detalles'] as $key => $value) {
-                                if ($counter < 3) {
-                                    $detallesPreview .= "<p><strong>$key:</strong> $value</p>";
-                                    $counter++;
-                                } else {
-                                    break;
-                                }
+                            // Extraer duración/resistencia para filtrado
+                            $duracion = 0;
+                            if (isset($producto['detalles']['Duración'])) {
+                                $duracion = intval($producto['detalles']['Duración']);
+                            } elseif (isset($producto['detalles']['Resistencia'])) {
+                                $duracion = intval($producto['detalles']['Resistencia']);
                             }
                             
                             echo '
-                            <div class="col-xl-3 col-lg-4 col-md-6" data-category="'.strtolower(str_replace(' ', '-', $producto['categoria'])).'" data-price="'.$producto['precio'].'">
+                            <div class="col-xl-4 col-lg-6 col-md-6 product-item" 
+                                 data-category="'.strtolower(str_replace(' ', '-', $producto['categoria'])).'" 
+                                 data-price="'.$producto['precio'].'" 
+                                 data-duration="'.$duracion.'"
+                                 data-name="'.strtolower($producto['nombre']).'">
                                 <div class="gallery-page__single">
-                                    <div class="gallery-page__img">
-                                        <img src="'.$ROOT_PATH.'/assets/images/gallery/productos/'.$producto['imagen'].'" alt="'.$nombreMostrar.'">
-                                        <div class="gallery-page__overlay">
+                                    <div class="gallery-page__img">';
+                                    
+                            if ($imagenExists) {
+                                echo '<img src="'.$imagenPath.'" alt="'.$nombreMostrar.'">';
+                            } else {
+                                echo '<div class="image-not-found">
+                                        <i class="fas fa-image"></i>
+                                        <div>Imagen no disponible</div>
+                                        <small>'.$producto['imagen'].'</small>
+                                      </div>';
+                            }
+                            
+                            echo '      <div class="gallery-page__overlay">
                                             <div class="gallery-page__title">
                                                 <h3>'.$nombreMostrar.'</h3>
                                             </div>
                                         </div>
                                         <div class="gallery-page__icon">
-                                            <a class="img-popup" href="'.$ROOT_PATH.'/assets/images/gallery/productos/'.$producto['imagen'].'" 
+                                            <a class="img-popup" href="'.($imagenExists ? $imagenPath : '#').'" 
                                                title="'.$nombreMostrar.'" 
                                                data-caption="<h3>'.$nombreMostrar.'</h3><p>'.$producto['descripcion'].'</p>'.$detallesTecnicos.'">
                                                 <span class="icon-plus-symbol"></span>
@@ -595,9 +795,14 @@
                                         </div>
                                     </div>
                                     <div class="product-details">
-                                        <div class="product-price">$'.$precioFormateado.'</div>
-                                        <div class="product-technical">
-                                            '.$detallesPreview.'
+                                        <div class="product-price">$'.$precioFormateado.' <small>Cubeta 19L</small></div>';
+                                        
+                            if ($precioGalonFormateado != 'N/A') {
+                                echo '<div class="product-price-gal">$'.$precioGalonFormateado.' <small>Galón</small></div>';
+                            }
+                                        
+                            echo '      <div class="product-technical">
+                                            '.$detallesTecnicos.'
                                         </div>
                                     </div>
                                 </div>
@@ -613,73 +818,134 @@
     <?php include_once __DIR__ . '/../bin/footer.php'; ?>
     <?php include_once __DIR__ . '/../bin/js.php'; ?>
     
-    <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
     <script>
         $(document).ready(function() {
-            // Inicializar popup de imágenes
+            // Limpiar cualquier instancia previa antes de inicializar
+            if ($.magnificPopup.instance) {
+                $.magnificPopup.close();
+            }
+
+            // Inicializar popup de imágenes con configuración mejorada
             $('.img-popup').magnificPopup({
                 type: 'image',
                 closeOnContentClick: true,
                 mainClass: 'mfp-img-mobile',
                 image: {
-                    verticalFit: true
+                    verticalFit: true,
+                    titleSrc: function(item) {
+                        // Usar el atributo data-caption para el título
+                        return item.el.attr('data-caption');
+                    }
+                },
+                gallery: {
+                    enabled: true, // Habilitar modo galería
+                    navigateByImgClick: true,
+                    preload: [0,2] // Precargar imágenes adyacentes
                 },
                 zoom: {
                     enabled: true,
                     duration: 300
+                },
+                removalDelay: 300, // Retraso para la animación de eliminación
+                fixedContentPos: true, // Posición fija del contenido
+                callbacks: {
+                    beforeOpen: function() {
+                        // Limpiar cualquier instancia previa
+                        this.st.mainClass = this.st.el.attr('data-effect');
+                    },
+                    open: function() {
+                        // Forzar redibujado para evitar superposiciones
+                        $.magnificPopup.instance.updateItemHTML();
+                    },
+                    close: function() {
+                        // Limpiar al cerrar
+                        $.magnificPopup.instance.wrap.removeAttr('style');
+                    },
+                    change: function() {
+                        // Limpiar al cambiar de imagen
+                        $.magnificPopup.instance.wrap.removeAttr('style');
+                    }
                 }
+            });
+            
+            // Actualizar rango de precios
+            $('#priceRange').on('input', function() {
+                const value = $(this).val();
+                $('#currentRange').text('Hasta: $' + parseInt(value).toLocaleString());
             });
             
             // Filtrado por categoría
-            $('.categories-list a').click(function(e) {
+            $('.category-filter').click(function(e) {
                 e.preventDefault();
-                $('.categories-list a').removeClass('active');
+                $('.category-filter').removeClass('active');
                 $(this).addClass('active');
                 
-                var category = $(this).text().toLowerCase().replace(' ', '-');
-                if (category === 'todas-las-categorías') {
-                    $('.col-xl-3').show();
-                } else {
-                    $('.col-xl-3').hide();
-                    $('.col-xl-3[data-category="'+category+'"]').show();
-                }
+                const category = $(this).data('category');
+                filterProducts();
             });
             
             // Filtrado por precio
-            $('.filter-button').click(function() {
-                var maxPrice = $('#priceRange').val();
-                $('.col-xl-3').each(function() {
-                    var price = parseFloat($(this).data('price'));
-                    if (price <= maxPrice) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-                $('.results-count').text('Mostrando productos hasta $'+maxPrice);
+            $('#filterButton').click(function() {
+                filterProducts();
+            });
+            
+            // Búsqueda de productos
+            $('#searchButton').click(function() {
+                filterProducts();
+            });
+            
+            $('#searchInput').keyup(function(e) {
+                if (e.key === 'Enter') {
+                    filterProducts();
+                }
             });
             
             // Ordenar productos
             $('#sort').change(function() {
-                var sortBy = $(this).val();
-                var $container = $('.row');
-                var $items = $('.col-xl-3');
+                sortProducts();
+            });
+            
+            function filterProducts() {
+                const maxPrice = parseInt($('#priceRange').val());
+                const searchTerm = $('#searchInput').val().toLowerCase();
+                const activeCategory = $('.category-filter.active').data('category');
+                
+                let visibleCount = 0;
+                
+                $('.product-item').each(function() {
+                    const price = parseFloat($(this).data('price'));
+                    const name = $(this).data('name');
+                    const category = $(this).data('category');
+                    
+                    const matchesPrice = price <= maxPrice;
+                    const matchesSearch = name.includes(searchTerm) || searchTerm === '';
+                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                    
+                    if (matchesPrice && matchesSearch && matchesCategory) {
+                        $(this).show();
+                        visibleCount++;
+                    } else {
+                        $(this).hide();
+                    }
+                });
+                
+                $('#resultsCount').text('Mostrando ' + visibleCount + ' productos');
+                sortProducts();
+            }
+            
+            function sortProducts() {
+                const sortBy = $('#sort').val();
+                const $container = $('#productsContainer');
+                const $items = $('.product-item:visible');
                 
                 $items.sort(function(a, b) {
-                    var aPrice = parseFloat($(a).data('price'));
-                    var bPrice = parseFloat($(b).data('price'));
-                    var aDuration = $(a).find('.product-technical').text().match(/Duración|Resistencia.*?(\d+)/);
-                    var bDuration = $(b).find('.product-technical').text().match(/Duración|Resistencia.*?(\d+)/);
-                    aDuration = aDuration ? parseInt(aDuration[1]) : 0;
-                    bDuration = bDuration ? parseInt(bDuration[1]) : 0;
+                    const aPrice = parseFloat($(a).data('price'));
+                    const bPrice = parseFloat($(b).data('price'));
+                    const aDuration = parseInt($(a).data('duration'));
+                    const bDuration = parseInt($(b).data('duration'));
                     
                     switch(sortBy) {
                         case 'price_asc':
@@ -688,11 +954,14 @@
                             return bPrice - aPrice;
                         case 'duration':
                             return bDuration - aDuration;
-                        default:
+                        default: // popular (orden original)
                             return 0;
                     }
                 }).appendTo($container);
-            });
+            }
+            
+            // Inicializar filtros
+            filterProducts();
         });
     </script>
 </body>
