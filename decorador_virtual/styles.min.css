@@ -207,6 +207,22 @@
     opacity: 1;
 }
 
+.placeholder-image {
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    z-index: 3; /* Mayor que room-image pero menor que los paneles */
+    display: none; /* Inicialmente oculto */
+    pointer-events: none; /* Para no interferir con clicks */
+}
+
+/* Mostrar placeholder cuando no hay imagen seleccionada */
+.room-image[src=""] ~ .placeholder-image,
+.room-image:not([src]) ~ .placeholder-image {
+    display: block;
+}
+
 /* Colores (mantener los existentes) */
 .color-platino-1{background-color:#ffffff}.color-platino-2{background-color:#1d1d1b}.color-platino-3{background-color:#ffbb00}.color-platino-4{background-color: #312780}.color-platino-5{background-color:#2e8966}.color-platino-6{background-color:#c00613}.color-platino-7{background-color:#ec6c23}.color-platino-8{background-color:#28235d}.color-platino-9{background-color:#662380}.color-platino-10{background-color:#960019}.color-platino-11{background-color:#683d13}.color-platino-12{background-color:#801711}.color-platino-13{background-color:#a18000}
 .color-zafiro-1{background-color:#faf8f4}.color-zafiro-2{background-color:#e7e1d1}.color-zafiro-3{background-color:#eee4cf}.color-zafiro-4{background-color:#d1c7b1}.color-zafiro-5{background-color:#cbb795}.color-zafiro-6{background-color:#eabd99}.color-zafiro-7{background-color:#f4aead}.color-zafiro-8{background-color:#d280b3}.color-zafiro-9{background-color:#baaac2}.color-zafiro-10{background-color:#a081a3}.color-zafiro-11{background-color:#7dc3a5}.color-zafiro-12{background-color:#a8c69a}.color-zafiro-13{background-color:#8ec47d}.color-zafiro-14{background-color:#a0c64b}.color-zafiro-15{background-color:#9daa70}.color-zafiro-16{background-color:#87bec3}.color-zafiro-17{background-color:#f9d49f}.color-zafiro-18{background-color:#f7b466}.color-zafiro-19{background-color:#f8d96b}.color-zafiro-20{background-color:#ca9647}.color-zafiro-21{background-color:#f4a784}.color-zafiro-22{background-color:#da7a60}.color-zafiro-23{background-color:#e77355}.color-zafiro-24{background-color:#6c4841}.color-zafiro-25{background-color:#67adcb}.color-zafiro-26{background-color:#3490ca}
