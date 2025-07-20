@@ -3,7 +3,7 @@
         <div class="container">
             <div class="main-header__top-inner clearfix">
                 <div class="main-header__logo">
-                    <a href="<?php echo $ROOT_PATH; ?>/">
+                    <a href="index.html">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-1.png" alt="" class="dark-logo">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-2.png" alt="" class="light-logo">
                     </a>
@@ -53,44 +53,34 @@
     <nav class="main-menu clearfix">
         <div class="main-menu__wrapper clearfix">
             <div class="container">
-                <div class="main-menu__wrapper-inner clearfix" style="display: flex; justify-content: center;">
-                    <div class="main-menu__main-menu-box">
-                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                        <ul class="main-menu__list" style="display: flex; gap: 20px; padding: 0; margin: 0; list-style: none;">
-                            <?php
-                            $current_uri = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/').'/';
-                            // Define los items del menú
-                            $menu_items = [
-                                '/' => ['url' => '/', 'title' => 'Inicio'],
-                                '/productos/' => ['url' => '/productos/', 'title' => 'Productos'],
-                                '/decorador_virtual/' => ['url' => '/decorador_virtual/', 'title' => 'Simulador Virtual'],
-                                '/calcular_m2/' => ['url' => '/calcular_m2/', 'title' => 'Calcular Material'],
-                                '/quienes_somos/' => ['url' => '/quienes_somos/', 'title' => 'Nosotros'],
-                                '/contacto/' => ['url' => '/contacto/', 'title' => 'Contacto']
-                            ];
-                            foreach ($menu_items as $path => $item) {
-                                $is_current = ($current_uri === $path) ? 'current' : '';
-                                echo '<li class="'.$is_current.'">';
-                                echo '<a href="'.$ROOT_PATH.$item['url'].'">'.$item['title'].'</a>';
-                                echo '</li>';
-                            }
-                            ?>
-                        </ul>
+                <div class="main-menu__wrapper-inner clearfix">
+                    <div class="main-menu__left">
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li class="dropdown current megamenu">
+                                    <a href="<?php echo $ROOT_PATH; ?>/">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/productos/">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">Simulador Virtual</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular Material</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/contacto/">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 </header>
-
-<!-- ✅ CSS del menú activo -->
-<style>
-.main-menu__list li.current a {
-    color: #e5383b; /* Color activo */
-    font-weight: bold;
-}
-.main-menu__list li a {
-    text-decoration: none;
-    color: #333; /* Color base del menú */
-}
-</style>
