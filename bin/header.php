@@ -3,7 +3,7 @@
         <div class="container">
             <div class="main-header__top-inner clearfix">
                 <div class="main-header__logo">
-                    <a href="index.html">
+                    <a href="<?php echo $ROOT_PATH; ?>/">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-1.png" alt="" class="dark-logo">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-2.png" alt="" class="light-logo">
                     </a>
@@ -58,18 +58,18 @@
                         <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                         <ul class="main-menu__list" style="display: flex; gap: 20px; padding: 0; margin: 0; list-style: none;">
                             <?php
-                            $current_page = basename($_SERVER['PHP_SELF']);
+                            $current_uri = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/').'/';
+                            // Define los items del menú
                             $menu_items = [
-                                'index.php' => ['url' => '/', 'title' => 'Inicio'],
-                                'productos.php' => ['url' => '/productos/', 'title' => 'Productos'],
-                                'decorador_virtual.php' => ['url' => '/decorador_virtual/', 'title' => 'Simulador Virtual'],
-                                'calcular_m2.php' => ['url' => '/calcular_m2/', 'title' => 'Calcular Material'],
-                                'quienes_somos.php' => ['url' => '/quienes_somos/', 'title' => 'Nosotros'],
-                                'contacto.php' => ['url' => '/contacto/', 'title' => 'Contacto']
+                                '/' => ['url' => '/', 'title' => 'Inicio'],
+                                '/productos/' => ['url' => '/productos/', 'title' => 'Productos'],
+                                '/decorador_virtual/' => ['url' => '/decorador_virtual/', 'title' => 'Simulador Virtual'],
+                                '/calcular_m2/' => ['url' => '/calcular_m2/', 'title' => 'Calcular Material'],
+                                '/quienes_somos/' => ['url' => '/quienes_somos/', 'title' => 'Nosotros'],
+                                '/contacto/' => ['url' => '/contacto/', 'title' => 'Contacto']
                             ];
-                            
-                            foreach ($menu_items as $page => $item) {
-                                $is_current = ($current_page == $page) ? 'current' : '';
+                            foreach ($menu_items as $path => $item) {
+                                $is_current = ($current_uri === $path) ? 'current' : '';
                                 echo '<li class="'.$is_current.'">';
                                 echo '<a href="'.$ROOT_PATH.$item['url'].'">'.$item['title'].'</a>';
                                 echo '</li>';
@@ -83,7 +83,7 @@
     </nav>
 </header>
 
-<!-- ✅ CSS sugerido -->
+<!-- ✅ CSS del menú activo -->
 <style>
 .main-menu__list li.current a {
     color: #e5383b; /* Color activo */
@@ -94,17 +94,3 @@
     color: #333; /* Color base del menú */
 }
 </style>
-
-<!-- ✅ JS solo si tu sitio usa SPA o AJAX (no necesario si tu sitio recarga al navegar) -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const menuLinks = document.querySelectorAll('.main-menu__list li a');
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            document.querySelectorAll('.main-menu__list li').forEach(li => li.classList.remove('current'));
-            this.parentElement.classList.add('current');
-        });
-    });
-});
-</script>
