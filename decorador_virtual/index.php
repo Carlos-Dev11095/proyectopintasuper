@@ -115,8 +115,9 @@
                     Pendiente aprobación de nombres oficiales.  
                     Fecha: [9/7/2025] -->
                     <!--  
-                    <option value="platino">Línea Platino-Gold</option>
+                    
                     -->
+                    <option value="platino">Línea Platino-Gold</option>
                     <option value="zafiro">Línea Zafiro</option>
                     <option value="dorada">Línea Dorada</option>
                     <option value="onix">Línea Ónix</option>
