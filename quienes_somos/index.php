@@ -183,55 +183,55 @@
                 <div class="row">
                     <div class="col-xl-7 col-lg-6">
                         <div class="leading__left">
-                            <div class="leading__video-link">
+                            <!-- <div class="leading__video-link">
                                 <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="video-popup">
                                     <div class="leading__video-icon">
                                         <span class="fa fa-play"></span>
                                         <i class="ripple"></i>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                             <h3 class="leading__title">Líderes en Pintura <br> y Decoración</h3>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="leading__right">
-                            <ul class="list-unstyled leading__points">
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Pintores certificados y con experiencia</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Materiales ecológicos y de alta calidad</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Atención personalizada a cada cliente</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Técnicas innovadoras de aplicación</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+<div class="col-xl-5 col-lg-6">
+    <div class="leading__right">
+        <ul class="list-unstyled leading__points">
+            <li>
+                <div class="icon">
+                    <span class="fa fa-check"></span>
+                </div>
+                <div class="text">
+                    <p>Amplia gama de colores y acabados</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <span class="fa fa-check"></span>
+                </div>
+                <div class="text">
+                    <p>Pinturas de alta durabilidad y rendimiento</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <span class="fa fa-check"></span>
+                </div>
+                <div class="text">
+                    <p>Asesoría para elección de tonos y combinaciones</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <span class="fa fa-check"></span>
+                </div>
+                <div class="text">
+                    <p>Acabados profesionales para interiores y exteriores</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
                 </div>
             </div>
         </section>

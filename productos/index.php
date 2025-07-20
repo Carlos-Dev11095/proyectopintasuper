@@ -503,7 +503,6 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                     <li>Productos</li>
                 </ul>
                 <h2>Nuestros Productos</h2>
-                <p class="page-header__subtitle">La magia del color en cada proyecto</p>
             </div>
         </div>
     </section>
@@ -538,12 +537,6 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                             <li><a href="#" class="category-filter" data-category="impermeabilizantes">Impermeabilizantes</a></li>
                             <li><a href="#" class="category-filter" data-category="esmaltes">Esmaltes</a></li>
                         </ul>
-                    </div>
-                    
-                    <div class="sidebar-widget">
-                        <h4>Sobre Pinta Super</h4>
-                        <p>Empresa fundada en 1993 en Morelia, Michoacán, especializada en la comercialización de pinturas y complementos de la más alta calidad.</p>
-                        <p><strong>Misión:</strong> Proporcionar soluciones, servicios y productos de gran calidad que superen las expectativas de nuestros clientes.</p>
                     </div>
                 </div>
 

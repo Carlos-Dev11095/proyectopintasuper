@@ -241,53 +241,52 @@
                         </div>
                         
                         <!-- Contenedor de sucursales en columnas -->
-                        <div class="row">
-                            <!-- Sucursal Matríz -->
-                            <div class="col-md-4">
-                                <div class="sucursal-box text-center">
-                                    <h3>Matríz</h3>
-                                    <p>Av. Guadalupe Victoria No.1560 Col. Prados Verdes.</p>
-                                    <p><a href="tel:4433171400">Tel. (443) 3171400</a></p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalMatriz">
-                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Matríz" class="sucursal-thumbnail img-fluid">
-                                        <small class="text-muted">(Click para ampliar)</small>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Sucursal Torreón -->
-                            <div class="col-md-4">
-                                <div class="sucursal-box text-center">
-                                    <h3>Torreón</h3>
-                                    <p>Av. Torreón Nuevo No.560 Col. Loma Real.</p>
-                                    <p><a href="tel:4432752004">Tel. (443) 2752004</a></p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTorreon">
-                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Torreón" class="sucursal-thumbnail img-fluid">
-                                        <small class="text-muted">(Click para ampliar)</small>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Sucursal Realito -->
-                            <div class="col-md-4">
-                                <div class="sucursal-box text-center">
-                                    <h3>Realito</h3>
-                                    <p>Periférico Paseo de la República No.4911 (Frente al Realito).</p>
-                                    <p><a href="tel:443275589">Tel. (443) 275589</a></p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalRealito">
-                                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Realito" class="sucursal-thumbnail img-fluid">
-                                        <small class="text-muted">(Click para ampliar)</small>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+<div class="row">
+    <!-- Sucursal Matríz -->
+    <div class="col-md-4">
+        <div class="sucursal-box text-center">
+            <h3>Matríz</h3>
+            <p>Av. Guadalupe Victoria No.1560 Col. Prados Verdes.</p>
+            <p><a href="tel:4433171400">Tel. (443) 3171400</a></p>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalMatriz">
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Matríz" class="sucursal-thumbnail img-fluid d-block mx-auto">
+                <small class="text-muted">(Click para ampliar)</small>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Sucursal Torreón -->
+    <div class="col-md-4">
+        <div class="sucursal-box text-center">
+            <h3>Torreón</h3>
+            <p>Av. Torreón Nuevo No.560 Col. Loma Real.</p>
+            <p><a href="tel:4432752004">Tel. (443) 2752004</a></p>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalTorreon">
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Torreón" class="sucursal-thumbnail img-fluid d-block mx-auto">
+                <small class="text-muted">(Click para ampliar)</small>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Sucursal Realito -->
+    <div class="col-md-4">
+        <div class="sucursal-box text-center">
+            <h3>Realito</h3>
+            <p>Periférico Paseo de la República No.4911 (Frente al Realito).</p>
+            <p><a href="tel:443275589">Tel. (443) 275589</a></p>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalRealito">
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Realito" class="sucursal-thumbnail img-fluid d-block mx-auto">
+                <small class="text-muted">(Click para ampliar)</small>
+            </a>
+        </div>
+    </div>
+</div>
+
                         
                         <!-- Redes sociales -->
                         <div class="contact-page__social text-center mt-5">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
                         </div>
                     </div>
                 </div>
