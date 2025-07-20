@@ -25,6 +25,7 @@
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.min.js" as="script">
+    <link rel="preload" href="images/seleccione-escena.png" as="image">
     <link rel="preload" href="images/habitacion.png" as="image">
     <link rel="preload" href="images/sala.png" as="image">
     <link rel="preload" href="images/bano.png" as="image">
@@ -53,7 +54,7 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li> 
                         <li><span>/</span></li>
                         <li>Simulador Virtual</li>
                     </ul>
@@ -69,6 +70,7 @@
         <div class="wall-container">
             <div id="wall" class="wall"></div>
             <img id="room-image" alt="Ambiente seleccionado" class="room-image">
+            <img id="placeholder-image" src="images/seleccione-escena.png" alt="Seleccione una escena" class="placeholder-image">
         </div>
         
         <!-- Botones flotantes -->
@@ -113,8 +115,9 @@
                     Pendiente aprobación de nombres oficiales.  
                     Fecha: [9/7/2025] -->
                     <!--  
-                    <option value="platino">Línea Platino-Gold</option>
+                    
                     -->
+                    <option value="platino">Línea Platino-Gold</option>
                     <option value="zafiro">Línea Zafiro</option>
                     <option value="dorada">Línea Dorada</option>
                     <option value="onix">Línea Ónix</option>

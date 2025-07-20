@@ -19,12 +19,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <?php include '../bin/css.php'; ?>
+    <style>
+        .banner_title {
+        color: #f7931e !important;
+        }     
+    </style>
 
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.min.js" as="script">
-    <!-- CSS combinado y minificado -->
-    <link rel="stylesheet" href="styles.min.css">
 </head>
 
 <body class="custom-cursor">
@@ -57,6 +60,7 @@
             </div>
         </section>
         <!--Page Header End-->
+        <!-- 404 Error Section Start -->   
         <section class="error-page">
             <div class="container">
                 <div class="row">
@@ -74,9 +78,7 @@
                 </div>
             </div>
         </section>
-        <!-- 404 Error Section Start -->    
-
-
+         
         <!-- 404 Error Section End --> 
 
         <?php require '../bin/footer.php'; ?>
