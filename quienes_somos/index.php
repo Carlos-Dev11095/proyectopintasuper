@@ -6,37 +6,48 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre Nosotros | PinturaSuper | Expertos en Pintura y Decoración</title>
+    <title>Pintasuper</title>
+    <!-- iconos favoritos -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="PinturaSuper: Tu socio experto en soluciones de pintura residencial, comercial, decorativa e industrial. Calidad, experiencia y compromiso desde 1993." />
+    <meta name="description" content="Plantilla HTML 5 Ambed" />
 
+    <!-- fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <?php include_once __DIR__ . '/../bin/css.php'; // Usa __DIR__ para ruta absoluta ?>
+    <?php include '../bin/css.php'; ?>
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="script.min.js" as="script">
+    <!-- CSS combinado y minificado -->
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 
 <body class="custom-cursor">
-
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
-    
-    <?php require_once __DIR__ . '/../bin/preloader.php'; // Usa __DIR__ para ruta absoluta ?>
+
+    <!-- precarga -->
+    <?php require '../bin/preloader.php'; ?>
 
     <div class="page-wrapper">
-        <?php require_once __DIR__ . '/../bin/header.php'; // Usa __DIR__ para ruta absoluta ?>
+        <?php require '../bin/header.php'; ?>
+
         <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div></div><section class="page-header">
+            <div class="sticky-header__content"></div>
+        </div>
+        
+        <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
             </div>
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>/index.html">Inicio</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>">Inicio</a></li>
                         <li><span>/</span></li>
                         <li>Sobre Nosotros</li>
                     </ul>
@@ -106,7 +117,8 @@
                                 <li>Calidad</li>
                                 <li>Responsabilidad</li>
                                 <li>Responsabilidad social</li>
-                                <li>Confianza</li> </ul>
+                                <li>Confianza</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -183,97 +195,54 @@
                 <div class="row">
                     <div class="col-xl-7 col-lg-6">
                         <div class="leading__left">
-                            <!-- <div class="leading__video-link">
-                                <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="video-popup">
-                                    <div class="leading__video-icon">
-                                        <span class="fa fa-play"></span>
-                                        <i class="ripple"></i>
-                                    </div>
-                                </a>
-                            </div> -->
                             <h3 class="leading__title">Líderes en Pintura <br> y Decoración</h3>
                         </div>
                     </div>
-<div class="col-xl-5 col-lg-6">
-    <div class="leading__right">
-        <ul class="list-unstyled leading__points">
-            <li>
-                <div class="icon">
-                    <span class="fa fa-check"></span>
-                </div>
-                <div class="text">
-                    <p>Amplia gama de colores y acabados</p>
-                </div>
-            </li>
-            <li>
-                <div class="icon">
-                    <span class="fa fa-check"></span>
-                </div>
-                <div class="text">
-                    <p>Pinturas de alta durabilidad y rendimiento</p>
-                </div>
-            </li>
-            <li>
-                <div class="icon">
-                    <span class="fa fa-check"></span>
-                </div>
-                <div class="text">
-                    <p>Asesoría para elección de tonos y combinaciones</p>
-                </div>
-            </li>
-            <li>
-                <div class="icon">
-                    <span class="fa fa-check"></span>
-                </div>
-                <div class="text">
-                    <p>Acabados profesionales para interiores y exteriores</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="leading__right">
+                            <ul class="list-unstyled leading__points">
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Amplia gama de colores y acabados</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Pinturas de alta durabilidad y rendimiento</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Asesoría para elección de tonos y combinaciones</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Acabados profesionales para interiores y exteriores</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <?php require_once __DIR__ . '/../bin/footer.php'; // Usa __DIR__ para ruta absoluta ?>
-        </div><div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
-            <div class="logo-box">
-                <a href="<?php echo $ROOT_PATH; ?>/index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-pintura.png" width="155" alt="PinturaSuper logo" /></a>
-            </div>
-            <div class="mobile-nav__container"></div>
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:contacto@pinturasuper.com">contacto@pinturasuper.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:800-123-4567">800 123 4567</a>
-                </li>
-            </ul><div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
-                    <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
-                    <a href="#" class="fab fa-pinterest-p" aria-label="Pinterest"></a>
-                </div></div></div>
-        </div>
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">Buscar aquí</label><input type="text" id="search" placeholder="Buscar servicios..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-        </div>
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        <?php require '../bin/footer.php'; ?>
+    </div>
 
-    <?php require_once __DIR__ . '/../bin/js.php'; // Usa __DIR__ para ruta absoluta ?>
+    <?php require '../bin/js.php'; ?>
 </body>
 </html>

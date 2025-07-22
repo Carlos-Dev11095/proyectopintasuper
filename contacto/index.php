@@ -187,29 +187,15 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <!-- style switcher -->
-    <div class="style-switcher">
-        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
-        <h3>Layout Options</h3>
-        <div class="layout-feature" id="colorMode">
-            <a href="" class="dark-switcher" data-theme="ambed-dark">Dark</a>
-            <a href="" class="light-switcher" data-theme="ambed-light">Light</a>
-            <button class="boxed-switcher">Boxed</button>
-        </div>
-    </div>
-    <!-- end style switcher -->
+    <?php require '../bin/preloader.php'; ?>
 
-    <div class="preloader">
-        <div class="preloader__image"></div>
-    </div>
-    
     <div class="page-wrapper">
-        <?php include_once __DIR__ . '/../bin/header.php'; ?>
+        <?php require_once __DIR__ . '/../bin/header.php'; ?>
 
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div>
         </div>
-
+        
         <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
@@ -343,49 +329,6 @@
                         <p class="mt-3">Periférico Paseo de la República No.4911 (Frente al Realito)</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="mobile-nav__wrapper">
-            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-            <div class="mobile-nav__content">
-                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-                <div class="logo-box">
-                    <a href="index.html" aria-label="logo image"><img src="/proyectopintasuper/assets/images/resources/footer-logo.png" width="155" alt="" /></a>
-                </div>
-                <div class="mobile-nav__container"></div>
-                <ul class="mobile-nav__contact list-unstyled">
-                    <li>
-                        <i class="fa fa-envelope"></i>
-                        <a href="mailto:needhelp@packageName__.com">needhelp@ambed.com</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-phone-alt"></i>
-                        <a href="tel:666-888-0000">666 888 0000</a>
-                    </li>
-                </ul>
-                <div class="mobile-nav__top">
-                    <div class="mobile-nav__social">
-                        <a href="#" class="fab fa-twitter"></a>
-                        <a href="#" class="fab fa-facebook-square"></a>
-                        <a href="#" class="fab fa-pinterest-p"></a>
-                        <a href="#" class="fab fa-instagram"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="search-popup">
-            <div class="search-popup__overlay search-toggler"></div>
-            <div class="search-popup__content">
-                <form action="#">
-                    <label for="search" class="sr-only">search here</label>
-                    <input type="text" id="search" placeholder="Search Here..." />
-                    <button type="submit" aria-label="search submit" class="thm-btn">
-                        <i class="icon-magnifying-glass"></i>
-                    </button>
-                </form>
             </div>
         </div>
 
