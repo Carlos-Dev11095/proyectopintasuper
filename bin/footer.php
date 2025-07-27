@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="text">
                                     <h5>Llama en cualquier momento</h5>
-                                    <p><a href="tel:52 443 161 8135">+ 52 (443) 161 8135</a></p>
+                                    <p><a href="tel:52 443 161 8135">+ 52 (443) - 1618135</a></p>
                                 </div>
                             </li>
                             <li>
@@ -117,7 +117,7 @@
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:52 443 161 8135">+52 (443) 161 8135</a>
+                <a href="tel:52 443 161 8135">+52 (443) - 1618135</a>
             </li>
         </ul>
         <div class="mobile-nav__top">
