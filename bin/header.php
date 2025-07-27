@@ -65,10 +65,10 @@
                                     <a href="<?php echo $ROOT_PATH; ?>/productos/">Productos</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">Simulador Virtual</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/simulador_virtual/">Simulador virtual</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular Material</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/calcular_material/">Calcular material</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">Nosotros</a>
