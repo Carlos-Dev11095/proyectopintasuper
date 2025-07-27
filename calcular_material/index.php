@@ -69,61 +69,49 @@
                         <h2>Seleccione el producto</h2>
                         <select id="producto">
                             <option value="">-- Seleccione el producto --</option>
-                            
                             <!-- PINTURAS -->
-                            <option value="platino_gold" 
-                                    data-rendimiento-brocha="10" 
-                                    data-rendimiento-rodillo="9.5" 
-                                    data-rendimiento-pistola="9" 
-                                    data-manos="1" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica PLATINO GOLD
-                            </option>
-                            <option value="dorada" 
-                                    data-rendimiento-brocha="7" 
-                                    data-rendimiento-rodillo="6.7" 
-                                    data-rendimiento-pistola="6.5" 
-                                    data-manos="1" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica DORADA
-                            </option>
-                            <option value="onix" 
-                                    data-rendimiento-brocha="6" 
-                                    data-rendimiento-rodillo="5.7" 
-                                    data-rendimiento-pistola="5.5" 
-                                    data-manos="2" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica ONIX
-                            </option>
-                            <option value="zafiro" 
-                                    data-rendimiento-brocha="4" 
-                                    data-rendimiento-rodillo="3.8" 
-                                    data-rendimiento-pistola="3.6" 
-                                    data-manos="2" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica ZAFIRO
-                            </option>
+<option value="platino_gold" 
+        data-rendimiento="11"
+        data-manos="1" 
+        data-tipo="pintura">
+    Vinil-Acrílica PLATINO GOLD
+</option>
+<option value="dorada" 
+        data-rendimiento="8" 
+        data-manos="1" 
+        data-tipo="pintura">
+    Vinil-Acrílica DORADA
+</option>
+<option value="onix" 
+        data-rendimiento="7" 
+        data-manos="2" 
+        data-tipo="pintura">
+    Vinil-Acrílica ONIX
+</option>
+<option value="zafiro" 
+        data-rendimiento="5"
+        data-manos="2" 
+        data-tipo="pintura">
+    Vinil-Acrílica ZAFIRO
+</option>
 
-                            <!-- ESMALTES -->
-                            <option value="super_rap_ultra" 
-                                    data-rendimiento-brocha="8" 
-                                    data-rendimiento-rodillo="7.6" 
-                                    data-rendimiento-pistola="7.2" 
-                                    data-manos="1" 
-                                    data-tipo="esmalte"
-                                    data-secado="10">
-                                SUPER RAP ULTRA
-                            </option>
+<!-- ESMALTES -->
+<option value="super_rap_ultra" 
+        data-rendimiento="9"
+        data-manos="1" 
+        data-tipo="esmalte"
+        data-secado="10">
+    SUPER RAP ULTRA
+</option>
+
+<option value="kivi_forte" 
+        data-rendimiento="8"
+        data-manos="2" 
+        data-tipo="esmalte"
+        data-secado="240">
+    KIVI FORTE
+</option>
                             
-                            <option value="kivi_forte" 
-                                    data-rendimiento-brocha="7" 
-                                    data-rendimiento-rodillo="6.6" 
-                                    data-rendimiento-pistola="6.2" 
-                                    data-manos="2" 
-                                    data-tipo="esmalte"
-                                    data-secado="240">
-                                KIVI FORTE
-                            </option>
                         </select>
                     </div>
 
