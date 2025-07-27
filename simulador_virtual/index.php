@@ -54,11 +54,11 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li> 
+                        <li><a href="<?php echo $ROOT_PATH; ?>/">INICIO</a></li> 
                         <li><span>/</span></li>
                         <li>Simulador Virtual</li>
                     </ul>
-                    <h2 class="banner_title">Simulador Virtual</h2>
+                    <h2 class="banner_title">Simulador virtual</h2>
                 </div>
             </div>
         </section>
