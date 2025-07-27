@@ -130,7 +130,7 @@
     </div>
 </section>
         <!-- Fin Sección Decorador -->
-
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
         <?php require '../bin/footer.php'; ?>
         <?php require '../bin/js.php'; ?>
         <!-- JavaScript minificado y al final del body -->
