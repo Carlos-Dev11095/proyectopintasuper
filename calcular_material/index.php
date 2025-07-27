@@ -68,7 +68,7 @@
                     <div class="panel panel-producto">
                         <h2>Seleccione el producto</h2>
                         <select id="producto">
-                            <option value="">-- Seleccione --</option>
+                            <option value="">-- Seleccione el producto --</option>
                             
                             <!-- PINTURAS -->
                             <option value="platino_gold" 
@@ -129,7 +129,7 @@
 
                     <!-- Panel Superficie -->
                     <div class="panel panel-superficie">
-                        <h2>Superficie a pintar</h2>
+                        <h2>Superficie a pintar del muro</h2>
                         <div class="input-group">
                             <label for="alto-pared">Alto (metros):</label>
                             <input type="number" id="alto-pared" step="0.01" min="0.1">
@@ -142,7 +142,7 @@
 
                     <!-- Panel Restar Superficie -->
                     <div class="panel panel-restar">
-                        <h2>Restar superficie - Puertas</h2>
+                        <h2>Restar superficie a pintar del muro - Puertas</h2>
                         <select id="num-puertas">
                             <option value="0">0 puertas</option>
                             <option value="1">1 puerta</option>
@@ -151,7 +151,7 @@
                         </select>
                         <div id="puertas-container"></div>
                         
-                        <h2>Restar superficie - Ventanas</h2>
+                        <h2>Restar superficie a pintar del muro - Ventanas</h2>
                         <select id="num-ventanas">
                             <option value="0">0 ventanas</option>
                             <option value="1">1 ventana</option>
@@ -163,19 +163,19 @@
 
                     <!-- Panel Opciones -->
                     <div class="panel panel-opciones">
-                        <h2>Opciones de aplicación</h2>
+                        <h2>Opciones de aplicación del muro</h2>
                         <div class="option-group">
-                            <h3>Superficie:</h3>
+                            <h3>Superficie (Estado del muro):</h3>
                             <label><input type="radio" name="superficie" value="1.2" checked> Nueva</label>
                             <label><input type="radio" name="superficie" value="1.0"> Mantenimiento</label>
                         </div>
                         <div class="option-group">
-                            <h3>Textura:</h3>
+                            <h3>Textura del muro:</h3>
                             <label><input type="radio" name="textura" value="1.0" checked> Lisa</label>
                             <label><input type="radio" name="textura" value="1.3"> Rugosa</label>
                         </div>
                         <div class="option-group">
-                            <h3>Técnica:</h3>
+                            <h3>Técnica de aplicación para el muro:</h3>
                             <label><input type="radio" name="tecnica" value="1.15" checked> Brocha</label>
                             <label><input type="radio" name="tecnica" value="1.05"> Rodillo</label>
                             <label><input type="radio" name="tecnica" value="0.95"> Pistola</label>
