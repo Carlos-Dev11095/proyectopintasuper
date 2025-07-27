@@ -48,11 +48,11 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>/">INICIO</a></li>
                         <li><span>/</span></li>
                         <li>Calcular Material</li>
                     </ul>
-                    <h2 class="banner_title">Calcular Material</h2>
+                    <h2 class="banner_title">Calcular material</h2>
                 </div>
             </div>
         </section>
@@ -186,7 +186,7 @@
                 <!-- Botones -->
                 <div class="button-container">
                     <button id="calcular" class="btn btn-primary">Calcular</button>
-                    <button id="resetear" class="btn btn-secondary">Resetear</button>
+                    <button id="resetear" class="btn btn-secondary">Reiniciar</button>
                 </div>
 
                 <!-- Panel Resultados -->
@@ -224,6 +224,7 @@
         </section>
         <!-- Fin Sección Decorador -->
 
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
         <?php require '../bin/footer.php'; ?>
         <?php require '../bin/js.php'; ?>
         <!-- JavaScript minificado y al final del body -->
