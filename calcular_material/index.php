@@ -218,7 +218,15 @@
                             <td id="res-sobrante"></td>
                         </tr>
                     </table>
-                    <p class="note">* Los resultados son aproximados y pueden variar según las condiciones de aplicación.</p>
+                    <p class="note">
+                        *Este cálculo es por muro. Calcula los rendimientos por muro y al final súmalos todos para obtener el total.
+                    </p>
+                    <p class="note">
+                        *El cálculo es aproximado, depende de las condiciones de la superficie y de quien aplica el producto.
+                    </p>
+                    <p class="note">
+                        *El cálculo puede variar un poco dependiendo del color elegido (cada color tiene un poder cubriente diferente). 
+                    </p>
                 </div>
             </div>
         </section>
