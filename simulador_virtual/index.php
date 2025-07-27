@@ -111,13 +111,12 @@
                 <h3>Seleccionar Línea de Color</h3>
                 <select id="palette-selector" class="palette-selector">
                     <option value="">-- Elegir línea --</option>
-                    <!-- IMPORTANTE: Nombres temporales para Platino-Gold (solo etapa de prueba).  
+                    <!-- IMPORTANTE: Nombres temporales para Platino-Gold (Visualización solo en etapa de prueba).  
                     Pendiente aprobación de nombres oficiales.  
                     Fecha: [9/7/2025] -->
                     <!--  
-                    
-                    -->
                     <option value="platino">Línea Platino-Gold</option>
+                    -->
                     <option value="zafiro">Línea Zafiro</option>
                     <option value="dorada">Línea Dorada</option>
                     <option value="onix">Línea Ónix</option>
