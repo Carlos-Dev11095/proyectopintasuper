@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintasuper</title>
     <!-- iconos favoritos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Plantilla HTML 5 Ambed" />
 
     <!-- fuentes -->
@@ -273,27 +273,13 @@
                         </li>
                     </ul>
                     <p class="about-one__text-2">Nuestro compromiso es brindar acabados impecables, uso de materiales de primera calidad y asesoría personalizada para cada proyecto residencial o comercial.</p>
-                    <div class="about-one__contact-us">
-                        <div class="about-one__btn-box">
-                            <a href="services.html" class="thm-btn about-one__btn">Ver Servicios</a>
-                        </div>
-                        <div class="about-one__call">
-                            <div class="about-one__call-icon">
-                                <span class="icon-phone-call"></span>
-                            </div>
-                            <div class="about-one__call-text">
-                                <p>¿Necesitas Ayuda?</p>
-                                <a href="tel:980009630">+ 98 (000) - 9630</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="about-one__right">
                     <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
                         <div class="about-one__img">
-                            <img src="assets/images/resources/pintores-profesionales-madrid.jpg" alt="Imagen principal servicios">
+                            <img src="assets/images/resources/soluciones.png" alt="Imagen principal servicios">
                         </div>
                         <div class="about-one__small-img">
                             <img src="assets/images/resources/pared.jpg" alt="Imagen secundaria servicios">
@@ -335,9 +321,9 @@
                                 <span class="icon-mind"></span> </div>
                             <h3 class="feature-one__title"><a href="servicios.html#asesoramiento">Asesoramiento Inteligente</a></h3>
                             <p class="feature-one__text">Te guiamos en la elección perfecta de colores y tipos de pintura para tu hogar u oficina.</p>
-                            <div class="feature-one__arrow">
+                            <!-- <div class="feature-one__arrow">
                                 <a href="servicios.html#asesoramiento"><i class="fa fa-arrow-right"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </li>
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
@@ -352,9 +338,9 @@
                                 <span class="icon-wallpaper-2"></span> </div>
                             <h3 class="feature-one__title"><a href="portafolio.html">Diseños y Acabados Únicos</a></h3>
                             <p class="feature-one__text">Creamos ambientes excepcionales con técnicas y estilos de pintura innovadores.</p>
-                            <div class="feature-one__arrow">
+                            <!-- <div class="feature-one__arrow">
                                 <a href="portafolio.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </li>
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
@@ -369,9 +355,9 @@
                                 <span class="icon-programmer"></span> </div>
                             <h3 class="feature-one__title"><a href="equipo.html">Equipo de Expertos de Pintura</a></h3>
                             <p class="feature-one__text">Contamos con personal profesional altamente calificado y con amplia experiencia en pintura.</p>
-                            <div class="feature-one__arrow">
+                            <!-- <div class="feature-one__arrow">
                                 <a href="equipo.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </li>
                     <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
@@ -386,9 +372,9 @@
                                 <span class="icon-best-price"></span> </div>
                             <h3 class="feature-one__title"><a href="calidad.html">Calidad Cuidando tu Economía</a></h3>
                             <p class="feature-one__text">Utilizamos materiales de calidad y técnicas avanzadas para resultados duraderos.</p>
-                            <div class="feature-one__arrow">
+                            <!--<div class="feature-one__arrow">
                                 <a href="calidad.html"><i class="fa fa-arrow-right"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </li>
                 </ul>
@@ -425,7 +411,7 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/cocina.jpg" alt="Herramientas y preparación de superficies">
+                                <img src="assets/images/services/herramientas.png" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
                                     <span class="icon-wallpaper-4"></span> </div>
                             </div>
@@ -438,7 +424,7 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/sala.jpg" alt="Asesoramiento experto en color">
+                                <img src="assets/images/services/asesoramiento.png" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
                                     <span class="icon-paint"></span> </div>
                             </div>
