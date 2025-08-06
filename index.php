@@ -19,7 +19,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <?php include 'bin/css.php'; ?>
-
+<style>
+.feature-one__icon img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+    </style>
 </head>
 
 <body class="custom-cursor">
@@ -153,7 +159,7 @@
 </section>
 <!--Main Slider End-->
 
-        <!--Inicio del Slider Principal-->
+<!--Inicio del Slider Principal-->
 <section class="feature-one">
     <div class="container">
         <ul class="list-unstyled feature-one__list">
@@ -166,12 +172,12 @@
                         <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                     </div>
                     <div class="feature-one__icon">
-                        <span class="fas fa-palette"></span>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/tonos_infinitos.jpg" alt="Tonos Infinitos">
                     </div>
-                    <h3 class="feature-one__title"><a href="products.html#colores">Tonos Infinitos</a></h3>
+                    <h3 class="feature-one__title"><a href="<?php echo $ROOT_PATH; ?>/apartados/tonos_infinitos">Tonos Infinitos</a></h3>
                     <p class="feature-one__text">Explora nuestra vasta gamma de colores y texturas para darle vida a cada rincón de tu hogar u oficina.</p>
                     <div class="feature-one__arrow">
-                        <a href="products.html#colores"><i class="fa fa-arrow-right"></i></a>
+                        <a href="<?php echo $ROOT_PATH; ?>/apartados/tonos_infinitos"><i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </li>
@@ -184,12 +190,12 @@
                         <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                     </div>
                     <div class="feature-one__icon">
-                        <span class="fas fa-paint-roller"></span>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/todo_para_tu_proyecto/todo_para_tu_proyecto.png" alt="Todo para tu Proyecto">
                     </div>
-                    <h3 class="feature-one__title"><a href="products.html#herramientas">Todo para tu Proyecto</a></h3>
+                    <h3 class="feature-one__title"><a href="<?php echo $ROOT_PATH; ?>/apartados/todo_para_tu_proyecto">Todo para tu Proyecto</a></h3>
                     <p class="feature-one__text">Encuentra todas las herramientas y materiales necesarios para un acabado profesional.</p>
                     <div class="feature-one__arrow">
-                        <a href="products.html#herramientas"><i class="fa fa-arrow-right"></i></a>
+                        <a href="<?php echo $ROOT_PATH; ?>/apartados/todo_para_tu_proyecto"><i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </li>
@@ -202,12 +208,12 @@
                         <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                     </div>
                     <div class="feature-one__icon">
-                        <span class="fas fa-shield-alt"></span>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/calidad_garantizada/calidad_garantizada.png" alt="Calidad Garantizada">
                     </div>
-                    <h3 class="feature-one__title"><a href="brands.html">Calidad Garantizada en todo momento</a></h3>
+                    <h3 class="feature-one__title"><a href="<?php echo $ROOT_PATH; ?>/apartados/calidad_garantizada">Calidad Garantizada</a></h3>
                     <p class="feature-one__text">Solo trabajamos con productos de calidad superior, asegurando durabilidad y rendimiento.</p>
                     <div class="feature-one__arrow">
-                        <a href="brands.html"><i class="fa fa-arrow-right"></i></a>
+                        <a href="<?php echo $ROOT_PATH; ?>/apartados/calidad_garantizada"><i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </li>
@@ -220,19 +226,20 @@
                         <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
                     </div>
                     <div class="feature-one__icon">
-                        <span class="fas fa-comments"></span>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/expertos_a_tu_servicio/expertos_a_tu_servicio.png" alt="Expertos a tu Servicio">
                     </div>
-                    <h3 class="feature-one__title"><a href="contact.html">Expertos a tu Servicio</a></h3>
+                    <h3 class="feature-one__title"><a href="<?php echo $ROOT_PATH; ?>/apartados/expertos_en_tu_servicio">Expertos a tu Servicio</a></h3>
                     <p class="feature-one__text">Recibe asesoramiento experto para elegir la pintura ideal y resolver cualquier duda.</p>
                     <div class="feature-one__arrow">
-                        <a href="contact.html"><i class="fa fa-arrow-right"></i></a>
+                        <a href="<?php echo $ROOT_PATH; ?>/apartados/expertos_en_tu_servicio"><i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
 </section>
-        <!--Fin del Slider Principal-->
+<!--Fin del Slider Principal-->
+
 
 <!--Inicio Nuestros Servicios-->
 <section class="about-one">
@@ -568,7 +575,7 @@
         <!--Fin de Proyectos-->
 
         <!--Inicio de Blog-->
-        <section class="blog-one">
+        <!-- <section class="blog-one">
             <div class="container">
                 <div class="section-title text-center">
                     <span class="section-title__tagline">Consejos y Tendencias</span>
@@ -641,7 +648,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--Fin de Blog-->
 
 
