@@ -3,7 +3,7 @@
         <div class="container">
             <div class="main-header__top-inner clearfix">
                 <div class="main-header__logo">
-                    <a href="index.html">
+                    <a href="<?php echo $ROOT_PATH; ?>/" class="main-header__logo-link">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-1.png" alt="" class="dark-logo">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-2.png" alt="" class="light-logo">
                     </a>
@@ -35,15 +35,17 @@
                                         <span class="icon-location"></span>
                                     </div>
                                     <div class="content">
-                                        <p>Av. Guadalupe Victoria #1560 Col, Prados Verdes, 58110</p>
-                                        <h5>Morelia, michoacán.</h5>
+                                        <a href="https://maps.app.goo.gl/Yezi8pG4X6TPdpur7" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                                            <p>Av. Guadalupe Victoria #1560 <br>Col, Prados Verdes, 58110</p>
+                                            <h5>Morelia, Michoacán</h5>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="main-header__top-right-social">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/PintaSuperPinturas" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/pintasuper/" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +60,8 @@
                         <div class="main-menu__main-menu-box">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li class="dropdown current megamenu">
+                                <!-- <li class="dropdown current megamenu"> -->
+                                    <li class="">
                                     <a href="<?php echo $ROOT_PATH; ?>/">Inicio</a>
                                 </li>
                                 <li>
@@ -71,7 +74,7 @@
                                     <a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">Calcular Material</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">Nosotros</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/nosotros/">Nosotros</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/contacto/">Contacto</a>

@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintasuper</title>
     <!-- iconos favoritos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/proyectopintasuper/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/proyectopintasuper/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/proyectopintasuper/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/proyectopintasuper/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Plantilla HTML 5 Ambed" />
-
     <!-- fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <?php include '../bin/css.php'; ?>
 
@@ -25,7 +25,175 @@
     <link rel="preload" href="script.min.js" as="script">
     <!-- CSS combinado y minificado -->
     <link rel="stylesheet" href="styles.min.css">
-</head>
+    <style>
+        :root {
+            --primary-color: #2a5f8b;
+            --secondary-color: #f7931e;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --color-brand: #fd4e01;
+            --color-brand-dark: #000082;
+        }
+
+        /* Estilo para el título principal "Sobre Nosotros" */
+        .page-header__inner h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .page-header__inner h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-brand);
+            border-radius: 2px;
+        }
+
+        /* Estilo para "Nuestra Historia" */
+        .section-title__tagline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-brand);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Estilo para "¿Quiénes Somos?" */
+        .section-title__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-brand-dark);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-title__title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--color-brand);
+            border-radius: 3px;
+        }
+
+        /* Efecto hover para interactividad */
+        .page-header__inner h2:hover,
+        .section-title__title:hover {
+            transform: translateY(-2px);
+            transition: var(--transition);
+        }
+
+        /* Estilos para secciones de contenido */
+        .about-three__text,
+        .mission-values__text,
+        .about-two__text-1,
+        .about-two__text-2 {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-color);
+        }
+
+        .mission-values__single {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-top: 4px solid var(--color-brand);
+            height: 100%;
+        }
+
+        .mission-values__single:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .mission-values__icon span {
+            color: var(--color-brand);
+            font-size: 2.5rem;
+        }
+
+        .leading__title {
+            font-size: 2.8rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .leading__points li {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .leading__points .icon {
+            color: var(--color-brand);
+            font-size: 1.3rem;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .mission-values__single {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header__inner h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title__title {
+                font-size: 2rem;
+            }
+            
+            .section-title__tagline {
+                font-size: 1.1rem;
+            }
+            
+            .leading__title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+        }
+
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+        }
+
+        .color-box.primary {
+            background-color: var(--color-brand);
+        }
+
+        .color-box.secondary {
+            background-color: var(--color-brand-dark);
+        }
+    </style>
 
 <body class="custom-cursor">
     <div class="custom-cursor__cursor"></div>
@@ -41,20 +209,19 @@
             <div class="sticky-header__content"></div>
         </div>
         
-        <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);"></div>
+        <div class="container">
+            <div class="page-header__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="<?php echo $ROOT_PATH; ?>/">Inicio</a></li>
+                    <li><span>/</span></li>
+                    <li>Sobre Nosotros</li>
+                </ul>
+                <h2 class="page-header__title">Sobre Nosotros</h2>
             </div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">Inicio</a></li>
-                        <li><span>/</span></li>
-                        <li>Sobre Nosotros</li>
-                    </ul>
-                    <h2>Sobre Nosotros</h2>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
         <br>
         <section class="about-three">
             <div class="container">

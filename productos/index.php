@@ -513,7 +513,7 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                 <div class="sidebar">
                     <div class="sidebar-widget sidebar-search">
                         <div style="display: flex; align-items: center;">
-                            <input type="text" placeholder="Buscar producto..." id="searchInput">
+                            <input type="text" placeholder="Buscar..." id="searchInput">
                             <button type="submit" id="searchButton"><i class="fas fa-search"></i></button>
                         </div>
                     </div>

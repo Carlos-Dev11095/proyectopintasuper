@@ -658,6 +658,8 @@
         </section>
         <!--Fin de Blog-->
 
+
+
     <?php include 'bin/footer.php'; ?>
 
     <?php include 'bin/js.php'; ?>

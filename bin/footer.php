@@ -1,3 +1,5 @@
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
 <section class="newsletter">
     <div class="container">
         <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
