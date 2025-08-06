@@ -48,11 +48,11 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>/">INICIO</a></li>
                         <li><span>/</span></li>
                         <li>Calcular Material</li>
                     </ul>
-                    <h2 class="banner_title">Calcular Material</h2>
+                    <h2 class="banner_title">Calcular material</h2>
                 </div>
             </div>
         </section>
@@ -68,68 +68,56 @@
                     <div class="panel panel-producto">
                         <h2>Seleccione el producto</h2>
                         <select id="producto">
-                            <option value="">-- Seleccione --</option>
-                            
+                            <option value="">-- Seleccione el producto --</option>
                             <!-- PINTURAS -->
-                            <option value="platino_gold" 
-                                    data-rendimiento-brocha="10" 
-                                    data-rendimiento-rodillo="9.5" 
-                                    data-rendimiento-pistola="9" 
-                                    data-manos="1" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica PLATINO GOLD
-                            </option>
-                            <option value="dorada" 
-                                    data-rendimiento-brocha="7" 
-                                    data-rendimiento-rodillo="6.7" 
-                                    data-rendimiento-pistola="6.5" 
-                                    data-manos="1" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica DORADA
-                            </option>
-                            <option value="onix" 
-                                    data-rendimiento-brocha="6" 
-                                    data-rendimiento-rodillo="5.7" 
-                                    data-rendimiento-pistola="5.5" 
-                                    data-manos="2" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica ONIX
-                            </option>
-                            <option value="zafiro" 
-                                    data-rendimiento-brocha="4" 
-                                    data-rendimiento-rodillo="3.8" 
-                                    data-rendimiento-pistola="3.6" 
-                                    data-manos="2" 
-                                    data-tipo="pintura">
-                                Vinil-Acrílica ZAFIRO
-                            </option>
+<option value="platino_gold" 
+        data-rendimiento="11"
+        data-manos="1" 
+        data-tipo="pintura">
+    Vinil-Acrílica PLATINO GOLD
+</option>
+<option value="dorada" 
+        data-rendimiento="8" 
+        data-manos="1" 
+        data-tipo="pintura">
+    Vinil-Acrílica DORADA
+</option>
+<option value="onix" 
+        data-rendimiento="7" 
+        data-manos="2" 
+        data-tipo="pintura">
+    Vinil-Acrílica ONIX
+</option>
+<option value="zafiro" 
+        data-rendimiento="5"
+        data-manos="2" 
+        data-tipo="pintura">
+    Vinil-Acrílica ZAFIRO
+</option>
 
-                            <!-- ESMALTES -->
-                            <option value="super_rap_ultra" 
-                                    data-rendimiento-brocha="8" 
-                                    data-rendimiento-rodillo="7.6" 
-                                    data-rendimiento-pistola="7.2" 
-                                    data-manos="1" 
-                                    data-tipo="esmalte"
-                                    data-secado="10">
-                                SUPER RAP ULTRA
-                            </option>
+<!-- ESMALTES -->
+<option value="super_rap_ultra" 
+        data-rendimiento="9"
+        data-manos="1" 
+        data-tipo="esmalte"
+        data-secado="10">
+    SUPER RAP ULTRA
+</option>
+
+<option value="kivi_forte" 
+        data-rendimiento="8"
+        data-manos="2" 
+        data-tipo="esmalte"
+        data-secado="240">
+    KIVI FORTE
+</option>
                             
-                            <option value="kivi_forte" 
-                                    data-rendimiento-brocha="7" 
-                                    data-rendimiento-rodillo="6.6" 
-                                    data-rendimiento-pistola="6.2" 
-                                    data-manos="2" 
-                                    data-tipo="esmalte"
-                                    data-secado="240">
-                                KIVI FORTE
-                            </option>
                         </select>
                     </div>
 
                     <!-- Panel Superficie -->
                     <div class="panel panel-superficie">
-                        <h2>Superficie a pintar</h2>
+                        <h2>Superficie a pintar del muro</h2>
                         <div class="input-group">
                             <label for="alto-pared">Alto (metros):</label>
                             <input type="number" id="alto-pared" step="0.01" min="0.1">
@@ -142,7 +130,7 @@
 
                     <!-- Panel Restar Superficie -->
                     <div class="panel panel-restar">
-                        <h2>Restar superficie - Puertas</h2>
+                        <h2>Restar superficie a pintar del muro - Puertas</h2>
                         <select id="num-puertas">
                             <option value="0">0 puertas</option>
                             <option value="1">1 puerta</option>
@@ -151,7 +139,7 @@
                         </select>
                         <div id="puertas-container"></div>
                         
-                        <h2>Restar superficie - Ventanas</h2>
+                        <h2>Restar superficie a pintar del muro - Ventanas</h2>
                         <select id="num-ventanas">
                             <option value="0">0 ventanas</option>
                             <option value="1">1 ventana</option>
@@ -163,19 +151,19 @@
 
                     <!-- Panel Opciones -->
                     <div class="panel panel-opciones">
-                        <h2>Opciones de aplicación</h2>
+                        <h2>Opciones de aplicación del muro</h2>
                         <div class="option-group">
-                            <h3>Superficie:</h3>
+                            <h3>Superficie (Estado del muro):</h3>
                             <label><input type="radio" name="superficie" value="1.2" checked> Nueva</label>
                             <label><input type="radio" name="superficie" value="1.0"> Mantenimiento</label>
                         </div>
                         <div class="option-group">
-                            <h3>Textura:</h3>
+                            <h3>Textura del muro:</h3>
                             <label><input type="radio" name="textura" value="1.0" checked> Lisa</label>
                             <label><input type="radio" name="textura" value="1.3"> Rugosa</label>
                         </div>
                         <div class="option-group">
-                            <h3>Técnica:</h3>
+                            <h3>Técnica de aplicación para el muro:</h3>
                             <label><input type="radio" name="tecnica" value="1.15" checked> Brocha</label>
                             <label><input type="radio" name="tecnica" value="1.05"> Rodillo</label>
                             <label><input type="radio" name="tecnica" value="0.95"> Pistola</label>
@@ -186,7 +174,7 @@
                 <!-- Botones -->
                 <div class="button-container">
                     <button id="calcular" class="btn btn-primary">Calcular</button>
-                    <button id="resetear" class="btn btn-secondary">Resetear</button>
+                    <button id="resetear" class="btn btn-secondary">Reiniciar</button>
                 </div>
 
                 <!-- Panel Resultados -->
@@ -218,12 +206,21 @@
                             <td id="res-sobrante"></td>
                         </tr>
                     </table>
-                    <p class="note">* Los resultados son aproximados y pueden variar según las condiciones de aplicación.</p>
+                    <p class="note">
+                        *Este cálculo es por muro. Calcula los rendimientos por muro y al final súmalos todos para obtener el total.
+                    </p>
+                    <p class="note">
+                        *El cálculo es aproximado, depende de las condiciones de la superficie y de quien aplica el producto.
+                    </p>
+                    <p class="note">
+                        *El cálculo puede variar un poco dependiendo del color elegido (cada color tiene un poder cubriente diferente). 
+                    </p>
                 </div>
             </div>
         </section>
         <!-- Fin Sección Decorador -->
 
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
         <?php require '../bin/footer.php'; ?>
         <?php require '../bin/js.php'; ?>
         <!-- JavaScript minificado y al final del body -->

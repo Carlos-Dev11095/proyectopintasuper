@@ -54,11 +54,11 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">INICIO</a></li> 
+                        <li><a href="<?php echo $ROOT_PATH; ?>/">INICIO</a></li> 
                         <li><span>/</span></li>
                         <li>Simulador Virtual</li>
                     </ul>
-                    <h2 class="banner_title">Simulador Virtual</h2>
+                    <h2 class="banner_title">Simulador virtual</h2>
                 </div>
             </div>
         </section>
@@ -111,13 +111,12 @@
                 <h3>Seleccionar Línea de Color</h3>
                 <select id="palette-selector" class="palette-selector">
                     <option value="">-- Elegir línea --</option>
-                    <!-- IMPORTANTE: Nombres temporales para Platino-Gold (solo etapa de prueba).  
+                    <!-- IMPORTANTE: Nombres temporales para Platino-Gold (Visualización solo en etapa de prueba).  
                     Pendiente aprobación de nombres oficiales.  
                     Fecha: [9/7/2025] -->
                     <!--  
-                    
-                    -->
                     <option value="platino">Línea Platino-Gold</option>
+                    -->
                     <option value="zafiro">Línea Zafiro</option>
                     <option value="dorada">Línea Dorada</option>
                     <option value="onix">Línea Ónix</option>
@@ -130,7 +129,7 @@
     </div>
 </section>
         <!-- Fin Sección Decorador -->
-
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
         <?php require '../bin/footer.php'; ?>
         <?php require '../bin/js.php'; ?>
         <!-- JavaScript minificado y al final del body -->

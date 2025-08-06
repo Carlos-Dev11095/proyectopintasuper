@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="text">
                                     <h5>Llama en cualquier momento</h5>
-                                    <p><a href="tel:52 443 161 8135">+ 52 443 161 8135</a></p>
+                                    <p><a href="tel:52 443 161 8135">+ 52 (443) - 1618135</a></p>
                                 </div>
                             </li>
                             <li>
@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright 2025 por <a href="https://github.com/Carlos-Dev11095" target="_blank" rel="noopener noreferrer">CharlieDev</a> y <a href="https://linktr.ee/luisggdev" target="_blank" rel="noopener noreferrer" >LGGDev</a></p>
+                        <p class="site-footer__bottom-text">© Copyright 2025 por <a href="https://linktr.ee/carlosrodgar" target="_blank" rel="noopener noreferrer">CharlieDev</a> y <a href="https://linktr.ee/luisggdev" target="_blank" rel="noopener noreferrer" >LGGDev</a></p>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:52 443 161 8135">+52 443 161 8135</a>
+                <a href="tel:52 443 161 8135">+52 (443) - 1618135</a>
             </li>
         </ul>
         <div class="mobile-nav__top">
