@@ -413,7 +413,7 @@
                             <div class="services-one__img">
                                 <img src="assets/images/services/herramientas.png" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
-                                    <span class="icon-wallpaper-4"></span> </div>
+                                    <span class="icon-paint"></span> </div>
                             </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="herramientas.html">Herramientas y Preparación</a></h3>
@@ -426,7 +426,7 @@
                             <div class="services-one__img">
                                 <img src="assets/images/services/asesoramiento.png" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
-                                    <span class="icon-paint"></span> </div>
+                                    <span class="icon-wallpaper-4"></span> </div>
                             </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="asesoramiento-color.html">Asesoramiento de Color</a></h3>
