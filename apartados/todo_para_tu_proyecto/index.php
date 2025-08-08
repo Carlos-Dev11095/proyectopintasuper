@@ -345,9 +345,9 @@
                             Desde brochas de precisión hasta escaleras seguras, rodillos eficientes y charolas prácticas, tenemos todas las herramientas y complementos que necesitas para pintar tu casa como un profesional.
                         </p>
                         <p class="intro-text">
-                            ¿Tu madera necesita un cambio? Contamos con productos especializados para pintar madera . 
-                            ¿Quieres darle un nuevo look a tu auto? Descubra nuestra gama de pinturas para automóviles . 
-                            ¿Buscas proteger tus superficies de la humedad, el sol y la lluvia? También tenemos soluciones para impermeabilizar.
+                            -¿Tu madera necesita un cambio? Contamos con productos especializados para pintar madera . 
+                            -¿Quieres darle un nuevo look a tu auto? Descubra nuestra gama de pinturas para automóviles . 
+                            -¿Buscas proteger tus superficies de la humedad, el sol y la lluvia? También tenemos soluciones para impermeabilizar.
                         </p>
                         <p class="intro-text">
                             ¡Visítanos y convierte tus proyectos en obras de arte!
