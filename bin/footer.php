@@ -35,8 +35,12 @@
                     <div class="footer-widget__column footer-widget__explore clearfix">
                         <h3 class="footer-widget__title">Explorar</h3>
                         <ul class="footer-widget__explore-list list-unstyled clearfix">
-                            <li><a href="<?php echo $ROOT_PATH; ?>/quienes_somos/">NOSOTROS</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/nosotros/">NOSOTROS</a></li>
                             <li><a href="<?php echo $ROOT_PATH; ?>/contacto/">CONTACTO</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/apartados/tonos_infinitos/">TONOS INFINITOS</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/apartados/todo_para_tu_proyecto/">TODO PARA TU PROYECTO</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/apartados/calidad_garantizada/">CALIDAD GARANTIZADA</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/apartados/expertos_en_tu_servicio/">EXPERTOS A TU SERVICIO</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,8 +49,8 @@
                         <h3 class="footer-widget__title">Servicios</h3>
                         <ul class="footer-widget__services-list list-unstyled clearfix">
                             <li><a href="<?php echo $ROOT_PATH; ?>/productos/">PRODUCTOS</a></li>
-                            <li><a href="<?php echo $ROOT_PATH; ?>/decorador_virtual/">SIMULADOR VIRTUAL</a></li>
-                            <li><a href="<?php echo $ROOT_PATH; ?>/calcular_m2/">CALCULAR MATERIAL</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/simulador_virtual/">SIMULADOR VIRTUAL</a></li>
+                            <li><a href="<?php echo $ROOT_PATH; ?>/calcular_material/">CALCULAR MATERIAL</a></li>
                         </ul>
                     </div>
                 </div>
