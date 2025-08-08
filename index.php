@@ -129,6 +129,18 @@
   }
 }
 
+.services-one__content {
+    position: relative;
+    padding-left: 40px; /* Espacio para el icono */
+}
+
+.services-one__icon-left {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #ffb400;
+}
+
 </style>
 </head>
 
@@ -484,7 +496,7 @@
                             <div class="services-one__img">
                                 <img src="assets/images/services/pared_pintada.jpg" alt="Pinturas y esmaltes de alta calidad">
                                 <div class="services-one__icon">
-                                    <span class="icon-wallpaper-3"></span> </div>
+                                    <span class="fas fa-paint-roller fa-sm"></span> </div>
                             </div>
                             <div class="services-one__content">
                                 <h3 class="services-one__title"><a href="productos-pinturas.html">Amplia Gama de Pinturas</a></h3>
@@ -495,12 +507,12 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/cocina.jpg" alt="Herramientas y preparación de superficies">
+                                <img src="assets/images/services/herramientas.png" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
-                                    <span class="icon-wallpaper-4"></span> </div>
+                                    <span class="fas fa-tools fa-sm"></span> </div>
                             </div>
                             <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="herramientas.html">Herramientas y Preparación</a></h3>
+                                <h3 class="services-one__title"><a>Herramientas y Preparación</a></h3>
                                 <p class="services-one__text">Encuentra todo lo necesario para preparar y aplicar pintura: brochas, rodillos, lijas, selladores, etc.</p>
                             </div>
                         </div>
@@ -508,12 +520,12 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
                             <div class="services-one__img">
-                                <img src="assets/images/services/sala.jpg" alt="Asesoramiento experto en color">
+                                <img src="assets/images/services/asesoramiento.png" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
-                                    <span class="icon-paint"></span> </div>
+                                    <span class="fas fa-palette fa-sm"></span> </div>
                             </div>
                             <div class="services-one__content">
-                                <h3 class="services-one__title"><a href="asesoramiento-color.html">Asesoramiento de Color</a></h3>
+                                <h3 class="services-one__title"><a>Asesoramiento de Color</a></h3>
                                 <p class="services-one__text">Nuestros expertos te guiarán para elegir la paleta de colores perfecta para cada ambiente.</p>
                             </div>
                         </div>
