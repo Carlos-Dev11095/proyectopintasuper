@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+
+        .banner_title {
+        color: #f7931e !important;
+        } 
+
         /* Estilos generales */
         :root {
             --primary-color: #E74C3C;
@@ -398,7 +403,7 @@
                         <li><span>/</span></li>
                         <li>Tonos Infinitos</li>
                     </ul>
-                    <h2>Tonos Infinitos</h2>
+                    <h2 class="banner_title">TONOS INFINITOS</h2>
                 </div>
             </div>
         </section>
