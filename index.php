@@ -198,7 +198,7 @@
                                 <h2 class="main-slider__title">Expertos en <br> Pintura <span>&</span> <br>
                                     Decoración</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="about.html" class="thm-btn main-slider__btn">Conoce Más</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/nosotros/" class="thm-btn main-slider__btn" target="_blank">Conócenos</a>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                 <h2 class="main-slider__title">Materiales de <br> la más alta <span>calidad</span> <br>
                                     para tus proyectos</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="productos.html" class="thm-btn main-slider__btn">Nuestros Productos</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/productos/" class="thm-btn main-slider__btn" target="_blank">Nuestros Productos</a>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +252,7 @@
                                 <h2 class="main-slider__title">Aplicación <br> profesional <span>&</span> <br>
                                     asesoría técnica</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="servicios.html" class="thm-btn main-slider__btn">Nuestros Servicios</a>
+                                    <a href="<?php echo $ROOT_PATH; ?>/apartados/expertos_en_tu_servicio" class="thm-btn main-slider__btn" target="_blank">Nuestros Servicios</a>
                                 </div>
                             </div>
                         </div>
