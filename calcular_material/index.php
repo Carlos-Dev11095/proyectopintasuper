@@ -61,7 +61,7 @@
         <!-- Sección Decorador -->
         <section class="decorator">
             <div class="container_dec">
-                <h1>Calcule el material</h1>
+                <h1 style="color: #000081;">Calcule el material</h1>
                 
                 <div class="panels-grid">
                     <!-- Panel Producto -->

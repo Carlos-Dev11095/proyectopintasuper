@@ -414,7 +414,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="intro-title">¡En Pinta Super, tu color ideal sí existe!</h2>
+                        <h2 class="intro-title" style="color: #000081;">¡En Pinta Super, tu color ideal sí existe!</h2>
                         <p class="intro-text">
                             En Pinta Super, tu imaginación es el límite. Contamos con una cantidad inmensa de tonos listos para transformar cualquier espacio, desde los neutros más serenos hasta los más vibrantes y atrevidos.
                         </p>
