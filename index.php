@@ -626,7 +626,7 @@
                                                     <div class="project-one__content">
                                                         <h4 class="project-one__title">Renovación de Sala con Colores Cálidos</h4>
                                                         <p class="project-one__text">Realizamos la transformación completa de esta sala de estar, aplicando una paleta de colores cálidos que aportan luminosidad y confort. Un trabajo detallado que superó las expectativas del cliente.</p>
-                                                        <a href="<?php echo $ROOT_PATH; ?>/simulador_virtual/" class="thm-btn project-one__btn" target="_blank">Ver Detalles del Proyecto</a>
+                                                        <a href="<?php echo $ROOT_PATH; ?>/simulador_virtual/?room=sala&palette=dorada&color=color-dorada-3" class="thm-btn project-one__btn" target="_blank">Ver Detalles del Proyecto</a>
                                                     </div>
                                                 </div>
                                             </div>

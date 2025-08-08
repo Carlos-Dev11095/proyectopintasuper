@@ -134,6 +134,7 @@
         <?php require '../bin/js.php'; ?>
         <!-- JavaScript minificado y al final del body -->
         <script src="script.min.js" defer></script>
+        <script src="preset-simulator.js" defer></script>
     </div>
 </body>
 </html>
