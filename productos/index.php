@@ -559,7 +559,7 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                         $productos = [
                             // PINTURAS ARQUITECTÓNICAS
                             [
-                                'imagen' => 'platino_gold.png',
+                                'imagen' => 'Platino_gold.png',
                                 'nombre' => 'Platino Gold',
                                 'precio' => 2992,
                                 'precio_galon' => 640,
