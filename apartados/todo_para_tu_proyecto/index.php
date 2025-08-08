@@ -340,7 +340,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="intro-title">¡Pinta tus ideas con nosotros!</h2>
+                        <h2 class="intro-title" style="color: #000081;">¡Pinta tus ideas con nosotros!</h2>
                         <p class="intro-text">
                             Desde brochas de precisión hasta escaleras seguras, rodillos eficientes y charolas prácticas, tenemos todas las herramientas y complementos que necesitas para pintar tu casa como un profesional.
                         </p>
