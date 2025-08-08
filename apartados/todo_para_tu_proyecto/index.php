@@ -24,6 +24,10 @@
 
     <style>
         /* Estilos generales */
+        .banner_title {
+        color: #f7931e !important;
+        } 
+
         :root {
             --primary-color: #E74C3C;
             --secondary-color: #3498DB;
@@ -325,7 +329,7 @@
                         <li><span>/</span></li>
                         <li>Todo para tu Proyecto</li>
                     </ul>
-                    <h2>Todo para tu Proyecto</h2>
+                    <h2 class="banner_title">TODO PARA TU PROYECTO</h2>
                 </div>
             </div>
         </section>
