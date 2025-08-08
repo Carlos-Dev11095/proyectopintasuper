@@ -58,7 +58,7 @@
                         <li><span>/</span></li>
                         <li>Simulador Virtual</li>
                     </ul>
-                    <h2 class="banner_title">Simulador virtual</h2>
+                    <h2 class="banner_title">SIMULADOR VIRTUAL</h2>
                 </div>
             </div>
         </section>
