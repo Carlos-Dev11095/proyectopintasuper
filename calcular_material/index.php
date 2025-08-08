@@ -52,7 +52,7 @@
                         <li><span>/</span></li>
                         <li>Calcular Material</li>
                     </ul>
-                    <h2 class="banner_title">Calcular material</h2>
+                    <h2 class="banner_title">CALCULAR MATERIAL</h2>
                 </div>
             </div>
         </section>
