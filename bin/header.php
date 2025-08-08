@@ -79,6 +79,9 @@
                                 <li>
                                     <a href="<?php echo $ROOT_PATH; ?>/contacto/">Contacto</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo $ROOT_PATH; ?>/apartados/tonos_infinitos/">Tonos infinitos</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

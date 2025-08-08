@@ -179,6 +179,11 @@
         transform: translateY(-3px);
         color: #1a3a5a;
     }
+
+    .banner_title {
+    color: #f7931e !important;
+    }   
+    
 </style>
     <?php include_once __DIR__ . '/../bin/css.php'; ?>
 </head>
@@ -203,11 +208,11 @@
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo $ROOT_PATH; ?>">Inicio</a></li>
+                        <li><a href="<?php echo $ROOT_PATH; ?>/">INICIO</a></li>
                         <li><span>/</span></li>
-                        <li>Contacto</li>
+                        <li>CONTACTO</li>
                     </ul>
-                    <h2>Contacto</h2>
+                    <h2 class="banner_title">CONTACTO</h2>
                 </div>
             </div>
         </section>
