@@ -398,7 +398,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="intro-title">¡Pinta Super: Calidad que se ve y se siente!</h2>
+                        <h2 class="intro-title"style="color: #000081;">¡Pinta Super: Calidad que se ve y se siente!</h2>
                         <p class="intro-text">En Pinta Super, no solo vendemos pintura, ofrecemos calidad superior que transforma tus espacios. Nuestros productos están formulados con los más altos estándares, garantizando colores vibrantes que perduran y un acabado impecable en cada aplicación.</p>
                         <p class="intro-text">Ya sea que estés pintando tu hogar, renovando muebles de madera o herrería, o tal vez dándole un nuevo aire a tu auto, con Pinta Super obtendrás una cobertura excepcional y durabilidad garantizada. Olvídate de retoques constantes y disfruta de resultados profesionales que resisten el paso del tiempo y las inclemencias del clima.</p>
                         <p class="intro-text">Elige Pinta Super y descubre la diferencia de una calidad que no solo embellece, sino que protege y perdura.</p>

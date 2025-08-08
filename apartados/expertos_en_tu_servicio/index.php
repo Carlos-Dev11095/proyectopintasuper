@@ -376,7 +376,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="intro-title">Asesoría Profesional para que tus proyectos se vuelvan mágicos</h2>
+                        <h2 class="intro-title" style="color: #000081;">Asesoría Profesional para que tus proyectos se vuelvan mágicos</h2>
                         <p class="intro-text">En Pinta Super, sabemos que cada proyecto es único. Por eso, nuestro equipo de expertos está listo para brindarte la asesoría profesional que necesitas. Con años de experiencia en el sector, nuestros especialistas te guiarán en cada paso, desde la elección del producto ideal hasta las técnicas de aplicación más efectivas.</p>
                         <p class="intro-text">¿Dudas sobre qué tipo de pintura usar para tu fachada o cómo preparar una superficie de madera? ¿Necesitas la mejor solución para impermeabilizar tu techo y protegerlo de la humedad? ¡No te preocupes! Nuestros trabajadores están capacitados para resolver todas tus inquietudes y ofrecerte las mejores recomendaciones en pinturas e impermeabilizantes, garantizando resultados duraderos y de alta calidad.</p>
                         <p class="intro-text">Confía en la experiencia de Pinta Super y logra acabados perfectos en todos tus proyectos.</p>

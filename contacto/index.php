@@ -226,7 +226,7 @@
                 <div class="contact-page__right">
                     <div class="contact-page__details">
                         <div class="section-title text-center">
-                            <h2 class="section-title__title">Nuestras Sucursales</h2>
+                            <h2 class="section-title__title" style="color: #000081;">Nuestras Sucursales</h2>
                             <p>en la Ciudad de Morelia, Mich.</p>
                             <p>Horario de atención: Lunes a Viernes de 8:30 am a 6:30 pm y Sábado de 8:30 am a 3:00 pm</p>
                         </div>
