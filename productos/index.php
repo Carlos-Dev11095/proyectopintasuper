@@ -490,48 +490,125 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
         }
     }
 
-    /* ------------------------- */
-    /* Lightbox (Magnific Popup) */
-    /* ------------------------- */
-    .mfp-wrap {
+    /* ---------------------------------- */
+    /* Estilos mejorados para Magnific Popup */
+    /* ---------------------------------- */
+    .mfp-bg {
+        opacity: 0.9 !important;
+        background: #0b0b0b !important;
         z-index: 1042 !important;
     }
 
+    .mfp-wrap {
+        z-index: 1043 !important;
+        -webkit-backface-visibility: hidden;
+    }
+
     .mfp-container {
-        padding: 0 15px !important;
+        padding: 0 8px !important;
+        z-index: 1044 !important;
     }
 
     .mfp-content {
         z-index: 1045 !important;
-        max-width: 900px;
+        max-width: 90%;
     }
 
     .mfp-figure:after {
         box-shadow: none !important;
-        background: none !important;
+        background: transparent !important;
     }
 
     .mfp-img {
         padding: 0;
-        max-height: calc(100vh - 150px);
+        max-height: calc(100vh - 120px);
     }
 
-    .mfp-bottom-bar {
-        margin-top: 10px;
+    .mfp-close {
+        font-size: 36px;
+        color: #FFF;
+        opacity: 0.8;
+        padding: 0 10px;
     }
 
-    .mfp-title {
-        text-align: left;
-        padding: 10px 0;
-        line-height: 1.5;
+    .mfp-close:hover {
+        opacity: 1;
     }
-    
-    .mfp-title h3 {
-        color: var(--secondary-color);
-        margin-bottom: 5px;
-        font-size: 1.5em;
+
+    .mfp-arrow {
+        background: rgba(0,0,0,0.5);
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+        opacity: 0.8;
+    }
+
+    .mfp-arrow:hover {
+        opacity: 1;
+    }
+
+    .mfp-arrow:before,
+    .mfp-arrow:after {
+        margin: 15px;
+        border-top-width: 4px;
+        border-left-width: 4px;
+    }
+
+    .mfp-counter {
+        font-size: 16px;
+        color: #FFF;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    }
+
+    /* Animaciones */
+    .mfp-fade.mfp-bg {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+
+    .mfp-fade.mfp-bg.mfp-ready {
+        opacity: 0.9;
+    }
+
+    .mfp-fade.mfp-bg.mfp-removing {
+        opacity: 0;
+    }
+
+    .mfp-fade.mfp-wrap .mfp-content {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+
+    .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+        opacity: 1;
+    }
+
+    .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+        opacity: 0;
+    }
+
+    /* ------------------------- */
+    /* Estilos para el spinner de carga */
+    /* ------------------------- */
+    .mfp-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: var(--color-brand);
+        animation: spin 1s ease-in-out infinite;
+        z-index: 1050;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
     }
 </style>
+
 </head>
 
 <body class="custom-cursor">
@@ -1017,8 +1094,7 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                                                     </div>
                                                     <div class="gallery-page__icon">
                                                         <a class="img-popup" href="'.($imagenExists ? $imagenPath : '#').'" 
-                                                           title="'.$nombreMostrar.'" 
-                                                           data-caption="<h3>'.$nombreMostrar.'</h3><p>'.$producto['descripcion'].'</p>'.$detallesTecnicos.'">
+                                                        title="'.$nombreMostrar.'" data-caption="<div class=\"lightbox-content\"><h3>'.$nombreMostrar.'</h3><div class=\"product-description\">'.$producto['descripcion'].'</div><div class=\"technical-details\">'.$detallesTecnicos.'</div></div>">
                                                             <span class="icon-plus-symbol"></span>
                                                         </a>
                                                     </div>
@@ -1049,153 +1125,194 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
-    <script>
-        $(document).ready(function() {
-            // Inicializar popup de imágenes
-            $('.img-popup').magnificPopup({
-                type: 'image',
-                closeOnContentClick: true,
-                mainClass: 'mfp-img-mobile',
-                image: {
-                    verticalFit: true,
-                    titleSrc: function(item) {
-                        return item.el.attr('data-caption');
-                    }
-                },
-                gallery: {
-                    enabled: true,
-                    navigateByImgClick: true,
-                    preload: [0,2]
-                }
-            });
-            
-            // Actualizar rango de precios
-            $('#priceRange').on('input', function() {
-                const value = $(this).val();
-                $('#currentRange').text('Hasta: $' + parseInt(value).toLocaleString());
-            });
-            
-            // Filtrado por categoría
-            $('.category-filter').click(function(e) {
-                e.preventDefault();
-                $('.category-filter').removeClass('active');
-                $(this).addClass('active');
-                filterProducts();
-            });
-            
-            // Filtrado por precio
-            $('#filterButton').click(function() {
-                filterProducts();
-            });
-            
-            // Búsqueda de productos
-            $('#searchButton').click(function() {
-                filterProducts();
-            });
-            
-            $('#searchInput').keyup(function(e) {
-                if (e.key === 'Enter') {
-                    filterProducts();
-                }
-            });
-            
-            // Ordenar productos
-            $('#sort').change(function() {
-                sortProducts();
-            });
-            
-            function filterProducts() {
-                const maxPrice = parseInt($('#priceRange').val());
-                const searchTerm = $('#searchInput').val().toLowerCase();
-                const activeCategory = $('.category-filter.active').data('category');
-                
-                let visibleCount = 0;
-                
-                $('.product-item').each(function() {
-                    const price = parseFloat($(this).data('price'));
-                    const name = $(this).data('name');
-                    const category = $(this).data('category');
-                    const presentation = $(this).data('presentation');
-                    
-                    const matchesPrice = price <= maxPrice;
-                    const matchesSearch = name.includes(searchTerm) || searchTerm === '';
-                    const matchesCategory = activeCategory === 'all' || 
-                                           category === activeCategory || 
-                                           (activeCategory === 'cubetas' && presentation === 'cubeta') || 
-                                           (activeCategory === 'galones' && presentation === 'galon');
-                    
-                    if (matchesPrice && matchesSearch && matchesCategory) {
-                        $(this).show();
-                        visibleCount++;
-                    } else {
-                        $(this).hide();
-                    }
-                });
-                
-                // Mostrar u ocultar secciones según el filtro
-                $('.presentation-section').each(function() {
-                    const presentation = $(this).data('presentation');
-                    const hasVisibleProducts = $(this).find('.product-item:visible').length > 0;
-                    
-                    if (activeCategory === 'all' || 
-                        (activeCategory === 'cubetas' && presentation === 'cubeta') || 
-                        (activeCategory === 'galones' && presentation === 'galon') ||
-                        $(this).find('.product-item[data-category="'+activeCategory+'"]:visible').length > 0) {
-                        $(this).show();
-                        $(this).find('.category-title').each(function() {
-                            const category = $(this).text().trim().toLowerCase().replace(' ', '-');
-                            if ($(this).nextUntil('.category-title').filter('.product-item:visible').length > 0) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-                    } else {
-                        $(this).hide();
-                    }
-                });
-                
-                $('#resultsCount').text('Mostrando ' + visibleCount + ' productos');
-                sortProducts();
+<script>
+$(document).ready(function() {
+    // Destruir cualquier instancia previa del lightbox
+    if($.magnificPopup.instance) {
+        $.magnificPopup.instance.close();
+        $.magnificPopup.proto.close.call($.magnificPopup.instance);
+    }
+
+    // Inicialización robusta del popup de imágenes
+    $('.img-popup').magnificPopup({
+        type: 'image',
+        removalDelay: 300,
+        mainClass: 'mfp-fade',
+        fixedContentPos: true,
+        fixedBgPos: true,
+        closeOnContentClick: true,
+        closeBtnInside: true,
+        preloader: true,
+        midClick: true,
+        modal: false,
+        image: {
+            verticalFit: true,
+            titleSrc: function(item) {
+                return item.el.attr('data-caption');
             }
-            
-            function sortProducts() {
-                const sortBy = $('#sort').val();
-                const $container = $('#productsContainer');
-                
-                $('.presentation-section').each(function() {
-                    const $section = $(this);
-                    $section.find('.category-title').each(function() {
-                        const $categoryTitle = $(this);
-                        const $productsContainer = $('<div class="products-row"></div>').insertAfter($categoryTitle);
-                        const $products = $categoryTitle.nextUntil('.category-title').filter('.product-item:visible');
-                        
-                        $products.detach().appendTo($productsContainer);
-                        
-                        $products.sort(function(a, b) {
-                            const aPrice = parseFloat($(a).data('price'));
-                            const bPrice = parseFloat($(b).data('price'));
-                            const aDuration = parseInt($(a).data('duration'));
-                            const bDuration = parseInt($(b).data('duration'));
-                            
-                            switch(sortBy) {
-                                case 'price_asc':
-                                    return aPrice - bPrice;
-                                case 'price_desc':
-                                    return bPrice - aPrice;
-                                case 'duration':
-                                    return bDuration - aDuration;
-                                default: // popular (orden original)
-                                    return 0;
-                            }
-                        }).appendTo($productsContainer);
-                    });
-                });
+        },
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+            tPrev: 'Anterior',
+            tNext: 'Siguiente',
+            tCounter: '<span class="mfp-counter">%curr% de %total%</span>',
+            preload: [0,2]
+        },
+        callbacks: {
+            open: function() {
+                // Forzar z-index y deshabilitar scroll
+                $('.mfp-bg').css('z-index', '1042');
+                $('.mfp-wrap').css('z-index', '1043');
+                $('body').css('overflow', 'hidden');
+            },
+            close: function() {
+                $('body').css('overflow', 'auto');
+            },
+            beforeClose: function() {
+                // Limpiar cualquier instancia duplicada
+                $.magnificPopup.instance.close();
+            },
+            elementParse: function(item) {
+                // Asegurar que solo se procese una vez
+                if(item.el.hasClass('mfp-loaded')) {
+                    item.src = '';
+                }
+                item.el.addClass('mfp-loaded');
             }
-            
-            // Inicializar filtros
+        },
+        loading: '<div class="mfp-loading"></div>'
+    });
+    
+    // Actualizar rango de precios
+    $('#priceRange').on('input', function() {
+        const value = $(this).val();
+        $('#currentRange').text('Hasta: $' + parseInt(value).toLocaleString());
+    });
+    
+    // Filtrado por categoría
+    $('.category-filter').click(function(e) {
+        e.preventDefault();
+        $('.category-filter').removeClass('active');
+        $(this).addClass('active');
+        filterProducts();
+    });
+    
+    // Filtrado por precio
+    $('#filterButton').click(function() {
+        filterProducts();
+    });
+    
+    // Búsqueda de productos
+    $('#searchButton').click(function() {
+        filterProducts();
+    });
+    
+    $('#searchInput').keyup(function(e) {
+        if (e.key === 'Enter') {
             filterProducts();
+        }
+    });
+    
+    // Ordenar productos
+    $('#sort').change(function() {
+        sortProducts();
+    });
+    
+    function filterProducts() {
+        const maxPrice = parseInt($('#priceRange').val());
+        const searchTerm = $('#searchInput').val().toLowerCase();
+        const activeCategory = $('.category-filter.active').data('category');
+        
+        let visibleCount = 0;
+        
+        $('.product-item').each(function() {
+            const price = parseFloat($(this).data('price'));
+            const name = $(this).data('name');
+            const category = $(this).data('category');
+            const presentation = $(this).data('presentation');
+            
+            const matchesPrice = price <= maxPrice;
+            const matchesSearch = name.includes(searchTerm) || searchTerm === '';
+            const matchesCategory = activeCategory === 'all' || 
+                                   category === activeCategory || 
+                                   (activeCategory === 'cubetas' && presentation === 'cubeta') || 
+                                   (activeCategory === 'galones' && presentation === 'galon');
+            
+            if (matchesPrice && matchesSearch && matchesCategory) {
+                $(this).show();
+                visibleCount++;
+            } else {
+                $(this).hide();
+            }
         });
-    </script>
+        
+        // Mostrar u ocultar secciones según el filtro
+        $('.presentation-section').each(function() {
+            const presentation = $(this).data('presentation');
+            const hasVisibleProducts = $(this).find('.product-item:visible').length > 0;
+            
+            if (activeCategory === 'all' || 
+                (activeCategory === 'cubetas' && presentation === 'cubeta') || 
+                (activeCategory === 'galones' && presentation === 'galon') ||
+                $(this).find('.product-item[data-category="'+activeCategory+'"]:visible').length > 0) {
+                $(this).show();
+                $(this).find('.category-title').each(function() {
+                    const category = $(this).text().trim().toLowerCase().replace(' ', '-');
+                    if ($(this).nextUntil('.category-title').filter('.product-item:visible').length > 0) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            } else {
+                $(this).hide();
+            }
+        });
+        
+        $('#resultsCount').text('Mostrando ' + visibleCount + ' productos');
+        sortProducts();
+    }
+    
+    function sortProducts() {
+        const sortBy = $('#sort').val();
+        const $container = $('#productsContainer');
+        
+        $('.presentation-section').each(function() {
+            const $section = $(this);
+            $section.find('.category-title').each(function() {
+                const $categoryTitle = $(this);
+                const $productsContainer = $('<div class="products-row"></div>').insertAfter($categoryTitle);
+                const $products = $categoryTitle.nextUntil('.category-title').filter('.product-item:visible');
+                
+                $products.detach().appendTo($productsContainer);
+                
+                $products.sort(function(a, b) {
+                    const aPrice = parseFloat($(a).data('price'));
+                    const bPrice = parseFloat($(b).data('price'));
+                    const aDuration = parseInt($(a).data('duration'));
+                    const bDuration = parseInt($(b).data('duration'));
+                    
+                    switch(sortBy) {
+                        case 'price_asc':
+                            return aPrice - bPrice;
+                        case 'price_desc':
+                            return bPrice - aPrice;
+                        case 'duration':
+                            return bDuration - aDuration;
+                        default: // popular (orden original)
+                            return 0;
+                    }
+                }).appendTo($productsContainer);
+            });
+        });
+    }
+    
+    // Inicializar filtros
+    filterProducts();
+});
+</script>
+
 </body>
 </html>

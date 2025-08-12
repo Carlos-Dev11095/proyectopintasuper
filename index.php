@@ -59,8 +59,8 @@
 }
 
 .feature-one__icon img {
-  max-width: 150%;
-  max-height: 150%;
+  max-width: 155%;
+  max-height: 155%;
   object-fit: contain;
   border-radius: 10px;
 }
