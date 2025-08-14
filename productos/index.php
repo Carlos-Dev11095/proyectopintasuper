@@ -557,179 +557,267 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                     <div class="row" id="productsContainer">
                         <?php
                         $productos = [
-                            // PINTURAS ARQUITECTÓNICAS
+                            // PINTURAS ARQUITECTÓNICAS - DORADA
                             [
-                                'imagen' => 'platino_gold.png',
-                                'nombre' => 'Platino Gold',
-                                'precio' => 2992,
-                                'precio_galon' => 640,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium para superficies interiores y exteriores, con acabado satinado brillante.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$640',
-                                    'Colores disponibles' => '13 colores',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Rendimiento' => '10-12 m² por litro',
-                                    'Duración' => '10-12 años',
-                                    'Acabado' => 'Satinado brillante',
-                                    'Recomendación' => 'Ideal para exteriores de alta resistencia'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'dorada.png',
+                                'imagen' => 'dorada_19_litros.png',
                                 'nombre' => 'Dorada',
                                 'precio' => 2025,
-                                'precio_galon' => 477,
+                                'precio_galon' => null,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Cubeta 19L',
                                 'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
                                 'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$477',
+                                    'Presentación' => 'Cubeta de 19 litros',
                                     'Colores disponibles' => '32 colores',
                                     'Tiempo de secado' => '30 minutos al tacto',
                                     'Rendimiento' => '7-9 m² por litro',
                                     'Duración' => '7 años',
-                                    'Acabado' => 'Mate',
-                                    'Recomendación' => 'Excelente relación calidad-precio'
+                                    'Acabado' => 'Mate'
                                 ]
                             ],
                             [
-                                'imagen' => 'onix.png',
-                                'nombre' => 'Onix',
-                                'precio' => 1458,
-                                'precio_galon' => 335,
+                                'imagen' => 'dorada_galon.png',
+                                'nombre' => 'Dorada',
+                                'precio' => 477,
+                                'precio_galon' => null,
                                 'tipo' => 'pintura',
                                 'categoria' => 'Pinturas Arquitectónicas',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño para decorar superficies en interiores y exteriores, con acabado mate.',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
                                 'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$335',
-                                    'Colores disponibles' => '33 colores',
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '32 colores',
                                     'Tiempo de secado' => '30 minutos al tacto',
-                                    'Rendimiento' => '6-8 m² por litro (a dos manos)',
-                                    'Duración' => '4 años',
-                                    'Acabado' => 'Mate',
-                                    'Recomendación' => 'Perfecta para proyectos residenciales'
+                                    'Rendimiento' => '7-9 m² por litro',
+                                    'Duración' => '7 años',
+                                    'Acabado' => 'Mate'
                                 ]
                             ],
-                            [
-                                'imagen' => 'zafiro.png',
-                                'nombre' => 'Zafiro',
-                                'precio' => 733,
-                                'precio_galon' => 184,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para decorar superficies en interiores, con acabado mate.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$184',
-                                    'Colores disponibles' => '26 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Rendimiento' => '4-6 m² por litro (a dos manos)',
-                                    'Duración' => '2 años',
-                                    'Acabado' => 'Mate',
-                                    'Recomendación' => 'Ideal para interiores con bajo tráfico'
-                                ]
-                            ],
-                            
+
                             // IMPERMEABILIZANTES
                             [
-                                'imagen' => 'imper_multi_premium.png',
+                                'imagen' => 'imper_multi_premium_19_litros.png',
                                 'nombre' => 'Imper Multi Premium',
                                 'precio' => 2391,
                                 'precio_galon' => 546,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
-                                'descripcion' => 'Impermeabilizante premium con resistencia de 7 años, elaborado a base de resinas estiren-acrílicas, pigmentos inorgánicos y micro fibra de poliéster.',
+                                'presentacion' => 'Cubeta 19L',
+                                'presentacion_galon' => 'Galón',
+                                'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
                                     'Precio por galón' => '$546',
                                     'Colores' => 'Terracota / Blanco',
                                     'Tiempo de secado' => '45 minutos al tacto',
-                                    'Rendimiento' => '1 m² por litro',
-                                    'Resistencia' => '7 años',
-                                    'Aplicación' => 'Techos y superficies exteriores',
-                                    'Recomendación' => 'Máxima protección contra humedad'
+                                    'Resistencia' => '7 años'
                                 ]
                             ],
                             [
-                                'imagen' => 'imper_multi_pro_fibrantado.png',
+                                'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
                                 'nombre' => 'Imper Multi Pro Fibrantado',
                                 'precio' => 2120,
                                 'precio_galon' => 546,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
-                                'descripcion' => 'Impermeabilizante fibrantado color terracota, con atributos acrílico elastoméricos creado en base agua.',
+                                'presentacion' => 'Cubeta 19L',
+                                'presentacion_galon' => 'Galón',
+                                'descripcion' => 'Impermeabilizante fibrantado color terracota.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros / Galón',
                                     'Precio por galón' => '$546',
                                     'Colores' => 'Terracota / Blanco',
                                     'Tiempo de secado' => '45 minutos al tacto',
-                                    'Rendimiento' => '1 m² por litro',
-                                    'Resistencia' => '10 años',
-                                    'Aplicación' => 'Techos con fisuras',
-                                    'Recomendación' => 'Ideal para techos con problemas de fisuras'
+                                    'Resistencia' => '10 años'
                                 ]
                             ],
                             [
-                                'imagen' => 'impertek_19.png',
+                                'imagen' => 'impertek_19_litros.png',
                                 'nombre' => 'Imper-Tek',
                                 'precio' => 1300,
                                 'precio_galon' => null,
                                 'tipo' => 'impermeabilizante',
                                 'categoria' => 'Impermeabilizantes',
-                                'descripcion' => 'Impermeabilizante elaborado a base de resinas estiren-acrílicas y pigmentos inorgánicos.',
+                                'presentacion' => 'Cubeta 19L',
+                                'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
                                 'detalles' => [
                                     'Presentación' => 'Cubeta de 19 litros',
                                     'Colores' => 'Terracota / Blanco',
                                     'Tiempo de secado' => '45 minutos al tacto',
-                                    'Rendimiento' => '1 m² por litro',
-                                    'Resistencia' => '5 años',
-                                    'Aplicación' => 'Techos planos',
-                                    'Recomendación' => 'Solución económica para techos planos'
+                                    'Resistencia' => '5 años'
                                 ]
                             ],
-                            
-                            // ESMALTES
+
+                            // ESMALTES - KIVI FORTE
                             [
-                                'imagen' => 'super_rap_ultra.png',
-                                'nombre' => 'Super Rap Ultra',
-                                'precio' => 3254.99,
-                                'precio_galon' => 734,
-                                'tipo' => 'esmalte',
-                                'categoria' => 'Esmaltes',
-                                'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido. Ideal para trabajos donde el secado de la pintura sea un factor fundamental.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón / Litro',
-                                    'Precio por galón' => '$734',
-                                    'Colores disponibles' => '25 colores',
-                                    'Tiempo de secado' => '10 minutos al tacto',
-                                    'Rendimiento' => '8-10 m² por litro',
-                                    'Acabados' => 'Brillante, satinado, metálico y mate',
-                                    'Aplicación' => 'Muebles y superficies metálicas',
-                                    'Recomendación' => 'Perfecto para proyectos con tiempos ajustados'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'kiviforte.png',
+                                'imagen' => 'kivi_forte_19_litros.png',
                                 'nombre' => 'Kivi Forte',
                                 'precio' => 3090,
                                 'precio_galon' => 702,
                                 'tipo' => 'esmalte',
                                 'categoria' => 'Esmaltes',
-                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento. Produce un acabado duro con máxima retención de color, adherencia y gran resistencia a la intemperie.',
+                                'presentacion' => 'Cubeta 19L',
+                                'presentacion_galon' => 'Galón',
+                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
                                 'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón / Litro',
+                                    'Presentación' => 'Cubeta de 19 litros / Galón',
                                     'Precio por galón' => '$702',
                                     'Colores disponibles' => '19 colores',
-                                    'Tiempo de secado' => '4 horas al tacto',
-                                    'Rendimiento' => '7-9 m² por litro (a dos manos)',
-                                    'Acabados' => 'Brillante, semimate, mate y metálico',
-                                    'Aplicación' => 'Estructuras metálicas exteriores',
-                                    'Recomendación' => 'Protección superior para metal expuesto'
+                                    'Tiempo de secado' => '4 horas al tacto'
+                                ]
+                            ],
+                            [
+                                'imagen' => 'kivi_forte_galon.png',
+                                'nombre' => 'Kivi Forte',
+                                'precio' => 702,
+                                'precio_galon' => null,
+                                'tipo' => 'esmalte',
+                                'categoria' => 'Esmaltes',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
+                                'detalles' => [
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '19 colores',
+                                    'Tiempo de secado' => '4 horas al tacto'
+                                ]
+                            ],
+
+                            // PINTURAS ARQUITECTÓNICAS - ONIX
+                            [
+                                'imagen' => 'onix_19_litros.png',
+                                'nombre' => 'Onix',
+                                'precio' => 1458,
+                                'precio_galon' => null,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Cubeta 19L',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
+                                'detalles' => [
+                                    'Presentación' => 'Cubeta de 19 litros',
+                                    'Colores disponibles' => '33 colores',
+                                    'Tiempo de secado' => '30 minutos al tacto',
+                                    'Duración' => '4 años'
+                                ]
+                            ],
+                            [
+                                'imagen' => 'onix_galon.png',
+                                'nombre' => 'Onix',
+                                'precio' => 335,
+                                'precio_galon' => null,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
+                                'detalles' => [
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '33 colores',
+                                    'Tiempo de secado' => '30 minutos al tacto',
+                                    'Duración' => '4 años'
+                                ]
+                            ],
+
+                            // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD
+                            [
+                                'imagen' => 'platino_gold_19_litros.png',
+                                'nombre' => 'Platino Gold',
+                                'precio' => 2992,
+                                'precio_galon' => 640,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Cubeta 19L',
+                                'presentacion_galon' => 'Galón',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
+                                'detalles' => [
+                                    'Presentación' => 'Cubeta de 19 litros / Galón',
+                                    'Precio por galón' => '$640',
+                                    'Colores disponibles' => '13 colores',
+                                    'Tiempo de secado' => '45 minutos al tacto',
+                                    'Duración' => '10-12 años'
+                                ]
+                            ],
+                            [
+                                'imagen' => 'platino_gold_galon.png',
+                                'nombre' => 'Platino Gold',
+                                'precio' => 640,
+                                'precio_galon' => null,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
+                                'detalles' => [
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '13 colores',
+                                    'Tiempo de secado' => '45 minutos al tacto',
+                                    'Duración' => '10-12 años'
+                                ]
+                            ],
+
+                            // ESMALTES - SUPER RAP
+                            [
+                                'imagen' => 'super_rap_ultra_19_litros.png',
+                                'nombre' => 'Super Rap Ultra',
+                                'precio' => 3254.99,
+                                'precio_galon' => 734,
+                                'tipo' => 'esmalte',
+                                'categoria' => 'Esmaltes',
+                                'presentacion' => 'Cubeta 19L',
+                                'presentacion_galon' => 'Galón',
+                                'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
+                                'detalles' => [
+                                    'Presentación' => 'Cubeta de 19 litros / Galón',
+                                    'Precio por galón' => '$734',
+                                    'Colores disponibles' => '25 colores',
+                                    'Tiempo de secado' => '10 minutos al tacto'
+                                ]
+                            ],
+                            [
+                                'imagen' => 'superrap_galon.png',
+                                'nombre' => 'Super Rap',
+                                'precio' => 734,
+                                'precio_galon' => null,
+                                'tipo' => 'esmalte',
+                                'categoria' => 'Esmaltes',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
+                                'detalles' => [
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '25 colores',
+                                    'Tiempo de secado' => '10 minutos al tacto'
+                                ]
+                            ],
+
+                            // PINTURAS ARQUITECTÓNICAS - ZAFIRO
+                            [
+                                'imagen' => 'zafiro_19_litros.png',
+                                'nombre' => 'Zafiro',
+                                'precio' => 733,
+                                'precio_galon' => null,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Cubeta 19L',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
+                                'detalles' => [
+                                    'Presentación' => 'Cubeta de 19 litros',
+                                    'Colores disponibles' => '26 colores',
+                                    'Tiempo de secado' => '30 minutos al tacto',
+                                    'Duración' => '2 años'
+                                ]
+                            ],
+                            [
+                                'imagen' => 'zafiro_galon.png',
+                                'nombre' => 'Zafiro',
+                                'precio' => 184,
+                                'precio_galon' => null,
+                                'tipo' => 'pintura',
+                                'categoria' => 'Pinturas Arquitectónicas',
+                                'presentacion' => 'Galón',
+                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
+                                'detalles' => [
+                                    'Presentación' => 'Galón',
+                                    'Colores disponibles' => '26 colores',
+                                    'Tiempo de secado' => '30 minutos al tacto',
+                                    'Duración' => '2 años'
                                 ]
                             ]
                         ];
@@ -788,10 +876,10 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                                         </div>
                                     </div>
                                     <div class="product-details">
-                                        <div class="product-price">$'.$precioFormateado.' <small>Cubeta 19L</small></div>';
+                                        <div class="product-price">$'.$precioFormateado.' <small>'.$producto['presentacion'].'</small></div>';
                                         
-                            if ($precioGalonFormateado != 'N/A') {
-                                echo '<div class="product-price-gal">$'.$precioGalonFormateado.' <small>Galón</small></div>';
+                            if (isset($producto['presentacion_galon'])) {
+                                echo '<div class="product-price-gal">$'.$precioGalonFormateado.' <small>'.$producto['presentacion_galon'].'</small></div>';
                             }
                                         
                             echo '      <div class="product-technical">
