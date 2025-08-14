@@ -2,7 +2,71 @@
 // Configuración de rutas
 $ROOT_PATH = '/proyectopintasuper';
 $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/productos/';
+
+// Función para mostrar productos
+function mostrarProducto($producto, $ROOT_PATH) {
+    $nombreMostrar = $producto['nombre'];
+    $precioFormateado = number_format($producto['precio'], 2);
+    $imagenPath = $ROOT_PATH . '/assets/images/gallery/productos/' . $producto['imagen'];
+    $imagenExists = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagenPath);
+    
+    // Generar detalles técnicos
+    $detallesTecnicos = '';
+    foreach ($producto['detalles'] as $key => $value) {
+        $detallesTecnicos .= "<p><strong>$key:</strong> $value</p>";
+    }
+    
+    // Extraer duración/resistencia para filtrado
+    $duracion = 0;
+    if (isset($producto['detalles']['Duración'])) {
+        $duracion = intval($producto['detalles']['Duración']);
+    } elseif (isset($producto['detalles']['Resistencia'])) {
+        $duracion = intval($producto['detalles']['Resistencia']);
+    }
+    
+    echo '
+    <div class="col-xl-4 col-lg-6 col-md-6 product-item" 
+         data-category="'.strtolower(str_replace(' ', '-', $producto['categoria'])).'" 
+         data-price="'.$producto['precio'].'" 
+         data-duration="'.$duracion.'"
+         data-name="'.strtolower($producto['nombre']).'">
+        <div class="gallery-page__single">
+            <div class="gallery-page__img">';
+            
+    if ($imagenExists) {
+        echo '<img src="'.$imagenPath.'" alt="'.$nombreMostrar.'">';
+    } else {
+        echo '<div class="image-not-found">
+                <i class="fas fa-image"></i>
+                <div>Imagen no disponible</div>
+                <small>'.$producto['imagen'].'</small>
+              </div>';
+    }
+    
+    echo '      <div class="gallery-page__overlay">
+                    <div class="gallery-page__title">
+                        <h3>'.$nombreMostrar.'</h3>
+                    </div>
+                </div>
+                <div class="gallery-page__icon">
+                    <a class="img-popup" href="'.($imagenExists ? $imagenPath : '#').'" 
+                       title="'.$nombreMostrar.'" 
+                       data-caption="<h3>'.$nombreMostrar.'</h3><p>'.$producto['descripcion'].'</p>'.$detallesTecnicos.'">
+                        <span class="icon-plus-symbol"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="product-price">$'.$precioFormateado.' <small>'.$producto['presentacion'].'</small></div>
+                <div class="product-technical">
+                    '.$detallesTecnicos.'
+                </div>
+            </div>
+        </div>
+    </div>';
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -360,7 +424,7 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
             color: #ccc;
         }
 
-        /* Estilos para el lightbox - CORRECCIONES */
+        /* Estilos para el lightbox */
         .mfp-wrap {
             z-index: 1042 !important;
         }
@@ -431,6 +495,38 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
             color: #fff !important;
         }
 
+        /* Nuevos estilos para la organización por secciones */
+        .product-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--color-brand-dark);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--color-brand);
+        }
+
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--color-brand);
+        }
+
         @media (max-width: 991px) {
             .gallery-wrapper {
                 flex-direction: column;
@@ -470,6 +566,14 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                 font-size: 30px;
                 right: 5px;
                 top: 5px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.2rem;
             }
         }
 
@@ -542,7 +646,7 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
 
                 <div class="main-content">
                     <div class="product-header-controls">
-                        <span class="results-count" id="resultsCount">Mostrando 9 productos</span>
+                        <span class="results-count" id="resultsCount">Mostrando todos los productos</span>
                         <div class="sort-by">
                             <label for="sort">Ordenar por:</label>
                             <select id="sort">
@@ -554,342 +658,329 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
                         </div>
                     </div>
 
-                    <div class="row" id="productsContainer">
-                        <?php
-                        $productos = [
-                            // PINTURAS ARQUITECTÓNICAS - DORADA
-                            [
-                                'imagen' => 'dorada_19_litros.png',
-                                'nombre' => 'Dorada',
-                                'precio' => 2025,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Cubeta 19L',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros',
-                                    'Colores disponibles' => '32 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Rendimiento' => '7-9 m² por litro',
-                                    'Duración' => '7 años',
-                                    'Acabado' => 'Mate'
+                    <!-- Sección para Cubetas de 19 litros -->
+                    <div class="product-section">
+                        <h3 class="section-title">Cubetas de 19 Litros</h3>
+                        
+                        <!-- Pinturas Arquitectónicas -->
+                        <h4 class="section-subtitle">Pinturas Arquitectónicas</h4>
+                        <div class="row" id="cubetasPinturas">
+                            <?php
+                            $cubetasPinturas = [
+                                // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD (Cubeta)
+                                [
+                                    'imagen' => 'platino_gold_19_litros.png',
+                                    'nombre' => 'Platino Gold',
+                                    'precio' => 2992,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '13 colores',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Duración' => '10-12 años'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - DORADA (Cubeta)
+                                [
+                                    'imagen' => 'dorada_19_litros.png',
+                                    'nombre' => 'Dorada',
+                                    'precio' => 2025,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '32 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Rendimiento' => '7-9 m² por litro',
+                                        'Duración' => '7 años',
+                                        'Acabado' => 'Mate'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - ONIX (Cubeta)
+                                [
+                                    'imagen' => 'onix_19_litros.png',
+                                    'nombre' => 'Onix',
+                                    'precio' => 1458,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '33 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Duración' => '4 años'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - ZAFIRO (Cubeta)
+                                [
+                                    'imagen' => 'zafiro_19_litros.png',
+                                    'nombre' => 'Zafiro',
+                                    'precio' => 733,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '26 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Duración' => '2 años'
+                                    ]
                                 ]
-                            ],
-                            [
-                                'imagen' => 'dorada_galon.png',
-                                'nombre' => 'Dorada',
-                                'precio' => 477,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '32 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Rendimiento' => '7-9 m² por litro',
-                                    'Duración' => '7 años',
-                                    'Acabado' => 'Mate'
-                                ]
-                            ],
-
-                            // IMPERMEABILIZANTES
-                            [
-                                'imagen' => 'imper_multi_premium_19_litros.png',
-                                'nombre' => 'Imper Multi Premium',
-                                'precio' => 2391,
-                                'precio_galon' => 546,
-                                'tipo' => 'impermeabilizante',
-                                'categoria' => 'Impermeabilizantes',
-                                'presentacion' => 'Cubeta 19L',
-                                'presentacion_galon' => 'Galón',
-                                'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$546',
-                                    'Colores' => 'Terracota / Blanco',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Resistencia' => '7 años'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
-                                'nombre' => 'Imper Multi Pro Fibrantado',
-                                'precio' => 2120,
-                                'precio_galon' => 546,
-                                'tipo' => 'impermeabilizante',
-                                'categoria' => 'Impermeabilizantes',
-                                'presentacion' => 'Cubeta 19L',
-                                'presentacion_galon' => 'Galón',
-                                'descripcion' => 'Impermeabilizante fibrantado color terracota.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$546',
-                                    'Colores' => 'Terracota / Blanco',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Resistencia' => '10 años'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'impertek_19_litros.png',
-                                'nombre' => 'Imper-Tek',
-                                'precio' => 1300,
-                                'precio_galon' => null,
-                                'tipo' => 'impermeabilizante',
-                                'categoria' => 'Impermeabilizantes',
-                                'presentacion' => 'Cubeta 19L',
-                                'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros',
-                                    'Colores' => 'Terracota / Blanco',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Resistencia' => '5 años'
-                                ]
-                            ],
-
-                            // ESMALTES - KIVI FORTE
-                            [
-                                'imagen' => 'kivi_forte_19_litros.png',
-                                'nombre' => 'Kivi Forte',
-                                'precio' => 3090,
-                                'precio_galon' => 702,
-                                'tipo' => 'esmalte',
-                                'categoria' => 'Esmaltes',
-                                'presentacion' => 'Cubeta 19L',
-                                'presentacion_galon' => 'Galón',
-                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$702',
-                                    'Colores disponibles' => '19 colores',
-                                    'Tiempo de secado' => '4 horas al tacto'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'kivi_forte_galon.png',
-                                'nombre' => 'Kivi Forte',
-                                'precio' => 702,
-                                'precio_galon' => null,
-                                'tipo' => 'esmalte',
-                                'categoria' => 'Esmaltes',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '19 colores',
-                                    'Tiempo de secado' => '4 horas al tacto'
-                                ]
-                            ],
-
-                            // PINTURAS ARQUITECTÓNICAS - ONIX
-                            [
-                                'imagen' => 'onix_19_litros.png',
-                                'nombre' => 'Onix',
-                                'precio' => 1458,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Cubeta 19L',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros',
-                                    'Colores disponibles' => '33 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Duración' => '4 años'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'onix_galon.png',
-                                'nombre' => 'Onix',
-                                'precio' => 335,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '33 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Duración' => '4 años'
-                                ]
-                            ],
-
-                            // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD
-                            [
-                                'imagen' => 'platino_gold_19_litros.png',
-                                'nombre' => 'Platino Gold',
-                                'precio' => 2992,
-                                'precio_galon' => 640,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Cubeta 19L',
-                                'presentacion_galon' => 'Galón',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$640',
-                                    'Colores disponibles' => '13 colores',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Duración' => '10-12 años'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'platino_gold_galon.png',
-                                'nombre' => 'Platino Gold',
-                                'precio' => 640,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '13 colores',
-                                    'Tiempo de secado' => '45 minutos al tacto',
-                                    'Duración' => '10-12 años'
-                                ]
-                            ],
-
-                            // ESMALTES - SUPER RAP
-                            [
-                                'imagen' => 'super_rap_ultra_19_litros.png',
-                                'nombre' => 'Super Rap Ultra',
-                                'precio' => 3254.99,
-                                'precio_galon' => 734,
-                                'tipo' => 'esmalte',
-                                'categoria' => 'Esmaltes',
-                                'presentacion' => 'Cubeta 19L',
-                                'presentacion_galon' => 'Galón',
-                                'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros / Galón',
-                                    'Precio por galón' => '$734',
-                                    'Colores disponibles' => '25 colores',
-                                    'Tiempo de secado' => '10 minutos al tacto'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'superrap_galon.png',
-                                'nombre' => 'Super Rap',
-                                'precio' => 734,
-                                'precio_galon' => null,
-                                'tipo' => 'esmalte',
-                                'categoria' => 'Esmaltes',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '25 colores',
-                                    'Tiempo de secado' => '10 minutos al tacto'
-                                ]
-                            ],
-
-                            // PINTURAS ARQUITECTÓNICAS - ZAFIRO
-                            [
-                                'imagen' => 'zafiro_19_litros.png',
-                                'nombre' => 'Zafiro',
-                                'precio' => 733,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Cubeta 19L',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
-                                'detalles' => [
-                                    'Presentación' => 'Cubeta de 19 litros',
-                                    'Colores disponibles' => '26 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Duración' => '2 años'
-                                ]
-                            ],
-                            [
-                                'imagen' => 'zafiro_galon.png',
-                                'nombre' => 'Zafiro',
-                                'precio' => 184,
-                                'precio_galon' => null,
-                                'tipo' => 'pintura',
-                                'categoria' => 'Pinturas Arquitectónicas',
-                                'presentacion' => 'Galón',
-                                'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
-                                'detalles' => [
-                                    'Presentación' => 'Galón',
-                                    'Colores disponibles' => '26 colores',
-                                    'Tiempo de secado' => '30 minutos al tacto',
-                                    'Duración' => '2 años'
-                                ]
-                            ]
-                        ];
-
-                        foreach ($productos as $producto) {
-                            $nombreMostrar = $producto['nombre'];
-                            $precioFormateado = number_format($producto['precio'], 2);
-                            $precioGalonFormateado = isset($producto['precio_galon']) ? number_format($producto['precio_galon'], 2) : 'N/A';
-                            $imagenPath = $ROOT_PATH . '/assets/images/gallery/productos/' . $producto['imagen'];
-                            $imagenExists = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagenPath);
+                            ];
                             
-                            // Generar detalles técnicos
-                            $detallesTecnicos = '';
-                            foreach ($producto['detalles'] as $key => $value) {
-                                $detallesTecnicos .= "<p><strong>$key:</strong> $value</p>";
+                            foreach ($cubetasPinturas as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
                             }
+                            ?>
+                        </div>
+                        
+                        <!-- Impermeabilizantes -->
+                        <h4 class="section-subtitle">Impermeabilizantes</h4>
+                        <div class="row" id="cubetasImpermeabilizantes">
+                            <?php
+                            $cubetasImper = [
+                                // IMPERMEABILIZANTES - MULTI PREMIUM (Cubeta)
+                                [
+                                    'imagen' => 'imper_multi_premium_19_litros.png',
+                                    'nombre' => 'Imper Multi Premium',
+                                    'precio' => 2391,
+                                    'tipo' => 'impermeabilizante',
+                                    'categoria' => 'Impermeabilizantes',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores' => 'Terracota / Blanco',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Resistencia' => '7 años'
+                                    ]
+                                ],
+                                
+                                // IMPERMEABILIZANTES - MULTI PRO FIBRANTADO (Cubeta)
+                                [
+                                    'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
+                                    'nombre' => 'Imper Multi Pro Fibrantado',
+                                    'precio' => 2120,
+                                    'tipo' => 'impermeabilizante',
+                                    'categoria' => 'Impermeabilizantes',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Impermeabilizante fibrantado color terracota.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores' => 'Terracota / Blanco',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Resistencia' => '10 años'
+                                    ]
+                                ],
+                                
+                                // IMPERMEABILIZANTES - IMPER-TEK (Cubeta)
+                                [
+                                    'imagen' => 'impertek_19_litros.png',
+                                    'nombre' => 'Imper-Tek',
+                                    'precio' => 1300,
+                                    'tipo' => 'impermeabilizante',
+                                    'categoria' => 'Impermeabilizantes',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores' => 'Terracota / Blanco',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Resistencia' => '5 años'
+                                    ]
+                                ]
+                            ];
                             
-                            // Extraer duración/resistencia para filtrado
-                            $duracion = 0;
-                            if (isset($producto['detalles']['Duración'])) {
-                                $duracion = intval($producto['detalles']['Duración']);
-                            } elseif (isset($producto['detalles']['Resistencia'])) {
-                                $duracion = intval($producto['detalles']['Resistencia']);
+                            foreach ($cubetasImper as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
                             }
+                            ?>
+                        </div>
+                        
+                        <!-- Esmaltes -->
+                        <h4 class="section-subtitle">Esmaltes</h4>
+                        <div class="row" id="cubetasEsmaltes">
+                            <?php
+                            $cubetasEsmaltes = [
+                                // ESMALTES - KIVI FORTE (Cubeta)
+                                [
+                                    'imagen' => 'kivi_forte_19_litros.png',
+                                    'nombre' => 'Kivi Forte',
+                                    'precio' => 3090,
+                                    'tipo' => 'esmalte',
+                                    'categoria' => 'Esmaltes',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '19 colores',
+                                        'Tiempo de secado' => '4 horas al tacto'
+                                    ]
+                                ],
+                                
+                                // ESMALTES - SUPER RAP ULTRA (Cubeta)
+                                [
+                                    'imagen' => 'super_rap_ultra_19_litros.png',
+                                    'nombre' => 'Super Rap Ultra',
+                                    'precio' => 3254.99,
+                                    'tipo' => 'esmalte',
+                                    'categoria' => 'Esmaltes',
+                                    'presentacion' => 'Cubeta 19L',
+                                    'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
+                                    'detalles' => [
+                                        'Presentación' => 'Cubeta de 19 litros',
+                                        'Colores disponibles' => '25 colores',
+                                        'Tiempo de secado' => '10 minutos al tacto'
+                                    ]
+                                ]
+                            ];
                             
-                            echo '
-                            <div class="col-xl-4 col-lg-6 col-md-6 product-item" 
-                                 data-category="'.strtolower(str_replace(' ', '-', $producto['categoria'])).'" 
-                                 data-price="'.$producto['precio'].'" 
-                                 data-duration="'.$duracion.'"
-                                 data-name="'.strtolower($producto['nombre']).'">
-                                <div class="gallery-page__single">
-                                    <div class="gallery-page__img">';
-                                    
-                            if ($imagenExists) {
-                                echo '<img src="'.$imagenPath.'" alt="'.$nombreMostrar.'">';
-                            } else {
-                                echo '<div class="image-not-found">
-                                        <i class="fas fa-image"></i>
-                                        <div>Imagen no disponible</div>
-                                        <small>'.$producto['imagen'].'</small>
-                                      </div>';
+                            foreach ($cubetasEsmaltes as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
                             }
+                            ?>
+                        </div>
+                    </div>
+
+                    <!-- Sección para Galones -->
+                    <div class="product-section" style="margin-top: 50px;">
+                        <h3 class="section-title">Galones</h3>
+                        
+                        <!-- Pinturas Arquitectónicas -->
+                        <h4 class="section-subtitle">Pinturas Arquitectónicas</h4>
+                        <div class="row" id="galonesPinturas">
+                            <?php
+                            $galonesPinturas = [
+                                // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD (Galón)
+                                [
+                                    'imagen' => 'platino_gold_galon.png',
+                                    'nombre' => 'Platino Gold',
+                                    'precio' => 640,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '13 colores',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Duración' => '10-12 años'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - DORADA (Galón)
+                                [
+                                    'imagen' => 'dorada_galon.png',
+                                    'nombre' => 'Dorada',
+                                    'precio' => 477,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '32 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Rendimiento' => '7-9 m² por litro',
+                                        'Duración' => '7 años',
+                                        'Acabado' => 'Mate'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - ONIX (Galón)
+                                [
+                                    'imagen' => 'onix_galon.png',
+                                    'nombre' => 'Onix',
+                                    'precio' => 335,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '33 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Duración' => '4 años'
+                                    ]
+                                ],
+                                
+                                // PINTURAS ARQUITECTÓNICAS - ZAFIRO (Galón)
+                                [
+                                    'imagen' => 'zafiro_galon.png',
+                                    'nombre' => 'Zafiro',
+                                    'precio' => 184,
+                                    'tipo' => 'pintura',
+                                    'categoria' => 'Pinturas Arquitectónicas',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '26 colores',
+                                        'Tiempo de secado' => '30 minutos al tacto',
+                                        'Duración' => '2 años'
+                                    ]
+                                ]
+                            ];
                             
-                            echo '      <div class="gallery-page__overlay">
-                                            <div class="gallery-page__title">
-                                                <h3>'.$nombreMostrar.'</h3>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-page__icon">
-                                            <a class="img-popup" href="'.($imagenExists ? $imagenPath : '#').'" 
-                                               title="'.$nombreMostrar.'" 
-                                               data-caption="<h3>'.$nombreMostrar.'</h3><p>'.$producto['descripcion'].'</p>'.$detallesTecnicos.'">
-                                                <span class="icon-plus-symbol"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-price">$'.$precioFormateado.' <small>'.$producto['presentacion'].'</small></div>';
-                                        
-                            if (isset($producto['presentacion_galon'])) {
-                                echo '<div class="product-price-gal">$'.$precioGalonFormateado.' <small>'.$producto['presentacion_galon'].'</small></div>';
+                            foreach ($galonesPinturas as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
                             }
-                                        
-                            echo '      <div class="product-technical">
-                                            '.$detallesTecnicos.'
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>';
-                        }
-                        ?>
+                            ?>
+                        </div>
+                        
+                        <!-- Esmaltes -->
+                        <h4 class="section-subtitle">Esmaltes</h4>
+                        <div class="row" id="galonesEsmaltes">
+                            <?php
+                            $galonesEsmaltes = [
+                                // ESMALTES - KIVI FORTE (Galón)
+                                [
+                                    'imagen' => 'kivi_forte_galon.png',
+                                    'nombre' => 'Kivi Forte',
+                                    'precio' => 702,
+                                    'tipo' => 'esmalte',
+                                    'categoria' => 'Esmaltes',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '19 colores',
+                                        'Tiempo de secado' => '4 horas al tacto'
+                                    ]
+                                ],
+                                
+                                // ESMALTES - SUPER RAP (Galón)
+                                [
+                                    'imagen' => 'superrap_galon.png',
+                                    'nombre' => 'Super Rap',
+                                    'precio' => 734,
+                                    'tipo' => 'esmalte',
+                                    'categoria' => 'Esmaltes',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores disponibles' => '25 colores',
+                                        'Tiempo de secado' => '10 minutos al tacto'
+                                    ]
+                                ]
+                            ];
+                            
+                            foreach ($galonesEsmaltes as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
