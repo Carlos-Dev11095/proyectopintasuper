@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintasuper</title>
-    <!-- iconos favoritos -->
     <link rel="apple-touch-icon" sizes="180x180" href="/proyectopintasuper/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/proyectopintasuper/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/proyectopintasuper/assets/images/favicons/favicon-16x16.png" />
@@ -87,8 +86,8 @@
 
     /* Estilo para la imagen del mapa */
     .sucursal-thumbnail {
-        width: 80px;
-        height: 80px;
+        width: 500px;
+        height: 500px;
         margin: 0; /* Eliminamos el margen superior/inferior para que el gap del LI lo controle */
         display: block;
     }
@@ -97,34 +96,12 @@
         transform: scale(1.03);
     }
 
-    /* Estilos para los modales */
-    .modal-dialog {
-        max-width: 90%;
-        margin: 2rem auto;
-    }
-
-    .modal-content {
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    .modal-body img {
-        width: 100%;
-        height: auto;
-        max-height: 70vh;
-        object-fit: contain;
-    }
-
     /* Ajustes para dispositivos móviles */
     @media (max-width: 768px) {
         .contact-page__details-list li {
             min-width: 100%;
         }
         
-        .modal-dialog {
-            max-width: 95%;
-            margin: 1rem auto;
-        }
     }
     
     /* Estilo para el título de sucursal */
@@ -182,7 +159,7 @@
 
     .banner_title {
     color: #f7931e !important;
-    }   
+    } 
     
 </style>
     <?php include_once __DIR__ . '/../bin/css.php'; ?>
@@ -201,7 +178,6 @@
             <div class="sticky-header__content"></div>
         </div>
         
-        <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
             </div>
@@ -216,10 +192,7 @@
                 </div>
             </div>
         </section>
-        <!--Page Header End-->
-
-<!--Contact Page Start-->
-<section class="contact-page">
+        <section class="contact-page">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -228,45 +201,65 @@
                         <div class="section-title text-center">
                             <h2 class="section-title__title" style="color: #000081;">Nuestras Sucursales</h2>
                             <p>en la Ciudad de Morelia, Mich.</p>
-                            <p>Horario de atención: Lunes a Viernes de 8:30 am a 6:30 pm y Sábado de 8:30 am a 3:00 pm</p>
+                            <p>Horario de atención: Lunes a Viernes de 8:30 am a 6:30 pm y Sábado de 8:30 am a 2:30 pm</p>
                         </div>
                         
-                        <!-- Contenedor de sucursales en columnas -->
-<div class="row">
-    <!-- Sucursal Matríz -->
+                        <div class="row">
     <div class="col-md-4">
         <div class="sucursal-box text-center">
-            <h3>Matríz</h3>
-            <p>Av. Guadalupe Victoria No.1560 Col. Prados Verdes.</p>
-            <p><a href="tel:4433171400">Tel. (443) 3171400</a></p>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modalMatriz">
-                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Matríz" class="sucursal-thumbnail img-fluid d-block mx-auto">
+            <h3>Matríz Prados Verdes</h3>
+            <p>Av. Guadalupe Victoria #1560 Col. Prados Verdes</p>
+            <p><a href="tel:4431618135">Tel. (443) 161 81 35</a></p>
+            <a>
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_matriz.png" alt="Sucursal Matríz" class="sucursal-thumbnail img-fluid d-block mx-auto">
                 <small class="text-muted">(Click para ampliar)</small>
             </a>
         </div>
     </div>
     
-    <!-- Sucursal Torreón -->
     <div class="col-md-4">
         <div class="sucursal-box text-center">
-            <h3>Torreón</h3>
-            <p>Av. Torreón Nuevo No.560 Col. Loma Real.</p>
-            <p><a href="tel:4432752004">Tel. (443) 2752004</a></p>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modalTorreon">
-                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Torreón" class="sucursal-thumbnail img-fluid d-block mx-auto">
+            <h3>Jardines</h3>
+            <p>Av. Prol. Fuentes de Villalongín #232 Local 2 Col. Fuentes de Morelia</p>
+            <p><a href="tel:4432733218">Tel. (443) 273 32 18</a></p>
+            <a>
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_jardines.png" alt="Sucursal Jardines" class="sucursal-thumbnail img-fluid d-block mx-auto">
                 <small class="text-muted">(Click para ampliar)</small>
             </a>
         </div>
     </div>
     
-    <!-- Sucursal Realito -->
+    <div class="col-md-4">
+        <div class="sucursal-box text-center">
+            <h3>Lomas del Valle</h3>
+            <p>Av. Siervo de la Nación #500-1 Col. Lomas del Valle</p>
+            <p><a href="tel:4431287064">Tel. (443) 128 70 64</a></p>
+            <a>
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_lomas_del_valle.png" alt="Sucursal Lomas del Valle" class="sucursal-thumbnail img-fluid d-block mx-auto">
+                <small class="text-muted">(Click para ampliar)</small>
+            </a>
+        </div>
+    </div>
+    
     <div class="col-md-4">
         <div class="sucursal-box text-center">
             <h3>Realito</h3>
-            <p>Periférico Paseo de la República No.4911 (Frente al Realito).</p>
-            <p><a href="tel:443275589">Tel. (443) 275589</a></p>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modalRealito">
-                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/mapa.png" alt="Sucursal Realito" class="sucursal-thumbnail img-fluid d-block mx-auto">
+            <p>Periférico Paseo de la República #4911 Col. Ignacio Zaragoza</p>
+            <p><a href="tel:4432259324">Tel. (443) 225 93 24</a></p>
+            <a>
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_realito.png" alt="Sucursal Realito" class="sucursal-thumbnail img-fluid d-block mx-auto">
+                <small class="text-muted">(Click para ampliar)</small>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="sucursal-box text-center">
+            <h3>Loma Real</h3>
+            <p>Av. Torreón Nuevo #560 Col. Loma Real</p>
+            <p><a href="tel:4431000259">Tel. (443) 100 02 59</a></p>
+            <a>
+                <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_loma_real.png" alt="Sucursal Loma Real" class="sucursal-thumbnail img-fluid d-block mx-auto">
                 <small class="text-muted">(Click para ampliar)</small>
             </a>
         </div>
@@ -274,10 +267,9 @@
 </div>
 
                         
-                        <!-- Redes sociales -->
                         <div class="contact-page__social text-center mt-5">
-                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
-                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
+                            <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
+                            <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
                         </div>
                     </div>
                 </div>
@@ -285,53 +277,63 @@
         </div>
     </div>
 </section>
-<!--Contact Page End-->
-        <!--Contact Page End-->
-
-        <!-- Modales para las imágenes -->
-        <!-- Modal Matríz -->
-        <div class="modal fade" id="modalMatriz" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Sucursal Matríz</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div tabindex="-1" aria-hidden="true">
+            <div>
+                <div class>
+                    <div class>
+                        <h5 class="">Sucursal Matríz Prados Verdes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body text-center">
-                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/matriz.jpg" alt="Sucursal Matríz" class="img-fluid">
-                        <p class="mt-3">Av. Guadalupe Victoria No.1560 Col. Prados Verdes</p>
+                    <div class=" text-center">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/matriz.jpg" alt="Sucursal Matríz Prados Verdes" class="img-fluid">
+                        <p class="mt-3">Av. Guadalupe Victoria #1560 Col. Prados Verdes</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal Torreón -->
-        <div class="modal fade" id="modalTorreon" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Sucursal Torreón</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div tabindex="-1" aria-hidden="true">                                                                                                                               >
+                <div>
+                    <div>
+                        <h5>Sucursal Jardines</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body text-center">
-                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/torreon.jpg" alt="Sucursal Torreón" class="img-fluid">
-                        <p class="mt-3">Av. Torreón Nuevo No.560 Col. Loma Real</p>
+                    <div>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/jardines.jpg" alt="Sucursal Jardines" class="img-fluid">
+                        <p class="mt-3">Av. Prol. Fuentes de Villalongín #232 Local 2 Col. Fuentes de Morelia</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal Realito -->
-        <div class="modal fade" id="modalRealito" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Sucursal Realito</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="" tabindex="-1" aria-hidden="true">
+            <div>
+                <div>
+                    <div>
+                        <h5>Sucursal Lomas del Valle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="" aria-label="Close"></button>
+
+                        <h5 class="">Sucursal Realito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body text-center">
-                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/realito.jpg" alt="Sucursal Realito" class="img-fluid">
-                        <p class="mt-3">Periférico Paseo de la República No.4911 (Frente al Realito)</p>
+                    <div class="text-center">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_realito.jpg" alt="Sucursal Realito" class="img-fluid">
+                        <p class="mt-3">Periférico Paseo de la República #4911 Col. Ignacio Zaragoza</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="" tabindex="-1" aria-hidden="true">
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <h5 class="">Sucursal Loma Real</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="" aria-label="Close"></button>
+                    </div>
+                    <div class="text-center">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_loma_real.png" alt="Sucursal Loma Real" class="img-fluid">
+                        <p class="mt-3">Av. Torreón Nuevo #560 Col. Loma Real</p>
                     </div>
                 </div>
             </div>
