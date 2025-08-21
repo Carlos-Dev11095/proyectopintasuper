@@ -938,6 +938,54 @@ function mostrarProducto($producto, $ROOT_PATH) {
                             ?>
                         </div>
                         
+                        <!-- Impermeabilizantes - SECCIÓN AGREGADA -->
+                        <h4 class="section-subtitle">Impermeabilizantes</h4>
+                        <div class="row" id="galonesImpermeabilizantes">
+                            <?php
+                            $galonesImper = [
+                                // IMPERMEABILIZANTES - MULTI PREMIUM FIBRATADO (Galón)
+                                [
+                                    'imagen' => 'imper__multi_premium__fibratado_galon.png',
+                                    'nombre' => 'Imper Multi Premium Fibratado',
+                                    'precio' => 650,
+                                    'tipo' => 'impermeabilizante',
+                                    'categoria' => 'Impermeabilizantes',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Impermeabilizante premium fibratado con resistencia de 7 años.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores' => 'Terracota / Blanco',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Resistencia' => '7 años',
+                                        'Tipo' => 'Fibratado'
+                                    ]
+                                ],
+                                
+                                // IMPERMEABILIZANTES - MULTI PRO FIBRATADO (Galón)
+                                [
+                                    'imagen' => 'imper_multi_pro_fibratado_galon.png',
+                                    'nombre' => 'Imper Multi Pro Fibratado',
+                                    'precio' => 580,
+                                    'tipo' => 'impermeabilizante',
+                                    'categoria' => 'Impermeabilizantes',
+                                    'presentacion' => 'Galón',
+                                    'descripcion' => 'Impermeabilizante pro fibratado color terracota.',
+                                    'detalles' => [
+                                        'Presentación' => 'Galón',
+                                        'Colores' => 'Terracota / Blanco',
+                                        'Tiempo de secado' => '45 minutos al tacto',
+                                        'Resistencia' => '10 años',
+                                        'Tipo' => 'Fibratado'
+                                    ]
+                                ]
+                            ];
+                            
+                            foreach ($galonesImper as $producto) {
+                                mostrarProducto($producto, $ROOT_PATH);
+                            }
+                            ?>
+                        </div>
+                        
                         <!-- Esmaltes -->
                         <h4 class="section-subtitle">Esmaltes</h4>
                         <div class="row" id="galonesEsmaltes">
