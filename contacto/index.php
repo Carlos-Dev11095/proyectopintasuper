@@ -418,8 +418,8 @@
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.632911404952!2d-101.1787827242706!3d19.82897142614035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0d8e2c3b7c3b%3A0x5e46c29214a4e2fd!2sPintasuper%20Realito!5e0!3m2!1ses!2smx!4v1710209978912!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
-                                            </div>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60100.17757458397!2d-101.2433213!3d19.701505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e585091311b%3A0x67b2d00361d15547!2sPinta%20Super%20Realito!5e0!3m2!1ses-419!2smx!4v1757031011864!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>  
                                         </div>
                                         
                                         <!-- Sucursal Loma Real -->
@@ -446,7 +446,7 @@
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.632911404952!2d-101.1787827242706!3d19.82897142614035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0d8e2c3b7c3b%3A0x5e46c29214a4e2fd!2sPintasuper%20Loma%20Real!5e0!3m2!1ses!2smx!4v1710210012345!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.585514293871!2d-101.19873760000002!3d19.7302631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e50f77bf59f%3A0x8dd225f5da5f4062!2sPinta%20Super%20Loma%20Real!5e0!3m2!1ses-419!2smx!4v1757031323331!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                     </div>
