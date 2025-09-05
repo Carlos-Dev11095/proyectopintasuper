@@ -1,3 +1,22 @@
+
+<style>
+  /* Íconos sociales del header */
+  .main-header__top-right-social a i {
+    font-size: 26px;         /* tamaño del icono */
+    color: #2f2a27;          /* color normal */
+    transition: color 0.3s ease;
+  }
+
+  .main-header__top-right-social a {
+    margin-left: 12px;       /* separación entre iconos */
+    text-decoration: none;   /* por si acaso quita subrayado */
+  }
+
+  .main-header__top-right-social a:hover i {
+    color: #e6b619;          /* color al pasar el mouse */
+  }
+</style>
+
 <header class="main-header clearfix">
     <div class="main-header__top">
         <div class="container">
@@ -35,9 +54,8 @@
                                         <span class="icon-location"></span>
                                     </div>
                                     <div class="content">
-                                        <a href="https://maps.app.goo.gl/Yezi8pG4X6TPdpur7" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
-                                            <p>Av. Guadalupe Victoria #1560 <br>Col, Prados Verdes, 58110</p>
-                                            <h5>Morelia, Michoacán</h5>
+                                        <a href="<?php echo $ROOT_PATH; ?>/contacto/" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                                            <p style="font-size: 14px;">ubica tu sucursal <br>más cercana</p>
                                         </a>
                                     </div>
                                 </li>

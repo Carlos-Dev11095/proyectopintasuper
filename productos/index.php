@@ -6,15 +6,18 @@ $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/pr
 // Función para mostrar productos
 function mostrarProducto($producto, $ROOT_PATH) {
     $nombreMostrar = $producto['nombre'];
-    $precioFormateado = number_format($producto['precio'], 2);
     $imagenPath = $ROOT_PATH . '/assets/images/gallery/productos/' . $producto['imagen'];
     $imagenExists = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagenPath);
     
-    // Generar detalles técnicos
+    // Generar detalles técnicos unificados
     $detallesTecnicos = '';
-    foreach ($producto['detalles'] as $key => $value) {
-        $detallesTecnicos .= "<p><strong>$key:</strong> $value</p>";
-    }
+    $detallesTecnicos .= isset($producto['detalles']['Presentación']) ? "<p><strong>Presentación:</strong> " . $producto['detalles']['Presentación'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Colores disponibles']) ? "<p><strong>Colores disponibles:</strong> " . $producto['detalles']['Colores disponibles'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Tiempo de secado']) ? "<p><strong>Tiempo de secado:</strong> " . $producto['detalles']['Tiempo de secado'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Rendimiento']) ? "<p><strong>Rendimiento (a dos manos):</strong> " . $producto['detalles']['Rendimiento'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Duración']) ? "<p><strong>Duración:</strong> " . $producto['detalles']['Duración'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Acabado']) ? "<p><strong>Acabado:</strong> " . $producto['detalles']['Acabado'] . "</p>" : "";
+    $detallesTecnicos .= isset($producto['detalles']['Resistencia']) ? "<p><strong>Resistencia:</strong> " . $producto['detalles']['Resistencia'] . "</p>" : "";
     
     // Extraer duración/resistencia para filtrado
     $duracion = 0;
@@ -27,7 +30,6 @@ function mostrarProducto($producto, $ROOT_PATH) {
     echo '
     <div class="col-xl-4 col-lg-6 col-md-6 product-item" 
          data-category="'.strtolower(str_replace(' ', '-', $producto['categoria'])).'" 
-         data-price="'.$producto['precio'].'" 
          data-duration="'.$duracion.'"
          data-name="'.strtolower($producto['nombre']).'">
         <div class="gallery-page__single">
@@ -57,11 +59,21 @@ function mostrarProducto($producto, $ROOT_PATH) {
                 </div>
             </div>
             <div class="product-details">
-                <div class="product-price">$'.$precioFormateado.' <small>'.$producto['presentacion'].'</small></div>
                 <div class="product-technical">
                     '.$detallesTecnicos.'
-                </div>
-            </div>
+                </div>';
+                
+    // Botón de descarga de ficha técnica si existe
+    if (isset($producto['ficha_tecnica']) && !empty($producto['ficha_tecnica'])) {
+        echo '<div class="download-ficha">
+                <a href="'.$ROOT_PATH.'/assets/fichas_tecnicas/'.$producto['ficha_tecnica'].'" 
+                   class="ficha-btn" download>
+                   <i class="fas fa-download"></i> Descargar Ficha Técnica
+                </a>
+              </div>';
+    }
+    
+    echo '  </div>
         </div>
     </div>';
 }
@@ -199,31 +211,6 @@ function mostrarProducto($producto, $ROOT_PATH) {
             padding: 20px 15px 0;
         }
 
-        .product-price {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .product-price small {
-            font-size: 0.7em;
-            color: #666;
-            display: block;
-        }
-
-        .product-price-gal {
-            font-size: 1.1em;
-            color: var(--color-brand-dark);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .product-price-gal small {
-            font-size: 0.7em;
-            color: #666;
-        }
-
         .product-technical {
             font-size: 0.9em;
             color: #666;
@@ -317,36 +304,6 @@ function mostrarProducto($producto, $ROOT_PATH) {
             border-radius: 5px;
             cursor: pointer;
             margin-left: 10px;
-        }
-
-        .price-filter .price-range {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .price-filter .price-range span {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .price-filter .filter-button {
-            background-color: var(--color-brand-dark);
-            color: white;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: block;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            transition: var(--transition);
-        }
-
-        .price-filter .filter-button:hover {
-            background-color: var(--color-brand);
         }
 
         .categories-list ul {
@@ -507,16 +464,28 @@ function mostrarProducto($producto, $ROOT_PATH) {
             padding-bottom: 10px;
             margin-bottom: 25px;
             position: relative;
+            cursor: pointer;
         }
 
         .section-title:after {
-            content: '';
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background-color: var(--color-brand);
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .section-title.collapsed:after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
 
         .section-subtitle {
@@ -525,6 +494,82 @@ function mostrarProducto($producto, $ROOT_PATH) {
             margin: 25px 0 15px;
             padding-left: 15px;
             border-left: 4px solid var(--color-brand);
+        }
+
+        /* Estilos para botón de descarga de ficha técnica */
+        .download-ficha {
+            margin-top: 15px;
+            padding: 0 15px;
+        }
+
+        .ficha-btn {
+            display: inline-block;
+            background-color: var(--color-brand-dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .ficha-btn:hover {
+            background-color: var(--color-brand);
+            color: white;
+        }
+
+        .ficha-btn i {
+            margin-right: 5px;
+        }
+
+        /* Estilos para secciones informativas */
+        .info-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--color-brand);
+        }
+
+        .info-section h3 {
+            color: var(--color-brand-dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .catalog-download {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .catalog-download h3 {
+            color: var(--color-brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .catalog-btn {
+            display: inline-block;
+            background-color: var(--color-brand);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .catalog-btn:hover {
+            background-color: var(--color-brand-dark);
+            color: white;
         }
 
         @media (max-width: 991px) {
@@ -622,24 +667,14 @@ function mostrarProducto($producto, $ROOT_PATH) {
                         </div>
                     </div>
                     
-                    <div class="sidebar-widget price-filter">
-                        <h4>Filtrar por Precio</h4>
-                        <div class="price-range">
-                            <span>$500</span>
-                            <input type="range" min="500" max="3500" value="3500" class="slider" id="priceRange">
-                            <span>$3,500</span>
-                        </div>
-                        <div class="current-range" id="currentRange">Hasta: $3,500</div>
-                        <button class="filter-button" id="filterButton">Aplicar Filtro</button>
-                    </div>
-
                     <div class="sidebar-widget categories-list">
                         <h4>Categorías</h4>
                         <ul>
                             <li><a href="#" class="active category-filter" data-category="all">Todas las categorías</a></li>
                             <li><a href="#" class="category-filter" data-category="pinturas-arquitectónicas">Pinturas Arquitectónicas</a></li>
-                            <li><a href="#" class="category-filter" data-category="impermeabilizantes">Impermeabilizantes</a></li>
+                            <li><a href="#" class="category-filter" data-category="vinilicas">Vinílicas</a></li>
                             <li><a href="#" class="category-filter" data-category="esmaltes">Esmaltes</a></li>
+                            <li><a href="#" class="category-filter" data-category="impermeabilizantes">Impermeabilizantes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -651,385 +686,312 @@ function mostrarProducto($producto, $ROOT_PATH) {
                             <label for="sort">Ordenar por:</label>
                             <select id="sort">
                                 <option value="popular">Más populares</option>
-                                <option value="price_asc">Precio: Menor a Mayor</option>
-                                <option value="price_desc">Precio: Mayor a Menor</option>
                                 <option value="duration">Mayor duración</option>
+                                <option value="name">Nombre A-Z</option>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Sección para Cubetas de 19 litros -->
+                    <!-- Secciones informativas -->
+                    <div class="info-section">
+                        <h3>Maderas</h3>
+                        <p>Contamos con una amplia gama de productos especializados para el tratamiento y protección de maderas, incluyendo barnices, lacas y protectores que realzan la belleza natural de la madera mientras la protegen de los elementos.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Automotivo</h3>
+                        <p>Ofrecemos pinturas y recubrimientos de alta calidad para el sector automotriz, con colores exactos y acabados duraderos que resisten las condiciones más exigentes.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Industrial</h3>
+                        <p>Nuestra línea industrial incluye recubrimientos especializados para protección contra corrosión, altas temperaturas y químicos, diseñados para cumplir con los estándares más rigurosos.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Complementos</h3>
+                        <p>Completa tus proyectos con nuestra variedad de complementos: diluyentes, removedores, masillas y herramientas especializadas para obtener resultados profesionales.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Equipo de Repintados</h3>
+                        <p>Ofrecemos equipos especializados para repintado automotriz e industrial, incluyendo pistolas, compresores y accesorios de las mejores marcas.</p>
+                    </div>
+
+                    <!-- Catálogo para descargar -->
+                    <div class="catalog-download">
+                        <h3>Consulta Nuestro Catálogo Completo 2025</h3>
+                        <a href="<?php echo $ROOT_PATH; ?>/assets/catalogos/catalogo_2025.pdf" class="catalog-btn" download>
+                            <i class="fas fa-download"></i> Descargar Catálogo Completo
+                        </a>
+                    </div>
+
+                    <!-- Sección para Pinturas Arquitectónicas -->
                     <div class="product-section">
-                        <h3 class="section-title">Cubetas de 19 Litros</h3>
-                        
-                        <!-- Pinturas Arquitectónicas -->
-                        <h4 class="section-subtitle">Pinturas Arquitectónicas</h4>
-                        <div class="row" id="cubetasPinturas">
-                            <?php
-                            $cubetasPinturas = [
-                                // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD (Cubeta)
-                                [
-                                    'imagen' => 'platino_gold_19_litros.png',
-                                    'nombre' => 'Platino Gold',
-                                    'precio' => 2992,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '13 colores',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Duración' => '10-12 años'
+                        <h3 class="section-title" data-target="arquitectonicos">Pinturas Arquitectónicas</h3>
+                        <div class="section-content" id="arquitectonicos">
+                            <div class="row">
+                                <?php
+                                $pinturasArquitectonicas = [
+                                    // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD (Cubeta)
+                                    [
+                                        'imagen' => 'platino_gold_19_litros.png',
+                                        'nombre' => 'Platino Gold',
+                                        'tipo' => 'pintura',
+                                        'categoria' => 'Pinturas Arquitectónicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '13 colores',
+                                            'Tiempo de secado' => '45 minutos al tacto',
+                                            'Rendimiento' => '7-9 m² por litro',
+                                            'Duración' => '10-12 años',
+                                            'Acabado' => 'Mate'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_platino_gold.pdf'
+                                    ],
+                                    
+                                    // PINTURAS ARQUITECTÓNICAS - DORADA (Cubeta)
+                                    [
+                                        'imagen' => 'dorada_19_litros.png',
+                                        'nombre' => 'Dorada',
+                                        'tipo' => 'pintura',
+                                        'categoria' => 'Pinturas Arquitectónicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '32 colores',
+                                            'Tiempo de secado' => '30 minutos al tacto',
+                                            'Rendimiento' => '7-9 m² por litro',
+                                            'Duración' => '7 años',
+                                            'Acabado' => 'Mate'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_dorada.pdf'
+                                    ],
+                                    
+                                    // PINTURAS ARQUITECTÓNICAS - ONIX (Cubeta)
+                                    [
+                                        'imagen' => 'onix_19_litros.png',
+                                        'nombre' => 'Onix',
+                                        'tipo' => 'pintura',
+                                        'categoria' => 'Pinturas Arquitectónicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '33 colores',
+                                            'Tiempo de secado' => '30 minutos al tacto',
+                                            'Rendimiento' => '7-9 m² por litro',
+                                            'Duración' => '4 años',
+                                            'Acabado' => 'Mate'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_onix.pdf'
+                                    ],
+                                    
+                                    // PINTURAS ARQUITECTÓNICAS - ZAFIRO (Cubeta)
+                                    [
+                                        'imagen' => 'zafiro_19_litros.png',
+                                        'nombre' => 'Zafiro',
+                                        'tipo' => 'pintura',
+                                        'categoria' => 'Pinturas Arquitectónicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '26 colores',
+                                            'Tiempo de secado' => '30 minutos al tacto',
+                                            'Rendimiento' => '7-9 m² por litro',
+                                            'Duración' => '2 años',
+                                            'Acabado' => 'Mate'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_zafiro.pdf'
                                     ]
-                                ],
+                                ];
                                 
-                                // PINTURAS ARQUITECTÓNICAS - DORADA (Cubeta)
-                                [
-                                    'imagen' => 'dorada_19_litros.png',
-                                    'nombre' => 'Dorada',
-                                    'precio' => 2025,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '32 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Rendimiento' => '7-9 m² por litro',
-                                        'Duración' => '7 años',
-                                        'Acabado' => 'Mate'
-                                    ]
-                                ],
-                                
-                                // PINTURAS ARQUITECTÓNICAS - ONIX (Cubeta)
-                                [
-                                    'imagen' => 'onix_19_litros.png',
-                                    'nombre' => 'Onix',
-                                    'precio' => 1458,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '33 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Duración' => '4 años'
-                                    ]
-                                ],
-                                
-                                // PINTURAS ARQUITECTÓNICAS - ZAFIRO (Cubeta)
-                                [
-                                    'imagen' => 'zafiro_19_litros.png',
-                                    'nombre' => 'Zafiro',
-                                    'precio' => 733,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '26 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Duración' => '2 años'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($cubetasPinturas as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
-                        </div>
-                        
-                        <!-- Impermeabilizantes -->
-                        <h4 class="section-subtitle">Impermeabilizantes</h4>
-                        <div class="row" id="cubetasImpermeabilizantes">
-                            <?php
-                            $cubetasImper = [
-                                // IMPERMEABILIZANTES - MULTI PREMIUM (Cubeta)
-                                [
-                                    'imagen' => 'imper_multi_premium_19_litros.png',
-                                    'nombre' => 'Imper Multi Premium',
-                                    'precio' => 2391,
-                                    'tipo' => 'impermeabilizante',
-                                    'categoria' => 'Impermeabilizantes',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores' => 'Terracota / Blanco',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Resistencia' => '7 años'
-                                    ]
-                                ],
-                                
-                                // IMPERMEABILIZANTES - MULTI PRO FIBRANTADO (Cubeta)
-                                [
-                                    'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
-                                    'nombre' => 'Imper Multi Pro Fibrantado',
-                                    'precio' => 2120,
-                                    'tipo' => 'impermeabilizante',
-                                    'categoria' => 'Impermeabilizantes',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Impermeabilizante fibrantado color terracota.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores' => 'Terracota / Blanco',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Resistencia' => '10 años'
-                                    ]
-                                ],
-                                
-                                // IMPERMEABILIZANTES - IMPER-TEK (Cubeta)
-                                [
-                                    'imagen' => 'impertek_19_litros.png',
-                                    'nombre' => 'Imper-Tek',
-                                    'precio' => 1300,
-                                    'tipo' => 'impermeabilizante',
-                                    'categoria' => 'Impermeabilizantes',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores' => 'Terracota / Blanco',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Resistencia' => '5 años'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($cubetasImper as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
-                        </div>
-                        
-                        <!-- Esmaltes -->
-                        <h4 class="section-subtitle">Esmaltes</h4>
-                        <div class="row" id="cubetasEsmaltes">
-                            <?php
-                            $cubetasEsmaltes = [
-                                // ESMALTES - KIVI FORTE (Cubeta)
-                                [
-                                    'imagen' => 'kivi_forte_19_litros.png',
-                                    'nombre' => 'Kivi Forte',
-                                    'precio' => 3090,
-                                    'tipo' => 'esmalte',
-                                    'categoria' => 'Esmaltes',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '19 colores',
-                                        'Tiempo de secado' => '4 horas al tacto'
-                                    ]
-                                ],
-                                
-                                // ESMALTES - SUPER RAP ULTRA (Cubeta)
-                                [
-                                    'imagen' => 'super_rap_ultra_19_litros.png',
-                                    'nombre' => 'Super Rap Ultra',
-                                    'precio' => 3254.99,
-                                    'tipo' => 'esmalte',
-                                    'categoria' => 'Esmaltes',
-                                    'presentacion' => 'Cubeta 19L',
-                                    'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
-                                    'detalles' => [
-                                        'Presentación' => 'Cubeta de 19 litros',
-                                        'Colores disponibles' => '25 colores',
-                                        'Tiempo de secado' => '10 minutos al tacto'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($cubetasEsmaltes as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
+                                foreach ($pinturasArquitectonicas as $producto) {
+                                    mostrarProducto($producto, $ROOT_PATH);
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Sección para Galones -->
-                    <div class="product-section" style="margin-top: 50px;">
-                        <h3 class="section-title">Galones</h3>
-                        
-                        <!-- Pinturas Arquitectónicas -->
-                        <h4 class="section-subtitle">Pinturas Arquitectónicas</h4>
-                        <div class="row" id="galonesPinturas">
-                            <?php
-                            $galonesPinturas = [
-                                // PINTURAS ARQUITECTÓNICAS - PLATINO GOLD (Galón)
-                                [
-                                    'imagen' => 'platino_gold_galon.png',
-                                    'nombre' => 'Platino Gold',
-                                    'precio' => 640,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '13 colores',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Duración' => '10-12 años'
+                    <!-- Sección para Vinílicas y Selladores -->
+                    <div class="product-section">
+                        <h3 class="section-title" data-target="vinilicas">Vinílicas y Selladores</h3>
+                        <div class="section-content" id="vinilicas">
+                            <div class="row">
+                                <?php
+                                $vinilicasSelladores = [
+                                    // SELLADOR - MULTI PREMIUM (Cubeta)
+                                    [
+                                        'imagen' => 'sellador_multi_premium_19_litros.png',
+                                        'nombre' => 'Sellador Multi Premium',
+                                        'tipo' => 'sellador',
+                                        'categoria' => 'Vinílicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Sellador premium de alta penetración y adherencia.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => 'Transparente / Blanco',
+                                            'Tiempo de secado' => '30 minutos al tacto',
+                                            'Rendimiento' => '10-12 m² por litro',
+                                            'Duración' => '5 años'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_sellador_multi.pdf'
+                                    ],
+                                    
+                                    // SELLADOR - PRO FIBRANTADO (Cubeta)
+                                    [
+                                        'imagen' => 'sellador_pro_fibrantado_19_litros.png',
+                                        'nombre' => 'Sellador Pro Fibrantado',
+                                        'tipo' => 'sellador',
+                                        'categoria' => 'Vinílicas',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Sellador con fibras para mayor resistencia.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => 'Transparente / Blanco',
+                                            'Tiempo de secado' => '45 minutos al tacto',
+                                            'Rendimiento' => '8-10 m² por litro',
+                                            'Duración' => '7 años'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_sellador_pro.pdf'
                                     ]
-                                ],
+                                ];
                                 
-                                // PINTURAS ARQUITECTÓNICAS - DORADA (Galón)
-                                [
-                                    'imagen' => 'dorada_galon.png',
-                                    'nombre' => 'Dorada',
-                                    'precio' => 477,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '32 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Rendimiento' => '7-9 m² por litro',
-                                        'Duración' => '7 años',
-                                        'Acabado' => 'Mate'
-                                    ]
-                                ],
-                                
-                                // PINTURAS ARQUITECTÓNICAS - ONIX (Galón)
-                                [
-                                    'imagen' => 'onix_galon.png',
-                                    'nombre' => 'Onix',
-                                    'precio' => 335,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '33 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Duración' => '4 años'
-                                    ]
-                                ],
-                                
-                                // PINTURAS ARQUITECTÓNICAS - ZAFIRO (Galón)
-                                [
-                                    'imagen' => 'zafiro_galon.png',
-                                    'nombre' => 'Zafiro',
-                                    'precio' => 184,
-                                    'tipo' => 'pintura',
-                                    'categoria' => 'Pinturas Arquitectónicas',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '26 colores',
-                                        'Tiempo de secado' => '30 minutos al tacto',
-                                        'Duración' => '2 años'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($galonesPinturas as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
-                        </div>
-                        
-                        <!-- Impermeabilizantes - SECCIÓN AGREGADA -->
-                        <h4 class="section-subtitle">Impermeabilizantes</h4>
-                        <div class="row" id="galonesImpermeabilizantes">
-                            <?php
-                            $galonesImper = [
-                                // IMPERMEABILIZANTES - MULTI PREMIUM FIBRATADO (Galón)
-                                [
-                                    'imagen' => 'imper__multi_premium__fibratado_galon.png',
-                                    'nombre' => 'Imper Multi Premium Fibratado',
-                                    'precio' => 650,
-                                    'tipo' => 'impermeabilizante',
-                                    'categoria' => 'Impermeabilizantes',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Impermeabilizante premium fibratado con resistencia de 7 años.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores' => 'Terracota / Blanco',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Resistencia' => '7 años',
-                                        'Tipo' => 'Fibratado'
-                                    ]
-                                ],
-                                
-                                // IMPERMEABILIZANTES - MULTI PRO FIBRATADO (Galón)
-                                [
-                                    'imagen' => 'imper_multi_pro_fibratado_galon.png',
-                                    'nombre' => 'Imper Multi Pro Fibratado',
-                                    'precio' => 580,
-                                    'tipo' => 'impermeabilizante',
-                                    'categoria' => 'Impermeabilizantes',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Impermeabilizante pro fibratado color terracota.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores' => 'Terracota / Blanco',
-                                        'Tiempo de secado' => '45 minutos al tacto',
-                                        'Resistencia' => '10 años',
-                                        'Tipo' => 'Fibratado'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($galonesImper as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
-                        </div>
-                        
-                        <!-- Esmaltes -->
-                        <h4 class="section-subtitle">Esmaltes</h4>
-                        <div class="row" id="galonesEsmaltes">
-                            <?php
-                            $galonesEsmaltes = [
-                                // ESMALTES - KIVI FORTE (Galón)
-                                [
-                                    'imagen' => 'kivi_forte_galon.png',
-                                    'nombre' => 'Kivi Forte',
-                                    'precio' => 702,
-                                    'tipo' => 'esmalte',
-                                    'categoria' => 'Esmaltes',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '19 colores',
-                                        'Tiempo de secado' => '4 horas al tacto'
-                                    ]
-                                ],
-                                
-                                // ESMALTES - SUPER RAP (Galón)
-                                [
-                                    'imagen' => 'superrap_galon.png',
-                                    'nombre' => 'Super Rap',
-                                    'precio' => 734,
-                                    'tipo' => 'esmalte',
-                                    'categoria' => 'Esmaltes',
-                                    'presentacion' => 'Galón',
-                                    'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
-                                    'detalles' => [
-                                        'Presentación' => 'Galón',
-                                        'Colores disponibles' => '25 colores',
-                                        'Tiempo de secado' => '10 minutos al tacto'
-                                    ]
-                                ]
-                            ];
-                            
-                            foreach ($galonesEsmaltes as $producto) {
-                                mostrarProducto($producto, $ROOT_PATH);
-                            }
-                            ?>
+                                foreach ($vinilicasSelladores as $producto) {
+                                    mostrarProducto($producto, $ROOT_PATH);
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Sección para Esmaltes -->
+                    <div class="product-section">
+                        <h3 class="section-title" data-target="esmaltes">Esmaltes</h3>
+                        <div class="section-content" id="esmaltes">
+                            <div class="row">
+                                <?php
+                                $esmaltes = [
+                                    // ESMALTES - KIVI FORTE (Cubeta)
+                                    [
+                                        'imagen' => 'kivi_forte_19_litros.png',
+                                        'nombre' => 'Kivi Forte',
+                                        'tipo' => 'esmalte',
+                                        'categoria' => 'Esmaltes',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '19 colores',
+                                            'Tiempo de secado' => '4 horas al tacto',
+                                            'Rendimiento' => '12-14 m² por litro',
+                                            'Acabado' => 'Brillante'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_kivi_forte.pdf'
+                                    ],
+                                    
+                                    // ESMALTES - SUPER RAP ULTRA (Cubeta)
+                                    [
+                                        'imagen' => 'super_rap_ultra_19_litros.png',
+                                        'nombre' => 'Super Rap Ultra',
+                                        'tipo' => 'esmalte',
+                                        'categoria' => 'Esmaltes',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => '25 colores',
+                                            'Tiempo de secado' => '10 minutos al tacto',
+                                            'Rendimiento' => '10-12 m² por litro',
+                                            'Acabado' => 'Semi-brillante'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_super_rap.pdf'
+                                    ]
+                                ];
+                                
+                                foreach ($esmaltes as $producto) {
+                                    mostrarProducto($producto, $ROOT_PATH);
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección para Impermeabilizantes -->
+                    <div class="product-section">
+                        <h3 class="section-title" data-target="impermeabilizantes">Impermeabilizantes</h3>
+                        <div class="section-content" id="impermeabilizantes">
+                            <div class="row">
+                                <?php
+                                $impermeabilizantes = [
+                                    // IMPERMEABILIZANTES - MULTI PREMIUM (Cubeta)
+                                    [
+                                        'imagen' => 'imper_multi_premium_19_litros.png',
+                                        'nombre' => 'Imper Multi Premium',
+                                        'tipo' => 'impermeabilizante',
+                                        'categoria' => 'Impermeabilizantes',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => 'Terracota / Blanco',
+                                            'Tiempo de secado' => '45 minutos al tacto',
+                                            'Rendimiento' => '4-5 m² por litro',
+                                            'Resistencia' => '7 años'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_imper_multi.pdf'
+                                    ],
+                                    
+                                    // IMPERMEABILIZANTES - MULTI PRO FIBRANTADO (Cubeta)
+                                    [
+                                        'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
+                                        'nombre' => 'Imper Multi Pro Fibrantado',
+                                        'tipo' => 'impermeabilizante',
+                                        'categoria' => 'Impermeabilizantes',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Impermeabilizante fibrantado color terracota.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => 'Terracota / Blanco',
+                                            'Tiempo de secado' => '45 minutos al tacto',
+                                            'Rendimiento' => '4-5 m² por litro',
+                                            'Resistencia' => '10 años'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_imper_pro.pdf'
+                                    ],
+                                    
+                                    // IMPERMEABILIZANTES - IMPER-TEK (Cubeta)
+                                    [
+                                        'imagen' => 'impertek_19_litros.png',
+                                        'nombre' => 'Imper-Tek',
+                                        'tipo' => 'impermeabilizante',
+                                        'categoria' => 'Impermeabilizantes',
+                                        'presentacion' => 'Cubeta 19L',
+                                        'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
+                                        'detalles' => [
+                                            'Presentación' => 'Cubeta de 19 litros',
+                                            'Colores disponibles' => 'Terracota / Blanco',
+                                            'Tiempo de secado' => '45 minutos al tacto',
+                                            'Rendimiento' => '4-5 m² por litro',
+                                            'Resistencia' => '5 años'
+                                        ],
+                                        'ficha_tecnica' => 'ficha_imper_tek.pdf'
+                                    ]
+                                ];
+                                
+                                foreach ($impermeabilizantes as $producto) {
+                                    mostrarProducto($producto, $ROOT_PATH);
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1091,11 +1053,18 @@ function mostrarProducto($producto, $ROOT_PATH) {
                 }
             });
             
-            // Actualizar rango de precios
-            $('#priceRange').on('input', function() {
-                const value = $(this).val();
-                $('#currentRange').text('Hasta: $' + parseInt(value).toLocaleString());
+            // Funcionalidad para expandir/colapsar secciones
+            $('.section-title').click(function() {
+                const target = $(this).data('target');
+                const $content = $('#' + target);
+                
+                $(this).toggleClass('collapsed');
+                $content.slideToggle(300);
             });
+            
+            // Inicializar secciones colapsadas
+            $('.section-title').addClass('collapsed');
+            $('.section-content').hide();
             
             // Filtrado por categoría
             $('.category-filter').click(function(e) {
@@ -1104,11 +1073,6 @@ function mostrarProducto($producto, $ROOT_PATH) {
                 $(this).addClass('active');
                 
                 const category = $(this).data('category');
-                filterProducts();
-            });
-            
-            // Filtrado por precio
-            $('#filterButton').click(function() {
                 filterProducts();
             });
             
@@ -1129,22 +1093,19 @@ function mostrarProducto($producto, $ROOT_PATH) {
             });
             
             function filterProducts() {
-                const maxPrice = parseInt($('#priceRange').val());
                 const searchTerm = $('#searchInput').val().toLowerCase();
                 const activeCategory = $('.category-filter.active').data('category');
                 
                 let visibleCount = 0;
                 
                 $('.product-item').each(function() {
-                    const price = parseFloat($(this).data('price'));
                     const name = $(this).data('name');
                     const category = $(this).data('category');
                     
-                    const matchesPrice = price <= maxPrice;
                     const matchesSearch = name.includes(searchTerm) || searchTerm === '';
                     const matchesCategory = activeCategory === 'all' || category === activeCategory;
                     
-                    if (matchesPrice && matchesSearch && matchesCategory) {
+                    if (matchesSearch && matchesCategory) {
                         $(this).show();
                         visibleCount++;
                     } else {
@@ -1158,20 +1119,18 @@ function mostrarProducto($producto, $ROOT_PATH) {
             
             function sortProducts() {
                 const sortBy = $('#sort').val();
-                const $container = $('#productsContainer');
+                const $container = $('.row');
                 const $items = $('.product-item:visible');
                 
                 $items.sort(function(a, b) {
-                    const aPrice = parseFloat($(a).data('price'));
-                    const bPrice = parseFloat($(b).data('price'));
+                    const aName = $(a).data('name');
+                    const bName = $(b).data('name');
                     const aDuration = parseInt($(a).data('duration'));
                     const bDuration = parseInt($(b).data('duration'));
                     
                     switch(sortBy) {
-                        case 'price_asc':
-                            return aPrice - bPrice;
-                        case 'price_desc':
-                            return bPrice - aPrice;
+                        case 'name':
+                            return aName.localeCompare(bName);
                         case 'duration':
                             return bDuration - aDuration;
                         default: // popular (orden original)

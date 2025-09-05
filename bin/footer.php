@@ -1,3 +1,13 @@
+<style>
+  .site-footer__social a {
+    height: 55px !important;
+    width: 55px !important;
+  }
+  .site-footer__social a i {
+    font-size: 28px !important;
+  }
+</style>
+
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 <section class="newsletter">

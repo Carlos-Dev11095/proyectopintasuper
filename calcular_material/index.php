@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="styles.min.css">
 </head>
 
-<body class="custom-cursor">
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
+<body>
 
     <!-- precarga -->
     <?php require '../bin/preloader.php'; ?>
