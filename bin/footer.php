@@ -1,28 +1,21 @@
-<style>
-  .site-footer__social a {
-    height: 55px !important;
-    width: 55px !important;
-  }
-  .site-footer__social a i {
-    font-size: 28px !important;
-  }
-</style>
-
-<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
-<section class="newsletter">
-    <div class="container">
-        <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
-            <div class="newsletter-shape-1" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/shapes/newsletter-shape-1.png);"></div>
-            <div class="newsletter__left">
-                <h3 class="newsletter__title">¡Descubre Nuestras Últimas Novedades!</h3>
-                <p class="newsletter__text">Explora nuestra colección de papeles pintados y pinturas de alta calidad.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <footer class="site-footer">
+        <style>
+      /* Íconos sociales del footer */
+      .site-footer__social a i {
+        font-size: 26px;        /* mismo tamaño que el header */
+        color: #ffffff;         /* color normal */
+        transition: color 0.3s ease;
+      }
+
+      .site-footer__social a {
+        margin-right: 12px;     /* separación entre iconos */
+        text-decoration: none;  /* sin subrayado */
+      }
+
+      .site-footer__social a:hover i {
+        color: #e6b619;         /* color al pasar el mouse */
+      }
+    </style>
     <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);"></div>
     <div class="site-footer__top">
         <div class="container">
@@ -33,8 +26,7 @@
                             <a href="<?php echo $ROOT_PATH; ?>/"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
-                            <p class="footer-widget__about-text">Si hablamos de PRECIO, CALIDAD y SERVICIO... hablamos de Pinta Super</p>
-                        </div>
+                            </div>
                         <div class="site-footer__social">
                             <a href="https://www.facebook.com/PintaSuperPinturas" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/pintasuper" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
@@ -68,6 +60,7 @@
                     <div class="footer-widget__column footer-widget__contact clearfix">
                         <h3 class="footer-widget__title">Contacto</h3>
                         <ul class="footer-widget__contact-list list-unstyled clearfix">
+                            <p style="color: #ffffff; margin-bottom: 20px;">Si hablamos de PRECIO, CALIDAD y SERVICIO... hablamos de Pinta Super</p>
                             <li>
                                 <div class="icon">
                                     <span class="icon-phone-call"></span>
@@ -117,30 +110,3 @@
         </div>
     </div>
 </footer>
-
-<div class="mobile-nav__wrapper">
-    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-    <div class="mobile-nav__content">
-        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-        <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" width="155" alt="" /></a>
-        </div>
-        <div class="mobile-nav__container"></div>
-        <ul class="mobile-nav__contact list-unstyled">
-            <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:pintasuperoficial@gmail.com">pintasuperoficial@gmail.com</a>
-            </li>
-            <li>
-                <i class="fa fa-phone-alt"></i>
-                <a href="tel:52 443 161 8135">+52 (443) - 161 8135</a>
-            </li>
-        </ul>
-        <div class="mobile-nav__top">
-            <div class="mobile-nav__social">
-                <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
-                <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
-            </div>
-        </div>
-    </div>
-</div>

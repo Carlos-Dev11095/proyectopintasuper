@@ -15,6 +15,14 @@
   .main-header__top-right-social a:hover i {
     color: #e6b619;          /* color al pasar el mouse */
   }
+  .main-header__logo {
+  float: left; /* Mueve el logo a la izquierda */
+}
+
+.main-header__logo img {
+  width: 250px; /* Ajusta el tamaño del logo, puedes cambiar el valor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
 </style>
 
 <header class="main-header clearfix">
@@ -24,7 +32,6 @@
                 <div class="main-header__logo">
                     <a href="<?php echo $ROOT_PATH; ?>/" class="main-header__logo-link">
                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-1.png" alt="" class="dark-logo">
-                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/logo-2.png" alt="" class="light-logo">
                     </a>
                 </div>
                 <div class="main-header__top-right">
