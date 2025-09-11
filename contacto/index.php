@@ -1,4 +1,4 @@
-<?php $ROOT_PATH = '/proyectopintasuper'; ?>
+<?php $ROOT_PATH = ''; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -33,20 +33,40 @@
             color: #f7931e !important;
         }
         
-        /* Estilos para pestañas de sucursales */
+        /* Estilos para pestañas de sucursales - MEJORADO PARA MÓVIL */
         .sucursales-tabs {
             margin-top: 40px;
+            position: relative;
+        }
+        
+        .nav-tabs-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .nav-tabs-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            scroll-behavior: smooth;
+            padding-bottom: 5px; /* Espacio para el indicador de scroll */
+        }
+        
+        .nav-tabs-scroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
         }
         
         .nav-tabs {
             border-bottom: 2px solid #2a5f8b;
-            justify-content: center;
+            display: inline-flex;
             flex-wrap: nowrap;
-            overflow-x: auto;
+            min-width: 100%;
+            position: relative;
         }
         
         .nav-tabs .nav-item {
             margin-bottom: -2px;
+            flex-shrink: 0;
         }
         
         .nav-tabs .nav-link {
@@ -54,8 +74,41 @@
             border-bottom: 3px solid transparent;
             color: #555;
             font-weight: 600;
-            padding: 12px 20px;
+            padding: 12px 16px;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        /* Indicador de que hay más pestañas en móvil */
+        .scroll-indicator {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 5px;
+        }
+        
+        .scroll-indicator.left {
+            left: 0;
+            right: auto;
+            background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+            justify-content: flex-start;
+            padding-left: 5px;
+        }
+        
+        .scroll-indicator i {
+            color: #2a5f8b;
+            font-size: 16px;
         }
         
         .nav-tabs .nav-link:hover {
@@ -67,6 +120,12 @@
             color: #2a5f8b;
             background-color: transparent;
             border-color: #2a5f8b;
+        }
+        
+        /* Mejorar la interacción táctil */
+        .nav-tabs .nav-link:active {
+            background-color: rgba(247, 147, 30, 0.1);
+            transform: scale(0.98);
         }
         
         .tab-content {
@@ -221,10 +280,13 @@
         
         /* Ajustes responsivos */
         @media (max-width: 768px) {
-            .nav-tabs {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                justify-content: flex-start;
+            .nav-tabs-container {
+                margin-bottom: 25px;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 10px 12px;
+                font-size: 13px;
             }
             
             .sucursal-content {
@@ -237,6 +299,27 @@
             
             .sucursal-map {
                 height: 250px;
+            }
+            
+            .online-purchase {
+                padding: 25px 20px;
+            }
+            
+            /* Mostrar indicadores de scroll en móvil */
+            .scroll-indicator {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-tabs .nav-link {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .sucursal-info, 
+            .sucursal-image {
+                min-width: 100%;
             }
         }
     </style>
@@ -284,30 +367,38 @@
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Ubicación de todas nuestras sucursales</h3>
                                     </div>
-                                    <div class="general-map">
-                                        <iframe src="https://www.google.com/maps/d/embed?mid=1Y6Zz6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6Z6" allowfullscreen="" loading="lazy"></iframe>
-                                    </div>
+
                                 </div>
                                 
-                                <!-- Pestañas de sucursales -->
+                                <!-- Pestañas de sucursales - MEJORADO -->
                                 <div class="sucursales-tabs">
-                                    <ul class="nav nav-tabs" id="sucursalesTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="matriz-tab" data-bs-toggle="tab" data-bs-target="#matriz" type="button" role="tab" aria-controls="matriz" aria-selected="true">Matríz</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="jardines-tab" data-bs-toggle="tab" data-bs-target="#jardines" type="button" role="tab" aria-controls="jardines" aria-selected="false">Jardines</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="lomas-tab" data-bs-toggle="tab" data-bs-target="#lomas" type="button" role="tab" aria-controls="lomas" aria-selected="false">Lomas del Valle</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="realito-tab" data-bs-toggle="tab" data-bs-target="#realito" type="button" role="tab" aria-controls="realito" aria-selected="false">Realito</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="loma-real-tab" data-bs-toggle="tab" data-bs-target="#loma-real" type="button" role="tab" aria-controls="loma-real" aria-selected="false">Loma Real</button>
-                                        </li>
-                                    </ul>
+                                    <div class="nav-tabs-container">
+                                        <div class="scroll-indicator left">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </div>
+                                        <div class="nav-tabs-scroll" id="tabsScroll">
+                                            <ul class="nav nav-tabs" id="sucursalesTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="matriz-tab" data-bs-toggle="tab" data-bs-target="#matriz" type="button" role="tab" aria-controls="matriz" aria-selected="true">Matríz</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="jardines-tab" data-bs-toggle="tab" data-bs-target="#jardines" type="button" role="tab" aria-controls="jardines" aria-selected="false">Jardines</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="lomas-tab" data-bs-toggle="tab" data-bs-target="#lomas" type="button" role="tab" aria-controls="lomas" aria-selected="false">Lomas del Valle</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="realito-tab" data-bs-toggle="tab" data-bs-target="#realito" type="button" role="tab" aria-controls="realito" aria-selected="false">Realito</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="loma-real-tab" data-bs-toggle="tab" data-bs-target="#loma-real" type="button" role="tab" aria-controls="loma-real" aria-selected="false">Loma Real</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="scroll-indicator">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
                                     
                                     <div class="tab-content" id="sucursalesTabContent">
                                         <!-- Sucursal Matríz -->
@@ -463,13 +554,6 @@
                                         <a href="https://www.mercadolibre.com.mx/" class="btn-compra" target="_blank">Ir a Mercado Libre</a>
                                     </div>
                                 </div>
-                                
-                                <!-- Redes sociales -->
-                                <div class="contact-page__social text-center mt-5">
-                                    <a href="https://www.facebook.com/PintaSuperPinturas" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a>
-                                    <a href="https://www.instagram.com/pintasuper" class="fab fa-instagram" target="_blank" rel="noopener noreferrer"></a>
-                                    <a href="https://wa.me/524431618135" class="fab fa-whatsapp" target="_blank" rel="noopener noreferrer"></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -483,5 +567,49 @@
     </div>
 
     <?php require_once __DIR__ . '/../bin/js.php';?>
+    
+    <script>
+    // Script para mejorar la experiencia móvil de las pestañas
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabsScroll = document.getElementById('tabsScroll');
+        const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+        
+        // Función para verificar la posición del scroll y mostrar/ocultar indicadores
+        function checkScrollPosition() {
+            if (tabsScroll.scrollLeft <= 10) {
+                scrollIndicators[0].style.opacity = '0'; // Ocultar indicador izquierdo
+            } else {
+                scrollIndicators[0].style.opacity = '1'; // Mostrar indicador izquierdo
+            }
+            
+            if (tabsScroll.scrollWidth - tabsScroll.scrollLeft - tabsScroll.clientWidth <= 10) {
+                scrollIndicators[1].style.opacity = '0'; // Ocultar indicador derecho
+            } else {
+                scrollIndicators[1].style.opacity = '1'; // Mostrar indicador derecho
+            }
+        }
+        
+        // Verificar posición inicial
+        checkScrollPosition();
+        
+        // Verificar posición al hacer scroll
+        tabsScroll.addEventListener('scroll', checkScrollPosition);
+        
+        // Ajustar en redimensionamiento de ventana
+        window.addEventListener('resize', checkScrollPosition);
+        
+        // Mejorar la accesibilidad táctil
+        const tabLinks = document.querySelectorAll('.nav-link');
+        tabLinks.forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            link.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        });
+    });
+    </script>
 </body>
 </html>

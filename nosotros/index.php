@@ -1,4 +1,4 @@
-<?php $ROOT_PATH = '/proyectopintasuper'; ?>
+<?php $ROOT_PATH = ''; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintasuper</title>
     <!-- iconos favoritos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/proyectopintasuper/assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/proyectopintasuper/assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/proyectopintasuper/assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/proyectopintasuper/assets/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Plantilla HTML 5 Ambed" />
     <!-- fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

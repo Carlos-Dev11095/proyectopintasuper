@@ -1,6 +1,6 @@
 <?php 
 // Configuración de rutas
-$ROOT_PATH = '/proyectopintasuper';
+$ROOT_PATH = '';
 $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/productos/';
 
 // Función para mostrar productos

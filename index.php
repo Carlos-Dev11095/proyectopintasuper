@@ -1,25 +1,24 @@
-<?php $ROOT_PATH = '/proyectopintasuper'; ?>
-
+<?php $ROOT_PATH = ''; ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintasuper</title>
-    <!-- iconos favoritos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Plantilla HTML 5 Ambed" />
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Ambed HTML 5 Template " />
 
-    <!-- fuentes -->
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <?php include 'bin/css.php'; ?>
-    
 <style>
 /* Estilos para mostrar los 4 elementos en una sola fila */
 .feature-one__list {
@@ -146,19 +145,13 @@
 
 <body>
 
-    <!-- precarga -->
-    <?php include 'bin/preloader.php'; ?>
-
-    <div class="page-wrapper">
-
-        <?php include 'bin/header.php'; ?>
-
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div>
-        </div>
+    <div class="preloader">
+        <div class="preloader__image"></div>
     </div>
 
-<!--Main Slider Start-->
+    <?php include 'bin/header.php'; ?>
+
+        <!--Main Slider Start-->
 <section class="main-slider clearfix">
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
         "effect": "fade",
@@ -270,7 +263,7 @@
 
     </div>
 </section>
-<!--Main Slider End-->
+        <!--Main Slider End-->
 
 <!--Sección de 4 elementos en hilera-->
 <section class="feature-one">
@@ -330,8 +323,6 @@
         </ul>
     </div>
 </section>
-
-<!--Inicio Nuestros Servicios-->
 <section class="about-one">
     <div class="about-one-shape-2 float-bob-x"></div>
     <div class="about-one-wall">
@@ -374,7 +365,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="about-one__right">
-                    <div class="about-one__img-box wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+                    <div class="about-one__img-box wow slideInRight animated" data-wow-delay="100ms" data-wow-duration="2500ms" style="visibility: visible; animation-duration: 2500ms; animation-delay: 100ms; animation-name: slideInRight;">
                         <div class="about-one__img">
                             <img src="assets/images/resources/soluciones.png" alt="Imagen principal servicios">
                         </div>
@@ -399,87 +390,15 @@
         </div>
     </div>
 </section>
-<!--Fin Nuestros Servicios-->
+        <!--About One End-->
 
 
-        <!--Inicio de Características-->
-        <section class="feature-one">
-            <div class="container">
-                <ul class="list-unstyled feature-one__list">
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-mind"></span> </div>
-                            <h3 class="feature-one__title"><a>Asesoramiento Inteligente</a></h3>
-                            <p class="feature-one__text">Te guiamos en la elección perfecta de colores y tipos de pintura para tu hogar u oficina.</p>
-                            <div class="feature-one__arrow">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-wallpaper-2"></span> </div>
-                            <h3 class="feature-one__title"><a>Diseños y Acabados Únicos</a></h3>
-                            <p class="feature-one__text">Creamos ambientes excepcionales con técnicas y estilos de pintura innovadores.</p>
-                            <div class="feature-one__arrow">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-programmer"></span> </div>
-                            <h3 class="feature-one__title"><a>Equipo de Expertos de Pintura</a></h3>
-                            <p class="feature-one__text">Contamos con personal profesional altamente calificado y con amplia experiencia en pintura.</p>
-                            <div class="feature-one__arrow">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature-one__single wow fadeInLeft" data-wow-delay="400ms">
-                        <div class="feature-one__content">
-                            <div class="feature-one__shape-1">
-                                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                            </div>
-                            <div class="feature-one__shape-2">
-                                <img src="assets/images/shapes/feature-one-shape-2.png" alt="">
-                            </div>
-                            <div class="feature-one__icon">
-                                <span class="icon-best-price"></span> </div>
-                            <h3 class="feature-one__title"><a>Calidad Cuidando tu Economía</a></h3>
-                            <p class="feature-one__text">Utilizamos materiales de calidad y técnicas avanzadas para resultados duraderos.</p>
-                            <div class="feature-one__arrow">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!--Fin de Características-->
 
-        <!--Inicio de Servicios-->
-        <section class="services-one">
+        <!--Services One Start-->
+<section class="services-one">
+
             <div class="services-one-bg-box">
-                <div class="services-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                    style="background-image: url(assets/images/backgrounds/pared_pintada.jpg);"></div>
+                <div class="services-one-bg jarallax" data-jarallax="" data-speed="0.2" data-imgposition="50% 0%" style="background-image: none;" data-jarallax-original-styles="background-image: url(assets/images/backgrounds/pared_pintada.jpg);"><div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(&quot;https://pintasuper.com/assets/images/backgrounds/pared_pintada.jpg&quot;); position: fixed; top: 0px; left: 0px; width: 747px; height: 855.025px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; will-change: transform, opacity; margin-top: -124.512px; transform: translate3d(0px, 151.644px, 0px);"></div></div></div>
                     </div>
             <div class="container">
                 <div class="section-title text-center">
@@ -489,7 +408,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4">
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="100ms">
+                        <div class="services-one__single wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                             <div class="services-one__img">
                                 <img src="assets/images/services/pared_pintada.jpg" alt="Pinturas y esmaltes de alta calidad">
                                 <div class="services-one__icon">
@@ -502,7 +421,7 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="200ms">
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="200ms" style="visibility: hidden; animation-delay: 200ms; animation-name: none;">
                             <div class="services-one__img">
                                 <img src="assets/images/services/herramientas.png" alt="Herramientas y preparación de superficies">
                                 <div class="services-one__icon">
@@ -515,7 +434,7 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms">
+                        <div class="services-one__single wow fadeInUp" data-wow-delay="300ms" style="visibility: hidden; animation-delay: 300ms; animation-name: none;">
                             <div class="services-one__img">
                                 <img src="assets/images/services/asesoramiento.png" alt="Asesoramiento experto en color">
                                 <div class="services-one__icon">
@@ -530,9 +449,10 @@
                 </div>
             </div>
         </section>
-        <!--Fin de Servicios-->
+        <!--Services One End-->
 
-        <!--Inicio de Trabajo de Calidad-->
+        <!--Quality Work Start-->
+
         <section class="quality-work">
             <div class="container">
                 <div class="row">
@@ -594,9 +514,10 @@
                 </div>
             </div>
         </section>
-        <!--Fin de Trabajo de Calidad-->
+        <!--Quality Work End-->
 
-        <!--Inicio de Proyectos-->
+        <!--Project One Start-->
+
         <section class="project-one">
             <div class="container">
                 <div class="section-title text-center">
@@ -623,7 +544,7 @@
                                                     <div class="project-one__content">
                                                         <h4 class="project-one__title">Renovación de Sala con Colores Cálidos</h4>
                                                         <p class="project-one__text">Realizamos la transformación completa de esta sala de estar, aplicando una paleta de colores cálidos que aportan luminosidad y confort. Un trabajo detallado que superó las expectativas del cliente.</p>
-                                                        <a href="<?php echo $ROOT_PATH; ?>/simulador_virtual/?room=sala&palette=dorada&color=color-dorada-3" class="thm-btn project-one__btn" target="_blank">Ver Detalles del Proyecto</a>
+                                                        <a href="/simulador_virtual/?room=sala&amp;palette=dorada&amp;color=color-dorada-3" class="thm-btn project-one__btn" target="_blank">Ver Detalles del Proyecto</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -634,15 +555,90 @@
                     </div>
                 </div>
             </div>
+        </div></section>
+        <!--Project One End-->
+
+        <!--Brand One Start-->
+        <section class="brand-one">
+            <div class="container">
+                <div class="brand-one__inner">
+                    <div class="row">
+                        <div class="col-xl-9">
+                            <div class="brand-one__main-content">
+                                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                            "0": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 2
+                            },
+                            "375": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 2
+                            },
+                            "575": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 3
+                            },
+                            "767": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 4
+                            },
+                            "991": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 5
+                            },
+                            "1199": {
+                                "spaceBetween": 100,
+                                "slidesPerView": 5
+                            }
+                        }}'>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-2.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-3.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-4.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-5.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-2.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-3.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-4.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/brand/brand-1-5.png" alt="">
+                                        </div><!-- /.swiper-slide -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!--Fin de Proyectos-->
+        <!--Brand One End-->
+
+        <?php include 'bin/footer.php'; ?>
+
+    </div><!-- /.page-wrapper -->
 
 
-<!-- Resto de tu código HTML... -->
-
-<?php include 'bin/footer.php'; ?>
-
-<?php include 'bin/js.php'; ?>
+       <?php include 'bin/js.php'; ?>
 
 </body>
+
 </html>

@@ -1,3 +1,16 @@
+<section class="newsletter">
+            <div class="container">
+                <div class="newsletter__inner wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                    <div class="newsletter-shape-1" style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
+                    <div class="newsletter__left">
+                        <h3 class="newsletter__title">Descubre nuestras novedades</h3>
+                        <p class="newsletter__text">Que tenemos para tí</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <!--Site Footer Start-->
 <footer class="site-footer">
         <style>
       /* Íconos sociales del footer */
@@ -16,14 +29,14 @@
         color: #e6b619;         /* color al pasar el mouse */
       }
     </style>
-    <div class="site-footer-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/site-footer-bg.jpg);"></div>
+    <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);"></div>
     <div class="site-footer__top">
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="<?php echo $ROOT_PATH; ?>/"><img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt=""></a>
+                            <a href="<?php echo $ROOT_PATH; ?>/"><img src="assets/images/resources/footer-logo.png" alt=""></a>
                         </div>
                         <div class="footer-widget__about-text-box">
                             </div>
@@ -85,11 +98,12 @@
                                         <span class="icon-location"></span>
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <a href="https://maps.app.goo.gl/75V8mGFnY4hwTtPo8" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
-                                        <p><h5>Av. Guadalupe Victoria #1560 <br>Col, Prados Verdes, 58110</h5></p>
-                                    </a>
-                                    <p>Morelia, Michoacán</p>
+<div class="text">        <!--Site Footer Start-->
+
+
+                                        <a href="/contacto/" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                                            <p style="font-size: 14px;">ubica tu sucursal <br>más cercana</p>
+                                        </a>
                                 </div>
                             </li>
                         </ul>
@@ -110,3 +124,4 @@
         </div>
     </div>
 </footer>
+        <!--Site Footer End-->

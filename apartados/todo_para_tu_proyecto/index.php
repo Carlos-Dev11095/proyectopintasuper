@@ -1,4 +1,4 @@
-<?php $ROOT_PATH = '/proyectopintasuper'; ?>
+<?php $ROOT_PATH = ''; ?>
 
 <!DOCTYPE html>
 <html lang="es">
