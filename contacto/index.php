@@ -382,6 +382,7 @@
             <div class="sticky-header__content"></div>
         </div>
         
+        <!-- Sección de encabezado -->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
             </div>
@@ -397,6 +398,7 @@
             </div>
         </section>
         
+        <!-- Sección de contacto -->
         <section class="contact-page">
             <div class="container">
                 <div class="row justify-content-center">
@@ -404,15 +406,15 @@
                         <div class="contact-page__right">
                             <div class="contact-page__details">
                                 
+                                <!-- Mapa general con todas las sucursales -->
                                 <div class="general-map-section">
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Ubicación de todas nuestras sucursales</h3>
                                     </div>
-                                    <div class="general-map">
-                                        <iframe src="https://www.google.com/maps/d/embed?mid=1Q054d4x5uB0v4D-5vM3z1B0v-5m0x5t&ehbc=2E312F" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    </div>
+
                                 </div>
                                 
+                                <!-- Pestañas de sucursales - MEJORADO -->
                                 <div class="sucursales-tabs">
                                     <div class="nav-tabs-container">
                                         <div class="scroll-indicator left">
@@ -443,12 +445,13 @@
                                     </div>
                                     
                                     <div class="tab-content" id="sucursalesTabContent">
+                                        <!-- Sucursal Matríz -->
                                         <div class="tab-pane fade show active" id="matriz" role="tabpanel" aria-labelledby="matriz-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
                                                     <h3>Matríz Prados Verdes</h3>
                                                     <p><strong>Dirección:</strong> Av. Guadalupe Victoria #1560 Col. Prados Verdes</p>
-                                                    <a href="https://maps.app.goo.gl/35J2qJ4k1J2Q4Q4y5" class="direccion-link" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/gxspcPhUfVaDTrpg6" class="direccion-link" target="_blank">
                                                         <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
                                                     </a>
                                                     <p><strong>Teléfono:</strong> <a href="tel:4431618135">(443) 161 81 35</a></p>
@@ -459,23 +462,24 @@
                                                     </a>
                                                 </div>
                                                 <div class="sucursal-image">
-                                                    <a href="https://maps.app.goo.gl/35J2qJ4k1J2Q4Q4y5" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/gxspcPhUfVaDTrpg6" target="_blank">
                                                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_matriz.png" alt="Sucursal Matríz" class="sucursal-thumbnail">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14981.189569727506!2d-101.19692348585974!3d19.72124584218084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e74f762a041%3A0xc09575f0a0c5c3c0!2sPintasuper%20Matriz!5e0!3m2!1sen!2smx!4v1714574972986!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.885839554273!2d-101.196944!3d19.717483899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e5d42f5ee23%3A0x5707f91f3774bb87!2sAv.%20Guadalupe%20Victoria%201560%2C%20Prados%20Verdes%2C%2058110%20Morelia%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1757029816522!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
+                                        <!-- Sucursal Jardines -->
                                         <div class="tab-pane fade" id="jardines" role="tabpanel" aria-labelledby="jardines-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
                                                     <h3>Jardines</h3>
                                                     <p><strong>Dirección:</strong> Av. Prol. Fuentes de Villalongín #232 Local 2 Col. Fuentes de Morelia</p>
-                                                    <a href="https://maps.app.goo.gl/5q5f5n6k6n7k7l8l8" class="direccion-link" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/aAonfsjbqBxusgK6A" class="direccion-link" target="_blank">
                                                         <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
                                                     </a>
                                                     <p><strong>Teléfono:</strong> <a href="tel:4432733218">(443) 273 32 18</a></p>
@@ -486,23 +490,24 @@
                                                     </a>
                                                 </div>
                                                 <div class="sucursal-image">
-                                                    <a href="https://maps.app.goo.gl/5q5f5n6k6n7k7l8l8" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/aAonfsjbqBxusgK6A" target="_blank">
                                                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_jardines.png" alt="Sucursal Jardines" class="sucursal-thumbnail">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14981.98651813101!2d-101.21858548585978!3d19.7212258421808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e74f762a041%3A0xc09575f0a0c5c3c0!2sPintasuper%20Jardines!5e0!3m2!1sen!2smx!4v1714574972986!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.965561317032!2d-101.2011499!3d19.6714746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0d942e9253e9%3A0x1671b927f30cf917!2sPinta%20Super%20Jardines!5e0!3m2!1ses-419!2smx!4v1757030321582!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
+                                        <!-- Sucursal Lomas del Valle -->
                                         <div class="tab-pane fade" id="lomas" role="tabpanel" aria-labelledby="lomas-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
                                                     <h3>Lomas del Valle</h3>
                                                     <p><strong>Dirección:</strong> Av. Siervo de la Nación #500-1 Col. Lomas del Valle</p>
-                                                    <a href="https://maps.app.goo.gl/4f4f4t4t4t5u6u7u8" class="direccion-link" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/n4kUKSzB6yHxhMUG6" class="direccion-link" target="_blank">
                                                         <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
                                                     </a>
                                                     <p><strong>Teléfono:</strong> <a href="tel:4431287064">(443) 128 70 64</a></p>
@@ -513,23 +518,24 @@
                                                     </a>
                                                 </div>
                                                 <div class="sucursal-image">
-                                                    <a href="https://maps.app.goo.gl/4f4f4t4t4t5u6u7u8" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/n4kUKSzB6yHxhMUG6" target="_blank">
                                                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_lomas_del_valle.png" alt="Sucursal Lomas del Valle" class="sucursal-thumbnail">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14981.88451813101!2d-101.19858548585978!3d19.7212258421808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e74f762a041%3A0xc09575f0a0c5c3c0!2sPintasuper%20Lomas!5e0!3m2!1sen!2smx!4v1714574972986!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.5607357306476!2d-101.2290199!3d19.6887372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0c202fe394bf%3A0x14eea922c5409583!2sPinta%20Super%20Lomas%20del%20Valle!5e0!3m2!1ses-419!2smx!4v1757030445586!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
+                                        <!-- Sucursal Realito -->
                                         <div class="tab-pane fade" id="realito" role="tabpanel" aria-labelledby="realito-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
                                                     <h3>Realito</h3>
                                                     <p><strong>Dirección:</strong> Periférico Paseo de la República #4911 Col. Ignacio Zaragoza</p>
-                                                    <a href="https://maps.app.goo.gl/6j6j6k6k6k7l7l8l8" class="direccion-link" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/tmmamvm7tFd36B3fA" class="direccion-link" target="_blank">
                                                         <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
                                                     </a>
                                                     <p><strong>Teléfono:</strong> <a href="tel:4432259324">(443) 225 93 24</a></p>
@@ -540,23 +546,24 @@
                                                     </a>
                                                 </div>
                                                 <div class="sucursal-image">
-                                                    <a href="https://maps.app.goo.gl/6j6j6k6k6k7l7l8l8" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/tmmamvm7tFd36B3fA" target="_blank">
                                                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_realito.png" alt="Sucursal Realito" class="sucursal-thumbnail">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14981.88451813101!2d-101.19858548585978!3d19.7212258421808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e74f762a041%3A0xc09575f0a0c5c3c0!2sPintasuper%20Realito!5e0!3m2!1sen!2smx!4v1714574972986!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60100.17757458397!2d-101.2433213!3d19.701505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e585091311b%3A0x67b2d00361d15547!2sPinta%20Super%20Realito!5e0!3m2!1ses-419!2smx!4v1757031011864!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>  
                                         </div>
                                         
+                                        <!-- Sucursal Loma Real -->
                                         <div class="tab-pane fade" id="loma-real" role="tabpanel" aria-labelledby="loma-real-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
                                                     <h3>Loma Real</h3>
                                                     <p><strong>Dirección:</strong> Av. Torreón Nuevo #560 Col. Loma Real</p>
-                                                    <a href="https://maps.app.goo.gl/7n7n7o7o7o8p8p9p9" class="direccion-link" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/hUvd2dHyK6tSQW7fA" class="direccion-link" target="_blank">
                                                         <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
                                                     </a>
                                                     <p><strong>Teléfono:</strong> <a href="tel:4431000259">(443) 100 02 59</a></p>
@@ -567,26 +574,28 @@
                                                     </a>
                                                 </div>
                                                 <div class="sucursal-image">
-                                                    <a href="https://maps.app.goo.gl/7n7n7o7o7o8p8p9p9" target="_blank">
+                                                    <a href="https://maps.app.goo.gl/hUvd2dHyK6tSQW7fA" target="_blank">
                                                         <img src="<?php echo $ROOT_PATH; ?>/assets/images/sucursales/sucursal_loma_real.png" alt="Sucursal Loma Real" class="sucursal-thumbnail">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
                                             <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14981.88451813101!2d-101.19858548585978!3d19.7212258421808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e74f762a041%3A0xc09575f0a0c5c3c0!2sPintasuper%20Loma%20Real!5e0!3m2!1sen!2smx!4v1714574972986!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.585514293871!2d-101.19873760000002!3d19.7302631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e50f77bf59f%3A0x8dd225f5da5f4062!2sPinta%20Super%20Loma%20Real!5e0!3m2!1ses-419!2smx!4v1757031323331!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
+                                <!-- Sección de compra en línea - ACTUALIZADA -->
                                 <div class="online-purchase">
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Compra en Línea</h3>
-                                        <p>¿Prefieres comprar desde la comodidad de tu hogar? Visita nuestros productos en Mercado Libre.</p>
+                                        <p>¿Prefieres comprar desde la comodidad de tu hogar? Visita nuestros productos en Mercado Libre</p>
                                     </div>
                                     <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado-libre-logo.png" alt="Mercado Libre" class="mercado-logo">
                                     
+                                    <!-- Cubetas 19 Litros -->
                                     <div class="product-category">
                                         <h4 class="category-title">CUBETAS 19 LITROS - PINTURAS VINÍLICAS</h4>
                                         <div class="product-grid">
@@ -609,6 +618,7 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- Galones Pintura Vinílica -->
                                     <div class="product-category">
                                         <h4 class="category-title">GALONES - PINTURAS VINÍLICAS</h4>
                                         <div class="product-grid">
@@ -630,9 +640,10 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
+                                    <!-- Impermeabilizantes -->
                                     <div class="product-category">
-                                        <h4 class="category-title">IMPERMEABILIZANTE CUBETA 19 LITROS</h4>
+                                        <h4 class="category-title">IMPERMEABILIZANTES - CUBETA 19 LITROS</h4>
                                         <div class="product-grid">
                                             <div class="product-card">
                                                 <div class="product-name">IMPER-TEK CUBETA 19 LITROS</div>
@@ -649,6 +660,7 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- Esmaltes -->
                                     <div class="product-category">
                                         <h4 class="category-title">ESMALTE SUPER RAP Y KIVI FORTE</h4>
                                         <div class="product-grid">
