@@ -13,360 +13,92 @@
     <link rel="manifest" href="/proyectopintasuper/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Pintasuper - Tienda de pinturas en Morelia con múltiples sucursales" />
     
-    <style>
-        /* Estilos generales */
-        .page-wrapper {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            overflow-x: hidden;
-        }
+<style>
+/* Estilos para la compra en línea - ACTUALIZADO */
+.online-purchase {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
 
-        .contact-page {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+.product-category {
+    margin-bottom: 30px;
+}
 
-        .banner_title {
-            color: #f7931e !important;
-        }
-        
-        /* Estilos para pestañas de sucursales - MEJORADO PARA MÓVIL */
-        .sucursales-tabs {
-            margin-top: 40px;
-            position: relative;
-        }
-        
-        .nav-tabs-container {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .nav-tabs-scroll {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            scroll-behavior: smooth;
-            padding-bottom: 5px; /* Espacio para el indicador de scroll */
-        }
-        
-        .nav-tabs-scroll::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
-        }
-        
-        .nav-tabs {
-            border-bottom: 2px solid #2a5f8b;
-            display: inline-flex;
-            flex-wrap: nowrap;
-            min-width: 100%;
-            position: relative;
-        }
-        
-        .nav-tabs .nav-item {
-            margin-bottom: -2px;
-            flex-shrink: 0;
-        }
-        
-        .nav-tabs .nav-link {
-            border: none;
-            border-bottom: 3px solid transparent;
-            color: #555;
-            font-weight: 600;
-            padding: 12px 16px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            font-size: 14px;
-            position: relative;
-        }
-        
-        /* Indicador de que hay más pestañas en móvil */
-        .scroll-indicator {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 30px;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 5px;
-        }
-        
-        .scroll-indicator.left {
-            left: 0;
-            right: auto;
-            background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
-            justify-content: flex-start;
-            padding-left: 5px;
-        }
-        
-        .scroll-indicator i {
-            color: #2a5f8b;
-            font-size: 16px;
-        }
-        
-        .nav-tabs .nav-link:hover {
-            border-color: #f7931e;
-            color: #2a5f8b;
-        }
-        
-        .nav-tabs .nav-link.active {
-            color: #2a5f8b;
-            background-color: transparent;
-            border-color: #2a5f8b;
-        }
-        
-        /* Mejorar la interacción táctil */
-        .nav-tabs .nav-link:active {
-            background-color: rgba(247, 147, 30, 0.1);
-            transform: scale(0.98);
-        }
-        
-        .tab-content {
-            padding: 30px 0;
-        }
-        
-        /* Estilos para el contenido de cada sucursal */
-        .sucursal-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: flex-start;
-        }
-        
-        .sucursal-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .sucursal-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .sucursal-thumbnail {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .sucursal-thumbnail:hover {
-            transform: scale(1.03);
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #25D366;
-            color: white !important;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-            text-decoration: none !important;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            color: white;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-        
-        /* Estilos para el mapa general */
-        .general-map-section {
-            margin: 60px 0;
-        }
-        
-        .general-map {
-            width: 100%;
-            height: 450px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            margin-top: 20px;
-        }
-        
-        .general-map iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Estilos para la compra en línea - ACTUALIZADO */
-        .online-purchase {
-            background-color: #f9f9f9;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
-        }
-        
-        .product-category {
-            margin-bottom: 30px;
-        }
-        
-        .category-title {
-            color: #2a5f8b;
-            border-bottom: 2px solid #f7931e;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        
-        .product-name {
-            font-weight: 600;
-            color: #2a5f8b;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .btn-compra {
-            display: block;
-            background-color: #2a5f8b;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        .btn-compra:hover {
-            background-color: #1a3a5a;
-            color: white;
-        }
-        
-        .mercado-logo {
-            max-width: 200px;
-            margin: 0 auto 20px;
-            display: block;
-        }
-        
-        /* Estilos para enlaces de dirección */
-        .direccion-link {
-            color: #2a5f8b;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        
-        .direccion-link:hover {
-            color: #f7931e;
-            text-decoration: underline;
-        }
-        
-        .direccion-link i {
-            margin-right: 5px;
-        }
-        
-        /* Estilos para mapas individuales */
-        .sucursal-map {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
-        
-        .sucursal-map iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .map-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2a5f8b;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        
-        /* Ajustes responsivos */
-        @media (max-width: 768px) {
-            .nav-tabs-container {
-                margin-bottom: 25px;
-            }
-            
-            .nav-tabs .nav-link {
-                padding: 10px 12px;
-                font-size: 13px;
-            }
-            
-            .sucursal-content {
-                flex-direction: column;
-            }
-            
-            .general-map {
-                height: 300px;
-            }
-            
-            .sucursal-map {
-                height: 250px;
-            }
-            
-            .online-purchase {
-                padding: 25px 20px;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            /* Mostrar indicadores de scroll en móvil */
-            .scroll-indicator {
-                opacity: 1;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .nav-tabs .nav-link {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-            
-            .sucursal-info, 
-            .sucursal-image {
-                min-width: 100%;
-            }
-        }
-    </style>
+.category-title {
+    color: #2a5f8b;
+    border-bottom: 2px solid #f7931e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Añadido para mejor alineación de contenido */
+    flex-direction: column; /* Añadido para mejor alineación de contenido */
+    justify-content: space-between; /* Añadido para mejor alineación de contenido */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    max-height: 150px; /* Hace la imagen más compacta */
+    object-fit: contain; /* Mantiene la proporción */
+    height: auto;
+    display: block; 
+    margin: 0 auto 15px auto; 
+    border-radius: 5px;
+}
+
+.product-name {
+    font-weight: 600;
+    color: #2a5f8b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    text-align: center; 
+}
+
+.btn-compra {
+    display: block;
+    background-color: #2a5f8b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: auto;
+}
+
+.btn-compra:hover {
+    background-color: #1a3a5a;
+    color: white;
+}
+
+.mercado-logo {
+    max-width: 200px;
+    margin: 0 auto 20px;
+    display: block;
+}
+</style>
     
     <?php include_once __DIR__ . '/../bin/css.php'; ?>
 </head>
@@ -382,7 +114,6 @@
             <div class="sticky-header__content"></div>
         </div>
         
-        <!-- Sección de encabezado -->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);">
             </div>
@@ -398,7 +129,6 @@
             </div>
         </section>
         
-        <!-- Sección de contacto -->
         <section class="contact-page">
             <div class="container">
                 <div class="row justify-content-center">
@@ -406,15 +136,12 @@
                         <div class="contact-page__right">
                             <div class="contact-page__details">
                                 
-                                <!-- Mapa general con todas las sucursales -->
                                 <div class="general-map-section">
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Ubicación de todas nuestras sucursales</h3>
                                     </div>
-
                                 </div>
                                 
-                                <!-- Pestañas de sucursales - MEJORADO -->
                                 <div class="sucursales-tabs">
                                     <div class="nav-tabs-container">
                                         <div class="scroll-indicator left">
@@ -445,7 +172,6 @@
                                     </div>
                                     
                                     <div class="tab-content" id="sucursalesTabContent">
-                                        <!-- Sucursal Matríz -->
                                         <div class="tab-pane fade show active" id="matriz" role="tabpanel" aria-labelledby="matriz-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
@@ -473,7 +199,6 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Sucursal Jardines -->
                                         <div class="tab-pane fade" id="jardines" role="tabpanel" aria-labelledby="jardines-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
@@ -501,7 +226,6 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Sucursal Lomas del Valle -->
                                         <div class="tab-pane fade" id="lomas" role="tabpanel" aria-labelledby="lomas-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
@@ -529,7 +253,6 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Sucursal Realito -->
                                         <div class="tab-pane fade" id="realito" role="tabpanel" aria-labelledby="realito-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
@@ -557,7 +280,6 @@
                                             </div>  
                                         </div>
                                         
-                                        <!-- Sucursal Loma Real -->
                                         <div class="tab-pane fade" id="loma-real" role="tabpanel" aria-labelledby="loma-real-tab">
                                             <div class="sucursal-content">
                                                 <div class="sucursal-info">
@@ -587,7 +309,6 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Sección de compra en línea - ACTUALIZADA -->
                                 <div class="online-purchase">
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Compra en Línea</h3>
@@ -595,89 +316,100 @@
                                     </div>
                                     <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado-libre-logo.png" alt="Mercado Libre" class="mercado-logo">
                                     
-                                    <!-- Cubetas 19 Litros -->
                                     <div class="product-category">
                                         <h4 class="category-title">CUBETAS 19 LITROS - PINTURAS VINÍLICAS</h4>
                                         <div class="product-grid">
                                             <div class="product-card">
                                                 <div class="product-name">PLATINO GOLD CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/PLATINO_GOLD_CUBETA_19_LITROS.webp" alt="PLATINO GOLD CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/cubeta-pintura-vinilica-pinta-super-platino-varios-colores/up/MLMU3063240800?pdp_filters=item_id:MLM3590556910" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">DORADA CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/DORADA_CUBETA_19_LITROS.webp" alt="DORADA CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/cubeta-pintura-vinilica-pinta-super-dorada-varios-colores/up/MLMU3063168880?pdp_filters=item_id:MLM3590401512" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">ONIX CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/ONIX_CUBETA_19_LITROS.webp" alt="ONIX CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/cubeta-pintura-vinilica-pinta-super-onix-varios-colores/up/MLMU3057867167?pdp_filters=item_id:MLM3590579632" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">ZAFIRO CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/ZAFIRO_CUBETA_19_LITROS.webp" alt="ZAFIRO CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/cubeta-pintura-19lt-vinilica-pinta-super-zafiro/up/MLMU3062814638?pdp_filters=item_id:MLM2255268135" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Galones Pintura Vinílica -->
                                     <div class="product-category">
                                         <h4 class="category-title">GALONES - PINTURAS VINÍLICAS</h4>
                                         <div class="product-grid">
                                             <div class="product-card">
                                                 <div class="product-name">PLATINO GOLD GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/PLATINO_GOLD_GALON.webp" alt="PLATINO GOLD GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-vinilica-galon-4lt-pinta-super-platino-varios-colores/up/MLMU3078992805?pdp_filters=item_id:MLM3603523854" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">DORADA GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/DORADA_GALON.webp" alt="DORADA GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-vinilica-galon-4lt-pinta-super-dorada-varios-colores/up/MLMU3078992805?pdp_filters=item_id:MLM3603523854" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">ONIX GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/ONIX_GALON.webp" alt="ONIX GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-vinilica-galon-4lt-pinta-super-onix-varios-colores/up/MLMU3084333274?pdp_filters=item_id:MLM2264010401" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">ZAFIRO GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/ZAFIRO_GALON.webp" alt="ZAFIRO GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-vinilica-interiores-galon-4lt-pinta-super-zafiro/up/MLMU3078984153?pdp_filters=item_id:MLM2264022661" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Impermeabilizantes -->
                                     <div class="product-category">
                                         <h4 class="category-title">IMPERMEABILIZANTES - CUBETA 19 LITROS</h4>
                                         <div class="product-grid">
                                             <div class="product-card">
                                                 <div class="product-name">IMPER-TEK CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/IMPERTEK_CUBETA_19_LITROS.webp" alt="IMPER-TEK CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/impermeabilizante-acrilico-rojo-3-anos-pinta-super-impertek/up/MLMU3064874478?pdp_filters=item_id:MLM3591629290" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">IMPER MULTI PREMIUM - 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/IMPER_MULTI_PREMIUM_19_LITROS.webp" alt="IMPER MULTI PREMIUM - 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/impermeabilizante-premium-3-anos-blancorojo-pinta-super/up/MLMU3059911991?pdp_filters=item_id:MLM3591943804" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">IMPER MULTI PRO FIBRATADO 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/IMPER_MULTI_PRO_FIBRATADO_19_LITROS.webp" alt="IMPER MULTI PRO FIBRATADO 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/impermeabilizante-fibratado-10-anos-blancorojo-pinta-super/up/MLMU3064928280?pdp_filters=item_id:MLM3591768586" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Esmaltes -->
                                     <div class="product-category">
                                         <h4 class="category-title">ESMALTE SUPER RAP Y KIVI FORTE</h4>
                                         <div class="product-grid">
                                             <div class="product-card">
                                                 <div class="product-name">SUPER RAP CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/SUPER_RAP_CUBETA_19_LITROS.webp" alt="SUPER RAP CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-esmalte-secado-rapido-19lt-pinta-super-super-rap/up/MLMU3083620188?pdp_filters=item_id:MLM3603230162" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">SUPER RAP GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/SUPER_RAP_GALON.webp" alt="SUPER RAP GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-esmalte-secado-rapido-4lt-pinta-super-super-rap/up/MLMU3078270399?pdp_filters=item_id:MLM3603281616" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">KIVI FORTE CUBETA 19 LITROS</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/KIVI_FORTE_CUBETA_19_LITROS.webp" alt="KIVI FORTE CUBETA 19 LITROS"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-esmalte-19lt-pinta-super-kivi-forte/up/MLMU3078210561?pdp_filters=item_id:MLM3603202610" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                             <div class="product-card">
                                                 <div class="product-name">KIVI FORTE GALÓN</div>
+                                                <img src="<?php echo $ROOT_PATH; ?>/assets/images/gallery/mercado_libre_galeria/KIVI_FORTE_GALON.webp" alt="KIVI FORTE GALÓN"/>
                                                 <a href="https://www.mercadolibre.com.mx/pintura-esmalte-4lt-pinta-super-kivi-forte/up/MLMU3083556182?pdp_filters=item_id:MLM3603293460" class="btn-compra" target="_blank">Comprar ahora</a>
                                             </div>
                                         </div>
