@@ -1,127 +1,162 @@
 <?php
 $ROOT_PATH = '/proyectopintasuper';
 $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/productos/';
-$PDF_BASE_PATH = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/productos/pdf/';
 
-// Definir los productos en un único array agrupado por categoría, basados en el catálogo y los productos ya existentes
+// Definir TODOS los productos en un único array agrupado por categoría
 $productosPorCategoria = [
     'Pinturas Arquitectónicas' => [
         [
             'imagen' => 'platino_gold_19_litros.png',
-            'nombre' => 'Platino Gold / Vinilux',
-            'descripcion' => 'Pintura arquitectónica Vinil-Acrilica de categoría Premium de 10 a 12 años de durabilidad para superficies interiores y exteriores, con acabado satinado.',
+            'nombre' => 'Platino Gold',
+            'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de categoría Premium.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '13 colores',
+                'Tiempo de secado' => '45 minutos al tacto',
+                'Rendimiento' => '7-9 m² por litro',
                 'Duración' => '10-12 años',
-                'Acabado' => 'Satinado'
+                'Acabado' => 'Mate'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Vinilux.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Kivi.pdf'
         ],
         [
             'imagen' => 'dorada_19_litros.png',
             'nombre' => 'Dorada',
-            'descripcion' => 'Pintura arquitectónica Vinil-Acrílica de gran desempeño de 7 a 8 años de durabilidad para superficies interiores y exteriores, con acabado mate.',
+            'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de gran desempeño para superficies interiores y exteriores, con acabado mate.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '32 colores',
-                'Duración' => '7-8 años',
+                'Tiempo de secado' => '30 minutos al tacto',
+                'Rendimiento' => '7-9 m² por litro',
+                'Duración' => '7 años',
                 'Acabado' => 'Mate'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Dorada.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Onix.pdf'
         ],
         [
             'imagen' => 'onix_19_litros.png',
             'nombre' => 'Onix',
-            'descripcion' => 'Pintura arquitectónica Vinil-Acrílica de buen desempeño de 3 a 4 años de durabilidad para decorar superficies en interiores y exteriores, con acabado mate.',
+            'descripcion' => 'Pintura arquitectónica Vinil-Acrítica de buen desempeño.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '33 colores',
-                'Duración' => '3-4 años',
+                'Tiempo de secado' => '30 minutos al tacto',
+                'Rendimiento' => '7-9 m² por litro',
+                'Duración' => '4 años',
                 'Acabado' => 'Mate'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Onix.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Onix.pdf'
         ],
         [
             'imagen' => 'zafiro_19_litros.png',
             'nombre' => 'Zafiro',
-            'descripcion' => 'Pintura arquitectónica Vinil-Acrílica para decorar superficies en interiores, con acabado mate.',
+            'descripcion' => 'Pintura arquitectónica Vinil-Acrítica para interiores.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '26 colores',
+                'Tiempo de secado' => '30 minutos al tacto',
+                'Rendimiento' => '7-9 m² por litro',
+                'Duración' => '2 años',
                 'Acabado' => 'Mate'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Zafiro.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Zafiro.pdf'
+        ]
+    ],
+    'Vinílicas' => [
+        [
+            'imagen' => 'sellador_multi_premium_19_litros.png',
+            'nombre' => 'Sellador Multi Premium',
+            'descripcion' => 'Sellador premium de alta penetración y adherencia.',
+            'detalles' => [
+                'Presentación' => 'Cubeta de 19 litros',
+                'Colores disponibles' => 'Transparente / Blanco',
+                'Tiempo de secado' => '30 minutos al tacto',
+                'Rendimiento' => '10-12 m² por litro',
+                'Duración' => '5 años'
+            ],
+            'ficha_tecnica' => 'Ficha Tecnica Vinilux.pdf'
+        ],
+        [
+            'imagen' => 'sellador_pro_fibrantado_19_litros.png',
+            'nombre' => 'Sellador Pro Fibrantado',
+            'descripcion' => 'Sellador con fibras para mayor resistencia.',
+            'detalles' => [
+                'Presentación' => 'Cubeta de 19 litros',
+                'Colores disponibles' => 'Transparente / Blanco',
+                'Tiempo de secado' => '45 minutos al tacto',
+                'Rendimiento' => '8-10 m² por litro',
+                'Duración' => '7 años'
+            ],
+            'ficha_tecnica' => 'Ficha Tecnica Super Rap.pdf'
         ]
     ],
     'Esmaltes' => [
         [
             'imagen' => 'kivi_forte_19_litros.png',
-            'nombre' => 'Esmalte Secado Normal Kivi Forte',
-            'descripcion' => 'Esmalte alquidálico anticorrosivo de excelente rendimiento con acabado brillante, semimate y mate.',
+            'nombre' => 'Kivi Forte',
+            'descripcion' => 'Esmalte alquídico anticorrosivo de excelente rendimiento.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón / Litro.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '19 colores',
-                'Acabado' => 'Brillante, Semimate y Mate'
+                'Tiempo de secado' => '4 horas al tacto',
+                'Rendimiento' => '12-14 m² por litro',
+                'Acabado' => 'Brillante'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Kivi.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Kivi.pdf'
         ],
         [
             'imagen' => 'super_rap_ultra_19_litros.png',
-            'nombre' => 'Esmalte Secado Rápido Super Rap',
-            'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido con acabado brillante, metálico y mate.',
+            'nombre' => 'Super Rap Ultra',
+            'descripcion' => 'Esmalte alquidálico modificado con estireno de secado rápido.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón / Litro.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => '25 colores',
-                'Acabado' => 'Brillante, Metálico y Mate'
+                'Tiempo de secado' => '10 minutos al tacto',
+                'Rendimiento' => '10-12 m² por litro',
+                'Acabado' => 'Semi-brillante'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Ficha_Tecnica_Super_Rap.pdf'
+            'ficha_tecnica' => 'Ficha Tecnica Super Rap.pdf'
         ]
     ],
     'Impermeabilizantes' => [
         [
             'imagen' => 'imper_multi_premium_19_litros.png',
-            'nombre' => 'Imper-Multi Premium',
-            'descripcion' => 'Impermeabilizante fibratado con atributos acrilico-elastoméricos, elaborado con fibras microsintéticas que le proporcionan una alta elongación, evitando el uso de membrana de refuerzo.',
+            'nombre' => 'Imper Multi Premium',
+            'descripcion' => 'Impermeabilizante premium con resistencia de 7 años.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => 'Terracota / Blanco',
-                'Resistencia' => '3, 5 y 7 años'
+                'Tiempo de secado' => '45 minutos al tacto',
+                'Rendimiento' => '4-5 m² por litro',
+                'Resistencia' => '7 años'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Imper_Multi_Premium.pdf'
+            'ficha_tecnica' => 'Imper Multi Premium_BLANCO.pdf'
         ],
         [
             'imagen' => 'imper_multi_pro_fibrantado_19_litros.png',
-            'nombre' => 'Imper-Multi Pro Fibratado',
-            'descripcion' => 'Impermeabilizante elaborado a base de resinas estiren-acrílicas, pigmentos inorgánicos y microfibra de poliéster. Ideal para mantenimiento.',
+            'nombre' => 'Imper Multi Pro Fibrantado',
+            'descripcion' => 'Impermeabilizante fibrantado color terracota.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros / Galón.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => 'Terracota / Blanco',
-                'Resistencia' => '3, 5 y 10 años'
+                'Tiempo de secado' => '45 minutos al tacto',
+                'Rendimiento' => '4-5 m² por litro',
+                'Resistencia' => '10 años'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Impermeabilizante_acrilico_fibratado_10_años.pdf'
+            'ficha_tecnica' => 'Impermeabilizante acrilico fibratado 10 años.pdf'
         ],
         [
             'imagen' => 'impertek_19_litros.png',
             'nombre' => 'Imper-Tek',
-            'descripcion' => 'Impermeabilizante elaborado a base de resinas estiren-acrílicas y pigmentos inorgánicos.',
+            'descripcion' => 'Impermeabilizante elaborado a base de resinas.',
             'detalles' => [
-                'Presentación' => 'Cubeta de 19 litros.',
+                'Presentación' => 'Cubeta de 19 litros',
                 'Colores disponibles' => 'Terracota / Blanco',
-                'Resistencia' => '3 y 5 años'
+                'Tiempo de secado' => '45 minutos al tacto',
+                'Rendimiento' => '4-5 m² por litro',
+                'Resistencia' => '5 años'
             ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/Impermeabilizante_imper-tek_acrilico_3_años.pdf'
-        ]
-    ],
-    'Aerosoles' => [
-        [
-            'imagen' => 'ft-aerosol-turbo-iso.png',
-            'nombre' => 'Aerosol Turbo',
-            'descripcion' => 'Esmalte de secado rápido a base de resina alquidal modificada con monómeros acrílicos.',
-            'detalles' => [
-                'Presentación' => 'Lata de 400 ml'
-            ],
-            'ficha_tecnica' => '/productos/pdf/FICHAS_TECNICAS/FT-AEROSOL-TURBO-ISO.pdf'
+            'ficha_tecnica' => 'Impermeabilizante acrilico fibratado 5 años.pdf'
         ]
     ]
 ];
@@ -183,20 +218,17 @@ function mostrarProducto($producto, $categoria, $ROOT_PATH) {
                 <div class="product-technical">
                     '.$detallesTecnicos.'
                 </div>';
-    
-    // Verificación y muestra del botón de descarga
-    if (!empty($producto['ficha_tecnica'])) {
-        echo '  <a href="'.$ROOT_PATH.$producto['ficha_tecnica'].'" class="thm-btn download-btn" style="margin-top: 15px;" target="_blank">
-                    <i class="fas fa-file-download"></i> Descargar Ficha Técnica
-                </a>';
-    } else {
-        echo '  <a href="#" class="thm-btn download-btn empty-btn" style="margin-top: 15px;">
-                    <i class="fas fa-file-download"></i> Ficha Técnica
-                </a>';
-    }
-    
-    echo '
-            </div>
+
+if (isset($producto['ficha_tecnica']) && !empty($producto['ficha_tecnica'])) {
+    echo '<div class="download-ficha">
+            <a href="'.$ROOT_PATH.'/pdf/FICHAS TECNICAS/'.$producto['ficha_tecnica'].'"
+               class="ficha-btn" download>
+               <i class="fas fa-download"></i> Descargar Ficha Técnica
+            </a>
+          </div>';
+}
+
+    echo '  </div>
         </div>
     </div>';
 }
@@ -640,26 +672,54 @@ $seccionesInformativas = [
             flex: 1;
         }
 
-        .thm-btn.download-btn {
+        .catalog-download {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .catalog-download h3 {
+            color: var(--color-blue-pintasuper);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .catalog-btn {
+            display: inline-block;
+            background-color: var(--color-brand);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .catalog-btn:hover {
+            background-color: var(--color-brand-dark);
+            color: white;
+        }
+
+        /* Estilo para los botones de ficha técnica */
+        .download-ficha .ficha-btn {
             background-color: var(--color-blue-pintasuper);
             color: white;
-            padding: 12px 25px;
-            font-weight: 600;
+            padding: 10px 20px;
             border-radius: 5px;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            transition: all 0.3s ease;
         }
 
-        .thm-btn.download-btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        .download-ficha .ficha-btn:hover {
+            background-color: #0b152d; /* Un azul un poco más oscuro */
         }
 
-        .thm-btn.download-btn.empty-btn {
-            opacity: 0.6;
-            cursor: not-allowed;
+        .download-ficha .ficha-btn i {
+            margin-right: 8px;
         }
 
         @media (max-width: 991px) {
@@ -706,6 +766,21 @@ $seccionesInformativas = [
                 font-size: 1.5rem;
             }
         }
+
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+        }
+
+        .color-box.primary {
+            background-color: #fd4e01;
+        }
+
+        .color-box.secondary {
+            background-color: #000082;
+        }
     </style>
 </head>
 
@@ -736,7 +811,6 @@ $seccionesInformativas = [
                             <button type="submit" id="searchButton"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
-
                     <div class="sidebar-widget categories-list">
                         <h4>Categorías</h4>
                         <ul>
@@ -744,6 +818,7 @@ $seccionesInformativas = [
                             <?php foreach ($productosPorCategoria as $categoria => $productos): ?>
                                 <li><a href="#" class="category-filter" data-category="<?= strtolower(str_replace(' ', '-', $categoria)); ?>"><?= htmlspecialchars($categoria); ?></a></li>
                             <?php endforeach; ?>
+                            <li><a href="#" class="category-filter" data-category="catalogo">Catálogo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -761,48 +836,20 @@ $seccionesInformativas = [
                         </div>
                     </div>
 
-                    <div class="row info-section-wrapper">
-                        <?php
-                        $infoItems = $seccionesInformativas;
-                        $repintado = $infoItems['Equipo de Repintados'];
-                        unset($infoItems['Equipo de Repintados']);
-
-                        foreach ($infoItems as $titulo => $descripcion): ?>
-                            <div class="col-md-6 info-section-item">
-                                <div class="info-section">
-                                    <h3><?= htmlspecialchars($titulo); ?></h3>
-                                    <p><?= htmlspecialchars($descripcion); ?></p>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <div class="col-md-12 info-section-item">
-                            <div class="info-section">
-                                <h3><?= htmlspecialchars('Equipo de Repintados'); ?></h3>
-                                <p><?= htmlspecialchars($repintado); ?></p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php mostrarCatalogo($catalogo, $ROOT_PATH, $PDF_BASE_PATH); ?>
 
                     <?php foreach ($productosPorCategoria as $categoria => $productos): ?>
-                        <div class="product-section">
+                        <div class="product-section" data-section-name="<?= strtolower(str_replace(' ', '-', $categoria)); ?>">
                             <h3 class="section-title"><?= htmlspecialchars($categoria); ?></h3>
                             <div class="section-content">
                                 <div class="row">
                                     <?php foreach ($productos as $producto): ?>
-                                        <?php mostrarProducto($producto, $categoria, $ROOT_PATH); ?>
+                                        <?php mostrarProducto($producto, $categoria, $ROOT_PATH, $PDF_BASE_PATH); ?>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
-
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-12 text-center">
-                            <a href="<?php echo $ROOT_PATH; ?>/assets/CATALOGO_2025.pdf" class="thm-btn download-btn" target="_blank" style="padding: 15px 30px; font-size: 1.1em;">
-                                <i class="fas fa-file-download"></i> Descargar Catálogo Completo
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
