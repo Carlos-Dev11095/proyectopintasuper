@@ -2,7 +2,6 @@
 $ROOT_PATH = '/proyectopintasuper';
 $IMAGE_DIR = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/assets/images/gallery/productos/';
 $PDF_BASE_PATH = $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/productos/pdf/';
-
 // Definir los productos en un único array agrupado por categoría, basados en el catálogo y los productos ya existentes
 $productosPorCategoria = [
     'Pinturas Arquitectónicas' => [
@@ -125,6 +124,9 @@ $productosPorCategoria = [
         ]
     ]
 ];
+
+
+
 
 // Función para mostrar un solo producto
 function mostrarProducto($producto, $categoria, $ROOT_PATH) {
@@ -662,6 +664,17 @@ $seccionesInformativas = [
             cursor: not-allowed;
         }
 
+        /* Nuevo estilo para el contenedor de los botones de descarga */
+        .download-buttons-container {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
         @media (max-width: 991px) {
             .gallery-wrapper {
                 flex-direction: column;
@@ -783,6 +796,12 @@ $seccionesInformativas = [
                         </div>
                     </div>
 
+                    <div class="download-buttons-container">
+                        <a href="<?= $ROOT_PATH; ?>/productos/pdf/FICHAS_TECNICAS/CATALOGO_2025.pdf" class="thm-btn download-btn" download target="_blank">
+                            <i class="fas fa-download"></i> Descargar Catálogo Completo 2025
+                        </a>
+                    </div>
+                    
                     <?php foreach ($productosPorCategoria as $categoria => $productos): ?>
                         <div class="product-section">
                             <h3 class="section-title"><?= htmlspecialchars($categoria); ?></h3>
@@ -796,13 +815,6 @@ $seccionesInformativas = [
                         </div>
                     <?php endforeach; ?>
 
-                    <div class="row" style="margin-top: 40px;">
-                        <div class="col-12 text-center">
-                            <a href="<?php echo $ROOT_PATH; ?>/assets/CATALOGO_2025.pdf" class="thm-btn download-btn" target="_blank" style="padding: 15px 30px; font-size: 1.1em;">
-                                <i class="fas fa-file-download"></i> Descargar Catálogo Completo
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

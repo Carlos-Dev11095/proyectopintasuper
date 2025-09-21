@@ -31,7 +31,7 @@
             <div class="main-header__top-inner clearfix">
                 <div class="main-header__logo">
                     <a href="<?php echo $ROOT_PATH; ?>/" class="main-header__logo-link">
-                        <img src="assets/images/resources/footer-logo.png" alt="" class="dark-logo">
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/footer-logo.png" alt="" class="dark-logo">
                     </a>
                 </div>
                 <div class="main-header__top-right">

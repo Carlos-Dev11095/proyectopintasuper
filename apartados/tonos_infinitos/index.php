@@ -7,25 +7,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tonos Infinitos - Pintasuper</title>
-    <!-- iconos favoritos -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="<?php echo $ROOT_PATH; ?>/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Descubre nuestra gama infinita de colores y servicio de igualación personalizado - Pintasuper" />
 
-    <!-- fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
 
         .banner_title {
-        color: #f7931e !important;
+            color: #f7931e !important;
         } 
 
         /* Estilos generales */
@@ -217,10 +214,14 @@
             background: var(--primary-color);
         }
         
+        /* --- AJUSTES PARA UNA GALERÍA MÁS COMPACTA Y HORIZONTAL --- */
         .color-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* Contenedor principal para todas las líneas de color */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no hay espacio */
             gap: 20px;
+            margin-bottom: 60px; /* Separación entre la galería y la siguiente sección */
         }
         
         .color-item {
@@ -229,6 +230,15 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            cursor: pointer; /* Agrega un cursor de puntero para indicar que se puede hacer clic */
+            
+            /* Hacemos los elementos más pequeños */
+            flex: 1 1 200px; /* Crece, se encoge, y tiene un tamaño base de 200px */
+            max-width: 250px; /* Tamaño máximo para escritorio */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         
         .color-item:hover {
@@ -244,12 +254,11 @@
         
         .color-item__info {
             padding: 15px;
-            text-align: center;
         }
-        
+
         .color-item__name {
             font-weight: 600;
-            margin-bottom: 5px;
+            margin: 0;
             color: var(--dark-color);
         }
         
@@ -346,9 +355,14 @@
             }
             
             .color-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
             
+            .color-item {
+                max-width: 100%;
+            }
+
             .matching-feature {
                 flex-direction: column;
             }
@@ -374,6 +388,95 @@
             justify-content: center;
             margin: 0 auto 20px;
         }
+
+        /* --- Estilos para el Modal de Imagen --- */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1000; /* Por encima de todo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s;
+            display: flex; /* Lo mantenemos en flex para centrar */
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            /* Eliminamos 'position: absolute' y 'transform' ya que Flexbox lo centra */
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para las flechas de navegación */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo para mayor visibilidad */
+            z-index: 1001; /* Asegura que estén por encima de la imagen */
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Responsive para las flechas en móviles */
+        @media (max-width: 767px) {
+            .prev, .next {
+                padding: 10px;
+                font-size: 16px;
+                margin-top: -30px; /* Ajuste para el centrado vertical en móvil */
+            }
+        }
     </style>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/bin/css.php'; ?>
@@ -381,7 +484,6 @@
 
 <body>
 
-    <!-- precarga -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/bin/preloader.php'; ?>
 
     <div class="page-wrapper">
@@ -391,7 +493,6 @@
             <div class="sticky-header__content"></div>
         </div>
 
-        <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header-bg" style="background-image: url(<?php echo $ROOT_PATH; ?>/assets/images/backgrounds/page-header-bg.jpg);"></div>
             <div class="container">
@@ -405,9 +506,6 @@
                 </div>
             </div>
         </section>
-        <!--Page Header End-->
-
-        <!-- Intro Section Start -->
         <section class="intro-section section-padding">
             <div class="container">
                 <div class="row">
@@ -426,9 +524,6 @@
                 </div>
             </div>
         </section>
-        <!-- Intro Section End -->
-
-        <!-- Color Gallery Start -->
         <section class="color-gallery section-padding">
             <div class="container">
                 <div class="section-title text-center">
@@ -436,80 +531,38 @@
                     <p class="section-title__text">Explora nuestras exclusivas colecciones cromáticas</p>
                 </div>
                 
-                <!-- Línea Dorada -->
-                <div class="color-line">
-                    <h3 class="color-line__title">Línea Dorada</h3>
-                    <div class="color-grid">
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/DORADA_COLORES.png" alt="Dorada 1" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Oro Antiguo</h4>
-                            </div>
+                <div class="color-grid">
+
+                    <div class="color-item">
+                        <div class="color-item__info">
+                            <h4 class="color-item__name">Línea Dorada</h4>
                         </div>
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/DORADA_COLORES 2.png" alt="Dorada 2" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Amarillo Sol</h4>
-                            </div>
-                        </div>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/DORADA_COLORES.png" alt="Tonos de Línea Dorada" class="color-item__img" data-index="0">
                     </div>
-                </div>
-                
-                <!-- Línea Onix -->
-                <div class="color-line">
-                    <h3 class="color-line__title">Línea Onix</h3>
-                    <div class="color-grid">
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ONIX_COLORES.png" alt="Onix 1" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Grafito Profundo</h4>
-                            </div>
+                    
+                    <div class="color-item">
+                        <div class="color-item__info">
+                            <h4 class="color-item__name">Línea Onix</h4>
                         </div>
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ONIX_COLORES 2.png" alt="Onix 2" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Negro Azabache</h4>
-                            </div>
-                        </div>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ONIX_COLORES.png" alt="Tonos de Línea Onix" class="color-item__img" data-index="1">
                     </div>
-                </div>
-                
-                <!-- Línea Platino Gold -->
-                <div class="color-line">
-                    <h3 class="color-line__title">Línea Platino Gold</h3>
-                    <div class="color-grid">
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/PLATINO GOLD_COLORES.png" alt="Platino Gold" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Platino Gold</h4>
-                            </div>
+                    
+                    <div class="color-item">
+                        <div class="color-item__info">
+                            <h4 class="color-item__name">Línea Platino Gold</h4>
                         </div>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/PLATINO GOLD_COLORES.png" alt="Tonos de Línea Platino Gold" class="color-item__img" data-index="2">
                     </div>
-                </div>
-                
-                <!-- Línea Zafiro -->
-                <div class="color-line">
-                    <h3 class="color-line__title">Línea Zafiro</h3>
-                    <div class="color-grid">
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ZAFIRO_COLORES.png" alt="Zafiro 1" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Azul Cobalto</h4>
-                            </div>
+                    
+                    <div class="color-item">
+                        <div class="color-item__info">
+                            <h4 class="color-item__name">Línea Zafiro</h4>
                         </div>
-                        <div class="color-item">
-                            <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ZAFIRO_COLORES 2.png" alt="Zafiro 2" class="color-item__img">
-                            <div class="color-item__info">
-                                <h4 class="color-item__name">Azul Noche</h4>
-                            </div>
-                        </div>
+                        <img src="<?php echo $ROOT_PATH; ?>/assets/images/resources/tonos_infinitos/ZAFIRO_COLORES.png" alt="Tonos de Línea Zafiro" class="color-item__img" data-index="3">
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Color Gallery End -->
-
-        <!-- Color Matching Section Start -->
         <section class="color-matching section-padding">
             <div class="container">
                 <div class="row align-items-center">
@@ -555,11 +608,76 @@
                 </div>
             </div>
         </section>
-        <!-- Color Matching Section End -->
-
         <?php include $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/bin/footer.php'; ?>
     </div>
 
+    <div id="myModal" class="modal">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+        
+        // Obtener todas las imágenes con la clase 'color-item__img'
+        const galleryImages = document.querySelectorAll('.color-item__img');
+        let currentImageIndex;
+
+        // Asignar event listeners a cada imagen para abrir el modal
+        galleryImages.forEach((image, index) => {
+            image.setAttribute('data-index', index); // Asegurarse de que cada imagen tenga un índice
+            image.addEventListener('click', function() {
+                openModal(this);
+            });
+        });
+
+        function openModal(imageElement) {
+            modal.style.display = "flex";
+            currentImageIndex = parseInt(imageElement.getAttribute('data-index'));
+            showSlide(currentImageIndex);
+        }
+
+        function showSlide(index) {
+            if (index >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else if (index < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+            modalImg.src = galleryImages[currentImageIndex].src;
+        }
+
+        function plusSlides(n) {
+            showSlide(currentImageIndex += n);
+        }
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Navegación con teclado (opcional)
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === "flex") { // Solo si el modal está abierto
+                if (event.key === "ArrowLeft") {
+                    plusSlides(-1);
+                } else if (event.key === "ArrowRight") {
+                    plusSlides(1);
+                } else if (event.key === "Escape") {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+    </script>
     <?php include $_SERVER['DOCUMENT_ROOT'] . $ROOT_PATH . '/bin/js.php'; ?>
 </body>
 </html>

@@ -13,92 +13,330 @@
     <link rel="manifest" href="/proyectopintasuper/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Pintasuper - Tienda de pinturas en Morelia con múltiples sucursales" />
     
-<style>
-/* Estilos para la compra en línea - ACTUALIZADO */
-.online-purchase {
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 40px 0;
-}
-
-.product-category {
-    margin-bottom: 30px;
-}
-
-.category-title {
-    color: #2a5f8b;
-    border-bottom: 2px solid #f7931e;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.product-card {
-    background: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Añadido para mejor alineación de contenido */
-    flex-direction: column; /* Añadido para mejor alineación de contenido */
-    justify-content: space-between; /* Añadido para mejor alineación de contenido */
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-.product-card img {
-    max-width: 100%;
-    max-height: 150px; /* Hace la imagen más compacta */
-    object-fit: contain; /* Mantiene la proporción */
-    height: auto;
-    display: block; 
-    margin: 0 auto 15px auto; 
-    border-radius: 5px;
-}
-
-.product-name {
-    font-weight: 600;
-    color: #2a5f8b;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    text-align: center; 
-}
-
-.btn-compra {
-    display: block;
-    background-color: #2a5f8b;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    margin-top: auto;
-}
-
-.btn-compra:hover {
-    background-color: #1a3a5a;
-    color: white;
-}
-
-.mercado-logo {
-    max-width: 200px;
-    margin: 0 auto 20px;
-    display: block;
-}
-</style>
+    <style>
+        /* Estilos para la compra en línea - ACTUALIZADO */
+        .online-purchase {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .product-category {
+            margin-bottom: 30px;
+        }
+        
+        .category-title {
+            color: #2a5f8b;
+            border-bottom: 2px solid #f7931e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Añadido para mejor alineación de contenido */
+            flex-direction: column; /* Añadido para mejor alineación de contenido */
+            justify-content: space-between; /* Añadido para mejor alineación de contenido */
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            max-width: 100%;
+            max-height: 150px; /* Hace la imagen más compacta */
+            object-fit: contain; /* Mantiene la proporción */
+            height: auto;
+            display: block; 
+            margin: 0 auto 15px auto; 
+            border-radius: 5px;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            color: #2a5f8b;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-align: center; 
+        }
+        
+        .btn-compra {
+            display: block;
+            background-color: #2a5f8b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .btn-compra:hover {
+            background-color: #1a3a5a;
+            color: white;
+        }
+        
+        .mercado-logo {
+            max-width: 200px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        /* Estilos generales */
+        .page-wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+        
+        .contact-page {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .banner_title {
+            color: #f7931e !important;
+        }
+        
+        /* Estilos para pestañas de sucursales - MEJORADO PARA MÓVIL */
+        .sucursales-tabs {
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .nav-tabs-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .nav-tabs-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            scroll-behavior: smooth;
+            padding-bottom: 5px; /* Espacio para el indicador de scroll */
+        }
+        
+        .nav-tabs-scroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .nav-tabs {
+            border-bottom: 2px solid #2a5f8b;
+            display: inline-flex;
+            flex-wrap: nowrap;
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .nav-tabs .nav-item {
+            margin-bottom: -2px;
+            flex-shrink: 0;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555;
+            font-weight: 600;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        /* Indicador de que hay más pestañas en móvil */
+        .scroll-indicator {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 5px;
+        }
+        
+        .scroll-indicator.left {
+            left: 0;
+            right: auto;
+            background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+            justify-content: flex-start;
+            padding-left: 5px;
+        }
+        
+        .scroll-indicator i {
+            color: #2a5f8b;
+            font-size: 16px;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: #f7931e;
+            color: #2a5f8b;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #2a5f8b;
+            background-color: transparent;
+            border-color: #2a5f8b;
+        }
+        
+        /* Mejorar la interacción táctil */
+        .nav-tabs .nav-link:active {
+            background-color: rgba(247, 147, 30, 0.1);
+            transform: scale(0.98);
+        }
+        
+        .tab-content {
+            padding: 30px 0;
+        }
+        
+        /* Estilos para el contenido de cada sucursal */
+        .sucursal-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .sucursal-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .sucursal-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .sucursal-thumbnail {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sucursal-thumbnail:hover {
+            transform: scale(1.03);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white !important;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+            text-decoration: none !important;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        /* Estilos para el mapa general y los de sucursal (unificado) */
+        .map-container {
+            width: 100%;
+            height: 450px; /* Altura unificada para todos los mapas */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 40px; /* Separación después del mapa */
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2a5f8b;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .nav-tabs-container {
+                margin-bottom: 25px;
+            }
+        
+            .nav-tabs .nav-link {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+        
+            .sucursal-content {
+                flex-direction: column;
+            }
+        
+            /* Altura de mapas en móviles */
+            .map-container {
+                height: 250px;
+            }
+        
+            .online-purchase {
+                padding: 25px 20px;
+            }
+        
+            /* Mostrar indicadores de scroll en móvil */
+            .scroll-indicator {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-tabs .nav-link {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+        
+            .sucursal-info,
+            .sucursal-image {
+                min-width: 100%;
+            }
+        }
+    </style>
     
     <?php include_once __DIR__ . '/../bin/css.php'; ?>
 </head>
@@ -139,7 +377,6 @@
                                 <div class="general-map-section">
                                     <div class="section-title text-center">
                                         <h3 class="section-title__title" style="color: #000081;">Ubicación de todas nuestras sucursales</h3>
-                                    </div>
                                 </div>
                                 
                                 <div class="sucursales-tabs">
@@ -194,8 +431,8 @@
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
-                                            <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.885839554273!2d-101.196944!3d19.717483899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e5d42f5ee23%3A0x5707f91f3774bb87!2sAv.%20Guadalupe%20Victoria%201560%2C%20Prados%20Verdes%2C%2058110%20Morelia%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1757029816522!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div class="map-container">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.885839554273!2d-101.196944!3d19.717483899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e5d42f5ee23%3A0x5707f91f3774bb87!2sAv.%20Guadalupe%20Victoria%201560%2C%20Prados%20Verdes%2C%2058110%20Morelia%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1757029816522!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
@@ -221,8 +458,8 @@
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
-                                            <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.965561317032!2d-101.2011499!3d19.6714746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0d942e9253e9%3A0x1671b927f30cf917!2sPinta%20Super%20Jardines!5e0!3m2!1ses-419!2smx!4v1757030321582!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div class="map-container">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.965561317032!2d-101.2011499!3d19.6714746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0d942e9253e9%3A0x1671b927f30cf917!2sPinta%20Super%20Jardines!5e0!3m2!1ses-419!2smx!4v1757030321582!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
@@ -248,8 +485,8 @@
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
-                                            <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.5607357306476!2d-101.2290199!3d19.6887372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0c202fe394bf%3A0x14eea922c5409583!2sPinta%20Super%20Lomas%20del%20Valle!5e0!3m2!1ses-419!2smx!4v1757030445586!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div class="map-container">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.5607357306476!2d-101.2290199!3d19.6887372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0c202fe394bf%3A0x14eea922c5409583!2sPinta%20Super%20Lomas%20del%20Valle!5e0!3m2!1ses-419!2smx!4v1757030445586!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                         
@@ -275,8 +512,8 @@
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
-                                            <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60100.17757458397!2d-101.2433213!3d19.701505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e585091311b%3A0x67b2d00361d15547!2sPinta%20Super%20Realito!5e0!3m2!1ses-419!2smx!4v1757031011864!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div class="map-container">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60100.17757458397!2d-101.2433213!3d19.701505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e585091311b%3A0x67b2d00361d15547!2sPinta%20Super%20Realito!5e0!3m2!1ses-419!2smx!4v1757031011864!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>  
                                         </div>
                                         
@@ -302,8 +539,8 @@
                                                 </div>
                                             </div>
                                             <div class="map-title">Ubicación en el mapa:</div>
-                                            <div class="sucursal-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.585514293871!2d-101.19873760000002!3d19.7302631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e50f77bf59f%3A0x8dd225f5da5f4062!2sPinta%20Super%20Loma%20Real!5e0!3m2!1ses-419!2smx!4v1757031323331!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            <div class="map-container">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.585514293871!2d-101.19873760000002!3d19.7302631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e50f77bf59f%3A0x8dd225f5da5f4062!2sPinta%20Super%20Loma%20Real!5e0!3m2!1ses-419!2smx!4v1757031323331!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
                                     </div>
